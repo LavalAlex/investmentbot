@@ -1,0 +1,12 @@
+{
+  "equity": 100.0,
+  "position": null,
+  "pending_signal": null,
+  "last_candle_time": "2026-03-24T23:00:00+00:00",
+  "consecutive_losses": 0,
+  "cb_until": null,
+  "cooldown_until": null,
+  "last_summary_date": "2026-03-24",
+  "trade_id_counter": 0,
+  "daily_trades": []
+}

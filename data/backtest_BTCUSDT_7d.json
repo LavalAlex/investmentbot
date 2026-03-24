@@ -1,0 +1,5042 @@
+{
+  "generated_at": "2026-03-21T20:40:31.112819+00:00",
+  "symbol": "BTC/USDT",
+  "timeframe": "15m",
+  "stop_loss_pct": 0.4,
+  "take_profit_pct": 1.0,
+  "fee_pct": 0.2,
+  "summary": {
+    "total_trades": 6,
+    "wins": 4,
+    "losses": 2,
+    "win_rate_pct": 66.67,
+    "cumulative_return_pct": 2.0035,
+    "avg_return_pct": 0.3333,
+    "best_trade_pct": 0.8,
+    "worst_trade_pct": -0.6,
+    "candles_evaluated": 672,
+    "buy_signals_total": 15,
+    "claude_approved": 0,
+    "claude_rejected": 0
+  },
+  "trades": [
+    {
+      "entry_time": "2026-03-15T18:00:00+00:00",
+      "exit_time": "2026-03-15T18:45:00+00:00",
+      "entry_price": 71819.96,
+      "exit_price": 71532.6802,
+      "pct_return": -0.6,
+      "exit_reason": "STOP_LOSS"
+    },
+    {
+      "entry_time": "2026-03-15T20:45:00+00:00",
+      "exit_time": "2026-03-15T22:45:00+00:00",
+      "entry_price": 71846.68,
+      "exit_price": 72565.1468,
+      "pct_return": 0.8,
+      "exit_reason": "TAKE_PROFIT"
+    },
+    {
+      "entry_time": "2026-03-15T23:30:00+00:00",
+      "exit_time": "2026-03-16T03:30:00+00:00",
+      "entry_price": 72479.05,
+      "exit_price": 73203.8405,
+      "pct_return": 0.8,
+      "exit_reason": "TAKE_PROFIT"
+    },
+    {
+      "entry_time": "2026-03-16T13:45:00+00:00",
+      "exit_time": "2026-03-16T14:15:00+00:00",
+      "entry_price": 74079.65,
+      "exit_price": 73783.3314,
+      "pct_return": -0.6,
+      "exit_reason": "STOP_LOSS"
+    },
+    {
+      "entry_time": "2026-03-16T21:15:00+00:00",
+      "exit_time": "2026-03-17T00:00:00+00:00",
+      "entry_price": 74367.93,
+      "exit_price": 75111.6093,
+      "pct_return": 0.8,
+      "exit_reason": "TAKE_PROFIT"
+    },
+    {
+      "entry_time": "2026-03-17T00:30:00+00:00",
+      "exit_time": "2026-03-17T01:00:00+00:00",
+      "entry_price": 75080.19,
+      "exit_price": 75830.9919,
+      "pct_return": 0.8,
+      "exit_reason": "TAKE_PROFIT"
+    }
+  ],
+  "signal_log": [
+    {
+      "candle_time": "2026-03-15T08:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71586.22,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T08:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71573.1,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T08:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71717.5,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T09:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 71828.13,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T09:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71847.41,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T09:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71758.59,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T09:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71791.1,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T10:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71806.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T10:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71862.46,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T10:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71830.64,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T10:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71783.09,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T11:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71700.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T11:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71695.56,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T11:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71754.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T11:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71839.42,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T12:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71702.74,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T12:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71706.97,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T12:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71567.28,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T12:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71610.33,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T13:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71442.49,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T13:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71526.9,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T13:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71449.89,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T13:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71607.54,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T14:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71579.35,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T14:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71457.39,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T14:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71484.38,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T14:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71622.03,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T15:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71546.93,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T15:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71472.8,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T15:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71486.52,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T15:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71481.24,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T16:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71559.98,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T16:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71405.7,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T16:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71450.02,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T16:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71437.35,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T17:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71482.12,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T17:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71515.17,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T17:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71521.37,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T17:45:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 71819.95,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T18:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71719.15,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T18:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71726.37,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T18:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71692.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T18:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71390.53,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T19:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71488.81,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T19:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71525.33,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T19:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71493.44,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T19:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71549.94,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T20:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71531.75,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T20:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71485.6,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T20:30:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 71846.68,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T20:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71730.81,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T21:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71646.15,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T21:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71761.24,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T21:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 72105.63,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T21:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 72109.58,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T22:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71796.79,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T22:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71931.49,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T22:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 72391.41,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T22:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 72749.44,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T23:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 72991.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T23:15:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 72479.04,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T23:30:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 72701.07,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-15T23:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 72815.24,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T00:00:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 72714.59,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T00:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72512.3,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T00:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72515.54,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T00:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72531.26,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T01:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72317.19,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T01:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72645.39,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T01:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72590.46,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T01:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 72752.9,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T02:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72694.37,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T02:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72451.44,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T02:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72444.13,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T02:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72514.69,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T03:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72528.13,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T03:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 72857.64,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T03:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73769.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T03:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73573.32,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T04:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73695.95,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T04:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73605.9,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T04:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73632.81,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T04:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73835.62,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T05:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73866.52,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T05:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73909.56,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T05:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74045.37,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T05:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74207.49,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T06:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73715.13,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T06:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73711.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T06:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73826.98,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T06:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73714.36,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T07:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73852.84,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T07:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73835.35,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T07:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73484.86,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T07:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73456.68,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T08:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73514.27,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T08:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73352.06,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T08:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 72906.56,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T08:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73135.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T09:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73132.46,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T09:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73278.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T09:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73201.4,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T09:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73260.92,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T10:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73338.33,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T10:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73453.71,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T10:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73253.21,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T10:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73783.42,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T11:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73606.92,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T11:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73556.24,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T11:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73626.28,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T11:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73552.77,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T12:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73596.63,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T12:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73878.04,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T12:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73807.63,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T12:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73864.8,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T13:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73967.86,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T13:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73902.9,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T13:30:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 74079.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T13:45:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 74109.55,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T14:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 74298.61,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T14:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73618.49,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T14:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73136.06,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T14:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73565.54,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T15:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73677.67,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T15:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73841.21,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T15:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73555.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T15:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73274.76,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T16:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73342.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T16:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73413.67,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T16:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73657.29,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T16:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73760.63,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T17:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73835.65,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T17:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73683.26,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T17:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73893.28,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T17:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73943.18,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T18:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74214.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T18:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74248.86,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T18:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74206.32,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T18:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73913.6,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T19:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74167.88,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T19:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74110.13,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T19:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74145.97,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T19:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73963.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T20:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73906.51,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T20:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73977.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T20:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74041.62,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T20:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74236.9,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T21:00:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 74367.93,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T21:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74280.05,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T21:30:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 74436.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T21:45:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 74401.36,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T22:00:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 74874.6,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T22:15:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 74660.31,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T22:30:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 74764.81,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T22:45:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 74772.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T23:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74392.5,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T23:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74612.39,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T23:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74874.93,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-16T23:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74884.67,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T00:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 75409.33,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T00:15:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 75080.2,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T00:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74996.96,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T00:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 75318.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T01:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 75840.88,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T01:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 75933.8,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T01:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 75678.16,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T01:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 75623.91,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T02:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 75243.62,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T02:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 75172.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T02:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 75396.16,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T02:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 75198.02,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T03:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74943.79,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T03:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74823.46,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T03:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74422.85,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T03:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74463.98,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T04:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74674.06,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T04:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74419.33,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T04:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74051.38,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T04:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74252.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T05:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74280.46,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T05:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74406.55,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T05:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73943.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T05:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74036.74,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T06:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74145.18,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T06:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74212.41,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T06:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74004.78,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T06:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74085.45,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T07:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74324.03,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T07:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74403.62,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T07:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74400.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T07:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74249.32,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T08:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74230.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T08:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74306.23,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T08:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74394.28,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T08:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74188.38,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T09:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74047.64,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T09:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74311.79,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T09:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74194.85,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T09:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73937.16,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T10:00:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 73685.51,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T10:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73750.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T10:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73743.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T10:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73729.45,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T11:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73930.54,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T11:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74012.78,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T11:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74107.82,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T11:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74033.11,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T12:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74057.88,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T12:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73793.9,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T12:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73837.39,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T12:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73739.74,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T13:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73836.46,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T13:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73715.06,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T13:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73721.08,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T13:45:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 73615.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T14:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73721.2,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T14:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73892.18,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T14:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74249.35,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T14:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74381.7,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T15:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74121.45,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T15:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74054.35,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T15:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73902.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T15:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73914.39,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T16:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73972.33,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T16:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74205.21,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T16:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74136.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T16:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74155.69,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T17:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74218.9,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T17:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74287.75,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T17:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74421.53,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T17:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74523.75,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T18:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74597.69,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T18:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74423.18,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T18:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74612.85,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T18:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74683.04,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T19:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74745.5,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T19:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74631.29,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T19:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74673.85,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T19:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74512.17,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T20:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74360.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T20:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74652.26,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T20:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74552.58,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T20:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74506.75,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T21:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74705.09,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T21:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74554.87,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T21:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74736.93,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T21:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74685.42,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T22:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74580.57,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T22:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74370.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T22:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74160.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T22:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74307.08,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T23:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74317.74,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T23:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74196.95,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T23:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73945.1,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-17T23:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73909.36,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T00:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73989.17,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T00:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73782.2,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T00:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73721.1,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T00:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73867.88,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T01:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73907.5,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T01:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74019.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T01:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74141.73,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T01:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74072.3,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T02:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74284.55,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T02:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74233.45,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T02:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74416.58,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T02:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74338.93,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T03:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74267.56,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T03:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74525.84,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T03:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74490.49,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T03:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74446.14,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T04:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74432.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T04:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74253.78,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T04:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74236.31,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T04:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74175.49,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T05:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74285.28,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T05:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74066.32,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T05:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74000.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T05:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73950.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T06:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74094.02,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T06:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74171.55,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T06:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74063.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T06:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73954.03,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T07:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73975.68,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T07:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73847.07,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T07:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73710.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T07:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73883.8,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T08:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74010.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T08:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74045.92,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T08:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74082.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T08:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 74044.89,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T09:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74172.59,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T09:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74164.25,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T09:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74248.25,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T09:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74181.08,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T10:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74259.37,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T10:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 74185.62,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T10:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73882.83,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T10:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73946.35,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T11:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 73955.76,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T11:15:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 73602.91,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T11:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 73113.08,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T11:45:00+00:00",
+      "signal": "SELL",
+      "confidence": "MEDIUM",
+      "close": 72952.85,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T12:00:00+00:00",
+      "signal": "SELL",
+      "confidence": "MEDIUM",
+      "close": 72751.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T12:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 72818.67,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T12:30:00+00:00",
+      "signal": "SELL",
+      "confidence": "MEDIUM",
+      "close": 72429.39,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T12:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 72361.24,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T13:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 72430.93,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T13:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 72474.59,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T13:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 72324.52,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T13:45:00+00:00",
+      "signal": "SELL",
+      "confidence": "MEDIUM",
+      "close": 72133.49,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T14:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71876.56,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T14:15:00+00:00",
+      "signal": "SELL",
+      "confidence": "MEDIUM",
+      "close": 71652.21,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T14:30:00+00:00",
+      "signal": "SELL",
+      "confidence": "MEDIUM",
+      "close": 71493.45,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T14:45:00+00:00",
+      "signal": "SELL",
+      "confidence": "MEDIUM",
+      "close": 71193.23,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T15:00:00+00:00",
+      "signal": "SELL",
+      "confidence": "MEDIUM",
+      "close": 71073.24,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T15:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71299.67,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T15:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71363.95,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T15:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71467.82,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T16:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71243.82,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T16:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71230.28,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T16:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71283.8,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T16:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71314.08,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T17:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71285.71,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T17:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71479.91,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T17:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71590.62,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T17:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71595.21,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T18:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71882.21,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T18:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71684.6,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T18:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71620.46,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T18:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71096.74,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T19:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71342.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T19:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71282.18,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T19:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71065.78,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T19:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71072.38,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T20:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70752.73,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T20:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70989.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T20:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71168.43,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T20:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71214.67,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T21:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71280.44,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T21:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71245.26,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T21:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71325.1,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T21:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71263.67,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T22:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70998.45,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T22:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71085.58,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T22:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71061.24,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T22:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71153.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T23:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71160.93,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T23:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71206.1,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T23:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71275.76,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-18T23:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71246.54,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T00:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71179.85,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T00:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71296.69,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T00:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71059.51,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T00:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71002.17,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T01:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70999.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T01:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71067.29,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T01:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71134.47,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T01:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71115.23,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T02:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71181.98,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T02:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71244.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T02:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71200.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T02:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71055.44,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T03:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71184.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T03:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71494.89,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T03:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71249.71,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T03:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71215.39,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T04:00:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 70867.64,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T04:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70732.97,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T04:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70793.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T04:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70822.07,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T05:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70815.85,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T05:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70694.34,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T05:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70779.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T05:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70826.54,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T06:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70869.43,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T06:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70731.72,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T06:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70713.15,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T06:45:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 70583.22,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T07:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69990.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T07:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69810.79,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T07:30:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 70096.95,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T07:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70191.17,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T08:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70165.83,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T08:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70066.36,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T08:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70020.67,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T08:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69985.19,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T09:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70042.14,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T09:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70265.41,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T09:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70457.54,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T09:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70513.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T10:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70420.09,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T10:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70400.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T10:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70216.69,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T10:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70133.72,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T11:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70138.51,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T11:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70204.15,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T11:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70023.5,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T11:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69952.75,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T12:00:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 69799.83,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T12:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69609.19,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T12:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69644.94,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T12:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69290.27,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T13:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69094.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T13:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69333.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T13:30:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 69717.19,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T13:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69905.65,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T14:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69507.4,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T14:15:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 69165.75,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T14:30:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 69278.56,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T14:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69482.25,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T15:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69700.69,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T15:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69206.82,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T15:30:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 68900.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T15:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69412.51,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T16:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69339.69,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T16:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69524.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T16:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69520.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T16:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69455.86,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T17:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69229.44,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T17:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69661.41,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T17:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69586.47,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T17:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69854.16,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T18:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69833.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T18:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69655.21,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T18:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69715.62,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T18:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69821.21,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T19:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70360.2,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T19:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70282.46,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T19:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70445.18,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T19:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70271.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T20:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70284.26,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T20:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70335.42,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T20:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70513.75,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T20:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70483.03,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T21:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70688.5,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T21:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70550.47,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T21:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70458.05,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T21:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70413.47,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T22:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70439.75,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T22:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70373.18,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T22:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70066.78,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T22:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70183.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T23:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70191.79,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T23:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70145.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T23:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69845.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-19T23:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69930.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T00:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70081.47,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T00:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70115.19,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T00:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70220.76,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T00:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70181.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T01:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70403.09,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T01:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70388.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T01:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70574.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T01:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70403.79,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T02:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70356.5,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T02:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70245.98,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T02:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70277.6,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T02:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70415.47,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T03:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70409.81,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T03:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70665.41,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T03:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70610.33,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T03:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70729.92,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T04:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70926.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T04:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70927.85,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T04:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70602.17,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T04:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70783.69,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T05:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70849.47,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T05:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70625.43,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T05:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70707.84,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T05:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70606.24,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T06:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70536.07,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T06:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70484.08,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T06:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70464.84,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T06:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70502.9,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T07:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70274.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T07:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70451.32,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T07:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70852.47,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T07:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70854.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T08:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 71274.16,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T08:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71248.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T08:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71114.34,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T08:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71042.23,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T09:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70849.27,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T09:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70509.18,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T09:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70640.19,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T09:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70583.8,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T10:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70366.57,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T10:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70325.07,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T10:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70533.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T10:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70611.68,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T11:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70779.36,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T11:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70713.03,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T11:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70395.29,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T11:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70478.71,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T12:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70572.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T12:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70442.9,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T12:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70359.52,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T12:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70342.63,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T13:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70324.71,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T13:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70495.62,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T13:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70323.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T13:45:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 69863.84,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T14:00:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 69810.33,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T14:15:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 69940.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T14:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69980.14,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T14:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69731.21,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T15:00:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 69768.89,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T15:15:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 69826.4,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T15:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69908.65,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T15:45:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 69860.09,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T16:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69988.51,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T16:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70024.65,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T16:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69771.65,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T16:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69829.26,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T17:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69803.71,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T17:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69656.1,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T17:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69573.35,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T17:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70000.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T18:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69973.05,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T18:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69666.79,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T18:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69696.6,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T18:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69770.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T19:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69877.24,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T19:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69876.63,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T19:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70007.91,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T19:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70177.86,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T20:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70206.39,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T20:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69977.25,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T20:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69931.91,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T20:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70057.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T21:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70133.93,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T21:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70500.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T21:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70405.38,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T21:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70540.73,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T22:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70809.61,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T22:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70686.03,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T22:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70696.29,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T22:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70767.85,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T23:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70522.07,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T23:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70480.63,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T23:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70534.51,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-20T23:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70510.73,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T00:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70594.76,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T00:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70657.29,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T00:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70602.53,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T00:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70682.19,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T01:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70671.51,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T01:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70610.12,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T01:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70519.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T01:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70464.59,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T02:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70485.17,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T02:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70644.57,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T02:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70708.13,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T02:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70737.6,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T03:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70695.04,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T03:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70704.97,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T03:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70651.35,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T03:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70657.35,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T04:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70757.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T04:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70746.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T04:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70645.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T04:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70642.13,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T05:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70637.45,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T05:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70792.01,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T05:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70779.8,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T05:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70697.94,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T06:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70718.19,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T06:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70815.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T06:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70779.98,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T06:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70774.65,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T07:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70731.92,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T07:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70875.94,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T07:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70755.78,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T07:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70727.33,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T08:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70685.55,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T08:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70528.26,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T08:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70589.39,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T08:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70594.43,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T09:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70715.91,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T09:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70589.02,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T09:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70639.87,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T09:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70661.59,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T10:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70635.44,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T10:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70559.76,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T10:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70586.08,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T10:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70605.64,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T11:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70572.63,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T11:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70609.99,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T11:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70647.17,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T11:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70652.72,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T12:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70730.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T12:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70780.0,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T12:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70758.83,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T12:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70722.61,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T13:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70751.9,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T13:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70737.42,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T13:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70726.34,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T13:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70740.18,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T14:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71020.08,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T14:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70933.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T14:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70940.86,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T14:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70629.1,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T15:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70639.37,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T15:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70670.46,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T15:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70616.2,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T15:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70630.02,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T16:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70566.84,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T16:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70414.32,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T16:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70371.22,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T16:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70301.66,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T17:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70279.1,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T17:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70368.48,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T17:30:00+00:00",
+      "signal": "SELL",
+      "confidence": "HIGH",
+      "close": 70388.23,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T17:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70304.08,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T18:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70381.64,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T18:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70412.67,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T18:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70479.49,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T18:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70389.19,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T19:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70431.69,
+      "claude_decision": null,
+      "claude_reason": null
+    },
+    {
+      "candle_time": "2026-03-21T19:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70414.08,
+      "claude_decision": null,
+      "claude_reason": null
+    }
+  ]
+}

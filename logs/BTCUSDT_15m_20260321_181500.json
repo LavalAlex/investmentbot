@@ -1,0 +1,21 @@
+{
+  "snapshot_time": "2026-03-21T18:44:07.294160+00:00",
+  "candle_close_time": "2026-03-21T18:15:00+00:00",
+  "symbol": "BTC/USDT",
+  "timeframe": "15m",
+  "signal": "NO_TRADE",
+  "confidence": "LOW",
+  "trend": "BEARISH",
+  "summary": "Insufficient confluence (bullish=0, bearish=2). No clear trade setup.",
+  "reasons": [
+    "EMA20 (70498.40) < EMA50 (70568.98): bearish trend",
+    "Price (70412.67) below EMA20: bearish positioning",
+    "RSI14 (42.6) neutral: no momentum conviction",
+    "ATR14 is 0.2% of price \u2014 volatility within normal range",
+    "Market structure: sideways or mixed"
+  ],
+  "risk_notes": [
+    "Volume ratio 0.30x avg \u2014 low participation, signal may be weak"
+  ],
+  "invalid_data": false
+}
