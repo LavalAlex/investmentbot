@@ -1,3 +1,111 @@
 [2026-03-24 14:00:58 UTC] [START] Paper trading started. initial_equity=100.00 USD | symbol=BTC/USDT | TF=15m | regime_filter=ON
 [2026-03-24 16:25:17 UTC] [WARN]  Empty 15m response — skipping cycle
 [2026-03-24 16:38:48 UTC] [WARN]  Empty 15m response — skipping cycle
+[2026-03-25 00:45:25 UTC] [SIGNAL] BUY → pending LONG entry on next candle | conf=HIGH | Bullish confluence across 4 factors with high confidence. Hard filters passed. Soft filter
+[2026-03-25 01:00:48 UTC] [OPEN]  LONG  | entry=  70923.90 | sl=  70498.36 | tp=  71774.99 | equity=100.0000 USD | id=PT-0001
+[2026-03-25 01:00:48 UTC] [UPDATE] LONG  | entry=  70923.90 | price=  70840.75 | pnl=-0.12% | MFE=0.10% | MAE=0.19% | TP_progress=8% | SL_progress=31%
+[2026-03-25 01:15:10 UTC] [UPDATE] LONG  | entry=  70923.90 | price=  70803.63 | pnl=-0.17% | MFE=0.10% | MAE=0.30% | TP_progress=8% | SL_progress=50%
+[2026-03-25 01:30:35 UTC] [UPDATE] LONG  | entry=  70923.90 | price=  70763.47 | pnl=-0.23% | MFE=0.10% | MAE=0.33% | TP_progress=8% | SL_progress=55%
+[2026-03-25 01:45:56 UTC] [UPDATE] LONG  | entry=  70923.90 | price=  70738.50 | pnl=-0.26% | MFE=0.10% | MAE=0.41% | TP_progress=8% | SL_progress=69%
+[2026-03-25 02:00:16 UTC] [UPDATE] LONG  | entry=  70923.90 | price=  70677.18 | pnl=-0.35% | MFE=0.10% | MAE=0.41% | TP_progress=8% | SL_progress=69%
+[2026-03-25 02:15:35 UTC] [UPDATE] LONG  | entry=  70923.90 | price=  70609.08 | pnl=-0.44% | MFE=0.10% | MAE=0.53% | TP_progress=8% | SL_progress=88%
+[2026-03-25 02:31:00 UTC] [UPDATE] LONG  | entry=  70923.90 | price=  70595.04 | pnl=-0.46% | MFE=0.10% | MAE=0.55% | TP_progress=8% | SL_progress=92%
+[2026-03-25 02:45:24 UTC] [UPDATE] LONG  | entry=  70923.90 | price=  70695.96 | pnl=-0.32% | MFE=0.10% | MAE=0.57% | TP_progress=8% | SL_progress=95%
+[2026-03-25 03:00:50 UTC] [CLOSE] LONG  | entry=  70923.90 | exit=  70498.36 | reason=STOP_LOSS       | LOSS | net= -0.8000 USD (-0.8000%) | equity=99.2000 USD | MFE=0.10% | MAE=0.61%
+[2026-03-25 04:30:15 UTC] [SIGNAL] BUY → pending LONG entry on next candle | conf=HIGH | Bullish confluence across 4 factors with high confidence. Hard filters passed. Soft filter
+[2026-03-25 04:45:50 UTC] [OPEN]  LONG  | entry=  70865.74 | sl=  70440.55 | tp=  71716.13 | equity=99.2000 USD | id=PT-0002
+[2026-03-25 04:45:50 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  70769.20 | pnl=-0.14% | MFE=0.03% | MAE=0.20% | TP_progress=2% | SL_progress=33%
+[2026-03-25 05:00:15 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  70968.64 | pnl=+0.15% | MFE=0.16% | MAE=0.20% | TP_progress=13% | SL_progress=33%
+[2026-03-25 05:15:40 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71245.33 | pnl=+0.54% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 05:30:03 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71198.74 | pnl=+0.47% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 05:45:28 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71220.93 | pnl=+0.50% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 06:00:53 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71117.66 | pnl=+0.36% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 06:15:16 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71076.02 | pnl=+0.30% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 06:30:39 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71234.41 | pnl=+0.52% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 06:45:06 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71201.00 | pnl=+0.47% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 07:00:31 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  70991.83 | pnl=+0.18% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 07:15:55 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71142.98 | pnl=+0.39% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 07:30:19 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71069.56 | pnl=+0.29% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 07:45:45 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71056.76 | pnl=+0.27% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 08:00:08 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  70926.88 | pnl=+0.09% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 08:15:36 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  70811.41 | pnl=-0.08% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 08:31:04 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71192.19 | pnl=+0.46% | MFE=0.68% | MAE=0.20% | TP_progress=56% | SL_progress=33%
+[2026-03-25 08:45:27 UTC] [BE]    LONG  | break-even activated at 70865.74
+[2026-03-25 08:45:27 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71478.32 | pnl=+0.86% | MFE=0.90% | MAE=0.20% | TP_progress=75% | SL_progress=33%
+[2026-03-25 09:00:51 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71248.39 | pnl=+0.54% | MFE=0.90% | MAE=0.20% | TP_progress=75% | SL_progress=33%
+[2026-03-25 09:15:15 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71334.03 | pnl=+0.66% | MFE=0.90% | MAE=0.20% | TP_progress=75% | SL_progress=33%
+[2026-03-25 09:30:39 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71268.20 | pnl=+0.57% | MFE=0.90% | MAE=0.20% | TP_progress=75% | SL_progress=33%
+[2026-03-25 09:45:03 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71263.02 | pnl=+0.56% | MFE=0.90% | MAE=0.20% | TP_progress=75% | SL_progress=33%
+[2026-03-25 10:00:31 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71345.91 | pnl=+0.68% | MFE=0.90% | MAE=0.20% | TP_progress=75% | SL_progress=33%
+[2026-03-25 10:15:58 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71420.00 | pnl=+0.78% | MFE=0.90% | MAE=0.20% | TP_progress=75% | SL_progress=33%
+[2026-03-25 10:30:25 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71405.92 | pnl=+0.76% | MFE=0.90% | MAE=0.20% | TP_progress=75% | SL_progress=33%
+[2026-03-25 10:45:50 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71436.31 | pnl=+0.81% | MFE=0.90% | MAE=0.20% | TP_progress=75% | SL_progress=33%
+[2026-03-25 11:00:13 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71501.39 | pnl=+0.90% | MFE=1.10% | MAE=0.20% | TP_progress=91% | SL_progress=33%
+[2026-03-25 11:15:37 UTC] [UPDATE] LONG  | entry=  70865.74 | price=  71599.09 | pnl=+1.03% | MFE=1.10% | MAE=0.20% | TP_progress=91% | SL_progress=33%
+[2026-03-25 11:31:02 UTC] [CLOSE] LONG  | entry=  70865.74 | exit=  71716.13 | reason=TAKE_PROFIT     | WIN  | net= +0.9920 USD (+1.0000%) | equity=100.1920 USD | MFE=1.50% | MAE=0.20%
+[2026-03-26 00:26:27 UTC] [WARN]  Empty 15m response — skipping cycle
+[2026-03-26 01:54:45 UTC] [WARN]  Empty 15m response — skipping cycle
+[2026-03-26 07:47:15 UTC] [WARN]  Empty 15m response — skipping cycle
+[2026-03-26 15:30:46 UTC] [SIGNAL] SELL → pending SHORT entry on next candle | conf=HIGH | Bearish confluence across 4 factors with high confidence. Hard filters passed. Soft filter
+[2026-03-26 15:45:58 UTC] [OPEN]  SHORT | entry=  69030.49 | sl=  69444.67 | tp=  67511.82 | equity=100.1920 USD | id=PT-0003
+[2026-03-26 15:45:58 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68988.75 | pnl=+0.06% | MFE=0.19% | MAE=0.06% | TP_progress=8% | SL_progress=9%
+[2026-03-26 16:00:12 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  69082.64 | pnl=-0.08% | MFE=0.19% | MAE=0.27% | TP_progress=8% | SL_progress=46%
+[2026-03-26 16:15:26 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  69022.57 | pnl=+0.01% | MFE=0.19% | MAE=0.27% | TP_progress=8% | SL_progress=46%
+[2026-03-26 16:30:38 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68888.01 | pnl=+0.21% | MFE=0.25% | MAE=0.27% | TP_progress=12% | SL_progress=46%
+[2026-03-26 16:45:48 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68918.29 | pnl=+0.16% | MFE=0.30% | MAE=0.27% | TP_progress=14% | SL_progress=46%
+[2026-03-26 17:00:59 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68932.52 | pnl=+0.14% | MFE=0.30% | MAE=0.27% | TP_progress=14% | SL_progress=46%
+[2026-03-26 17:15:15 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68921.51 | pnl=+0.16% | MFE=0.30% | MAE=0.27% | TP_progress=14% | SL_progress=46%
+[2026-03-26 17:30:26 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  69082.98 | pnl=-0.08% | MFE=0.30% | MAE=0.27% | TP_progress=14% | SL_progress=46%
+[2026-03-26 17:45:37 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68957.74 | pnl=+0.11% | MFE=0.30% | MAE=0.27% | TP_progress=14% | SL_progress=46%
+[2026-03-26 18:00:48 UTC] [BE]    SHORT | break-even activated at 69030.49
+[2026-03-26 18:00:48 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68486.86 | pnl=+0.79% | MFE=0.95% | MAE=0.27% | TP_progress=43% | SL_progress=46%
+[2026-03-26 18:15:58 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68459.44 | pnl=+0.83% | MFE=1.04% | MAE=0.27% | TP_progress=47% | SL_progress=46%
+[2026-03-26 18:30:09 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68203.58 | pnl=+1.20% | MFE=1.27% | MAE=0.27% | TP_progress=58% | SL_progress=46%
+[2026-03-26 18:45:20 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68336.67 | pnl=+1.01% | MFE=1.27% | MAE=0.27% | TP_progress=58% | SL_progress=46%
+[2026-03-26 19:00:31 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68497.25 | pnl=+0.77% | MFE=1.27% | MAE=0.27% | TP_progress=58% | SL_progress=46%
+[2026-03-26 19:15:42 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68457.40 | pnl=+0.83% | MFE=1.27% | MAE=0.27% | TP_progress=58% | SL_progress=46%
+[2026-03-26 19:30:52 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68435.96 | pnl=+0.86% | MFE=1.27% | MAE=0.27% | TP_progress=58% | SL_progress=46%
+[2026-03-26 19:45:03 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68633.12 | pnl=+0.58% | MFE=1.27% | MAE=0.27% | TP_progress=58% | SL_progress=46%
+[2026-03-26 20:00:13 UTC] [UPDATE] SHORT | entry=  69030.49 | price=  68534.36 | pnl=+0.72% | MFE=1.27% | MAE=0.27% | TP_progress=58% | SL_progress=46%
+[2026-03-26 20:15:25 UTC] [CLOSE] SHORT | entry=  69030.49 | exit=  69030.49 | reason=STOP_LOSS       | LOSS | net= -0.2004 USD (-0.2000%) | equity=99.9916 USD | MFE=1.27% | MAE=0.65%
+[2026-03-27 04:15:13 UTC] [SIGNAL] SELL → pending SHORT entry on next candle | conf=HIGH | Bearish confluence across 4 factors with high confidence. Hard filters passed. Soft filter
+[2026-03-27 04:30:26 UTC] [OPEN]  SHORT | entry=  68405.23 | sl=  68815.66 | tp=  66900.31 | equity=99.9916 USD | id=PT-0004
+[2026-03-27 04:30:26 UTC] [UPDATE] SHORT | entry=  68405.23 | price=  68534.05 | pnl=-0.19% | MFE=0.02% | MAE=0.24% | TP_progress=1% | SL_progress=39%
+[2026-03-27 04:45:38 UTC] [UPDATE] SHORT | entry=  68405.23 | price=  68591.86 | pnl=-0.27% | MFE=0.02% | MAE=0.32% | TP_progress=1% | SL_progress=53%
+[2026-03-27 05:00:51 UTC] [UPDATE] SHORT | entry=  68405.23 | price=  68578.00 | pnl=-0.25% | MFE=0.02% | MAE=0.34% | TP_progress=1% | SL_progress=56%
+[2026-03-27 05:15:04 UTC] [CB]    Circuit breaker triggered — entries blocked until 2026-03-29 05:00 UTC
+[2026-03-27 05:15:04 UTC] [CLOSE] SHORT | entry=  68405.23 | exit=  68815.66 | reason=STOP_LOSS       | LOSS | net= -0.7999 USD (-0.8000%) | equity=99.1917 USD | MFE=0.02% | MAE=0.61%
+[2026-03-27 15:54:58 UTC] [WARN]  Empty 15m response — skipping cycle
+[2026-03-29 15:30:49 UTC] [SIGNAL] SELL → pending SHORT entry on next candle | conf=HIGH | Bearish confluence across 4 factors with high confidence. Hard filters passed. Soft filter
+[2026-03-29 15:45:02 UTC] [OPEN]  SHORT | entry=  66420.74 | sl=  66819.26 | tp=  64959.48 | equity=99.1917 USD | id=PT-0005
+[2026-03-29 15:45:02 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66456.12 | pnl=-0.05% | MFE=0.13% | MAE=0.07% | TP_progress=6% | SL_progress=11%
+[2026-03-29 16:00:15 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66523.00 | pnl=-0.15% | MFE=0.13% | MAE=0.18% | TP_progress=6% | SL_progress=31%
+[2026-03-29 16:15:28 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66447.22 | pnl=-0.04% | MFE=0.13% | MAE=0.21% | TP_progress=6% | SL_progress=34%
+[2026-03-29 16:30:45 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66617.19 | pnl=-0.30% | MFE=0.13% | MAE=0.37% | TP_progress=6% | SL_progress=61%
+[2026-03-29 16:45:59 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66540.00 | pnl=-0.18% | MFE=0.13% | MAE=0.37% | TP_progress=6% | SL_progress=61%
+[2026-03-29 17:00:11 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66499.35 | pnl=-0.12% | MFE=0.13% | MAE=0.37% | TP_progress=6% | SL_progress=61%
+[2026-03-29 17:15:23 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66422.35 | pnl=-0.00% | MFE=0.13% | MAE=0.37% | TP_progress=6% | SL_progress=61%
+[2026-03-29 17:30:40 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66262.41 | pnl=+0.24% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 17:45:53 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66392.26 | pnl=+0.04% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 18:00:05 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66385.84 | pnl=+0.05% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 18:15:20 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66402.54 | pnl=+0.03% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 18:30:34 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66397.51 | pnl=+0.03% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 18:45:47 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66430.59 | pnl=-0.01% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 19:01:00 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66427.26 | pnl=-0.01% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 19:15:14 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66436.90 | pnl=-0.02% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 19:30:27 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66425.94 | pnl=-0.01% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 19:45:39 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66391.74 | pnl=+0.04% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 20:00:53 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66348.62 | pnl=+0.11% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 20:15:06 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66461.17 | pnl=-0.06% | MFE=0.40% | MAE=0.37% | TP_progress=18% | SL_progress=61%
+[2026-03-29 20:30:27 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66705.65 | pnl=-0.43% | MFE=0.40% | MAE=0.56% | TP_progress=18% | SL_progress=94%
+[2026-03-29 20:45:42 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66596.27 | pnl=-0.26% | MFE=0.40% | MAE=0.56% | TP_progress=18% | SL_progress=94%
+[2026-03-29 21:00:55 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66614.05 | pnl=-0.29% | MFE=0.40% | MAE=0.56% | TP_progress=18% | SL_progress=94%
+[2026-03-29 21:15:07 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66554.62 | pnl=-0.20% | MFE=0.40% | MAE=0.56% | TP_progress=18% | SL_progress=94%
+[2026-03-29 21:30:19 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66653.87 | pnl=-0.35% | MFE=0.40% | MAE=0.56% | TP_progress=18% | SL_progress=94%
+[2026-03-29 21:45:32 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66640.32 | pnl=-0.33% | MFE=0.40% | MAE=0.56% | TP_progress=18% | SL_progress=94%
+[2026-03-29 22:00:46 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66710.12 | pnl=-0.44% | MFE=0.40% | MAE=0.56% | TP_progress=18% | SL_progress=94%
+[2026-03-29 22:15:58 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66306.35 | pnl=+0.17% | MFE=0.40% | MAE=0.56% | TP_progress=18% | SL_progress=94%
+[2026-03-29 22:30:12 UTC] [UPDATE] SHORT | entry=  66420.74 | price=  66384.51 | pnl=+0.05% | MFE=0.40% | MAE=0.56% | TP_progress=18% | SL_progress=94%
+[2026-03-29 22:45:27 UTC] [BE]    SHORT | break-even activated at 66420.74
+[2026-03-29 22:45:27 UTC] [CLOSE] SHORT | entry=  66420.74 | exit=  66420.74 | reason=STOP_LOSS       | LOSS | net= -0.1984 USD (-0.2000%) | equity=98.9933 USD | MFE=1.18% | MAE=0.56%
+[2026-03-30 00:01:03 UTC] [STOP]  Paper monitor stopped by user.

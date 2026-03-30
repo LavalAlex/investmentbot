@@ -1,12 +1,12 @@
 {
-  "equity": 100.0,
+  "equity": 98.9933,
   "position": null,
   "pending_signal": null,
-  "last_candle_time": "2026-03-24T23:00:00+00:00",
-  "consecutive_losses": 0,
-  "cb_until": null,
-  "cooldown_until": null,
-  "last_summary_date": "2026-03-24",
-  "trade_id_counter": 0,
+  "last_candle_time": "2026-03-29T23:45:00+00:00",
+  "consecutive_losses": 1,
+  "cb_until": "2026-03-29T05:00:00+00:00",
+  "cooldown_until": "2026-03-29T23:15:00+00:00",
+  "last_summary_date": "2026-03-30",
+  "trade_id_counter": 5,
   "daily_trades": []
 }
