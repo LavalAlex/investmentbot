@@ -4,56 +4,51 @@ Reset the paper trading environment to a clean initial state.
 Usage:
     python3 reset_paper_logs.py
 
-Safe to run only when the paper monitor is NOT running.
-Deletes all log files and writes a fresh paper_state.json with 100 USD equity.
+Safe to run only when paper_monitor.py is NOT running.
+Deletes log files and writes a fresh paper_state.json.
 """
 
 import json
 import os
 from pathlib import Path
 
-LOGS_DIR = "logs"
-
-FILES_TO_DELETE = [
-    f"{LOGS_DIR}/paper_trading_events.txt",
-    f"{LOGS_DIR}/paper_trades.csv",
-    f"{LOGS_DIR}/paper_daily_summary.txt",
-]
-
-STATE_PATH    = f"{LOGS_DIR}/paper_state.json"
-INITIAL_EQUITY = 100.0
-
-FRESH_STATE = {
-    "equity":             INITIAL_EQUITY,
-    "position":           None,
-    "pending_signal":     None,
-    "last_candle_time":   None,
-    "consecutive_losses": 0,
-    "cb_until":           None,
-    "cooldown_until":     None,
-    "last_summary_date":  None,
-    "trade_id_counter":   0,
-    "daily_trades":       [],
-}
+INITIAL_EQUITY = 10_000.0
+STATE_FILE     = 'paper_state.json'
+LOGS_DIR       = 'logs'
 
 
 def main() -> None:
-    Path(LOGS_DIR).mkdir(parents=True, exist_ok=True)
+    # ── Remove state file ─────────────────────────────────────────────────────
+    if os.path.exists(STATE_FILE):
+        os.remove(STATE_FILE)
+        print(f"  deleted : {STATE_FILE}")
+    else:
+        print(f"  skipped : {STATE_FILE}  (not found)")
 
-    for path in FILES_TO_DELETE:
-        if os.path.exists(path):
+    # ── Remove paper log files ────────────────────────────────────────────────
+    Path(LOGS_DIR).mkdir(parents=True, exist_ok=True)
+    removed = 0
+    for fname in os.listdir(LOGS_DIR):
+        if fname.startswith('paper_') and fname.endswith('.log'):
+            path = os.path.join(LOGS_DIR, fname)
             os.remove(path)
             print(f"  deleted : {path}")
-        else:
-            print(f"  skipped : {path}  (not found)")
+            removed += 1
+    if removed == 0:
+        print(f"  skipped : no paper_*.log files found in {LOGS_DIR}/")
 
-    with open(STATE_PATH, "w") as f:
-        json.dump(FRESH_STATE, f, indent=2)
-    print(f"  created : {STATE_PATH}  (equity={INITIAL_EQUITY:.2f} USD, all counters reset)")
+    # ── Write fresh state ─────────────────────────────────────────────────────
+    fresh = {
+        'equity':    INITIAL_EQUITY,
+        'positions': {},
+        'trades':    [],
+    }
+    with open(STATE_FILE, 'w') as f:
+        json.dump(fresh, f, indent=2)
+    print(f"  created : {STATE_FILE}  (equity={INITIAL_EQUITY:.0f} USD)")
 
-    print()
-    print(f"[RESET] Paper trading logs cleared. Ready to start fresh with {INITIAL_EQUITY:.0f} USD.")
+    print(f"\n[RESET] Ready. Start monitor with: python paper_monitor.py --loop")
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

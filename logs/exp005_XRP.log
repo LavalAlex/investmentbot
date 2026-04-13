@@ -1,0 +1,19 @@
+
+============================================================
+EXP005-v2  |  XRP  |  IN-SAMPLE
+Strategy   : EXP002-v2 (unchanged)
+1h data    : data/XRPUSDT_1h_last_200d.csv
+15m data   : data/XRPUSDT_15m_last_180d.csv
+============================================================
+
+
+============================================================
+SUMMARY — XRP_IN_SAMPLE
+============================================================
+No trades generated.
+Filter rejections:
+  No trend signal  : 0
+  Trend strength   : 4622
+  Pullback quality : 8578
+  Candle quality   : 2134
+  Range floor      : 0

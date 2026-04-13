@@ -1,0 +1,84 @@
+{
+  "BTC": {
+    "windows": [
+      {
+        "trades": 210,
+        "win_rate_pct": 35.2,
+        "return_pct": 10.36,
+        "max_dd_pct": 11.73,
+        "profit_factor": 1.071,
+        "expectancy_usd": 4.93,
+        "gross_profit": 15640.03,
+        "gross_loss": 14605.28,
+        "window": "W1: Apr 2025 \u2013 Jul 2025",
+        "equity_start": 9991.06
+      },
+      {
+        "trades": 200,
+        "win_rate_pct": 38.0,
+        "return_pct": 29.53,
+        "max_dd_pct": 9.64,
+        "profit_factor": 1.197,
+        "expectancy_usd": 16.28,
+        "gross_profit": 19756.1,
+        "gross_loss": 16499.95,
+        "window": "W2: Jul 2025 \u2013 Oct 2025",
+        "equity_start": 11025.82
+      },
+      {
+        "trades": 222,
+        "win_rate_pct": 36.5,
+        "return_pct": 20.55,
+        "max_dd_pct": 16.82,
+        "profit_factor": 1.122,
+        "expectancy_usd": 13.22,
+        "gross_profit": 26973.49,
+        "gross_loss": 24038.18,
+        "window": "W3: Oct 2025 \u2013 Jan 2026",
+        "equity_start": 14281.97
+      },
+      {
+        "trades": 211,
+        "win_rate_pct": 37.0,
+        "return_pct": 23.11,
+        "max_dd_pct": 17.8,
+        "profit_factor": 1.146,
+        "expectancy_usd": 18.86,
+        "gross_profit": 31277.79,
+        "gross_loss": 27298.83,
+        "window": "W4: Jan 2026 \u2013 Apr 2026",
+        "equity_start": 17217.27
+      }
+    ],
+    "final_equity": 21196.2324
+  },
+  "ETH": {
+    "windows": [
+      {
+        "trades": 242,
+        "win_rate_pct": 36.0,
+        "return_pct": 17.94,
+        "max_dd_pct": 21.88,
+        "profit_factor": 1.099,
+        "expectancy_usd": 7.04,
+        "gross_profit": 18986.22,
+        "gross_loss": 17281.44,
+        "window": "W1: Oct 2025 \u2013 Jan 2026",
+        "equity_start": 9501.4
+      },
+      {
+        "trades": 205,
+        "win_rate_pct": 40.0,
+        "return_pct": 47.35,
+        "max_dd_pct": 12.35,
+        "profit_factor": 1.325,
+        "expectancy_usd": 25.88,
+        "gross_profit": 21609.3,
+        "gross_loss": 16303.45,
+        "window": "W2: Jan 2026 \u2013 Apr 2026",
+        "equity_start": 11206.18
+      }
+    ],
+    "final_equity": 16512.0419
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24T02:27:56.303783+00:00",
+  "generated_at": "2026-03-25T02:11:00.015838+00:00",
   "symbol": "BTC/USDT",
   "timeframe": "15m",
   "stop_loss_pct": 0.6,
@@ -9,45 +9,48 @@
   "cb_loss_threshold": 2,
   "cb_pause_hours": 48,
   "regime_filter_long": true,
+  "regime_filter_short": false,
   "block_long_low_vol": false,
   "summary": {
     "candles_evaluated": 17280,
-    "buy_signals_total": 159,
-    "sell_signals_total": 227,
+    "buy_signals_total": 160,
+    "sell_signals_total": 212,
     "circuit_breaker_events": 35,
-    "circuit_breaker_blocked": 208,
+    "circuit_breaker_blocked": 210,
     "regime_blocked_longs": 4,
+    "regime_blocked_shorts": 0,
+    "low_vol_blocked_shorts": 0,
     "claude_approved": 0,
     "claude_rejected": 0,
-    "total_trades": 135,
-    "wins": 48,
+    "total_trades": 134,
+    "wins": 47,
     "losses": 87,
-    "win_rate_pct": 35.56,
-    "cumulative_return_pct": 17.1798,
-    "avg_return_pct": 0.1234,
+    "win_rate_pct": 35.07,
+    "cumulative_return_pct": 15.4125,
+    "avg_return_pct": 0.1128,
     "best_trade_pct": 2.0,
     "worst_trade_pct": -1.8291,
     "max_drawdown_pct": 8.2937,
-    "profit_factor": 1.3042,
-    "expectancy_pct": 0.1234,
-    "avg_trade_duration_min": 235.8,
+    "profit_factor": 1.2784,
+    "expectancy_pct": 0.1128,
+    "avg_trade_duration_min": 222.5,
     "longest_win_streak": 5,
     "longest_loss_streak": 10,
     "long": {
-      "trades": 60,
+      "trades": 61,
       "wins": 25,
-      "losses": 35,
-      "win_rate_pct": 41.67,
-      "cumulative_return_pct": 3.877,
-      "profit_factor": 1.1875
+      "losses": 36,
+      "win_rate_pct": 40.98,
+      "cumulative_return_pct": 3.5216,
+      "profit_factor": 1.1688
     },
     "short": {
-      "trades": 75,
-      "wins": 23,
-      "losses": 52,
-      "win_rate_pct": 30.67,
-      "cumulative_return_pct": 12.8064,
-      "profit_factor": 1.3791
+      "trades": 73,
+      "wins": 22,
+      "losses": 51,
+      "win_rate_pct": 30.14,
+      "cumulative_return_pct": 11.4864,
+      "profit_factor": 1.3516
     }
   },
   "circuit_breaker_events": [
@@ -259,17 +262,10 @@
       "circuit_breaker_triggered": true,
       "circuit_breaker_start": "2026-03-22T15:15:00+00:00",
       "circuit_breaker_end": "2026-03-24T15:15:00+00:00",
-      "blocked_entries_count": 5
+      "blocked_entries_count": 7
     }
   ],
   "monthly_returns": [
-    {
-      "month": "2025-09",
-      "trades": 2,
-      "wins": 1,
-      "losses": 1,
-      "return_pct": 1.184
-    },
     {
       "month": "2025-10",
       "trades": 21,
@@ -307,33 +303,13 @@
     },
     {
       "month": "2026-03",
-      "trades": 21,
+      "trades": 22,
       "wins": 9,
-      "losses": 12,
-      "return_pct": 3.7685
+      "losses": 13,
+      "return_pct": 3.4135
     }
   ],
   "trades": [
-    {
-      "entry_time": "2025-09-25T07:45:00+00:00",
-      "exit_time": "2025-09-25T17:45:00+00:00",
-      "entry_price": 111831.37,
-      "exit_price": 109371.0799,
-      "pct_return": 2.0,
-      "exit_reason": "TAKE_PROFIT",
-      "break_even_triggered": true,
-      "direction": "SHORT"
-    },
-    {
-      "entry_time": "2025-09-25T18:45:00+00:00",
-      "exit_time": "2025-09-26T18:15:00+00:00",
-      "entry_price": 109488.0,
-      "exit_price": 110144.928,
-      "pct_return": -0.8,
-      "exit_reason": "STOP_LOSS",
-      "break_even_triggered": false,
-      "direction": "SHORT"
-    },
     {
       "entry_time": "2025-09-30T20:15:00+00:00",
       "exit_time": "2025-10-01T08:30:00+00:00",
@@ -1663,1098 +1639,19 @@
       "exit_reason": "STOP_LOSS",
       "break_even_triggered": true,
       "direction": "SHORT"
+    },
+    {
+      "entry_time": "2026-03-25T00:45:00+00:00",
+      "exit_time": "2026-03-25T00:45:00+00:00",
+      "entry_price": 70923.9,
+      "exit_price": 70823.15,
+      "pct_return": -0.3421,
+      "exit_reason": "END_OF_DATA",
+      "break_even_triggered": false,
+      "direction": "LONG"
     }
   ],
   "signal_log": [
-    {
-      "candle_time": "2025-09-25T07:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 111860.41,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T07:30:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 111831.37,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T07:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 111766.72,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T08:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111980.86,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T08:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 112031.17,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T08:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111767.3,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T08:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 111727.21,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T09:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111891.26,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T09:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 112079.77,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T09:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111832.34,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T09:45:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 111571.58,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T10:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111678.53,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T10:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111761.55,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T10:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111612.98,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T10:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111648.19,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T11:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 111554.02,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T11:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 111544.87,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T11:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 111420.9,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T11:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 111348.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T12:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111559.59,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T12:15:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 111125.76,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T12:30:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 111380.6,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T12:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 111111.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T13:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 111275.11,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T13:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111617.01,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T13:30:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 110720.91,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T13:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111000.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T14:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111293.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T14:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111499.52,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T14:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111489.04,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T14:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111540.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T15:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111317.95,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T15:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 110945.67,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T15:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111309.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T15:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111580.77,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T16:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111527.92,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T16:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111116.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T16:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 111096.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T16:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 110957.29,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T17:00:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 110160.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T17:15:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 109938.11,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T17:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109374.07,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T17:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 108833.63,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T18:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109222.13,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T18:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109442.99,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T18:30:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 109488.01,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T18:45:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 109760.2,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T19:00:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 109674.2,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T19:15:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 109819.34,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T19:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109549.37,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T19:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109360.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T20:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109245.15,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T20:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109357.92,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T20:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109205.32,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T20:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109163.44,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T21:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109463.21,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T21:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109318.83,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T21:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109166.6,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T21:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109420.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T22:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109530.19,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T22:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109480.55,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T22:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109438.29,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T22:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109419.97,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T23:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109487.26,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T23:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109447.34,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T23:30:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 109083.17,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-25T23:45:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 108994.49,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T00:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109301.01,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T00:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109300.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T00:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 108809.25,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T00:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109472.13,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T01:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109639.13,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T01:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109560.01,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T01:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109649.99,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T01:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109680.4,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T02:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109658.14,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T02:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109568.35,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T02:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109620.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T02:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109621.7,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T03:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109528.97,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T03:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109344.01,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T03:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109416.72,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T03:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109580.01,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T04:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109500.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T04:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109409.12,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T04:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109258.5,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T04:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109338.01,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T05:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109379.54,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T05:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109560.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T05:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109360.52,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T05:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109252.79,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T06:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109276.61,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T06:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109482.62,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T06:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109560.02,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T06:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109360.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T07:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109561.05,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T07:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109300.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T07:30:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 108944.98,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T07:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 109320.02,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T08:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109438.26,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T08:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109515.77,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T08:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109599.99,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T08:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109567.2,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T09:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109664.29,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T09:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109646.73,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T09:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109415.6,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T09:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109568.72,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T10:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109185.09,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T10:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109092.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T10:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 108830.01,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T10:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 108895.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T11:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "MEDIUM",
-      "close": 108768.02,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T11:15:00+00:00",
-      "signal": "SELL",
-      "confidence": "HIGH",
-      "close": 108744.79,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T11:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109042.04,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T11:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109133.5,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T12:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 108883.65,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T12:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109121.28,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T12:30:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109497.69,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T12:45:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109372.68,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T13:00:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109160.0,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
-    {
-      "candle_time": "2025-09-26T13:15:00+00:00",
-      "signal": "NO_TRADE",
-      "confidence": "LOW",
-      "close": 109183.63,
-      "claude_decision": null,
-      "claude_reason": null,
-      "circuit_breaker": false
-    },
     {
       "candle_time": "2025-09-26T13:30:00+00:00",
       "signal": "NO_TRADE",
@@ -2893,7 +1790,7 @@
     {
       "candle_time": "2025-09-26T17:15:00+00:00",
       "signal": "NO_TRADE",
-      "confidence": "LOW",
+      "confidence": "MEDIUM",
       "close": 109912.14,
       "claude_decision": null,
       "claude_reason": null,
@@ -156726,6 +155623,1095 @@
       "claude_decision": null,
       "claude_reason": null,
       "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T18:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71046.83,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T18:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71076.22,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T19:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70935.03,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T19:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71031.95,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T19:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70904.35,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T19:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70679.05,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T20:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70795.16,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T20:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70811.17,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T20:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70949.28,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T20:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70915.59,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T21:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70827.66,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T21:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70894.08,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T21:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70936.0,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T21:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70851.35,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T22:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70727.6,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T22:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70636.01,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T22:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70712.45,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T22:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70780.22,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T23:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70552.81,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T23:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70707.2,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T23:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70767.17,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-23T23:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70906.45,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T00:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70786.55,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T00:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70720.55,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T00:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70592.21,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T00:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70679.2,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T01:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70565.48,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T01:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70828.15,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T01:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70392.31,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T01:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70516.57,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T02:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70466.0,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T02:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70559.73,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T02:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70531.31,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T02:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70453.37,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T03:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70503.1,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T03:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70541.65,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T03:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70489.98,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T03:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70542.9,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T04:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70636.56,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T04:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70532.32,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T04:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70340.32,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T04:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70372.44,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T05:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70161.04,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T05:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70181.25,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T05:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70326.12,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T05:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70283.85,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T06:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70364.14,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T06:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70378.56,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T06:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70470.01,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T06:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70541.38,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T07:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70835.04,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T07:15:00+00:00",
+      "signal": "BUY_CIRCUIT_BREAKER",
+      "confidence": "HIGH",
+      "close": 70929.92,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T07:30:00+00:00",
+      "signal": "BUY_CIRCUIT_BREAKER",
+      "confidence": "HIGH",
+      "close": 70902.71,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T07:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71291.7,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T08:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71132.08,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T08:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70914.41,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T08:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71068.93,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T08:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70964.15,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T09:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70876.04,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T09:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71014.7,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T09:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71242.7,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T09:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71316.97,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T10:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71264.83,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T10:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71114.64,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T10:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71244.13,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T10:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 71272.87,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T11:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71119.61,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T11:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71067.21,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T11:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71244.0,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T11:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71157.77,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T12:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71074.01,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T12:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 71085.9,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T12:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70900.0,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T12:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70956.48,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T13:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70829.23,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T13:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70598.69,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T13:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70321.51,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T13:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70100.46,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T14:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69858.64,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T14:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70000.41,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T14:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69846.28,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T14:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69869.93,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": true
+    },
+    {
+      "candle_time": "2026-03-24T15:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69966.0,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T15:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "HIGH",
+      "close": 70029.61,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T15:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70058.12,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T15:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69873.04,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T16:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69915.27,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T16:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69798.32,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T16:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69564.81,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T16:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69476.87,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T17:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69237.43,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T17:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69177.17,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T17:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 68946.27,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T17:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69238.43,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T18:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69366.35,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T18:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69408.35,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T18:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69530.83,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T18:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69430.24,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T19:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69640.8,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T19:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69537.72,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T19:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69445.56,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T19:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 69377.33,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T20:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69415.54,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T20:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70012.33,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T20:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70059.59,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T20:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70093.19,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T21:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 69992.84,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T21:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70059.91,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T21:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70275.75,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T21:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70332.93,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T22:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70543.52,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T22:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70238.88,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T22:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70288.01,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T22:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70316.96,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T23:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "LOW",
+      "close": 70536.45,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T23:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70748.6,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T23:30:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70665.43,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-24T23:45:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70556.74,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-25T00:00:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70726.0,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-25T00:15:00+00:00",
+      "signal": "NO_TRADE",
+      "confidence": "MEDIUM",
+      "close": 70668.99,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
+    },
+    {
+      "candle_time": "2026-03-25T00:30:00+00:00",
+      "signal": "BUY",
+      "confidence": "HIGH",
+      "close": 70923.89,
+      "claude_decision": null,
+      "claude_reason": null,
+      "circuit_breaker": false
     }
   ]
 }

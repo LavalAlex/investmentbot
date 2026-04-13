@@ -1,0 +1,19 @@
+
+============================================================
+EXP005-v2  |  DOGE  |  IN-SAMPLE
+Strategy   : EXP002-v2 (unchanged)
+1h data    : data/DOGEUSDT_1h_last_200d.csv
+15m data   : data/DOGEUSDT_15m_last_180d.csv
+============================================================
+
+
+============================================================
+SUMMARY — DOGE_IN_SAMPLE
+============================================================
+No trades generated.
+Filter rejections:
+  No trend signal  : 0
+  Trend strength   : 3933
+  Pullback quality : 9117
+  Candle quality   : 2117
+  Range floor      : 0

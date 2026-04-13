@@ -1,0 +1,614 @@
+{
+  "generated_at": "2026-03-25T01:02:37.553499+00:00",
+  "strategy_params": {
+    "timeframe": "15m",
+    "stop_loss_pct": 0.6,
+    "take_profit_pct": 1.2,
+    "short_take_profit_pct": 2.2,
+    "break_even_trigger_pct": 0.8,
+    "fee_round_trip_pct": 0.2,
+    "cb_loss_threshold": 2,
+    "cb_pause_hours": 48,
+    "regime_filter_long": true
+  },
+  "approval_thresholds": {
+    "min_profit_factor": 1.05,
+    "min_cumulative_return": 0.0,
+    "min_return_dd_ratio": 0.5
+  },
+  "results": [
+    {
+      "symbol": "BTC/USDT",
+      "verdict": "APPROVE",
+      "approval_reasons": [
+        "PASS: profit_factor 1.2784 > 1.05",
+        "PASS: cumulative_return +15.4125% > 0",
+        "PASS: return/drawdown ratio 1.86 >= 0.5 (return=+15.41%, dd=8.29%)"
+      ],
+      "summary": {
+        "candles_evaluated": 17280,
+        "buy_signals_total": 160,
+        "sell_signals_total": 212,
+        "circuit_breaker_events": 35,
+        "circuit_breaker_blocked": 210,
+        "regime_blocked_longs": 4,
+        "claude_approved": 0,
+        "claude_rejected": 0,
+        "total_trades": 134,
+        "wins": 47,
+        "losses": 87,
+        "win_rate_pct": 35.07,
+        "cumulative_return_pct": 15.4125,
+        "avg_return_pct": 0.1128,
+        "best_trade_pct": 2.0,
+        "worst_trade_pct": -1.8291,
+        "max_drawdown_pct": 8.2937,
+        "profit_factor": 1.2784,
+        "expectancy_pct": 0.1128,
+        "avg_trade_duration_min": 222.5,
+        "longest_win_streak": 5,
+        "longest_loss_streak": 10,
+        "long": {
+          "trades": 61,
+          "wins": 25,
+          "losses": 36,
+          "win_rate_pct": 40.98,
+          "cumulative_return_pct": 3.5216,
+          "profit_factor": 1.1688
+        },
+        "short": {
+          "trades": 73,
+          "wins": 22,
+          "losses": 51,
+          "win_rate_pct": 30.14,
+          "cumulative_return_pct": 11.4864,
+          "profit_factor": 1.3516
+        }
+      },
+      "monthly_returns": [
+        {
+          "month": "2025-10",
+          "trades": 21,
+          "wins": 6,
+          "losses": 15,
+          "return_pct": -1.7758
+        },
+        {
+          "month": "2025-11",
+          "trades": 27,
+          "wins": 9,
+          "losses": 18,
+          "return_pct": 3.805
+        },
+        {
+          "month": "2025-12",
+          "trades": 18,
+          "wins": 4,
+          "losses": 14,
+          "return_pct": -3.5811
+        },
+        {
+          "month": "2026-01",
+          "trades": 22,
+          "wins": 12,
+          "losses": 10,
+          "return_pct": 10.5895
+        },
+        {
+          "month": "2026-02",
+          "trades": 24,
+          "wins": 7,
+          "losses": 17,
+          "return_pct": 2.6509
+        },
+        {
+          "month": "2026-03",
+          "trades": 22,
+          "wins": 9,
+          "losses": 13,
+          "return_pct": 3.4135
+        }
+      ]
+    },
+    {
+      "symbol": "ETH/USDT",
+      "verdict": "REJECT",
+      "approval_reasons": [
+        "REJECT: profit_factor 0.5143 <= 1.05",
+        "REJECT: cumulative_return -26.9697% <= 0",
+        "REJECT: return/drawdown ratio -0.95 < 0.5 (return=-26.97%, dd=28.47%)"
+      ],
+      "summary": {
+        "candles_evaluated": 17280,
+        "buy_signals_total": 136,
+        "sell_signals_total": 123,
+        "circuit_breaker_events": 46,
+        "circuit_breaker_blocked": 380,
+        "regime_blocked_longs": 7,
+        "claude_approved": 0,
+        "claude_rejected": 0,
+        "total_trades": 123,
+        "wins": 22,
+        "losses": 101,
+        "win_rate_pct": 17.89,
+        "cumulative_return_pct": -26.9697,
+        "avg_return_pct": -0.2513,
+        "best_trade_pct": 2.0,
+        "worst_trade_pct": -1.4475,
+        "max_drawdown_pct": 28.4662,
+        "profit_factor": 0.5143,
+        "expectancy_pct": -0.2513,
+        "avg_trade_duration_min": 109.9,
+        "longest_win_streak": 2,
+        "longest_loss_streak": 21,
+        "long": {
+          "trades": 59,
+          "wins": 12,
+          "losses": 47,
+          "win_rate_pct": 20.34,
+          "cumulative_return_pct": -15.3865,
+          "profit_factor": 0.4352
+        },
+        "short": {
+          "trades": 64,
+          "wins": 10,
+          "losses": 54,
+          "win_rate_pct": 15.62,
+          "cumulative_return_pct": -13.6895,
+          "profit_factor": 0.5817
+        }
+      },
+      "monthly_returns": [
+        {
+          "month": "2025-09",
+          "trades": 3,
+          "wins": 0,
+          "losses": 3,
+          "return_pct": -2.3809
+        },
+        {
+          "month": "2025-10",
+          "trades": 21,
+          "wins": 6,
+          "losses": 15,
+          "return_pct": 0.2121
+        },
+        {
+          "month": "2025-11",
+          "trades": 20,
+          "wins": 4,
+          "losses": 16,
+          "return_pct": -2.131
+        },
+        {
+          "month": "2025-12",
+          "trades": 22,
+          "wins": 5,
+          "losses": 17,
+          "return_pct": -4.0524
+        },
+        {
+          "month": "2026-01",
+          "trades": 25,
+          "wins": 5,
+          "losses": 20,
+          "return_pct": -7.0673
+        },
+        {
+          "month": "2026-02",
+          "trades": 13,
+          "wins": 1,
+          "losses": 12,
+          "return_pct": -5.111
+        },
+        {
+          "month": "2026-03",
+          "trades": 19,
+          "wins": 1,
+          "losses": 18,
+          "return_pct": -9.8462
+        }
+      ]
+    },
+    {
+      "symbol": "BNB/USDT",
+      "verdict": "REJECT",
+      "approval_reasons": [
+        "REJECT: profit_factor 0.7862 <= 1.05",
+        "REJECT: cumulative_return -14.1336% <= 0",
+        "REJECT: return/drawdown ratio -0.66 < 0.5 (return=-14.13%, dd=21.33%)"
+      ],
+      "summary": {
+        "candles_evaluated": 17280,
+        "buy_signals_total": 183,
+        "sell_signals_total": 161,
+        "circuit_breaker_events": 44,
+        "circuit_breaker_blocked": 336,
+        "regime_blocked_longs": 6,
+        "claude_approved": 0,
+        "claude_rejected": 0,
+        "total_trades": 136,
+        "wins": 34,
+        "losses": 102,
+        "win_rate_pct": 25.0,
+        "cumulative_return_pct": -14.1336,
+        "avg_return_pct": -0.1058,
+        "best_trade_pct": 6.8891,
+        "worst_trade_pct": -1.599,
+        "max_drawdown_pct": 21.3268,
+        "profit_factor": 0.7862,
+        "expectancy_pct": -0.1058,
+        "avg_trade_duration_min": 167.2,
+        "longest_win_streak": 2,
+        "longest_loss_streak": 10,
+        "long": {
+          "trades": 67,
+          "wins": 20,
+          "losses": 47,
+          "win_rate_pct": 29.85,
+          "cumulative_return_pct": -10.0584,
+          "profit_factor": 0.6582
+        },
+        "short": {
+          "trades": 69,
+          "wins": 14,
+          "losses": 55,
+          "win_rate_pct": 20.29,
+          "cumulative_return_pct": -4.5309,
+          "profit_factor": 0.8915
+        }
+      },
+      "monthly_returns": [
+        {
+          "month": "2025-09",
+          "trades": 4,
+          "wins": 2,
+          "losses": 2,
+          "return_pct": 0.9915
+        },
+        {
+          "month": "2025-10",
+          "trades": 30,
+          "wins": 9,
+          "losses": 21,
+          "return_pct": 1.7376
+        },
+        {
+          "month": "2025-11",
+          "trades": 21,
+          "wins": 5,
+          "losses": 16,
+          "return_pct": -4.1127
+        },
+        {
+          "month": "2025-12",
+          "trades": 21,
+          "wins": 4,
+          "losses": 17,
+          "return_pct": -3.0965
+        },
+        {
+          "month": "2026-01",
+          "trades": 21,
+          "wins": 5,
+          "losses": 16,
+          "return_pct": -3.0637
+        },
+        {
+          "month": "2026-02",
+          "trades": 20,
+          "wins": 4,
+          "losses": 16,
+          "return_pct": -5.0869
+        },
+        {
+          "month": "2026-03",
+          "trades": 19,
+          "wins": 5,
+          "losses": 14,
+          "return_pct": -2.244
+        }
+      ]
+    },
+    {
+      "symbol": "SOL/USDT",
+      "verdict": "REJECT",
+      "approval_reasons": [
+        "REJECT: profit_factor 0.4068 <= 1.05",
+        "REJECT: cumulative_return -36.3506% <= 0",
+        "REJECT: return/drawdown ratio -0.99 < 0.5 (return=-36.35%, dd=36.59%)"
+      ],
+      "summary": {
+        "candles_evaluated": 17280,
+        "buy_signals_total": 113,
+        "sell_signals_total": 152,
+        "circuit_breaker_events": 46,
+        "circuit_breaker_blocked": 387,
+        "regime_blocked_longs": 12,
+        "claude_approved": 0,
+        "claude_rejected": 0,
+        "total_trades": 120,
+        "wins": 19,
+        "losses": 101,
+        "win_rate_pct": 15.83,
+        "cumulative_return_pct": -36.3506,
+        "avg_return_pct": -0.3712,
+        "best_trade_pct": 2.3119,
+        "worst_trade_pct": -3.3837,
+        "max_drawdown_pct": 36.5881,
+        "profit_factor": 0.4068,
+        "expectancy_pct": -0.3712,
+        "avg_trade_duration_min": 103.5,
+        "longest_win_streak": 2,
+        "longest_loss_streak": 26,
+        "long": {
+          "trades": 52,
+          "wins": 9,
+          "losses": 43,
+          "win_rate_pct": 17.31,
+          "cumulative_return_pct": -17.4086,
+          "profit_factor": 0.3507
+        },
+        "short": {
+          "trades": 68,
+          "wins": 10,
+          "losses": 58,
+          "win_rate_pct": 14.71,
+          "cumulative_return_pct": -22.9345,
+          "profit_factor": 0.4424
+        }
+      },
+      "monthly_returns": [
+        {
+          "month": "2025-09",
+          "trades": 2,
+          "wins": 0,
+          "losses": 2,
+          "return_pct": -0.9984
+        },
+        {
+          "month": "2025-10",
+          "trades": 18,
+          "wins": 2,
+          "losses": 16,
+          "return_pct": -7.0469
+        },
+        {
+          "month": "2025-11",
+          "trades": 18,
+          "wins": 2,
+          "losses": 16,
+          "return_pct": -11.9849
+        },
+        {
+          "month": "2025-12",
+          "trades": 19,
+          "wins": 0,
+          "losses": 19,
+          "return_pct": -13.4854
+        },
+        {
+          "month": "2026-01",
+          "trades": 25,
+          "wins": 6,
+          "losses": 19,
+          "return_pct": -5.5626
+        },
+        {
+          "month": "2026-02",
+          "trades": 20,
+          "wins": 5,
+          "losses": 15,
+          "return_pct": -0.9647
+        },
+        {
+          "month": "2026-03",
+          "trades": 18,
+          "wins": 4,
+          "losses": 14,
+          "return_pct": -2.88
+        }
+      ]
+    },
+    {
+      "symbol": "XRP/USDT",
+      "verdict": "REJECT",
+      "approval_reasons": [
+        "REJECT: profit_factor 0.3690 <= 1.05",
+        "REJECT: cumulative_return -36.2131% <= 0",
+        "REJECT: return/drawdown ratio -1.00 < 0.5 (return=-36.21%, dd=36.36%)"
+      ],
+      "summary": {
+        "candles_evaluated": 17280,
+        "buy_signals_total": 92,
+        "sell_signals_total": 210,
+        "circuit_breaker_events": 49,
+        "circuit_breaker_blocked": 423,
+        "regime_blocked_longs": 10,
+        "claude_approved": 0,
+        "claude_rejected": 0,
+        "total_trades": 125,
+        "wins": 19,
+        "losses": 106,
+        "win_rate_pct": 15.2,
+        "cumulative_return_pct": -36.2131,
+        "avg_return_pct": -0.3557,
+        "best_trade_pct": 2.0,
+        "worst_trade_pct": -1.8988,
+        "max_drawdown_pct": 36.3566,
+        "profit_factor": 0.369,
+        "expectancy_pct": -0.3557,
+        "avg_trade_duration_min": 103.6,
+        "longest_win_streak": 2,
+        "longest_loss_streak": 22,
+        "long": {
+          "trades": 44,
+          "wins": 12,
+          "losses": 32,
+          "win_rate_pct": 27.27,
+          "cumulative_return_pct": -10.3048,
+          "profit_factor": 0.5281
+        },
+        "short": {
+          "trades": 81,
+          "wins": 7,
+          "losses": 74,
+          "win_rate_pct": 8.64,
+          "cumulative_return_pct": -28.8848,
+          "profit_factor": 0.2932
+        }
+      },
+      "monthly_returns": [
+        {
+          "month": "2025-09",
+          "trades": 2,
+          "wins": 0,
+          "losses": 2,
+          "return_pct": -1.5936
+        },
+        {
+          "month": "2025-10",
+          "trades": 20,
+          "wins": 4,
+          "losses": 16,
+          "return_pct": -6.7015
+        },
+        {
+          "month": "2025-11",
+          "trades": 21,
+          "wins": 4,
+          "losses": 17,
+          "return_pct": -6.9448
+        },
+        {
+          "month": "2025-12",
+          "trades": 18,
+          "wins": 0,
+          "losses": 18,
+          "return_pct": -11.8816
+        },
+        {
+          "month": "2026-01",
+          "trades": 24,
+          "wins": 6,
+          "losses": 18,
+          "return_pct": -2.389
+        },
+        {
+          "month": "2026-02",
+          "trades": 20,
+          "wins": 1,
+          "losses": 19,
+          "return_pct": -7.9753
+        },
+        {
+          "month": "2026-03",
+          "trades": 20,
+          "wins": 4,
+          "losses": 16,
+          "return_pct": -5.6759
+        }
+      ]
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "verdict": "REJECT",
+      "approval_reasons": [
+        "REJECT: profit_factor 0.6356 <= 1.05",
+        "REJECT: cumulative_return -24.2433% <= 0",
+        "REJECT: return/drawdown ratio -1.00 < 0.5 (return=-24.24%, dd=24.24%)"
+      ],
+      "summary": {
+        "candles_evaluated": 17280,
+        "buy_signals_total": 99,
+        "sell_signals_total": 194,
+        "circuit_breaker_events": 48,
+        "circuit_breaker_blocked": 374,
+        "regime_blocked_longs": 8,
+        "claude_approved": 0,
+        "claude_rejected": 0,
+        "total_trades": 141,
+        "wins": 30,
+        "losses": 111,
+        "win_rate_pct": 21.28,
+        "cumulative_return_pct": -24.2433,
+        "avg_return_pct": -0.1916,
+        "best_trade_pct": 2.9103,
+        "worst_trade_pct": -2.7269,
+        "max_drawdown_pct": 24.2433,
+        "profit_factor": 0.6356,
+        "expectancy_pct": -0.1916,
+        "avg_trade_duration_min": 95.1,
+        "longest_win_streak": 5,
+        "longest_loss_streak": 19,
+        "long": {
+          "trades": 50,
+          "wins": 15,
+          "losses": 35,
+          "win_rate_pct": 30.0,
+          "cumulative_return_pct": -7.9887,
+          "profit_factor": 0.666
+        },
+        "short": {
+          "trades": 91,
+          "wins": 15,
+          "losses": 76,
+          "win_rate_pct": 16.48,
+          "cumulative_return_pct": -17.6658,
+          "profit_factor": 0.6207
+        }
+      },
+      "monthly_returns": [
+        {
+          "month": "2025-09",
+          "trades": 4,
+          "wins": 0,
+          "losses": 4,
+          "return_pct": -2.5761
+        },
+        {
+          "month": "2025-10",
+          "trades": 21,
+          "wins": 4,
+          "losses": 17,
+          "return_pct": -5.1166
+        },
+        {
+          "month": "2025-11",
+          "trades": 20,
+          "wins": 2,
+          "losses": 18,
+          "return_pct": -4.1547
+        },
+        {
+          "month": "2025-12",
+          "trades": 21,
+          "wins": 5,
+          "losses": 16,
+          "return_pct": -0.9708
+        },
+        {
+          "month": "2026-01",
+          "trades": 26,
+          "wins": 6,
+          "losses": 20,
+          "return_pct": -3.3216
+        },
+        {
+          "month": "2026-02",
+          "trades": 26,
+          "wins": 8,
+          "losses": 18,
+          "return_pct": -2.8298
+        },
+        {
+          "month": "2026-03",
+          "trades": 23,
+          "wins": 5,
+          "losses": 18,
+          "return_pct": -8.0887
+        }
+      ]
+    }
+  ]
+}

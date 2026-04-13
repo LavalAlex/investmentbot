@@ -56,11 +56,21 @@ ROUND_TRIP_FEE_PCT = FEE_PER_SIDE_PCT * 2
 # SHORT logic is not affected.
 REGIME_FILTER_LONG = True
 
+# Blocks SHORT entries when the last confirmed 1h candle closed ABOVE the 1h EMA200.
+# Rationale: SHORT entries in bullish macro regimes (price > EMA200) are counter-trend
+# and historically underperform vs SHORTs taken in confirmed bearish regimes.
+REGIME_FILTER_SHORT = False
+
 # Optional additional gate (disabled by default):
 # Also block LONG when 1h ATR14 is below its rolling-expanding median —
 # i.e., low-volatility environments where LONG setups historically hit SL.
 # Set to True only after further testing.
 BLOCK_LONG_LOW_VOL = False
+
+# Block SHORT entries when 1h ATR14 is below its rolling-expanding median —
+# i.e., low-volatility / choppy environments where SHORT setups whipsaw
+# rather than trend to the 2.2% TP. Mirror of BLOCK_LONG_LOW_VOL.
+BLOCK_SHORT_LOW_VOL = False
 
 
 # ---------------------------------------------------------------------------
@@ -93,6 +103,7 @@ def load_dataset(path: str) -> pd.DataFrame:
 def run_backtest(
     df_raw: pd.DataFrame,
     df_1h: pd.DataFrame,
+    symbol: str = SYMBOL,
 ) -> tuple[list[dict], list[dict], list[dict]]:
     """
     Iterate candle-by-candle, generate signals, simulate position management.
@@ -117,7 +128,7 @@ def run_backtest(
 
     # Pre-compute 1h indicators once for the regime filter.
     # Uses expanding-median ATR so there is no lookahead bias.
-    if REGIME_FILTER_LONG or BLOCK_LONG_LOW_VOL:
+    if REGIME_FILTER_LONG or REGIME_FILTER_SHORT or BLOCK_LONG_LOW_VOL or BLOCK_SHORT_LOW_VOL:
         df_1h_ind = add_indicators(df_1h.copy())
         if not df_1h_ind.empty:
             df_1h_ind["atr_pct"] = df_1h_ind["atr14"] / df_1h_ind["close"]
@@ -151,7 +162,7 @@ def run_backtest(
         htf_cutoff = candle_open_time.floor("h")
         df_htf_slice = df_1h[df_1h.index < htf_cutoff]
 
-        payload = generate_signal(window, SYMBOL, TIMEFRAME, df_htf=df_htf_slice)
+        payload = generate_signal(window, symbol, TIMEFRAME, df_htf=df_htf_slice)
         signal  = payload["signal"]
 
         exec_candle = df_ind.iloc[i + 1]
@@ -236,6 +247,33 @@ def run_backtest(
                     log_entry["signal"] = "SELL_CIRCUIT_BREAKER"
                     signal_log.append(log_entry)
                     continue
+
+                # Regime filter: block SHORT when last confirmed 1h candle
+                # closed above 1h EMA200 (bullish macro regime).
+                if REGIME_FILTER_SHORT and df_1h_ind is not None:
+                    htf_mask = df_1h_ind.index < htf_cutoff
+                    if htf_mask.any():
+                        last_1h = df_1h_ind[htf_mask].iloc[-1]
+                        _1h_close  = float(last_1h["close"])
+                        _1h_ema200 = float(last_1h["ema200"])
+                        if pd.notna(_1h_ema200) and _1h_close > _1h_ema200:
+                            log_entry["signal"] = "SELL_REGIME_BLOCKED"
+                            signal_log.append(log_entry)
+                            continue
+
+                # Low-volatility gate: block SHORT when 1h ATR is below its
+                # expanding median — choppy conditions don't sustain 2.2% moves.
+                if BLOCK_SHORT_LOW_VOL and df_1h_ind is not None:
+                    htf_mask = df_1h_ind.index < htf_cutoff
+                    if htf_mask.any():
+                        last_1h   = df_1h_ind[htf_mask].iloc[-1]
+                        _atr_pct  = last_1h.get("atr_pct",      float("nan"))
+                        _atr_med  = last_1h.get("atr_exp_median", float("nan"))
+                        if pd.notna(_atr_pct) and pd.notna(_atr_med):
+                            if float(_atr_pct) < float(_atr_med):
+                                log_entry["signal"] = "SELL_LOW_VOL_BLOCKED"
+                                signal_log.append(log_entry)
+                                continue
 
                 position = {
                     "entry_price":          exec_price,
@@ -381,18 +419,22 @@ def compute_summary(
 
     buy_signals      = sum(1 for s in signal_log if s["signal"] == "BUY")
     sell_signals     = sum(1 for s in signal_log if s["signal"] == "SELL")
-    cb_blocked       = sum(1 for s in signal_log if s["signal"] in ("BUY_CIRCUIT_BREAKER", "SELL_CIRCUIT_BREAKER"))
-    regime_blocked   = sum(1 for s in signal_log if s["signal"] == "BUY_REGIME_BLOCKED")
+    cb_blocked             = sum(1 for s in signal_log if s["signal"] in ("BUY_CIRCUIT_BREAKER", "SELL_CIRCUIT_BREAKER"))
+    regime_blocked_longs   = sum(1 for s in signal_log if s["signal"] == "BUY_REGIME_BLOCKED")
+    regime_blocked_shorts  = sum(1 for s in signal_log if s["signal"] == "SELL_REGIME_BLOCKED")
+    low_vol_blocked_shorts = sum(1 for s in signal_log if s["signal"] == "SELL_LOW_VOL_BLOCKED")
     claude_approved  = sum(1 for s in signal_log if s.get("claude_decision") == "APPROVE")
     claude_rejected  = sum(1 for s in signal_log if s.get("claude_decision") == "REJECT")
 
     base = {
-        "candles_evaluated":       len(df),
-        "buy_signals_total":       buy_signals,
-        "sell_signals_total":      sell_signals,
-        "circuit_breaker_events":  len(cb_events),
-        "circuit_breaker_blocked": cb_blocked,
-        "regime_blocked_longs":    regime_blocked,
+        "candles_evaluated":           len(df),
+        "buy_signals_total":           buy_signals,
+        "sell_signals_total":          sell_signals,
+        "circuit_breaker_events":      len(cb_events),
+        "circuit_breaker_blocked":     cb_blocked,
+        "regime_blocked_longs":        regime_blocked_longs,
+        "regime_blocked_shorts":       regime_blocked_shorts,
+        "low_vol_blocked_shorts":      low_vol_blocked_shorts,
         "claude_approved":         claude_approved,
         "claude_rejected":         claude_rejected,
     }
@@ -551,8 +593,9 @@ def print_summary(summary: dict, trades: list[dict], cb_events: list[dict]) -> N
     print(f"  BACKTEST RESULTS — Stage A   [{SYMBOL}]")
     print(f"  Dataset   : {PATH_15M}")
     print(f"  Timeframe : {TIMEFRAME}  |  SL={STOP_LOSS_PCT}%  TP={TAKE_PROFIT_PCT}%  Fee={ROUND_TRIP_FEE_PCT}%")
-    regime_status = f"ENABLED (low-vol gate: {'ON' if BLOCK_LONG_LOW_VOL else 'OFF'})" if REGIME_FILTER_LONG else "DISABLED"
-    print(f"  Break-even trigger : +{BREAK_EVEN_TRIGGER_PCT}%  |  Regime filter (LONG): {regime_status}")
+    regime_long_status  = f"ENABLED (low-vol gate: {'ON' if BLOCK_LONG_LOW_VOL else 'OFF'})" if REGIME_FILTER_LONG else "DISABLED"
+    regime_short_status = "ENABLED" if REGIME_FILTER_SHORT else "DISABLED"
+    print(f"  Break-even trigger : +{BREAK_EVEN_TRIGGER_PCT}%  |  Regime filter LONG: {regime_long_status}  SHORT: {regime_short_status}")
     print(f"  Circuit breaker    : {CB_LOSS_THRESHOLD} consecutive losses → {CB_PAUSE_HOURS}h pause")
     print("=" * 60)
     print(f"  Candles evaluated      : {summary['candles_evaluated']}")
@@ -561,6 +604,8 @@ def print_summary(summary: dict, trades: list[dict], cb_events: list[dict]) -> N
     print(f"  Circuit breaker events : {summary['circuit_breaker_events']}")
     print(f"  CB blocked entries     : {summary['circuit_breaker_blocked']}")
     print(f"  Regime blocked (LONG)  : {summary['regime_blocked_longs']}")
+    print(f"  Regime blocked (SHORT) : {summary['regime_blocked_shorts']}")
+    print(f"  Low-vol blocked (SHORT): {summary['low_vol_blocked_shorts']}")
     print(f"  Claude approved        : {summary['claude_approved']}")
     print(f"  Claude rejected        : {summary['claude_rejected']}")
     print(f"  Total trades      : {summary['total_trades']}")
@@ -649,6 +694,7 @@ def save_results(
         "cb_loss_threshold":         CB_LOSS_THRESHOLD,
         "cb_pause_hours":            CB_PAUSE_HOURS,
         "regime_filter_long":        REGIME_FILTER_LONG,
+        "regime_filter_short":       REGIME_FILTER_SHORT,
         "block_long_low_vol":        BLOCK_LONG_LOW_VOL,
         "summary":                   summary,
         "circuit_breaker_events":    cb_events,

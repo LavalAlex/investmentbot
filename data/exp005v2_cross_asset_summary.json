@@ -1,0 +1,68 @@
+[
+  {
+    "asset": "BTC",
+    "trades": 442,
+    "win_rate": 36.2,
+    "return_pct": 39.69,
+    "max_dd_pct": 17.8,
+    "pf": 1.115,
+    "expectancy": 8.98,
+    "long_pnl": 3655.7,
+    "short_pnl": 312.89
+  },
+  {
+    "asset": "ETH",
+    "trades": 461,
+    "win_rate": 37.3,
+    "return_pct": 65.12,
+    "max_dd_pct": 21.88,
+    "pf": 1.188,
+    "expectancy": 14.13,
+    "long_pnl": 4383.29,
+    "short_pnl": 2128.75
+  },
+  {
+    "asset": "SOL",
+    "trades": 140,
+    "win_rate": 30.0,
+    "return_pct": -14.21,
+    "max_dd_pct": 29.99,
+    "pf": 0.852,
+    "expectancy": -10.15,
+    "long_pnl": -1241.58,
+    "short_pnl": -179.04
+  },
+  {
+    "asset": "BNB",
+    "trades": 440,
+    "win_rate": 35.5,
+    "return_pct": 26.48,
+    "max_dd_pct": 18.07,
+    "pf": 1.081,
+    "expectancy": 6.02,
+    "long_pnl": 191.35,
+    "short_pnl": 2456.66
+  },
+  {
+    "asset": "XRP",
+    "trades": 0,
+    "win_rate": 0.0,
+    "return_pct": 0.0,
+    "max_dd_pct": 0.0,
+    "pf": 0.0,
+    "expectancy": 0.0,
+    "long_pnl": 0.0,
+    "short_pnl": 0.0
+  },
+  {
+    "asset": "DOGE",
+    "trades": 0,
+    "win_rate": 0.0,
+    "return_pct": 0.0,
+    "max_dd_pct": 0.0,
+    "pf": 0.0,
+    "expectancy": 0.0,
+    "long_pnl": 0.0,
+    "short_pnl": 0.0
+  }
+]

@@ -1,0 +1,1425 @@
+{
+  "generated_at": "2026-04-07T00:21:38.683874+00:00",
+  "experiment": "Walk-Forward OOS Validation \u2014 BTC/USDT",
+  "oos_period": "2025-03-30 \u2192 2025-09-26",
+  "verdict": "NOT VALIDATED",
+  "insample": {
+    "period": "2025-09-26 \u2192 2026-03-25",
+    "total_trades": 134,
+    "wins": 47,
+    "losses": 87,
+    "win_rate_pct": 35.07,
+    "cumulative_return_pct": 15.41,
+    "max_drawdown_pct": 8.29,
+    "profit_factor": 1.2784,
+    "expectancy_pct": 0.1128,
+    "longest_loss_streak": 10,
+    "long": {
+      "trades": 61,
+      "wins": 25,
+      "losses": 36,
+      "win_rate_pct": 40.98,
+      "cumulative_return_pct": 3.52,
+      "profit_factor": 1.1688
+    },
+    "short": {
+      "trades": 73,
+      "wins": 22,
+      "losses": 51,
+      "win_rate_pct": 30.14,
+      "cumulative_return_pct": 11.49,
+      "profit_factor": 1.3516
+    },
+    "monthly": {
+      "2025-10": {
+        "trades": 21,
+        "wr": 28.6,
+        "ret": -1.78
+      },
+      "2025-11": {
+        "trades": 27,
+        "wr": 33.3,
+        "ret": 3.81
+      },
+      "2025-12": {
+        "trades": 18,
+        "wr": 22.2,
+        "ret": -3.58
+      },
+      "2026-01": {
+        "trades": 22,
+        "wr": 54.5,
+        "ret": 10.59
+      },
+      "2026-02": {
+        "trades": 24,
+        "wr": 29.2,
+        "ret": 2.65
+      },
+      "2026-03": {
+        "trades": 22,
+        "wr": 40.9,
+        "ret": 3.41
+      }
+    }
+  },
+  "oos_summary": {
+    "candles_evaluated": 17280,
+    "buy_signals_total": 158,
+    "sell_signals_total": 145,
+    "circuit_breaker_events": 37,
+    "circuit_breaker_blocked": 233,
+    "regime_blocked_longs": 3,
+    "regime_blocked_shorts": 0,
+    "low_vol_blocked_shorts": 0,
+    "claude_approved": 0,
+    "claude_rejected": 0,
+    "total_trades": 104,
+    "wins": 21,
+    "losses": 83,
+    "win_rate_pct": 20.19,
+    "cumulative_return_pct": -24.3922,
+    "avg_return_pct": -0.2654,
+    "best_trade_pct": 2.0,
+    "worst_trade_pct": -0.8,
+    "max_drawdown_pct": 26.1468,
+    "profit_factor": 0.4753,
+    "expectancy_pct": -0.2654,
+    "avg_trade_duration_min": 326.1,
+    "longest_win_streak": 4,
+    "longest_loss_streak": 13,
+    "long": {
+      "trades": 65,
+      "wins": 17,
+      "losses": 48,
+      "win_rate_pct": 26.15,
+      "cumulative_return_pct": -15.4771,
+      "profit_factor": 0.506
+    },
+    "short": {
+      "trades": 39,
+      "wins": 4,
+      "losses": 35,
+      "win_rate_pct": 10.26,
+      "cumulative_return_pct": -10.5475,
+      "profit_factor": 0.4211
+    }
+  },
+  "oos_monthly": [
+    {
+      "month": "2025-03",
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "return_pct": -0.3996
+    },
+    {
+      "month": "2025-04",
+      "trades": 21,
+      "wins": 4,
+      "losses": 17,
+      "return_pct": -6.6489
+    },
+    {
+      "month": "2025-05",
+      "trades": 26,
+      "wins": 6,
+      "losses": 20,
+      "return_pct": -5.9119
+    },
+    {
+      "month": "2025-06",
+      "trades": 12,
+      "wins": 2,
+      "losses": 10,
+      "return_pct": -4.721
+    },
+    {
+      "month": "2025-07",
+      "trades": 18,
+      "wins": 6,
+      "losses": 12,
+      "return_pct": -2.4323
+    },
+    {
+      "month": "2025-08",
+      "trades": 14,
+      "wins": 2,
+      "losses": 12,
+      "return_pct": -3.5825
+    },
+    {
+      "month": "2025-09",
+      "trades": 11,
+      "wins": 1,
+      "losses": 10,
+      "return_pct": -3.5744
+    }
+  ],
+  "oos_cb_events": [
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-03-31T01:00:00+00:00",
+      "circuit_breaker_end": "2025-04-02T01:00:00+00:00",
+      "blocked_entries_count": 7
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-04-03T23:45:00+00:00",
+      "circuit_breaker_end": "2025-04-05T23:45:00+00:00",
+      "blocked_entries_count": 2
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-04-07T05:00:00+00:00",
+      "circuit_breaker_end": "2025-04-09T05:00:00+00:00",
+      "blocked_entries_count": 9
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-04-11T22:15:00+00:00",
+      "circuit_breaker_end": "2025-04-13T22:15:00+00:00",
+      "blocked_entries_count": 14
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-04-18T07:15:00+00:00",
+      "circuit_breaker_end": "2025-04-20T07:15:00+00:00",
+      "blocked_entries_count": 0
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-04-21T14:45:00+00:00",
+      "circuit_breaker_end": "2025-04-23T14:45:00+00:00",
+      "blocked_entries_count": 12
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-04-25T01:15:00+00:00",
+      "circuit_breaker_end": "2025-04-27T01:15:00+00:00",
+      "blocked_entries_count": 6
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-04-29T04:45:00+00:00",
+      "circuit_breaker_end": "2025-05-01T04:45:00+00:00",
+      "blocked_entries_count": 2
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-05-02T07:30:00+00:00",
+      "circuit_breaker_end": "2025-05-04T07:30:00+00:00",
+      "blocked_entries_count": 2
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-05-05T14:00:00+00:00",
+      "circuit_breaker_end": "2025-05-07T14:00:00+00:00",
+      "blocked_entries_count": 4
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-05-09T14:15:00+00:00",
+      "circuit_breaker_end": "2025-05-11T14:15:00+00:00",
+      "blocked_entries_count": 5
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-05-14T01:45:00+00:00",
+      "circuit_breaker_end": "2025-05-16T01:45:00+00:00",
+      "blocked_entries_count": 7
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-05-16T19:15:00+00:00",
+      "circuit_breaker_end": "2025-05-18T19:15:00+00:00",
+      "blocked_entries_count": 0
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-05-19T13:30:00+00:00",
+      "circuit_breaker_end": "2025-05-21T13:30:00+00:00",
+      "blocked_entries_count": 29
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-05-23T03:15:00+00:00",
+      "circuit_breaker_end": "2025-05-25T03:15:00+00:00",
+      "blocked_entries_count": 0
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-05-25T18:15:00+00:00",
+      "circuit_breaker_end": "2025-05-27T18:15:00+00:00",
+      "blocked_entries_count": 6
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-05-31T14:00:00+00:00",
+      "circuit_breaker_end": "2025-06-02T14:00:00+00:00",
+      "blocked_entries_count": 3
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-06-05T12:15:00+00:00",
+      "circuit_breaker_end": "2025-06-07T12:15:00+00:00",
+      "blocked_entries_count": 10
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-06-11T16:00:00+00:00",
+      "circuit_breaker_end": "2025-06-13T16:00:00+00:00",
+      "blocked_entries_count": 11
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-06-17T19:00:00+00:00",
+      "circuit_breaker_end": "2025-06-19T19:00:00+00:00",
+      "blocked_entries_count": 4
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-06-23T17:00:00+00:00",
+      "circuit_breaker_end": "2025-06-25T17:00:00+00:00",
+      "blocked_entries_count": 13
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-06-26T21:15:00+00:00",
+      "circuit_breaker_end": "2025-06-28T21:15:00+00:00",
+      "blocked_entries_count": 0
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-07-07T12:00:00+00:00",
+      "circuit_breaker_end": "2025-07-09T12:00:00+00:00",
+      "blocked_entries_count": 0
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-07-16T22:15:00+00:00",
+      "circuit_breaker_end": "2025-07-18T22:15:00+00:00",
+      "blocked_entries_count": 8
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-07-21T22:30:00+00:00",
+      "circuit_breaker_end": "2025-07-23T22:30:00+00:00",
+      "blocked_entries_count": 5
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-07-24T16:30:00+00:00",
+      "circuit_breaker_end": "2025-07-26T16:30:00+00:00",
+      "blocked_entries_count": 5
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-07-30T14:45:00+00:00",
+      "circuit_breaker_end": "2025-08-01T14:45:00+00:00",
+      "blocked_entries_count": 21
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-08-07T01:45:00+00:00",
+      "circuit_breaker_end": "2025-08-09T01:45:00+00:00",
+      "blocked_entries_count": 3
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-08-13T13:45:00+00:00",
+      "circuit_breaker_end": "2025-08-15T13:45:00+00:00",
+      "blocked_entries_count": 6
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-08-18T13:15:00+00:00",
+      "circuit_breaker_end": "2025-08-20T13:15:00+00:00",
+      "blocked_entries_count": 8
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-08-22T02:15:00+00:00",
+      "circuit_breaker_end": "2025-08-24T02:15:00+00:00",
+      "blocked_entries_count": 2
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-08-28T15:15:00+00:00",
+      "circuit_breaker_end": "2025-08-30T15:15:00+00:00",
+      "blocked_entries_count": 8
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-09-02T18:30:00+00:00",
+      "circuit_breaker_end": "2025-09-04T18:30:00+00:00",
+      "blocked_entries_count": 7
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-09-05T14:15:00+00:00",
+      "circuit_breaker_end": "2025-09-07T14:15:00+00:00",
+      "blocked_entries_count": 0
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-09-11T14:15:00+00:00",
+      "circuit_breaker_end": "2025-09-13T14:15:00+00:00",
+      "blocked_entries_count": 5
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-09-18T00:15:00+00:00",
+      "circuit_breaker_end": "2025-09-20T00:15:00+00:00",
+      "blocked_entries_count": 1
+    },
+    {
+      "circuit_breaker_triggered": true,
+      "circuit_breaker_start": "2025-09-25T13:30:00+00:00",
+      "circuit_breaker_end": "2025-09-27T13:30:00+00:00",
+      "blocked_entries_count": 8
+    }
+  ],
+  "oos_trades": [
+    {
+      "entry_time": "2025-03-30T14:00:00+00:00",
+      "exit_time": "2025-03-30T22:30:00+00:00",
+      "entry_price": 82678.42,
+      "exit_price": 82678.42,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-03-30T23:30:00+00:00",
+      "exit_time": "2025-03-31T01:00:00+00:00",
+      "entry_price": 81964.95,
+      "exit_price": 81964.95,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-04-02T10:15:00+00:00",
+      "exit_time": "2025-04-02T11:45:00+00:00",
+      "entry_price": 85123.38,
+      "exit_price": 84612.6397,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-02T13:45:00+00:00",
+      "exit_time": "2025-04-02T15:15:00+00:00",
+      "entry_price": 85472.49,
+      "exit_price": 86498.1599,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-02T16:00:00+00:00",
+      "exit_time": "2025-04-02T18:15:00+00:00",
+      "entry_price": 86757.67,
+      "exit_price": 86237.124,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-03T12:15:00+00:00",
+      "exit_time": "2025-04-03T23:45:00+00:00",
+      "entry_price": 83012.01,
+      "exit_price": 83012.01,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-04-06T14:30:00+00:00",
+      "exit_time": "2025-04-06T17:45:00+00:00",
+      "entry_price": 82386.64,
+      "exit_price": 80574.1339,
+      "pct_return": 2.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-04-07T03:45:00+00:00",
+      "exit_time": "2025-04-07T04:00:00+00:00",
+      "entry_price": 77417.32,
+      "exit_price": 77881.8239,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-04-07T04:45:00+00:00",
+      "exit_time": "2025-04-07T05:00:00+00:00",
+      "entry_price": 76807.07,
+      "exit_price": 77267.9124,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-04-09T12:00:00+00:00",
+      "exit_time": "2025-04-09T12:45:00+00:00",
+      "entry_price": 76230.01,
+      "exit_price": 76687.3901,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-04-11T08:00:00+00:00",
+      "exit_time": "2025-04-11T09:30:00+00:00",
+      "entry_price": 81266.76,
+      "exit_price": 82241.9611,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-11T13:45:00+00:00",
+      "exit_time": "2025-04-11T14:00:00+00:00",
+      "entry_price": 82924.95,
+      "exit_price": 82427.4003,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-11T17:45:00+00:00",
+      "exit_time": "2025-04-11T22:15:00+00:00",
+      "entry_price": 83944.0,
+      "exit_price": 83440.336,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-14T02:45:00+00:00",
+      "exit_time": "2025-04-14T03:00:00+00:00",
+      "entry_price": 85322.35,
+      "exit_price": 84810.4159,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-15T03:00:00+00:00",
+      "exit_time": "2025-04-15T13:45:00+00:00",
+      "entry_price": 85232.83,
+      "exit_price": 86255.624,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-17T12:45:00+00:00",
+      "exit_time": "2025-04-17T14:00:00+00:00",
+      "entry_price": 84800.16,
+      "exit_price": 84291.359,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-17T16:30:00+00:00",
+      "exit_time": "2025-04-18T07:15:00+00:00",
+      "entry_price": 84943.39,
+      "exit_price": 84433.7297,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-21T09:15:00+00:00",
+      "exit_time": "2025-04-21T11:15:00+00:00",
+      "entry_price": 87534.99,
+      "exit_price": 87009.7801,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-21T14:30:00+00:00",
+      "exit_time": "2025-04-21T14:45:00+00:00",
+      "entry_price": 88367.33,
+      "exit_price": 87837.126,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-24T15:45:00+00:00",
+      "exit_time": "2025-04-24T17:30:00+00:00",
+      "entry_price": 93259.98,
+      "exit_price": 92700.4201,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-24T23:30:00+00:00",
+      "exit_time": "2025-04-25T01:15:00+00:00",
+      "entry_price": 93683.24,
+      "exit_price": 93683.24,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-28T08:15:00+00:00",
+      "exit_time": "2025-04-28T13:30:00+00:00",
+      "entry_price": 94722.19,
+      "exit_price": 94722.19,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-04-28T23:15:00+00:00",
+      "exit_time": "2025-04-29T04:45:00+00:00",
+      "entry_price": 94986.57,
+      "exit_price": 94416.6506,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-01T14:30:00+00:00",
+      "exit_time": "2025-05-01T20:00:00+00:00",
+      "entry_price": 96404.01,
+      "exit_price": 96404.01,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-02T01:15:00+00:00",
+      "exit_time": "2025-05-02T07:30:00+00:00",
+      "entry_price": 97003.65,
+      "exit_price": 96421.6281,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-05T00:15:00+00:00",
+      "exit_time": "2025-05-05T05:00:00+00:00",
+      "entry_price": 94443.77,
+      "exit_price": 94443.77,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-05-05T13:45:00+00:00",
+      "exit_time": "2025-05-05T14:00:00+00:00",
+      "entry_price": 93887.22,
+      "exit_price": 94450.5433,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-05-07T14:30:00+00:00",
+      "exit_time": "2025-05-07T14:45:00+00:00",
+      "entry_price": 97447.3,
+      "exit_price": 96862.6162,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-08T01:00:00+00:00",
+      "exit_time": "2025-05-08T03:30:00+00:00",
+      "entry_price": 97770.0,
+      "exit_price": 98943.24,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-08T05:00:00+00:00",
+      "exit_time": "2025-05-08T15:15:00+00:00",
+      "entry_price": 98954.32,
+      "exit_price": 100141.7718,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-08T16:00:00+00:00",
+      "exit_time": "2025-05-08T20:30:00+00:00",
+      "entry_price": 100758.08,
+      "exit_price": 101967.177,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-09T07:15:00+00:00",
+      "exit_time": "2025-05-09T08:00:00+00:00",
+      "entry_price": 103511.52,
+      "exit_price": 103511.52,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-09T14:00:00+00:00",
+      "exit_time": "2025-05-09T14:15:00+00:00",
+      "entry_price": 103633.5,
+      "exit_price": 103011.699,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-12T01:15:00+00:00",
+      "exit_time": "2025-05-12T01:30:00+00:00",
+      "entry_price": 104747.99,
+      "exit_price": 104119.5021,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-13T19:00:00+00:00",
+      "exit_time": "2025-05-14T01:45:00+00:00",
+      "entry_price": 104354.19,
+      "exit_price": 103728.0649,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-16T02:15:00+00:00",
+      "exit_time": "2025-05-16T08:00:00+00:00",
+      "entry_price": 104262.0,
+      "exit_price": 103636.428,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-16T16:15:00+00:00",
+      "exit_time": "2025-05-16T19:15:00+00:00",
+      "entry_price": 104301.99,
+      "exit_price": 103676.1781,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-18T23:00:00+00:00",
+      "exit_time": "2025-05-19T00:30:00+00:00",
+      "entry_price": 105928.11,
+      "exit_price": 105928.11,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-19T12:45:00+00:00",
+      "exit_time": "2025-05-19T13:30:00+00:00",
+      "entry_price": 102393.55,
+      "exit_price": 103007.9113,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-05-21T14:00:00+00:00",
+      "exit_time": "2025-05-21T14:45:00+00:00",
+      "entry_price": 107244.75,
+      "exit_price": 108531.687,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-21T23:30:00+00:00",
+      "exit_time": "2025-05-22T03:30:00+00:00",
+      "entry_price": 109752.66,
+      "exit_price": 111069.6919,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-22T12:30:00+00:00",
+      "exit_time": "2025-05-22T14:00:00+00:00",
+      "entry_price": 111285.71,
+      "exit_price": 110617.9957,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-23T00:15:00+00:00",
+      "exit_time": "2025-05-23T03:15:00+00:00",
+      "entry_price": 111783.37,
+      "exit_price": 111112.6698,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-05-25T09:45:00+00:00",
+      "exit_time": "2025-05-25T12:15:00+00:00",
+      "entry_price": 106880.01,
+      "exit_price": 107521.2901,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-05-25T15:30:00+00:00",
+      "exit_time": "2025-05-25T18:15:00+00:00",
+      "entry_price": 106835.71,
+      "exit_price": 107476.7243,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-05-28T16:15:00+00:00",
+      "exit_time": "2025-05-28T23:15:00+00:00",
+      "entry_price": 107283.31,
+      "exit_price": 107927.0099,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-05-29T15:45:00+00:00",
+      "exit_time": "2025-05-30T00:45:00+00:00",
+      "entry_price": 107289.62,
+      "exit_price": 104929.2484,
+      "pct_return": 2.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-05-30T09:45:00+00:00",
+      "exit_time": "2025-05-30T10:00:00+00:00",
+      "entry_price": 105045.67,
+      "exit_price": 105675.944,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-05-30T16:45:00+00:00",
+      "exit_time": "2025-05-31T14:00:00+00:00",
+      "entry_price": 104400.0,
+      "exit_price": 104400.0,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-06-02T14:00:00+00:00",
+      "exit_time": "2025-06-02T14:15:00+00:00",
+      "entry_price": 103799.99,
+      "exit_price": 104422.7899,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-06-04T20:30:00+00:00",
+      "exit_time": "2025-06-05T12:15:00+00:00",
+      "entry_price": 104681.96,
+      "exit_price": 105310.0518,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-06-09T18:00:00+00:00",
+      "exit_time": "2025-06-09T21:15:00+00:00",
+      "entry_price": 108337.57,
+      "exit_price": 109637.6208,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-06-10T19:45:00+00:00",
+      "exit_time": "2025-06-10T20:15:00+00:00",
+      "entry_price": 109965.18,
+      "exit_price": 109305.3889,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-06-11T14:30:00+00:00",
+      "exit_time": "2025-06-11T16:00:00+00:00",
+      "entry_price": 110240.01,
+      "exit_price": 109578.5699,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-06-16T05:45:00+00:00",
+      "exit_time": "2025-06-16T16:30:00+00:00",
+      "entry_price": 106527.52,
+      "exit_price": 107805.8502,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-06-16T19:45:00+00:00",
+      "exit_time": "2025-06-16T22:30:00+00:00",
+      "entry_price": 108511.62,
+      "exit_price": 107860.5503,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-06-17T15:15:00+00:00",
+      "exit_time": "2025-06-17T19:00:00+00:00",
+      "entry_price": 104742.15,
+      "exit_price": 104742.15,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-06-21T20:45:00+00:00",
+      "exit_time": "2025-06-22T00:15:00+00:00",
+      "entry_price": 102686.6,
+      "exit_price": 102686.6,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-06-23T16:45:00+00:00",
+      "exit_time": "2025-06-23T17:00:00+00:00",
+      "entry_price": 100569.23,
+      "exit_price": 101172.6454,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-06-26T02:15:00+00:00",
+      "exit_time": "2025-06-26T11:45:00+00:00",
+      "entry_price": 107802.51,
+      "exit_price": 107155.6949,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-06-26T20:45:00+00:00",
+      "exit_time": "2025-06-26T21:15:00+00:00",
+      "entry_price": 107953.59,
+      "exit_price": 107305.8685,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-01T14:45:00+00:00",
+      "exit_time": "2025-07-02T03:00:00+00:00",
+      "entry_price": 106039.5,
+      "exit_price": 106039.5,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-07-02T14:30:00+00:00",
+      "exit_time": "2025-07-02T16:00:00+00:00",
+      "entry_price": 107850.6,
+      "exit_price": 109144.8072,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-03T13:45:00+00:00",
+      "exit_time": "2025-07-03T15:00:00+00:00",
+      "entry_price": 110076.98,
+      "exit_price": 109416.5181,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-06T22:00:00+00:00",
+      "exit_time": "2025-07-07T12:00:00+00:00",
+      "entry_price": 109208.24,
+      "exit_price": 108552.9906,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-09T19:30:00+00:00",
+      "exit_time": "2025-07-09T19:45:00+00:00",
+      "entry_price": 110346.02,
+      "exit_price": 111670.1722,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-09T20:30:00+00:00",
+      "exit_time": "2025-07-10T16:15:00+00:00",
+      "entry_price": 111005.87,
+      "exit_price": 112337.9404,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-10T18:30:00+00:00",
+      "exit_time": "2025-07-10T21:15:00+00:00",
+      "entry_price": 113182.35,
+      "exit_price": 114540.5382,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-11T03:15:00+00:00",
+      "exit_time": "2025-07-11T05:30:00+00:00",
+      "entry_price": 116487.77,
+      "exit_price": 117885.6232,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-11T07:00:00+00:00",
+      "exit_time": "2025-07-11T11:15:00+00:00",
+      "entry_price": 117648.32,
+      "exit_price": 117648.32,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-13T14:45:00+00:00",
+      "exit_time": "2025-07-14T03:30:00+00:00",
+      "entry_price": 118735.07,
+      "exit_price": 120159.8908,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-16T15:30:00+00:00",
+      "exit_time": "2025-07-16T16:00:00+00:00",
+      "entry_price": 119498.28,
+      "exit_price": 118781.2903,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-16T21:15:00+00:00",
+      "exit_time": "2025-07-16T22:15:00+00:00",
+      "entry_price": 119901.16,
+      "exit_price": 119181.753,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-20T22:30:00+00:00",
+      "exit_time": "2025-07-21T02:00:00+00:00",
+      "entry_price": 117266.0,
+      "exit_price": 117969.596,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-07-21T19:45:00+00:00",
+      "exit_time": "2025-07-21T22:30:00+00:00",
+      "entry_price": 116844.71,
+      "exit_price": 117545.7783,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-07-24T06:15:00+00:00",
+      "exit_time": "2025-07-24T07:45:00+00:00",
+      "entry_price": 117740.01,
+      "exit_price": 118446.4501,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-07-24T15:15:00+00:00",
+      "exit_time": "2025-07-24T16:30:00+00:00",
+      "entry_price": 119265.54,
+      "exit_price": 118549.9468,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-07-29T16:45:00+00:00",
+      "exit_time": "2025-07-30T03:45:00+00:00",
+      "entry_price": 117459.4,
+      "exit_price": 118164.1564,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-07-30T12:45:00+00:00",
+      "exit_time": "2025-07-30T14:45:00+00:00",
+      "entry_price": 117583.67,
+      "exit_price": 118289.172,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-08-01T18:30:00+00:00",
+      "exit_time": "2025-08-03T11:00:00+00:00",
+      "entry_price": 114154.9,
+      "exit_price": 114154.9,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-08-06T18:30:00+00:00",
+      "exit_time": "2025-08-07T01:45:00+00:00",
+      "entry_price": 115426.66,
+      "exit_price": 114734.1,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-08-10T15:15:00+00:00",
+      "exit_time": "2025-08-10T20:15:00+00:00",
+      "entry_price": 118883.33,
+      "exit_price": 118170.03,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-08-11T01:45:00+00:00",
+      "exit_time": "2025-08-11T02:00:00+00:00",
+      "entry_price": 119758.91,
+      "exit_price": 121196.0169,
+      "pct_return": 1.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-08-12T21:00:00+00:00",
+      "exit_time": "2025-08-13T01:00:00+00:00",
+      "entry_price": 120192.09,
+      "exit_price": 119470.9375,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-08-13T10:15:00+00:00",
+      "exit_time": "2025-08-13T13:45:00+00:00",
+      "entry_price": 120395.99,
+      "exit_price": 120395.99,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-08-15T14:15:00+00:00",
+      "exit_time": "2025-08-17T04:45:00+00:00",
+      "entry_price": 118025.23,
+      "exit_price": 118025.23,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-08-18T05:15:00+00:00",
+      "exit_time": "2025-08-18T13:15:00+00:00",
+      "entry_price": 115681.63,
+      "exit_price": 115681.63,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-08-20T13:45:00+00:00",
+      "exit_time": "2025-08-20T14:30:00+00:00",
+      "entry_price": 113138.0,
+      "exit_price": 113816.828,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-08-21T15:15:00+00:00",
+      "exit_time": "2025-08-22T02:15:00+00:00",
+      "entry_price": 112700.04,
+      "exit_price": 113376.2402,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-08-25T05:45:00+00:00",
+      "exit_time": "2025-08-25T15:15:00+00:00",
+      "entry_price": 112505.17,
+      "exit_price": 112505.17,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-08-25T19:45:00+00:00",
+      "exit_time": "2025-08-26T01:00:00+00:00",
+      "entry_price": 111164.12,
+      "exit_price": 108718.5094,
+      "pct_return": 2.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-08-26T11:45:00+00:00",
+      "exit_time": "2025-08-26T12:30:00+00:00",
+      "entry_price": 109658.37,
+      "exit_price": 110316.3202,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-08-28T07:30:00+00:00",
+      "exit_time": "2025-08-28T15:15:00+00:00",
+      "entry_price": 113158.23,
+      "exit_price": 112479.2806,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-09-01T00:45:00+00:00",
+      "exit_time": "2025-09-01T07:00:00+00:00",
+      "entry_price": 108167.15,
+      "exit_price": 108167.15,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-09-02T14:15:00+00:00",
+      "exit_time": "2025-09-02T18:30:00+00:00",
+      "entry_price": 111027.9,
+      "exit_price": 110361.7326,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-09-05T08:00:00+00:00",
+      "exit_time": "2025-09-05T09:15:00+00:00",
+      "entry_price": 112954.32,
+      "exit_price": 112276.5941,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-09-05T12:45:00+00:00",
+      "exit_time": "2025-09-05T14:15:00+00:00",
+      "entry_price": 112670.01,
+      "exit_price": 111993.9899,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-09-08T09:30:00+00:00",
+      "exit_time": "2025-09-09T00:15:00+00:00",
+      "entry_price": 111842.97,
+      "exit_price": 111842.97,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-09-11T14:00:00+00:00",
+      "exit_time": "2025-09-11T14:15:00+00:00",
+      "entry_price": 114630.06,
+      "exit_price": 113942.2796,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-09-16T17:45:00+00:00",
+      "exit_time": "2025-09-17T14:15:00+00:00",
+      "entry_price": 116495.06,
+      "exit_price": 115796.0896,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-09-17T23:15:00+00:00",
+      "exit_time": "2025-09-18T00:15:00+00:00",
+      "entry_price": 116815.49,
+      "exit_price": 116114.5971,
+      "pct_return": -0.8,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": false,
+      "direction": "LONG"
+    },
+    {
+      "entry_time": "2025-09-22T02:45:00+00:00",
+      "exit_time": "2025-09-23T02:45:00+00:00",
+      "entry_price": 114286.7,
+      "exit_price": 111772.3926,
+      "pct_return": 2.0,
+      "exit_reason": "TAKE_PROFIT",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-09-23T18:00:00+00:00",
+      "exit_time": "2025-09-24T04:15:00+00:00",
+      "entry_price": 111957.76,
+      "exit_price": 111957.76,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    },
+    {
+      "entry_time": "2025-09-25T07:15:00+00:00",
+      "exit_time": "2025-09-25T13:30:00+00:00",
+      "entry_price": 111608.78,
+      "exit_price": 111608.78,
+      "pct_return": -0.2,
+      "exit_reason": "STOP_LOSS",
+      "break_even_triggered": true,
+      "direction": "SHORT"
+    }
+  ]
+}

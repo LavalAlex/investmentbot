@@ -10,8 +10,18 @@ BINANCE_SECRET = os.getenv("BINANCE_SECRET")
 if not BINANCE_API_KEY or not BINANCE_SECRET:
     raise EnvironmentError("BINANCE_API_KEY and BINANCE_SECRET must be set in .env")
 
-# Analysis target — BTC/USDT only
+# Analysis target — BTC/USDT only (live monitoring)
 SYMBOL = "BTC/USDT"
+
+# Multi-coin research universe (backtesting and transferability analysis only)
+SYMBOL_UNIVERSE = [
+    "BTC/USDT",
+    "ETH/USDT",
+    "BNB/USDT",
+    "SOL/USDT",
+    "XRP/USDT",
+    "DOGE/USDT",
+]
 
 TIMEFRAME = os.getenv("TIMEFRAME", "1h")
 CANDLE_LIMIT = int(os.getenv("CANDLE_LIMIT", "100"))

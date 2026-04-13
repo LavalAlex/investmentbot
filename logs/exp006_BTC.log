@@ -1,0 +1,1715 @@
+
+============================================================
+EXP006-v2  |  BTC  |  WALK-FORWARD
+Strategy   : EXP002-v2 (unchanged)
+Windows    : 4 × 3-month evaluation periods
+============================================================
+
+[OPEN]  SHORT | ts=2025-03-30 03:30:00+00:00 | entry=83209.11 | sl=83353.93 | tp=82919.47 | pct_to_tp=0.35% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=83209.11 | exit=82919.47 | reason=TP | net=+200.00 USD | equity=10200.00 USD
+[OPEN]  LONG | ts=2025-03-30 06:30:00+00:00 | entry=83163.86 | sl=82868.96 | tp=83753.66 | pct_to_tp=0.71% | pct_to_sl=0.35%
+[CLOSE] LONG | entry=83163.86 | exit=82868.96 | reason=SL | net=-102.00 USD | equity=10098.00 USD
+[OPEN]  SHORT | ts=2025-03-30 16:45:00+00:00 | entry=82284.01 | sl=82534.79 | tp=81782.45 | pct_to_tp=0.61% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=82284.01 | exit=82534.79 | reason=SL | net=-100.98 USD | equity=9997.02 USD
+[OPEN]  SHORT | ts=2025-03-30 19:15:00+00:00 | entry=82588.43 | sl=82729.49 | tp=82306.31 | pct_to_tp=0.34% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=82588.43 | exit=82306.31 | reason=TP | net=+199.94 USD | equity=10196.96 USD
+[OPEN]  SHORT | ts=2025-03-30 23:00:00+00:00 | entry=82230.47 | sl=82442.94 | tp=81805.53 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=82230.47 | exit=82442.94 | reason=SL | net=-101.97 USD | equity=10094.99 USD
+[OPEN]  SHORT | ts=2025-03-31 07:30:00+00:00 | entry=81825.69 | sl=82056.53 | tp=81364.01 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] SHORT | entry=81825.69 | exit=82056.53 | reason=SL | net=-100.95 USD | equity=9994.04 USD
+[OPEN]  SHORT | ts=2025-03-31 08:45:00+00:00 | entry=81899.15 | sl=82152.87 | tp=81391.71 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] SHORT | entry=81899.15 | exit=81391.71 | reason=TP | net=+199.88 USD | equity=10193.92 USD
+[OPEN]  SHORT | ts=2025-03-31 12:00:00+00:00 | entry=82003.66 | sl=82284.00 | tp=81442.98 | pct_to_tp=0.68% | pct_to_sl=0.34%
+[CLOSE] SHORT | entry=82003.66 | exit=82284.00 | reason=SL | net=-101.94 USD | equity=10091.98 USD
+[OPEN]  LONG | ts=2025-03-31 14:00:00+00:00 | entry=83338.48 | sl=82507.49 | tp=85000.46 | pct_to_tp=1.99% | pct_to_sl=1.00%
+[CLOSE] LONG | entry=83338.48 | exit=82507.49 | reason=SL | net=-100.92 USD | equity=9991.06 USD
+[OPEN]  LONG | ts=2025-04-01 14:30:00+00:00 | entry=83507.99 | sl=82940.00 | tp=84643.97 | pct_to_tp=1.36% | pct_to_sl=0.68%
+[CLOSE] LONG | entry=83507.99 | exit=84643.97 | reason=TP | net=+199.82 USD | equity=10190.88 USD
+[OPEN]  LONG | ts=2025-04-01 15:30:00+00:00 | entry=85331.24 | sl=84750.46 | tp=86492.80 | pct_to_tp=1.36% | pct_to_sl=0.68%
+[CLOSE] LONG | entry=85331.24 | exit=84750.46 | reason=SL | net=-101.91 USD | equity=10088.98 USD
+[OPEN]  LONG | ts=2025-04-02 03:00:00+00:00 | entry=84839.99 | sl=84706.21 | tp=85107.55 | pct_to_tp=0.32% | pct_to_sl=0.16%
+[CLOSE] LONG | entry=84839.99 | exit=84706.21 | reason=SL | net=-100.89 USD | equity=9988.09 USD
+[OPEN]  LONG | ts=2025-04-02 04:00:00+00:00 | entry=84696.53 | sl=84517.00 | tp=85055.59 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=84696.53 | exit=84517.00 | reason=SL | net=-99.88 USD | equity=9888.20 USD
+[OPEN]  LONG | ts=2025-04-02 04:45:00+00:00 | entry=84607.00 | sl=84460.11 | tp=84900.78 | pct_to_tp=0.35% | pct_to_sl=0.17%
+[CLOSE] LONG | entry=84607.00 | exit=84460.11 | reason=SL | net=-98.88 USD | equity=9789.32 USD
+[OPEN]  LONG | ts=2025-04-02 12:30:00+00:00 | entry=84969.57 | sl=84573.98 | tp=85760.75 | pct_to_tp=0.93% | pct_to_sl=0.47%
+[CLOSE] LONG | entry=84969.57 | exit=84573.98 | reason=SL | net=-97.89 USD | equity=9691.43 USD
+[OPEN]  LONG | ts=2025-04-02 14:15:00+00:00 | entry=85736.26 | sl=85327.39 | tp=86554.00 | pct_to_tp=0.95% | pct_to_sl=0.48%
+[CLOSE] LONG | entry=85736.26 | exit=86554.00 | reason=TP | net=+193.83 USD | equity=9885.26 USD
+[OPEN]  LONG | ts=2025-04-05 01:00:00+00:00 | entry=83992.29 | sl=83786.86 | tp=84403.15 | pct_to_tp=0.49% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=83992.29 | exit=83786.86 | reason=SL | net=-98.85 USD | equity=9786.41 USD
+[OPEN]  SHORT | ts=2025-04-05 19:30:00+00:00 | entry=82908.00 | sl=83100.00 | tp=82524.00 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=82908.00 | exit=83100.00 | reason=SL | net=-97.86 USD | equity=9688.54 USD
+[OPEN]  SHORT | ts=2025-04-05 21:45:00+00:00 | entry=82913.89 | sl=83084.42 | tp=82572.83 | pct_to_tp=0.41% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=82913.89 | exit=83084.42 | reason=SL | net=-96.89 USD | equity=9591.66 USD
+[OPEN]  SHORT | ts=2025-04-06 11:00:00+00:00 | entry=82752.63 | sl=82921.48 | tp=82414.93 | pct_to_tp=0.41% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=82752.63 | exit=82921.48 | reason=SL | net=-95.92 USD | equity=9495.74 USD
+[OPEN]  SHORT | ts=2025-04-06 13:15:00+00:00 | entry=82539.70 | sl=82805.71 | tp=82007.68 | pct_to_tp=0.64% | pct_to_sl=0.32%
+[CLOSE] SHORT | entry=82539.70 | exit=82805.71 | reason=SL | net=-94.96 USD | equity=9400.78 USD
+[OPEN]  SHORT | ts=2025-04-06 16:00:00+00:00 | entry=82434.42 | sl=82554.15 | tp=82194.96 | pct_to_tp=0.29% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=82434.42 | exit=82194.96 | reason=TP | net=+188.02 USD | equity=9588.80 USD
+[OPEN]  SHORT | ts=2025-04-07 16:45:00+00:00 | entry=77434.01 | sl=77916.00 | tp=76470.03 | pct_to_tp=1.24% | pct_to_sl=0.62%
+[CLOSE] SHORT | entry=77434.01 | exit=77916.00 | reason=SL | net=-95.89 USD | equity=9492.91 USD
+[OPEN]  LONG | ts=2025-04-07 20:15:00+00:00 | entry=78689.45 | sl=78230.01 | tp=79608.33 | pct_to_tp=1.17% | pct_to_sl=0.58%
+[CLOSE] LONG | entry=78689.45 | exit=79608.33 | reason=TP | net=+189.86 USD | equity=9682.77 USD
+[OPEN]  SHORT | ts=2025-04-09 07:45:00+00:00 | entry=77694.12 | sl=77930.44 | tp=77221.48 | pct_to_tp=0.61% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=77694.12 | exit=77221.48 | reason=TP | net=+193.66 USD | equity=9876.42 USD
+[OPEN]  SHORT | ts=2025-04-09 09:15:00+00:00 | entry=77246.52 | sl=77380.00 | tp=76979.56 | pct_to_tp=0.35% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=77246.52 | exit=77380.00 | reason=SL | net=-98.76 USD | equity=9777.66 USD
+[OPEN]  LONG | ts=2025-04-09 17:15:00+00:00 | entry=80820.66 | sl=77649.99 | tp=87162.00 | pct_to_tp=7.85% | pct_to_sl=3.92%
+[CLOSE] LONG | entry=80820.66 | exit=87162.00 | reason=TP | net=+195.55 USD | equity=9973.21 USD
+[OPEN]  LONG | ts=2025-04-21 12:00:00+00:00 | entry=87320.76 | sl=86962.46 | tp=88037.36 | pct_to_tp=0.82% | pct_to_sl=0.41%
+[CLOSE] LONG | entry=87320.76 | exit=86962.46 | reason=SL | net=-99.73 USD | equity=9873.48 USD
+[OPEN]  LONG | ts=2025-04-21 14:00:00+00:00 | entry=87673.01 | sl=86943.39 | tp=89132.25 | pct_to_tp=1.66% | pct_to_sl=0.83%
+[CLOSE] LONG | entry=87673.01 | exit=86943.39 | reason=SL | net=-98.73 USD | equity=9774.75 USD
+[OPEN]  LONG | ts=2025-04-21 19:00:00+00:00 | entry=87048.85 | sl=86712.50 | tp=87721.55 | pct_to_tp=0.77% | pct_to_sl=0.39%
+[CLOSE] LONG | entry=87048.85 | exit=87721.55 | reason=TP | net=+195.49 USD | equity=9970.24 USD
+[OPEN]  LONG | ts=2025-04-23 15:45:00+00:00 | entry=93195.28 | sl=92551.89 | tp=94482.06 | pct_to_tp=1.38% | pct_to_sl=0.69%
+[CLOSE] LONG | entry=93195.28 | exit=92551.89 | reason=SL | net=-99.70 USD | equity=9870.54 USD
+[OPEN]  LONG | ts=2025-04-24 16:00:00+00:00 | entry=93460.48 | sl=93202.51 | tp=93976.42 | pct_to_tp=0.55% | pct_to_sl=0.28%
+[CLOSE] LONG | entry=93460.48 | exit=93202.51 | reason=SL | net=-98.71 USD | equity=9771.83 USD
+[OPEN]  LONG | ts=2025-04-24 18:00:00+00:00 | entry=93315.39 | sl=92999.07 | tp=93948.03 | pct_to_tp=0.68% | pct_to_sl=0.34%
+[CLOSE] LONG | entry=93315.39 | exit=93948.03 | reason=TP | net=+195.44 USD | equity=9967.27 USD
+[OPEN]  LONG | ts=2025-04-25 00:30:00+00:00 | entry=93895.38 | sl=93604.80 | tp=94476.54 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] LONG | entry=93895.38 | exit=93604.80 | reason=SL | net=-99.67 USD | equity=9867.60 USD
+[OPEN]  LONG | ts=2025-04-25 03:30:00+00:00 | entry=93317.10 | sl=93131.26 | tp=93688.78 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=93317.10 | exit=93131.26 | reason=SL | net=-98.68 USD | equity=9768.92 USD
+[OPEN]  LONG | ts=2025-04-25 05:00:00+00:00 | entry=93336.83 | sl=93013.56 | tp=93983.37 | pct_to_tp=0.69% | pct_to_sl=0.35%
+[CLOSE] LONG | entry=93336.83 | exit=93983.37 | reason=TP | net=+195.38 USD | equity=9964.30 USD
+[OPEN]  LONG | ts=2025-04-25 11:15:00+00:00 | entry=94190.00 | sl=93961.22 | tp=94647.56 | pct_to_tp=0.49% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=94190.00 | exit=94647.56 | reason=TP | net=+199.29 USD | equity=10163.58 USD
+[OPEN]  LONG | ts=2025-04-25 12:30:00+00:00 | entry=94766.59 | sl=94395.31 | tp=95509.15 | pct_to_tp=0.78% | pct_to_sl=0.39%
+[CLOSE] LONG | entry=94766.59 | exit=94395.31 | reason=SL | net=-101.64 USD | equity=10061.95 USD
+[OPEN]  LONG | ts=2025-04-25 22:00:00+00:00 | entry=94803.11 | sl=94587.21 | tp=95234.91 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=94803.11 | exit=94587.21 | reason=SL | net=-100.62 USD | equity=9961.33 USD
+[OPEN]  LONG | ts=2025-04-26 00:45:00+00:00 | entry=94880.69 | sl=94527.84 | tp=95586.39 | pct_to_tp=0.74% | pct_to_sl=0.37%
+[CLOSE] LONG | entry=94880.69 | exit=94527.84 | reason=SL | net=-99.61 USD | equity=9861.72 USD
+[OPEN]  LONG | ts=2025-04-26 06:00:00+00:00 | entry=94698.99 | sl=94583.91 | tp=94929.15 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=94698.99 | exit=94583.91 | reason=SL | net=-98.62 USD | equity=9763.10 USD
+[OPEN]  SHORT | ts=2025-04-26 23:30:00+00:00 | entry=94623.01 | sl=94737.62 | tp=94393.79 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] SHORT | entry=94623.01 | exit=94737.62 | reason=SL | net=-97.63 USD | equity=9665.47 USD
+[OPEN]  LONG | ts=2025-04-27 00:15:00+00:00 | entry=94949.49 | sl=94773.15 | tp=95302.17 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=94949.49 | exit=94773.15 | reason=SL | net=-96.65 USD | equity=9568.81 USD
+[OPEN]  LONG | ts=2025-04-28 11:15:00+00:00 | entry=95487.20 | sl=95257.15 | tp=95947.30 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=95487.20 | exit=95257.15 | reason=SL | net=-95.69 USD | equity=9473.12 USD
+[OPEN]  LONG | ts=2025-04-28 23:00:00+00:00 | entry=94986.57 | sl=94792.52 | tp=95374.67 | pct_to_tp=0.41% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=94986.57 | exit=95374.67 | reason=TP | net=+189.46 USD | equity=9662.59 USD
+[OPEN]  LONG | ts=2025-04-29 04:15:00+00:00 | entry=94857.25 | sl=94701.29 | tp=95169.17 | pct_to_tp=0.33% | pct_to_sl=0.16%
+[CLOSE] LONG | entry=94857.25 | exit=94701.29 | reason=SL | net=-96.63 USD | equity=9565.96 USD
+[OPEN]  LONG | ts=2025-04-29 11:00:00+00:00 | entry=95200.00 | sl=94810.63 | tp=95978.74 | pct_to_tp=0.82% | pct_to_sl=0.41%
+[CLOSE] LONG | entry=95200.00 | exit=94810.63 | reason=SL | net=-95.66 USD | equity=9470.30 USD
+[OPEN]  LONG | ts=2025-04-29 14:30:00+00:00 | entry=95145.72 | sl=94700.00 | tp=96037.16 | pct_to_tp=0.94% | pct_to_sl=0.47%
+[CLOSE] LONG | entry=95145.72 | exit=94700.00 | reason=SL | net=-94.70 USD | equity=9375.60 USD
+[OPEN]  LONG | ts=2025-04-29 17:15:00+00:00 | entry=95221.19 | sl=95013.76 | tp=95636.05 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=95221.19 | exit=95013.76 | reason=SL | net=-93.76 USD | equity=9281.84 USD
+[OPEN]  SHORT | ts=2025-04-29 23:00:00+00:00 | entry=93819.99 | sl=94164.88 | tp=93130.21 | pct_to_tp=0.74% | pct_to_sl=0.37%
+[CLOSE] SHORT | entry=93819.99 | exit=94164.88 | reason=SL | net=-92.82 USD | equity=9189.02 USD
+[OPEN]  SHORT | ts=2025-04-30 19:15:00+00:00 | entry=93797.90 | sl=94110.00 | tp=93173.70 | pct_to_tp=0.67% | pct_to_sl=0.33%
+[CLOSE] SHORT | entry=93797.90 | exit=94110.00 | reason=SL | net=-91.89 USD | equity=9097.13 USD
+[OPEN]  LONG | ts=2025-05-01 08:15:00+00:00 | entry=95149.99 | sl=95017.31 | tp=95415.35 | pct_to_tp=0.28% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=95149.99 | exit=95415.35 | reason=TP | net=+181.94 USD | equity=9279.08 USD
+[OPEN]  LONG | ts=2025-05-02 00:00:00+00:00 | entry=96619.04 | sl=96466.21 | tp=96924.70 | pct_to_tp=0.32% | pct_to_sl=0.16%
+[CLOSE] LONG | entry=96619.04 | exit=96924.70 | reason=TP | net=+185.58 USD | equity=9464.66 USD
+[OPEN]  LONG | ts=2025-05-02 00:45:00+00:00 | entry=97042.97 | sl=96792.45 | tp=97544.01 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=97042.97 | exit=96792.45 | reason=SL | net=-94.65 USD | equity=9370.01 USD
+[OPEN]  LONG | ts=2025-05-02 08:00:00+00:00 | entry=96567.54 | sl=96350.00 | tp=97002.62 | pct_to_tp=0.45% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=96567.54 | exit=97002.62 | reason=TP | net=+187.40 USD | equity=9557.41 USD
+[OPEN]  LONG | ts=2025-05-02 13:15:00+00:00 | entry=96962.27 | sl=96768.69 | tp=97349.43 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=96962.27 | exit=96768.69 | reason=SL | net=-95.57 USD | equity=9461.84 USD
+[OPEN]  LONG | ts=2025-05-02 14:15:00+00:00 | entry=97162.70 | sl=96804.99 | tp=97878.12 | pct_to_tp=0.74% | pct_to_sl=0.37%
+[CLOSE] LONG | entry=97162.70 | exit=97878.12 | reason=TP | net=+189.24 USD | equity=9651.07 USD
+[OPEN]  LONG | ts=2025-05-02 15:30:00+00:00 | entry=97429.51 | sl=97092.90 | tp=98102.73 | pct_to_tp=0.69% | pct_to_sl=0.35%
+[CLOSE] LONG | entry=97429.51 | exit=97092.90 | reason=SL | net=-96.51 USD | equity=9554.56 USD
+[OPEN]  LONG | ts=2025-05-02 18:00:00+00:00 | entry=97523.99 | sl=97365.44 | tp=97841.09 | pct_to_tp=0.33% | pct_to_sl=0.16%
+[CLOSE] LONG | entry=97523.99 | exit=97365.44 | reason=SL | net=-95.55 USD | equity=9459.02 USD
+[OPEN]  SHORT | ts=2025-05-04 08:15:00+00:00 | entry=95672.66 | sl=95884.04 | tp=95249.90 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] SHORT | entry=95672.66 | exit=95249.90 | reason=TP | net=+189.18 USD | equity=9648.20 USD
+[OPEN]  SHORT | ts=2025-05-04 15:30:00+00:00 | entry=95460.41 | sl=95598.54 | tp=95184.15 | pct_to_tp=0.29% | pct_to_sl=0.14%
+[CLOSE] SHORT | entry=95460.41 | exit=95598.54 | reason=SL | net=-96.48 USD | equity=9551.72 USD
+[OPEN]  SHORT | ts=2025-05-04 22:00:00+00:00 | entry=95207.16 | sl=95690.48 | tp=94240.52 | pct_to_tp=1.02% | pct_to_sl=0.51%
+[CLOSE] SHORT | entry=95207.16 | exit=94240.52 | reason=TP | net=+191.03 USD | equity=9742.75 USD
+[OPEN]  SHORT | ts=2025-05-05 07:00:00+00:00 | entry=94591.79 | sl=94825.46 | tp=94124.45 | pct_to_tp=0.49% | pct_to_sl=0.25%
+[CLOSE] SHORT | entry=94591.79 | exit=94124.45 | reason=TP | net=+194.86 USD | equity=9937.61 USD
+[OPEN]  SHORT | ts=2025-05-05 19:30:00+00:00 | entry=94499.99 | sl=94683.93 | tp=94132.11 | pct_to_tp=0.39% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=94499.99 | exit=94132.11 | reason=TP | net=+198.75 USD | equity=10136.36 USD
+[OPEN]  LONG | ts=2025-05-06 02:45:00+00:00 | entry=94334.99 | sl=94153.98 | tp=94697.01 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=94334.99 | exit=94153.98 | reason=SL | net=-101.36 USD | equity=10034.99 USD
+[OPEN]  SHORT | ts=2025-05-06 09:00:00+00:00 | entry=94201.76 | sl=94375.90 | tp=93853.48 | pct_to_tp=0.37% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=94201.76 | exit=93853.48 | reason=TP | net=+200.70 USD | equity=10235.69 USD
+[OPEN]  LONG | ts=2025-05-06 23:15:00+00:00 | entry=96628.25 | sl=96193.95 | tp=97496.85 | pct_to_tp=0.90% | pct_to_sl=0.45%
+[CLOSE] LONG | entry=96628.25 | exit=97496.85 | reason=TP | net=+204.71 USD | equity=10440.41 USD
+[OPEN]  LONG | ts=2025-05-07 20:00:00+00:00 | entry=96403.99 | sl=96076.92 | tp=97058.13 | pct_to_tp=0.68% | pct_to_sl=0.34%
+[CLOSE] LONG | entry=96403.99 | exit=97058.13 | reason=TP | net=+208.81 USD | equity=10649.22 USD
+[OPEN]  LONG | ts=2025-05-07 22:30:00+00:00 | entry=97239.36 | sl=97020.54 | tp=97677.00 | pct_to_tp=0.45% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=97239.36 | exit=97020.54 | reason=SL | net=-106.49 USD | equity=10542.72 USD
+[OPEN]  LONG | ts=2025-05-09 17:15:00+00:00 | entry=103031.40 | sl=102780.34 | tp=103533.52 | pct_to_tp=0.49% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=103031.40 | exit=102780.34 | reason=SL | net=-105.43 USD | equity=10437.30 USD
+[OPEN]  LONG | ts=2025-05-09 23:00:00+00:00 | entry=102870.00 | sl=102736.59 | tp=103136.82 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] LONG | entry=102870.00 | exit=103136.82 | reason=TP | net=+208.75 USD | equity=10646.04 USD
+[OPEN]  LONG | ts=2025-05-10 03:30:00+00:00 | entry=103180.00 | sl=103023.33 | tp=103493.34 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=103180.00 | exit=103493.34 | reason=TP | net=+212.92 USD | equity=10858.96 USD
+[OPEN]  LONG | ts=2025-05-10 06:15:00+00:00 | entry=103715.91 | sl=103389.87 | tp=104367.99 | pct_to_tp=0.63% | pct_to_sl=0.31%
+[CLOSE] LONG | entry=103715.91 | exit=103389.87 | reason=SL | net=-108.59 USD | equity=10750.37 USD
+[OPEN]  LONG | ts=2025-05-10 12:00:00+00:00 | entry=103605.56 | sl=103421.50 | tp=103973.68 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=103605.56 | exit=103421.50 | reason=SL | net=-107.50 USD | equity=10642.87 USD
+[OPEN]  LONG | ts=2025-05-10 14:30:00+00:00 | entry=103543.69 | sl=103475.21 | tp=103680.65 | pct_to_tp=0.13% | pct_to_sl=0.07%
+[CLOSE] LONG | entry=103543.69 | exit=103475.21 | reason=SL | net=-106.43 USD | equity=10536.44 USD
+[OPEN]  LONG | ts=2025-05-10 16:00:00+00:00 | entry=103253.19 | sl=103127.69 | tp=103504.19 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=103253.19 | exit=103504.19 | reason=TP | net=+210.73 USD | equity=10747.17 USD
+[OPEN]  LONG | ts=2025-05-10 18:00:00+00:00 | entry=103314.29 | sl=103156.00 | tp=103630.87 | pct_to_tp=0.31% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=103314.29 | exit=103156.00 | reason=SL | net=-107.47 USD | equity=10639.70 USD
+[OPEN]  SHORT | ts=2025-05-10 19:00:00+00:00 | entry=103085.53 | sl=103265.26 | tp=102726.07 | pct_to_tp=0.35% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=103085.53 | exit=103265.26 | reason=SL | net=-106.40 USD | equity=10533.30 USD
+[OPEN]  SHORT | ts=2025-05-10 20:45:00+00:00 | entry=103193.43 | sl=103317.47 | tp=102945.35 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] SHORT | entry=103193.43 | exit=103317.47 | reason=SL | net=-105.33 USD | equity=10427.97 USD
+[OPEN]  SHORT | ts=2025-05-10 21:15:00+00:00 | entry=103229.60 | sl=103273.74 | tp=103141.32 | pct_to_tp=0.09% | pct_to_sl=0.04%
+[CLOSE] SHORT | entry=103229.60 | exit=103273.74 | reason=SL | net=-104.28 USD | equity=10323.69 USD
+[OPEN]  SHORT | ts=2025-05-10 22:00:00+00:00 | entry=103588.60 | sl=103793.66 | tp=103178.48 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=103588.60 | exit=103793.66 | reason=SL | net=-103.24 USD | equity=10220.45 USD
+[OPEN]  LONG | ts=2025-05-10 23:00:00+00:00 | entry=103988.99 | sl=103571.42 | tp=104824.13 | pct_to_tp=0.80% | pct_to_sl=0.40%
+[CLOSE] LONG | entry=103988.99 | exit=104824.13 | reason=TP | net=+204.41 USD | equity=10424.86 USD
+[OPEN]  LONG | ts=2025-05-10 23:45:00+00:00 | entry=104809.53 | sl=104362.11 | tp=105704.37 | pct_to_tp=0.85% | pct_to_sl=0.43%
+[CLOSE] LONG | entry=104809.53 | exit=104362.11 | reason=SL | net=-104.25 USD | equity=10320.61 USD
+[OPEN]  LONG | ts=2025-05-11 00:30:00+00:00 | entry=104414.84 | sl=103926.48 | tp=105391.56 | pct_to_tp=0.94% | pct_to_sl=0.47%
+[CLOSE] LONG | entry=104414.84 | exit=103926.48 | reason=SL | net=-103.21 USD | equity=10217.41 USD
+[OPEN]  LONG | ts=2025-05-11 03:15:00+00:00 | entry=104000.00 | sl=103793.65 | tp=104412.70 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=104000.00 | exit=103793.65 | reason=SL | net=-102.17 USD | equity=10115.23 USD
+[OPEN]  LONG | ts=2025-05-11 04:00:00+00:00 | entry=104334.37 | sl=103997.44 | tp=105008.23 | pct_to_tp=0.65% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=104334.37 | exit=103997.44 | reason=SL | net=-101.15 USD | equity=10014.08 USD
+[OPEN]  LONG | ts=2025-05-11 06:15:00+00:00 | entry=103952.39 | sl=103794.68 | tp=104267.81 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=103952.39 | exit=103794.68 | reason=SL | net=-100.14 USD | equity=9913.94 USD
+[OPEN]  LONG | ts=2025-05-11 08:00:00+00:00 | entry=103799.99 | sl=103380.95 | tp=104638.07 | pct_to_tp=0.81% | pct_to_sl=0.40%
+[CLOSE] LONG | entry=103799.99 | exit=104638.07 | reason=TP | net=+198.28 USD | equity=10112.22 USD
+[OPEN]  LONG | ts=2025-05-11 14:30:00+00:00 | entry=104242.25 | sl=103880.00 | tp=104966.75 | pct_to_tp=0.70% | pct_to_sl=0.35%
+[CLOSE] LONG | entry=104242.25 | exit=103880.00 | reason=SL | net=-101.12 USD | equity=10011.10 USD
+[OPEN]  LONG | ts=2025-05-11 18:30:00+00:00 | entry=104488.58 | sl=103857.14 | tp=105751.46 | pct_to_tp=1.21% | pct_to_sl=0.60%
+[CLOSE] LONG | entry=104488.58 | exit=103857.14 | reason=SL | net=-100.11 USD | equity=9910.99 USD
+[OPEN]  LONG | ts=2025-05-12 00:00:00+00:00 | entry=104328.04 | sl=104074.15 | tp=104835.82 | pct_to_tp=0.49% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=104328.04 | exit=104835.82 | reason=TP | net=+198.22 USD | equity=10109.20 USD
+[OPEN]  SHORT | ts=2025-05-12 07:30:00+00:00 | entry=104727.97 | sl=105700.00 | tp=102783.91 | pct_to_tp=1.86% | pct_to_sl=0.93%
+[CLOSE] SHORT | entry=104727.97 | exit=102783.91 | reason=TP | net=+202.18 USD | equity=10311.39 USD
+[OPEN]  SHORT | ts=2025-05-12 14:45:00+00:00 | entry=102799.99 | sl=103449.00 | tp=101501.97 | pct_to_tp=1.26% | pct_to_sl=0.63%
+[CLOSE] SHORT | entry=102799.99 | exit=101501.97 | reason=TP | net=+206.23 USD | equity=10517.62 USD
+[OPEN]  SHORT | ts=2025-05-13 00:00:00+00:00 | entry=102584.04 | sl=102791.32 | tp=102169.48 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=102584.04 | exit=102169.48 | reason=TP | net=+210.35 USD | equity=10727.97 USD
+[OPEN]  SHORT | ts=2025-05-13 03:15:00+00:00 | entry=101602.31 | sl=102058.05 | tp=100690.83 | pct_to_tp=0.90% | pct_to_sl=0.45%
+[CLOSE] SHORT | entry=101602.31 | exit=102058.05 | reason=SL | net=-107.28 USD | equity=10620.69 USD
+[OPEN]  SHORT | ts=2025-05-13 05:15:00+00:00 | entry=102560.00 | sl=102684.88 | tp=102310.24 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] SHORT | entry=102560.00 | exit=102310.24 | reason=TP | net=+212.41 USD | equity=10833.10 USD
+[OPEN]  SHORT | ts=2025-05-13 06:15:00+00:00 | entry=102365.00 | sl=102666.93 | tp=101761.14 | pct_to_tp=0.59% | pct_to_sl=0.29%
+[CLOSE] SHORT | entry=102365.00 | exit=102666.93 | reason=SL | net=-108.33 USD | equity=10724.77 USD
+[OPEN]  SHORT | ts=2025-05-13 08:15:00+00:00 | entry=102571.99 | sl=102958.81 | tp=101798.35 | pct_to_tp=0.75% | pct_to_sl=0.38%
+[CLOSE] SHORT | entry=102571.99 | exit=102958.81 | reason=SL | net=-107.25 USD | equity=10617.52 USD
+[OPEN]  LONG | ts=2025-05-13 15:00:00+00:00 | entry=103740.43 | sl=103132.15 | tp=104956.99 | pct_to_tp=1.17% | pct_to_sl=0.59%
+[CLOSE] LONG | entry=103740.43 | exit=104956.99 | reason=TP | net=+212.35 USD | equity=10829.87 USD
+[OPEN]  SHORT | ts=2025-05-15 13:15:00+00:00 | entry=102582.23 | sl=102769.38 | tp=102207.93 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=102582.23 | exit=102207.93 | reason=TP | net=+216.60 USD | equity=11046.47 USD
+[OPEN]  SHORT | ts=2025-05-15 14:30:00+00:00 | entry=101680.01 | sl=102080.00 | tp=100880.03 | pct_to_tp=0.79% | pct_to_sl=0.39%
+[CLOSE] SHORT | entry=101680.01 | exit=102080.00 | reason=SL | net=-110.46 USD | equity=10936.01 USD
+[OPEN]  LONG | ts=2025-05-16 00:30:00+00:00 | entry=103946.98 | sl=103742.00 | tp=104356.94 | pct_to_tp=0.39% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=103946.98 | exit=103742.00 | reason=SL | net=-109.36 USD | equity=10826.65 USD
+[OPEN]  LONG | ts=2025-05-16 15:00:00+00:00 | entry=104099.89 | sl=103578.71 | tp=105142.25 | pct_to_tp=1.00% | pct_to_sl=0.50%
+[CLOSE] LONG | entry=104099.89 | exit=103578.71 | reason=SL | net=-108.27 USD | equity=10718.38 USD
+[OPEN]  LONG | ts=2025-05-18 13:30:00+00:00 | entry=104459.99 | sl=103902.01 | tp=105575.95 | pct_to_tp=1.07% | pct_to_sl=0.53%
+[CLOSE] LONG | entry=104459.99 | exit=105575.95 | reason=TP | net=+214.37 USD | equity=10932.75 USD
+[OPEN]  LONG | ts=2025-05-18 19:00:00+00:00 | entry=104654.71 | sl=104440.21 | tp=105083.71 | pct_to_tp=0.41% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=104654.71 | exit=104440.21 | reason=SL | net=-109.33 USD | equity=10823.42 USD
+[OPEN]  LONG | ts=2025-05-18 22:15:00+00:00 | entry=105051.87 | sl=104001.09 | tp=107153.43 | pct_to_tp=2.00% | pct_to_sl=1.00%
+[CLOSE] LONG | entry=105051.87 | exit=104001.09 | reason=SL | net=-108.23 USD | equity=10715.19 USD
+[OPEN]  LONG | ts=2025-05-20 09:30:00+00:00 | entry=105359.20 | sl=105317.42 | tp=105442.76 | pct_to_tp=0.08% | pct_to_sl=0.04%
+[CLOSE] LONG | entry=105359.20 | exit=105317.42 | reason=SL | net=-107.15 USD | equity=10608.04 USD
+[OPEN]  LONG | ts=2025-05-20 19:00:00+00:00 | entry=105844.93 | sl=105220.00 | tp=107094.79 | pct_to_tp=1.18% | pct_to_sl=0.59%
+[CLOSE] LONG | entry=105844.93 | exit=107094.79 | reason=TP | net=+212.16 USD | equity=10820.20 USD
+[OPEN]  LONG | ts=2025-05-21 08:00:00+00:00 | entry=106765.34 | sl=106458.36 | tp=107379.30 | pct_to_tp=0.58% | pct_to_sl=0.29%
+[CLOSE] LONG | entry=106765.34 | exit=106458.36 | reason=SL | net=-108.20 USD | equity=10711.99 USD
+[OPEN]  LONG | ts=2025-05-21 10:00:00+00:00 | entry=106401.22 | sl=106136.99 | tp=106929.68 | pct_to_tp=0.50% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=106401.22 | exit=106929.68 | reason=TP | net=+214.24 USD | equity=10926.23 USD
+[OPEN]  LONG | ts=2025-05-21 14:45:00+00:00 | entry=108999.99 | sl=107691.29 | tp=111617.39 | pct_to_tp=2.40% | pct_to_sl=1.20%
+[CLOSE] LONG | entry=108999.99 | exit=107691.29 | reason=SL | net=-109.26 USD | equity=10816.97 USD
+[OPEN]  LONG | ts=2025-05-21 19:30:00+00:00 | entry=108114.22 | sl=107224.00 | tp=109894.66 | pct_to_tp=1.65% | pct_to_sl=0.82%
+[CLOSE] LONG | entry=108114.22 | exit=109894.66 | reason=TP | net=+216.34 USD | equity=11033.31 USD
+[OPEN]  LONG | ts=2025-05-22 21:30:00+00:00 | entry=110967.43 | sl=110763.78 | tp=111374.73 | pct_to_tp=0.37% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=110967.43 | exit=110763.78 | reason=SL | net=-110.33 USD | equity=10922.98 USD
+[OPEN]  LONG | ts=2025-05-22 22:00:00+00:00 | entry=111074.02 | sl=110831.36 | tp=111559.34 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=111074.02 | exit=111559.34 | reason=TP | net=+218.46 USD | equity=11141.44 USD
+[OPEN]  LONG | ts=2025-05-23 03:30:00+00:00 | entry=111144.99 | sl=111000.13 | tp=111434.71 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] LONG | entry=111144.99 | exit=111000.13 | reason=SL | net=-111.41 USD | equity=11030.02 USD
+[OPEN]  LONG | ts=2025-05-23 04:45:00+00:00 | entry=110844.19 | sl=110634.90 | tp=111262.77 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=110844.19 | exit=110634.90 | reason=SL | net=-110.30 USD | equity=10919.72 USD
+[OPEN]  SHORT | ts=2025-05-23 10:00:00+00:00 | entry=110941.03 | sl=111335.02 | tp=110153.05 | pct_to_tp=0.71% | pct_to_sl=0.36%
+[CLOSE] SHORT | entry=110941.03 | exit=110153.05 | reason=TP | net=+218.39 USD | equity=11138.12 USD
+[OPEN]  SHORT | ts=2025-05-23 12:00:00+00:00 | entry=108127.98 | sl=109096.39 | tp=106191.16 | pct_to_tp=1.79% | pct_to_sl=0.90%
+[CLOSE] SHORT | entry=108127.98 | exit=109096.39 | reason=SL | net=-111.38 USD | equity=11026.74 USD
+[OPEN]  SHORT | ts=2025-05-25 00:30:00+00:00 | entry=107502.44 | sl=108130.44 | tp=106246.44 | pct_to_tp=1.17% | pct_to_sl=0.58%
+[CLOSE] SHORT | entry=107502.44 | exit=108130.44 | reason=SL | net=-110.27 USD | equity=10916.47 USD
+[OPEN]  SHORT | ts=2025-05-25 04:00:00+00:00 | entry=107981.97 | sl=108136.37 | tp=107673.17 | pct_to_tp=0.29% | pct_to_sl=0.14%
+[CLOSE] SHORT | entry=107981.97 | exit=108136.37 | reason=SL | net=-109.16 USD | equity=10807.30 USD
+[OPEN]  SHORT | ts=2025-05-25 05:00:00+00:00 | entry=108124.04 | sl=108288.69 | tp=107794.74 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=108124.04 | exit=107794.74 | reason=TP | net=+216.15 USD | equity=11023.45 USD
+[OPEN]  SHORT | ts=2025-05-25 07:00:00+00:00 | entry=107716.08 | sl=107938.00 | tp=107272.24 | pct_to_tp=0.41% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=107716.08 | exit=107272.24 | reason=TP | net=+220.47 USD | equity=11243.92 USD
+[OPEN]  SHORT | ts=2025-05-25 14:30:00+00:00 | entry=107203.26 | sl=107644.01 | tp=106321.76 | pct_to_tp=0.82% | pct_to_sl=0.41%
+[CLOSE] SHORT | entry=107203.26 | exit=107644.01 | reason=SL | net=-112.44 USD | equity=11131.48 USD
+[OPEN]  SHORT | ts=2025-05-25 20:00:00+00:00 | entry=107527.28 | sl=107754.24 | tp=107073.36 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=107527.28 | exit=107754.24 | reason=SL | net=-111.31 USD | equity=11020.17 USD
+[OPEN]  SHORT | ts=2025-05-25 21:15:00+00:00 | entry=107460.00 | sl=107866.91 | tp=106646.18 | pct_to_tp=0.76% | pct_to_sl=0.38%
+[CLOSE] SHORT | entry=107460.00 | exit=107866.91 | reason=SL | net=-110.20 USD | equity=10909.96 USD
+[OPEN]  LONG | ts=2025-05-26 15:15:00+00:00 | entry=109874.07 | sl=109611.38 | tp=110399.45 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=109874.07 | exit=110399.45 | reason=TP | net=+218.20 USD | equity=11128.16 USD
+[OPEN]  LONG | ts=2025-05-26 20:45:00+00:00 | entry=109606.50 | sl=109378.56 | tp=110062.38 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=109606.50 | exit=109378.56 | reason=SL | net=-111.28 USD | equity=11016.88 USD
+[OPEN]  LONG | ts=2025-05-27 13:00:00+00:00 | entry=110374.07 | sl=109581.46 | tp=111959.29 | pct_to_tp=1.44% | pct_to_sl=0.72%
+[CLOSE] LONG | entry=110374.07 | exit=109581.46 | reason=SL | net=-110.17 USD | equity=10906.71 USD
+[OPEN]  LONG | ts=2025-05-27 15:30:00+00:00 | entry=110001.99 | sl=109626.74 | tp=110752.49 | pct_to_tp=0.68% | pct_to_sl=0.34%
+[CLOSE] LONG | entry=110001.99 | exit=109626.74 | reason=SL | net=-109.07 USD | equity=10797.65 USD
+[OPEN]  SHORT | ts=2025-05-28 02:45:00+00:00 | entry=108627.42 | sl=108856.09 | tp=108170.08 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=108627.42 | exit=108856.09 | reason=SL | net=-107.98 USD | equity=10689.67 USD
+[OPEN]  SHORT | ts=2025-05-28 10:00:00+00:00 | entry=108562.63 | sl=108800.00 | tp=108087.89 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] SHORT | entry=108562.63 | exit=108800.00 | reason=SL | net=-106.90 USD | equity=10582.77 USD
+[OPEN]  SHORT | ts=2025-05-28 14:30:00+00:00 | entry=107603.85 | sl=107954.55 | tp=106902.45 | pct_to_tp=0.65% | pct_to_sl=0.33%
+[CLOSE] SHORT | entry=107603.85 | exit=106902.45 | reason=TP | net=+211.66 USD | equity=10794.43 USD
+[OPEN]  SHORT | ts=2025-05-29 00:30:00+00:00 | entry=107801.91 | sl=108032.92 | tp=107339.89 | pct_to_tp=0.43% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=107801.91 | exit=108032.92 | reason=SL | net=-107.94 USD | equity=10686.48 USD
+[OPEN]  LONG | ts=2025-05-29 05:30:00+00:00 | entry=107727.27 | sl=107600.96 | tp=107979.89 | pct_to_tp=0.23% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=107727.27 | exit=107979.89 | reason=TP | net=+213.73 USD | equity=10900.21 USD
+[OPEN]  SHORT | ts=2025-05-29 07:30:00+00:00 | entry=107843.61 | sl=107999.50 | tp=107531.83 | pct_to_tp=0.29% | pct_to_sl=0.14%
+[CLOSE] SHORT | entry=107843.61 | exit=107999.50 | reason=SL | net=-109.00 USD | equity=10791.21 USD
+[OPEN]  SHORT | ts=2025-05-30 06:15:00+00:00 | entry=105949.49 | sl=106080.04 | tp=105688.39 | pct_to_tp=0.25% | pct_to_sl=0.12%
+[CLOSE] SHORT | entry=105949.49 | exit=105688.39 | reason=TP | net=+215.82 USD | equity=11007.03 USD
+[OPEN]  SHORT | ts=2025-05-30 11:00:00+00:00 | entry=105815.90 | sl=105981.75 | tp=105484.20 | pct_to_tp=0.31% | pct_to_sl=0.16%
+[CLOSE] SHORT | entry=105815.90 | exit=105484.20 | reason=TP | net=+220.14 USD | equity=11227.18 USD
+[OPEN]  SHORT | ts=2025-05-30 12:45:00+00:00 | entry=105684.96 | sl=106000.00 | tp=105054.88 | pct_to_tp=0.60% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=105684.96 | exit=105054.88 | reason=TP | net=+224.54 USD | equity=11451.72 USD
+[OPEN]  SHORT | ts=2025-05-30 15:45:00+00:00 | entry=105543.00 | sl=105760.23 | tp=105108.54 | pct_to_tp=0.41% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=105543.00 | exit=105108.54 | reason=TP | net=+229.03 USD | equity=11680.75 USD
+[OPEN]  SHORT | ts=2025-05-30 16:45:00+00:00 | entry=103898.75 | sl=104400.01 | tp=102896.23 | pct_to_tp=0.96% | pct_to_sl=0.48%
+[CLOSE] SHORT | entry=103898.75 | exit=104400.01 | reason=SL | net=-116.81 USD | equity=11563.95 USD
+[OPEN]  LONG | ts=2025-06-01 02:15:00+00:00 | entry=104164.58 | sl=103946.22 | tp=104601.30 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=104164.58 | exit=104601.30 | reason=TP | net=+231.28 USD | equity=11795.22 USD
+[OPEN]  SHORT | ts=2025-06-01 06:45:00+00:00 | entry=104258.93 | sl=104358.24 | tp=104060.31 | pct_to_tp=0.19% | pct_to_sl=0.10%
+[CLOSE] SHORT | entry=104258.93 | exit=104358.24 | reason=SL | net=-117.95 USD | equity=11677.27 USD
+[OPEN]  SHORT | ts=2025-06-01 10:30:00+00:00 | entry=103819.39 | sl=103952.02 | tp=103554.13 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] SHORT | entry=103819.39 | exit=103952.02 | reason=SL | net=-116.77 USD | equity=11560.50 USD
+[OPEN]  SHORT | ts=2025-06-01 12:15:00+00:00 | entry=104048.79 | sl=104188.51 | tp=103769.35 | pct_to_tp=0.27% | pct_to_sl=0.13%
+[CLOSE] SHORT | entry=104048.79 | exit=104188.51 | reason=SL | net=-115.60 USD | equity=11444.89 USD
+[OPEN]  SHORT | ts=2025-06-02 19:30:00+00:00 | entry=104122.36 | sl=104396.23 | tp=103574.62 | pct_to_tp=0.53% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=104122.36 | exit=104396.23 | reason=SL | net=-114.45 USD | equity=11330.45 USD
+[OPEN]  LONG | ts=2025-06-03 14:15:00+00:00 | entry=105789.96 | sl=105201.72 | tp=106966.44 | pct_to_tp=1.11% | pct_to_sl=0.56%
+[CLOSE] LONG | entry=105789.96 | exit=105201.72 | reason=SL | net=-113.30 USD | equity=11217.14 USD
+[OPEN]  SHORT | ts=2025-06-05 17:45:00+00:00 | entry=103240.04 | sl=103348.84 | tp=103022.44 | pct_to_tp=0.21% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=103240.04 | exit=103022.44 | reason=TP | net=+224.34 USD | equity=11441.48 USD
+[OPEN]  SHORT | ts=2025-06-06 05:15:00+00:00 | entry=102737.63 | sl=102917.07 | tp=102378.75 | pct_to_tp=0.35% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=102737.63 | exit=102917.07 | reason=SL | net=-114.41 USD | equity=11327.07 USD
+[OPEN]  SHORT | ts=2025-06-06 07:30:00+00:00 | entry=103155.79 | sl=103349.12 | tp=102769.13 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=103155.79 | exit=103349.12 | reason=SL | net=-113.27 USD | equity=11213.80 USD
+[OPEN]  LONG | ts=2025-06-06 20:30:00+00:00 | entry=104578.75 | sl=104305.25 | tp=105125.75 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=104578.75 | exit=104305.25 | reason=SL | net=-112.14 USD | equity=11101.66 USD
+[OPEN]  LONG | ts=2025-06-07 03:00:00+00:00 | entry=104746.05 | sl=104484.52 | tp=105269.11 | pct_to_tp=0.50% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=104746.05 | exit=105269.11 | reason=TP | net=+222.03 USD | equity=11323.69 USD
+[OPEN]  LONG | ts=2025-06-07 09:00:00+00:00 | entry=104884.07 | sl=104746.43 | tp=105159.35 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] LONG | entry=104884.07 | exit=105159.35 | reason=TP | net=+226.47 USD | equity=11550.17 USD
+[OPEN]  LONG | ts=2025-06-08 00:15:00+00:00 | entry=105507.87 | sl=105446.79 | tp=105630.03 | pct_to_tp=0.12% | pct_to_sl=0.06%
+[CLOSE] LONG | entry=105507.87 | exit=105630.03 | reason=TP | net=+231.00 USD | equity=11781.17 USD
+[OPEN]  LONG | ts=2025-06-08 01:30:00+00:00 | entry=105655.07 | sl=105535.75 | tp=105893.71 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=105655.07 | exit=105535.75 | reason=SL | net=-117.81 USD | equity=11663.36 USD
+[OPEN]  LONG | ts=2025-06-08 13:30:00+00:00 | entry=105876.61 | sl=105740.84 | tp=106148.15 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] LONG | entry=105876.61 | exit=105740.84 | reason=SL | net=-116.63 USD | equity=11546.73 USD
+[OPEN]  LONG | ts=2025-06-08 14:00:00+00:00 | entry=105736.40 | sl=105577.36 | tp=106054.48 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=105736.40 | exit=106054.48 | reason=TP | net=+230.93 USD | equity=11777.66 USD
+[OPEN]  LONG | ts=2025-06-09 10:00:00+00:00 | entry=107176.38 | sl=106565.30 | tp=108398.54 | pct_to_tp=1.14% | pct_to_sl=0.57%
+[CLOSE] LONG | entry=107176.38 | exit=108398.54 | reason=TP | net=+235.55 USD | equity=12013.21 USD
+[OPEN]  LONG | ts=2025-06-10 09:45:00+00:00 | entry=109508.78 | sl=109352.43 | tp=109821.48 | pct_to_tp=0.29% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=109508.78 | exit=109352.43 | reason=SL | net=-120.13 USD | equity=11893.08 USD
+[OPEN]  LONG | ts=2025-06-10 10:45:00+00:00 | entry=109303.61 | sl=109275.43 | tp=109359.97 | pct_to_tp=0.05% | pct_to_sl=0.03%
+[CLOSE] LONG | entry=109303.61 | exit=109359.97 | reason=TP | net=+237.86 USD | equity=12130.94 USD
+[OPEN]  LONG | ts=2025-06-10 12:45:00+00:00 | entry=109697.76 | sl=109546.73 | tp=109999.82 | pct_to_tp=0.28% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=109697.76 | exit=109546.73 | reason=SL | net=-121.31 USD | equity=12009.63 USD
+[OPEN]  LONG | ts=2025-06-10 15:00:00+00:00 | entry=109099.99 | sl=108481.75 | tp=110336.47 | pct_to_tp=1.13% | pct_to_sl=0.57%
+[CLOSE] LONG | entry=109099.99 | exit=108481.75 | reason=SL | net=-120.10 USD | equity=11889.54 USD
+[OPEN]  LONG | ts=2025-06-10 15:45:00+00:00 | entry=109015.42 | sl=108679.02 | tp=109688.22 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] LONG | entry=109015.42 | exit=108679.02 | reason=SL | net=-118.90 USD | equity=11770.64 USD
+[OPEN]  SHORT | ts=2025-06-10 19:45:00+00:00 | entry=109526.30 | sl=109969.66 | tp=108639.58 | pct_to_tp=0.81% | pct_to_sl=0.40%
+[CLOSE] SHORT | entry=109526.30 | exit=109969.66 | reason=SL | net=-117.71 USD | equity=11652.94 USD
+[OPEN]  LONG | ts=2025-06-11 03:00:00+00:00 | entry=109797.63 | sl=109665.18 | tp=110062.53 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=109797.63 | exit=109665.18 | reason=SL | net=-116.53 USD | equity=11536.41 USD
+[OPEN]  LONG | ts=2025-06-11 03:45:00+00:00 | entry=109722.95 | sl=109622.03 | tp=109924.79 | pct_to_tp=0.18% | pct_to_sl=0.09%
+[CLOSE] LONG | entry=109722.95 | exit=109622.03 | reason=SL | net=-115.36 USD | equity=11421.04 USD
+[OPEN]  LONG | ts=2025-06-11 04:15:00+00:00 | entry=109674.99 | sl=109592.95 | tp=109839.07 | pct_to_tp=0.15% | pct_to_sl=0.07%
+[CLOSE] LONG | entry=109674.99 | exit=109592.95 | reason=SL | net=-114.21 USD | equity=11306.83 USD
+[OPEN]  LONG | ts=2025-06-11 05:15:00+00:00 | entry=109626.46 | sl=109430.38 | tp=110018.62 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=109626.46 | exit=109430.38 | reason=SL | net=-113.07 USD | equity=11193.76 USD
+[OPEN]  LONG | ts=2025-06-11 07:00:00+00:00 | entry=109696.13 | sl=109581.95 | tp=109924.49 | pct_to_tp=0.21% | pct_to_sl=0.10%
+[CLOSE] LONG | entry=109696.13 | exit=109581.95 | reason=SL | net=-111.94 USD | equity=11081.83 USD
+[OPEN]  LONG | ts=2025-06-11 08:00:00+00:00 | entry=109564.50 | sl=109446.73 | tp=109800.04 | pct_to_tp=0.21% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=109564.50 | exit=109446.73 | reason=SL | net=-110.82 USD | equity=10971.01 USD
+[OPEN]  LONG | ts=2025-06-11 15:15:00+00:00 | entry=109787.88 | sl=109663.64 | tp=110036.36 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=109787.88 | exit=109663.64 | reason=SL | net=-109.71 USD | equity=10861.30 USD
+[OPEN]  SHORT | ts=2025-06-12 03:15:00+00:00 | entry=107882.27 | sl=108330.01 | tp=106986.79 | pct_to_tp=0.83% | pct_to_sl=0.42%
+[CLOSE] SHORT | entry=107882.27 | exit=106986.79 | reason=TP | net=+217.23 USD | equity=11078.52 USD
+[OPEN]  SHORT | ts=2025-06-12 15:15:00+00:00 | entry=107211.31 | sl=107719.15 | tp=106195.63 | pct_to_tp=0.95% | pct_to_sl=0.47%
+[CLOSE] SHORT | entry=107211.31 | exit=107719.15 | reason=SL | net=-110.79 USD | equity=10967.74 USD
+[OPEN]  SHORT | ts=2025-06-12 19:30:00+00:00 | entry=107541.01 | sl=107836.91 | tp=106949.21 | pct_to_tp=0.55% | pct_to_sl=0.28%
+[CLOSE] SHORT | entry=107541.01 | exit=106949.21 | reason=TP | net=+219.35 USD | equity=11187.09 USD
+[OPEN]  SHORT | ts=2025-06-12 20:30:00+00:00 | entry=106013.25 | sl=106957.70 | tp=104124.35 | pct_to_tp=1.78% | pct_to_sl=0.89%
+[CLOSE] SHORT | entry=106013.25 | exit=104124.35 | reason=TP | net=+223.74 USD | equity=11410.83 USD
+[OPEN]  SHORT | ts=2025-06-13 13:45:00+00:00 | entry=104732.44 | sl=105235.80 | tp=103725.72 | pct_to_tp=0.96% | pct_to_sl=0.48%
+[CLOSE] SHORT | entry=104732.44 | exit=105235.80 | reason=SL | net=-114.11 USD | equity=11296.73 USD
+[OPEN]  SHORT | ts=2025-06-13 17:00:00+00:00 | entry=105376.88 | sl=105783.65 | tp=104563.34 | pct_to_tp=0.77% | pct_to_sl=0.39%
+[CLOSE] SHORT | entry=105376.88 | exit=105783.65 | reason=SL | net=-112.97 USD | equity=11183.76 USD
+[OPEN]  LONG | ts=2025-06-14 03:15:00+00:00 | entry=105352.94 | sl=105246.04 | tp=105566.74 | pct_to_tp=0.20% | pct_to_sl=0.10%
+[CLOSE] LONG | entry=105352.94 | exit=105246.04 | reason=SL | net=-111.84 USD | equity=11071.92 USD
+[OPEN]  SHORT | ts=2025-06-14 07:00:00+00:00 | entry=104940.00 | sl=105105.14 | tp=104609.72 | pct_to_tp=0.31% | pct_to_sl=0.16%
+[CLOSE] SHORT | entry=104940.00 | exit=105105.14 | reason=SL | net=-110.72 USD | equity=10961.20 USD
+[OPEN]  SHORT | ts=2025-06-14 07:45:00+00:00 | entry=105076.59 | sl=105142.14 | tp=104945.49 | pct_to_tp=0.12% | pct_to_sl=0.06%
+[CLOSE] SHORT | entry=105076.59 | exit=104945.49 | reason=TP | net=+219.22 USD | equity=11180.43 USD
+[OPEN]  SHORT | ts=2025-06-14 12:00:00+00:00 | entry=104970.83 | sl=105100.00 | tp=104712.49 | pct_to_tp=0.25% | pct_to_sl=0.12%
+[CLOSE] SHORT | entry=104970.83 | exit=105100.00 | reason=SL | net=-111.80 USD | equity=11068.62 USD
+[OPEN]  SHORT | ts=2025-06-14 14:15:00+00:00 | entry=105005.86 | sl=105060.00 | tp=104897.58 | pct_to_tp=0.10% | pct_to_sl=0.05%
+[CLOSE] SHORT | entry=105005.86 | exit=104897.58 | reason=TP | net=+221.37 USD | equity=11289.99 USD
+[OPEN]  SHORT | ts=2025-06-14 16:15:00+00:00 | entry=104711.71 | sl=104865.52 | tp=104404.09 | pct_to_tp=0.29% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=104711.71 | exit=104404.09 | reason=TP | net=+225.80 USD | equity=11515.79 USD
+[OPEN]  SHORT | ts=2025-06-14 17:30:00+00:00 | entry=104507.32 | sl=104705.19 | tp=104111.58 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=104507.32 | exit=104705.19 | reason=SL | net=-115.16 USD | equity=11400.64 USD
+[OPEN]  SHORT | ts=2025-06-14 19:45:00+00:00 | entry=104645.67 | sl=104970.00 | tp=103997.01 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] SHORT | entry=104645.67 | exit=104970.00 | reason=SL | net=-114.01 USD | equity=11286.63 USD
+[OPEN]  LONG | ts=2025-06-16 14:15:00+00:00 | entry=107356.00 | sl=106844.66 | tp=108378.68 | pct_to_tp=0.95% | pct_to_sl=0.48%
+[CLOSE] LONG | entry=107356.00 | exit=108378.68 | reason=TP | net=+225.73 USD | equity=11512.36 USD
+[OPEN]  LONG | ts=2025-06-17 02:45:00+00:00 | entry=107482.39 | sl=106711.84 | tp=109023.49 | pct_to_tp=1.43% | pct_to_sl=0.72%
+[CLOSE] LONG | entry=107482.39 | exit=106711.84 | reason=SL | net=-115.12 USD | equity=11397.24 USD
+[OPEN]  SHORT | ts=2025-06-17 20:45:00+00:00 | entry=104362.39 | sl=104576.15 | tp=103934.87 | pct_to_tp=0.41% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=104362.39 | exit=104576.15 | reason=SL | net=-113.97 USD | equity=11283.27 USD
+[OPEN]  SHORT | ts=2025-06-18 02:30:00+00:00 | entry=104919.07 | sl=105099.99 | tp=104557.23 | pct_to_tp=0.34% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=104919.07 | exit=105099.99 | reason=SL | net=-112.83 USD | equity=11170.43 USD
+[OPEN]  LONG | ts=2025-06-18 07:45:00+00:00 | entry=104973.24 | sl=104914.93 | tp=105089.86 | pct_to_tp=0.11% | pct_to_sl=0.06%
+[CLOSE] LONG | entry=104973.24 | exit=105089.86 | reason=TP | net=+223.41 USD | equity=11393.84 USD
+[OPEN]  LONG | ts=2025-06-18 08:45:00+00:00 | entry=104949.90 | sl=104807.50 | tp=105234.70 | pct_to_tp=0.27% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=104949.90 | exit=104807.50 | reason=SL | net=-113.94 USD | equity=11279.90 USD
+[OPEN]  SHORT | ts=2025-06-18 12:30:00+00:00 | entry=104487.69 | sl=104725.21 | tp=104012.65 | pct_to_tp=0.45% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=104487.69 | exit=104012.65 | reason=TP | net=+225.60 USD | equity=11505.50 USD
+[OPEN]  SHORT | ts=2025-06-18 16:00:00+00:00 | entry=104666.00 | sl=104836.64 | tp=104324.72 | pct_to_tp=0.33% | pct_to_sl=0.16%
+[CLOSE] SHORT | entry=104666.00 | exit=104324.72 | reason=TP | net=+230.11 USD | equity=11735.61 USD
+[OPEN]  SHORT | ts=2025-06-18 17:15:00+00:00 | entry=104088.89 | sl=104323.45 | tp=103619.77 | pct_to_tp=0.45% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=104088.89 | exit=103619.77 | reason=TP | net=+234.71 USD | equity=11970.32 USD
+[OPEN]  SHORT | ts=2025-06-18 19:15:00+00:00 | entry=103819.11 | sl=104400.00 | tp=102657.33 | pct_to_tp=1.12% | pct_to_sl=0.56%
+[CLOSE] SHORT | entry=103819.11 | exit=104400.00 | reason=SL | net=-119.70 USD | equity=11850.62 USD
+[OPEN]  SHORT | ts=2025-06-18 21:00:00+00:00 | entry=104417.36 | sl=104848.49 | tp=103555.10 | pct_to_tp=0.83% | pct_to_sl=0.41%
+[CLOSE] SHORT | entry=104417.36 | exit=104848.49 | reason=SL | net=-118.51 USD | equity=11732.12 USD
+[OPEN]  SHORT | ts=2025-06-19 14:30:00+00:00 | entry=104350.00 | sl=104622.00 | tp=103806.00 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=104350.00 | exit=104622.00 | reason=SL | net=-117.32 USD | equity=11614.79 USD
+[OPEN]  SHORT | ts=2025-06-19 19:30:00+00:00 | entry=104186.06 | sl=104298.93 | tp=103960.32 | pct_to_tp=0.22% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=104186.06 | exit=104298.93 | reason=SL | net=-116.15 USD | equity=11498.65 USD
+[OPEN]  SHORT | ts=2025-06-19 20:30:00+00:00 | entry=104150.71 | sl=104400.00 | tp=103652.13 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] SHORT | entry=104150.71 | exit=104400.00 | reason=SL | net=-114.99 USD | equity=11383.66 USD
+[OPEN]  SHORT | ts=2025-06-21 07:00:00+00:00 | entry=103380.55 | sl=103572.69 | tp=102996.27 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=103380.55 | exit=103572.69 | reason=SL | net=-113.84 USD | equity=11269.82 USD
+[OPEN]  SHORT | ts=2025-06-21 15:15:00+00:00 | entry=103396.21 | sl=103589.16 | tp=103010.31 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=103396.21 | exit=103589.16 | reason=SL | net=-112.70 USD | equity=11157.12 USD
+[OPEN]  SHORT | ts=2025-06-21 16:30:00+00:00 | entry=103467.51 | sl=103639.15 | tp=103124.23 | pct_to_tp=0.33% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=103467.51 | exit=103124.23 | reason=TP | net=+223.14 USD | equity=11380.27 USD
+[OPEN]  SHORT | ts=2025-06-21 19:15:00+00:00 | entry=102480.10 | sl=102659.88 | tp=102120.54 | pct_to_tp=0.35% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=102480.10 | exit=102659.88 | reason=SL | net=-113.80 USD | equity=11266.46 USD
+[OPEN]  SHORT | ts=2025-06-22 01:15:00+00:00 | entry=102564.86 | sl=102840.47 | tp=102013.64 | pct_to_tp=0.54% | pct_to_sl=0.27%
+[CLOSE] SHORT | entry=102564.86 | exit=102840.47 | reason=SL | net=-112.66 USD | equity=11153.80 USD
+[OPEN]  SHORT | ts=2025-06-22 03:15:00+00:00 | entry=102158.05 | sl=102471.35 | tp=101531.45 | pct_to_tp=0.61% | pct_to_sl=0.31%
+[CLOSE] SHORT | entry=102158.05 | exit=102471.35 | reason=SL | net=-111.54 USD | equity=11042.26 USD
+[OPEN]  SHORT | ts=2025-06-22 05:30:00+00:00 | entry=102677.00 | sl=102832.60 | tp=102365.80 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=102677.00 | exit=102832.60 | reason=SL | net=-110.42 USD | equity=10931.84 USD
+[OPEN]  SHORT | ts=2025-06-22 06:15:00+00:00 | entry=102820.00 | sl=102946.47 | tp=102567.06 | pct_to_tp=0.25% | pct_to_sl=0.12%
+[CLOSE] SHORT | entry=102820.00 | exit=102567.06 | reason=TP | net=+218.64 USD | equity=11150.48 USD
+[OPEN]  SHORT | ts=2025-06-22 07:30:00+00:00 | entry=102320.00 | sl=102627.80 | tp=101704.40 | pct_to_tp=0.60% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=102320.00 | exit=102627.80 | reason=SL | net=-111.50 USD | equity=11038.97 USD
+[OPEN]  SHORT | ts=2025-06-22 09:15:00+00:00 | entry=102366.98 | sl=102639.03 | tp=101822.88 | pct_to_tp=0.53% | pct_to_sl=0.27%
+[CLOSE] SHORT | entry=102366.98 | exit=102639.03 | reason=SL | net=-110.39 USD | equity=10928.58 USD
+[OPEN]  SHORT | ts=2025-06-22 13:00:00+00:00 | entry=102281.83 | sl=102810.28 | tp=101224.93 | pct_to_tp=1.03% | pct_to_sl=0.52%
+[CLOSE] SHORT | entry=102281.83 | exit=101224.93 | reason=TP | net=+218.57 USD | equity=11147.15 USD
+[OPEN]  SHORT | ts=2025-06-22 13:30:00+00:00 | entry=100343.92 | sl=101086.46 | tp=98858.84 | pct_to_tp=1.48% | pct_to_sl=0.74%
+[CLOSE] SHORT | entry=100343.92 | exit=101086.46 | reason=SL | net=-111.47 USD | equity=11035.68 USD
+[OPEN]  SHORT | ts=2025-06-22 14:15:00+00:00 | entry=99537.71 | sl=100547.22 | tp=97518.69 | pct_to_tp=2.03% | pct_to_sl=1.01%
+[CLOSE] SHORT | entry=99537.71 | exit=100547.22 | reason=SL | net=-110.36 USD | equity=10925.33 USD
+[OPEN]  SHORT | ts=2025-06-22 23:00:00+00:00 | entry=100740.00 | sl=101034.65 | tp=100150.70 | pct_to_tp=0.58% | pct_to_sl=0.29%
+[CLOSE] SHORT | entry=100740.00 | exit=101034.65 | reason=SL | net=-109.25 USD | equity=10816.07 USD
+[OPEN]  SHORT | ts=2025-06-23 01:15:00+00:00 | entry=100610.95 | sl=100906.69 | tp=100019.47 | pct_to_tp=0.59% | pct_to_sl=0.29%
+[CLOSE] SHORT | entry=100610.95 | exit=100906.69 | reason=SL | net=-108.16 USD | equity=10707.91 USD
+[OPEN]  LONG | ts=2025-06-23 04:15:00+00:00 | entry=101266.36 | sl=101031.16 | tp=101736.76 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=101266.36 | exit=101736.76 | reason=TP | net=+214.16 USD | equity=10922.07 USD
+[OPEN]  LONG | ts=2025-06-24 20:15:00+00:00 | entry=105813.86 | sl=105469.11 | tp=106503.36 | pct_to_tp=0.65% | pct_to_sl=0.33%
+[CLOSE] LONG | entry=105813.86 | exit=106503.36 | reason=TP | net=+218.44 USD | equity=11140.51 USD
+[OPEN]  LONG | ts=2025-06-25 16:00:00+00:00 | entry=107358.29 | sl=107007.46 | tp=108059.95 | pct_to_tp=0.65% | pct_to_sl=0.33%
+[CLOSE] LONG | entry=107358.29 | exit=107007.46 | reason=SL | net=-111.41 USD | equity=11029.11 USD
+[OPEN]  LONG | ts=2025-06-25 23:45:00+00:00 | entry=107340.58 | sl=107133.89 | tp=107753.96 | pct_to_tp=0.39% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=107340.58 | exit=107133.89 | reason=SL | net=-110.29 USD | equity=10918.81 USD
+[OPEN]  LONG | ts=2025-06-26 11:45:00+00:00 | entry=107325.41 | sl=107117.65 | tp=107740.93 | pct_to_tp=0.39% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=107325.41 | exit=107117.65 | reason=SL | net=-109.19 USD | equity=10809.63 USD
+[OPEN]  SHORT | ts=2025-06-26 15:00:00+00:00 | entry=107290.01 | sl=107515.50 | tp=106839.03 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=107290.01 | exit=106839.03 | reason=TP | net=+216.19 USD | equity=11025.82 USD
+[OPEN]  SHORT | ts=2025-07-01 08:00:00+00:00 | entry=106893.47 | sl=107178.99 | tp=106322.43 | pct_to_tp=0.53% | pct_to_sl=0.27%
+[CLOSE] SHORT | entry=106893.47 | exit=106322.43 | reason=TP | net=+220.52 USD | equity=11246.34 USD
+[OPEN]  SHORT | ts=2025-07-01 14:15:00+00:00 | entry=106546.03 | sl=107179.99 | tp=105278.11 | pct_to_tp=1.19% | pct_to_sl=0.60%
+[CLOSE] SHORT | entry=106546.03 | exit=105278.11 | reason=TP | net=+224.93 USD | equity=11471.26 USD
+[OPEN]  LONG | ts=2025-07-03 04:00:00+00:00 | entry=108816.17 | sl=108566.14 | tp=109316.23 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=108816.17 | exit=109316.23 | reason=TP | net=+229.43 USD | equity=11700.69 USD
+[OPEN]  LONG | ts=2025-07-03 06:15:00+00:00 | entry=109450.00 | sl=109265.99 | tp=109818.02 | pct_to_tp=0.34% | pct_to_sl=0.17%
+[CLOSE] LONG | entry=109450.00 | exit=109265.99 | reason=SL | net=-117.01 USD | equity=11583.68 USD
+[OPEN]  LONG | ts=2025-07-03 13:00:00+00:00 | entry=109339.84 | sl=109133.30 | tp=109752.92 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=109339.84 | exit=109752.92 | reason=TP | net=+231.67 USD | equity=11815.35 USD
+[OPEN]  LONG | ts=2025-07-03 16:30:00+00:00 | entry=109369.83 | sl=109150.00 | tp=109809.49 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=109369.83 | exit=109809.49 | reason=TP | net=+236.31 USD | equity=12051.66 USD
+[OPEN]  LONG | ts=2025-07-04 00:30:00+00:00 | entry=109659.99 | sl=109495.72 | tp=109988.53 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=109659.99 | exit=109495.72 | reason=SL | net=-120.52 USD | equity=11931.14 USD
+[OPEN]  SHORT | ts=2025-07-05 01:15:00+00:00 | entry=107935.72 | sl=108081.41 | tp=107644.34 | pct_to_tp=0.27% | pct_to_sl=0.13%
+[CLOSE] SHORT | entry=107935.72 | exit=108081.41 | reason=SL | net=-119.31 USD | equity=11811.83 USD
+[OPEN]  LONG | ts=2025-07-06 21:00:00+00:00 | entry=108921.67 | sl=108665.47 | tp=109434.07 | pct_to_tp=0.47% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=108921.67 | exit=109434.07 | reason=TP | net=+236.24 USD | equity=12048.07 USD
+[OPEN]  LONG | ts=2025-07-07 01:30:00+00:00 | entry=109026.80 | sl=108901.90 | tp=109276.60 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=109026.80 | exit=109276.60 | reason=TP | net=+240.96 USD | equity=12289.03 USD
+[OPEN]  SHORT | ts=2025-07-07 18:15:00+00:00 | entry=107538.95 | sl=108062.55 | tp=106491.75 | pct_to_tp=0.97% | pct_to_sl=0.49%
+[CLOSE] SHORT | entry=107538.95 | exit=108062.55 | reason=SL | net=-122.89 USD | equity=12166.14 USD
+[OPEN]  SHORT | ts=2025-07-07 20:45:00+00:00 | entry=107886.85 | sl=108004.99 | tp=107650.57 | pct_to_tp=0.22% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=107886.85 | exit=108004.99 | reason=SL | net=-121.66 USD | equity=12044.48 USD
+[OPEN]  SHORT | ts=2025-07-08 01:30:00+00:00 | entry=107880.11 | sl=108111.16 | tp=107418.01 | pct_to_tp=0.43% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=107880.11 | exit=108111.16 | reason=SL | net=-120.44 USD | equity=11924.03 USD
+[OPEN]  LONG | ts=2025-07-09 01:00:00+00:00 | entry=109098.82 | sl=108928.00 | tp=109440.46 | pct_to_tp=0.31% | pct_to_sl=0.16%
+[CLOSE] LONG | entry=109098.82 | exit=108928.00 | reason=SL | net=-119.24 USD | equity=11804.79 USD
+[OPEN]  LONG | ts=2025-07-09 13:00:00+00:00 | entry=109707.90 | sl=109330.76 | tp=110462.18 | pct_to_tp=0.69% | pct_to_sl=0.34%
+[CLOSE] LONG | entry=109707.90 | exit=109330.76 | reason=SL | net=-118.05 USD | equity=11686.75 USD
+[OPEN]  LONG | ts=2025-07-09 16:30:00+00:00 | entry=109314.20 | sl=109203.84 | tp=109534.92 | pct_to_tp=0.20% | pct_to_sl=0.10%
+[CLOSE] LONG | entry=109314.20 | exit=109203.84 | reason=SL | net=-116.87 USD | equity=11569.88 USD
+[OPEN]  LONG | ts=2025-07-09 18:00:00+00:00 | entry=109469.99 | sl=109137.42 | tp=110135.13 | pct_to_tp=0.61% | pct_to_sl=0.30%
+[CLOSE] LONG | entry=109469.99 | exit=110135.13 | reason=TP | net=+231.40 USD | equity=11801.28 USD
+[OPEN]  LONG | ts=2025-07-09 19:30:00+00:00 | entry=111390.91 | sl=110245.66 | tp=113681.41 | pct_to_tp=2.06% | pct_to_sl=1.03%
+[CLOSE] LONG | entry=111390.91 | exit=113681.41 | reason=TP | net=+236.03 USD | equity=12037.30 USD
+[OPEN]  LONG | ts=2025-07-11 16:15:00+00:00 | entry=117261.07 | sl=116631.00 | tp=118521.21 | pct_to_tp=1.07% | pct_to_sl=0.54%
+[CLOSE] LONG | entry=117261.07 | exit=118521.21 | reason=TP | net=+240.75 USD | equity=12278.05 USD
+[OPEN]  LONG | ts=2025-07-13 13:15:00+00:00 | entry=118308.24 | sl=118175.00 | tp=118574.72 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=118308.24 | exit=118574.72 | reason=TP | net=+245.56 USD | equity=12523.61 USD
+[OPEN]  LONG | ts=2025-07-13 22:30:00+00:00 | entry=118763.36 | sl=118424.50 | tp=119441.08 | pct_to_tp=0.57% | pct_to_sl=0.29%
+[CLOSE] LONG | entry=118763.36 | exit=118424.50 | reason=SL | net=-125.24 USD | equity=12398.37 USD
+[OPEN]  LONG | ts=2025-07-13 23:45:00+00:00 | entry=119086.64 | sl=118694.69 | tp=119870.54 | pct_to_tp=0.66% | pct_to_sl=0.33%
+[CLOSE] LONG | entry=119086.64 | exit=119870.54 | reason=TP | net=+247.97 USD | equity=12646.34 USD
+[OPEN]  LONG | ts=2025-07-14 17:00:00+00:00 | entry=120500.35 | sl=120206.39 | tp=121088.27 | pct_to_tp=0.49% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=120500.35 | exit=120206.39 | reason=SL | net=-126.46 USD | equity=12519.88 USD
+[OPEN]  SHORT | ts=2025-07-15 14:15:00+00:00 | entry=117566.70 | sl=118388.66 | tp=115922.78 | pct_to_tp=1.40% | pct_to_sl=0.70%
+[CLOSE] SHORT | entry=117566.70 | exit=115922.78 | reason=TP | net=+250.40 USD | equity=12770.27 USD
+[OPEN]  SHORT | ts=2025-07-15 18:00:00+00:00 | entry=117106.31 | sl=117380.00 | tp=116558.93 | pct_to_tp=0.47% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=117106.31 | exit=116558.93 | reason=TP | net=+255.41 USD | equity=13025.68 USD
+[OPEN]  SHORT | ts=2025-07-15 19:30:00+00:00 | entry=116489.85 | sl=116908.77 | tp=115652.01 | pct_to_tp=0.72% | pct_to_sl=0.36%
+[CLOSE] SHORT | entry=116489.85 | exit=116908.77 | reason=SL | net=-130.26 USD | equity=12895.42 USD
+[OPEN]  SHORT | ts=2025-07-16 00:00:00+00:00 | entry=117436.55 | sl=117789.06 | tp=116731.53 | pct_to_tp=0.60% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=117436.55 | exit=117789.06 | reason=SL | net=-128.95 USD | equity=12766.47 USD
+[OPEN]  LONG | ts=2025-07-16 02:45:00+00:00 | entry=117317.27 | sl=117107.94 | tp=117735.93 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=117317.27 | exit=117735.93 | reason=TP | net=+255.33 USD | equity=13021.80 USD
+[OPEN]  LONG | ts=2025-07-16 14:45:00+00:00 | entry=119056.80 | sl=118620.00 | tp=119930.40 | pct_to_tp=0.73% | pct_to_sl=0.37%
+[CLOSE] LONG | entry=119056.80 | exit=118620.00 | reason=SL | net=-130.22 USD | equity=12891.58 USD
+[OPEN]  LONG | ts=2025-07-16 16:15:00+00:00 | entry=119175.67 | sl=118749.71 | tp=120027.59 | pct_to_tp=0.71% | pct_to_sl=0.36%
+[CLOSE] LONG | entry=119175.67 | exit=120027.59 | reason=TP | net=+257.83 USD | equity=13149.41 USD
+[OPEN]  LONG | ts=2025-07-17 00:30:00+00:00 | entry=119135.07 | sl=118823.26 | tp=119758.69 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=119135.07 | exit=118823.26 | reason=SL | net=-131.49 USD | equity=13017.92 USD
+[OPEN]  LONG | ts=2025-07-17 21:00:00+00:00 | entry=120065.99 | sl=119431.93 | tp=121334.11 | pct_to_tp=1.06% | pct_to_sl=0.53%
+[CLOSE] LONG | entry=120065.99 | exit=119431.93 | reason=SL | net=-130.18 USD | equity=12887.74 USD
+[OPEN]  LONG | ts=2025-07-18 00:15:00+00:00 | entry=119501.00 | sl=119053.54 | tp=120395.92 | pct_to_tp=0.75% | pct_to_sl=0.37%
+[CLOSE] LONG | entry=119501.00 | exit=120395.92 | reason=TP | net=+257.75 USD | equity=13145.49 USD
+[OPEN]  SHORT | ts=2025-07-19 20:45:00+00:00 | entry=117720.01 | sl=118076.00 | tp=117008.03 | pct_to_tp=0.60% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=117720.01 | exit=118076.00 | reason=SL | net=-131.45 USD | equity=13014.04 USD
+[OPEN]  LONG | ts=2025-07-21 07:00:00+00:00 | entry=119377.24 | sl=119162.62 | tp=119806.48 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=119377.24 | exit=119162.62 | reason=SL | net=-130.14 USD | equity=12883.90 USD
+[OPEN]  SHORT | ts=2025-07-22 01:00:00+00:00 | entry=116869.17 | sl=117129.08 | tp=116349.35 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] SHORT | entry=116869.17 | exit=117129.08 | reason=SL | net=-128.84 USD | equity=12755.06 USD
+[OPEN]  SHORT | ts=2025-07-22 02:30:00+00:00 | entry=117297.17 | sl=117676.13 | tp=116539.25 | pct_to_tp=0.65% | pct_to_sl=0.32%
+[CLOSE] SHORT | entry=117297.17 | exit=117676.13 | reason=SL | net=-127.55 USD | equity=12627.51 USD
+[OPEN]  LONG | ts=2025-07-22 14:30:00+00:00 | entry=118742.13 | sl=118312.34 | tp=119601.71 | pct_to_tp=0.72% | pct_to_sl=0.36%
+[CLOSE] LONG | entry=118742.13 | exit=119601.71 | reason=TP | net=+252.55 USD | equity=12880.06 USD
+[OPEN]  SHORT | ts=2025-07-23 21:15:00+00:00 | entry=117559.99 | sl=118058.00 | tp=116563.97 | pct_to_tp=0.85% | pct_to_sl=0.42%
+[CLOSE] SHORT | entry=117559.99 | exit=118058.00 | reason=SL | net=-128.80 USD | equity=12751.26 USD
+[OPEN]  SHORT | ts=2025-07-25 12:15:00+00:00 | entry=116259.39 | sl=116600.00 | tp=115578.17 | pct_to_tp=0.59% | pct_to_sl=0.29%
+[CLOSE] SHORT | entry=116259.39 | exit=115578.17 | reason=TP | net=+255.03 USD | equity=13006.28 USD
+[OPEN]  SHORT | ts=2025-07-25 14:00:00+00:00 | entry=115600.00 | sl=116286.87 | tp=114226.26 | pct_to_tp=1.19% | pct_to_sl=0.59%
+[CLOSE] SHORT | entry=115600.00 | exit=116286.87 | reason=SL | net=-130.06 USD | equity=12876.22 USD
+[OPEN]  SHORT | ts=2025-07-25 17:45:00+00:00 | entry=116042.50 | sl=116226.86 | tp=115673.78 | pct_to_tp=0.32% | pct_to_sl=0.16%
+[CLOSE] SHORT | entry=116042.50 | exit=116226.86 | reason=SL | net=-128.76 USD | equity=12747.46 USD
+[OPEN]  LONG | ts=2025-07-27 14:15:00+00:00 | entry=118423.99 | sl=118295.23 | tp=118681.51 | pct_to_tp=0.22% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=118423.99 | exit=118295.23 | reason=SL | net=-127.47 USD | equity=12619.98 USD
+[OPEN]  LONG | ts=2025-07-27 15:45:00+00:00 | entry=118585.74 | sl=118403.97 | tp=118949.28 | pct_to_tp=0.31% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=118585.74 | exit=118949.28 | reason=TP | net=+252.40 USD | equity=12872.38 USD
+[OPEN]  LONG | ts=2025-07-27 16:15:00+00:00 | entry=119360.00 | sl=119082.61 | tp=119914.78 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=119360.00 | exit=119082.61 | reason=SL | net=-128.72 USD | equity=12743.66 USD
+[OPEN]  LONG | ts=2025-07-27 22:00:00+00:00 | entry=119701.24 | sl=119228.56 | tp=120646.60 | pct_to_tp=0.79% | pct_to_sl=0.39%
+[CLOSE] LONG | entry=119701.24 | exit=119228.56 | reason=SL | net=-127.44 USD | equity=12616.22 USD
+[OPEN]  LONG | ts=2025-07-28 02:00:00+00:00 | entry=119210.86 | sl=119021.11 | tp=119590.36 | pct_to_tp=0.32% | pct_to_sl=0.16%
+[CLOSE] LONG | entry=119210.86 | exit=119590.36 | reason=TP | net=+252.32 USD | equity=12868.55 USD
+[OPEN]  LONG | ts=2025-07-28 03:45:00+00:00 | entry=119287.99 | sl=119234.37 | tp=119395.23 | pct_to_tp=0.09% | pct_to_sl=0.04%
+[CLOSE] LONG | entry=119287.99 | exit=119395.23 | reason=TP | net=+257.37 USD | equity=13125.92 USD
+[OPEN]  SHORT | ts=2025-07-28 20:00:00+00:00 | entry=117768.06 | sl=118162.17 | tp=116979.84 | pct_to_tp=0.67% | pct_to_sl=0.33%
+[CLOSE] SHORT | entry=117768.06 | exit=118162.17 | reason=SL | net=-131.26 USD | equity=12994.66 USD
+[OPEN]  SHORT | ts=2025-07-29 00:30:00+00:00 | entry=117706.52 | sl=118280.00 | tp=116559.56 | pct_to_tp=0.97% | pct_to_sl=0.49%
+[CLOSE] SHORT | entry=117706.52 | exit=118280.00 | reason=SL | net=-129.95 USD | equity=12864.71 USD
+[OPEN]  SHORT | ts=2025-07-29 20:30:00+00:00 | entry=117211.99 | sl=117585.35 | tp=116465.27 | pct_to_tp=0.64% | pct_to_sl=0.32%
+[CLOSE] SHORT | entry=117211.99 | exit=117585.35 | reason=SL | net=-128.65 USD | equity=12736.07 USD
+[OPEN]  SHORT | ts=2025-08-01 13:30:00+00:00 | entry=114985.01 | sl=115679.82 | tp=113595.39 | pct_to_tp=1.21% | pct_to_sl=0.60%
+[CLOSE] SHORT | entry=114985.01 | exit=115679.82 | reason=SL | net=-127.36 USD | equity=12608.70 USD
+[OPEN]  SHORT | ts=2025-08-01 14:30:00+00:00 | entry=115432.08 | sl=115831.28 | tp=114633.68 | pct_to_tp=0.69% | pct_to_sl=0.35%
+[CLOSE] SHORT | entry=115432.08 | exit=114633.68 | reason=TP | net=+252.17 USD | equity=12860.88 USD
+[OPEN]  SHORT | ts=2025-08-02 06:00:00+00:00 | entry=113834.73 | sl=113981.07 | tp=113542.05 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] SHORT | entry=113834.73 | exit=113542.05 | reason=TP | net=+257.22 USD | equity=13118.10 USD
+[OPEN]  SHORT | ts=2025-08-02 08:30:00+00:00 | entry=113724.27 | sl=113880.00 | tp=113412.81 | pct_to_tp=0.27% | pct_to_sl=0.14%
+[CLOSE] SHORT | entry=113724.27 | exit=113880.00 | reason=SL | net=-131.18 USD | equity=12986.92 USD
+[OPEN]  SHORT | ts=2025-08-02 12:00:00+00:00 | entry=113718.95 | sl=113787.12 | tp=113582.61 | pct_to_tp=0.12% | pct_to_sl=0.06%
+[CLOSE] SHORT | entry=113718.95 | exit=113582.61 | reason=TP | net=+259.74 USD | equity=13246.65 USD
+[OPEN]  SHORT | ts=2025-08-02 13:00:00+00:00 | entry=113450.01 | sl=113630.00 | tp=113090.03 | pct_to_tp=0.32% | pct_to_sl=0.16%
+[CLOSE] SHORT | entry=113450.01 | exit=113090.03 | reason=TP | net=+264.93 USD | equity=13511.59 USD
+[OPEN]  SHORT | ts=2025-08-02 22:15:00+00:00 | entry=112586.72 | sl=112840.57 | tp=112079.02 | pct_to_tp=0.45% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=112586.72 | exit=112840.57 | reason=SL | net=-135.12 USD | equity=13376.47 USD
+[OPEN]  SHORT | ts=2025-08-02 23:00:00+00:00 | entry=112615.34 | sl=112873.83 | tp=112098.36 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=112615.34 | exit=112098.36 | reason=TP | net=+267.53 USD | equity=13644.00 USD
+[OPEN]  SHORT | ts=2025-08-03 04:00:00+00:00 | entry=113407.92 | sl=113604.20 | tp=113015.36 | pct_to_tp=0.35% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=113407.92 | exit=113604.20 | reason=SL | net=-136.44 USD | equity=13507.56 USD
+[OPEN]  LONG | ts=2025-08-04 00:45:00+00:00 | entry=114899.87 | sl=114590.90 | tp=115517.81 | pct_to_tp=0.54% | pct_to_sl=0.27%
+[CLOSE] LONG | entry=114899.87 | exit=114590.90 | reason=SL | net=-135.08 USD | equity=13372.48 USD
+[OPEN]  LONG | ts=2025-08-04 15:00:00+00:00 | entry=114989.64 | sl=114667.77 | tp=115633.38 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] LONG | entry=114989.64 | exit=114667.77 | reason=SL | net=-133.72 USD | equity=13238.76 USD
+[OPEN]  LONG | ts=2025-08-04 16:30:00+00:00 | entry=115066.72 | sl=114900.00 | tp=115400.16 | pct_to_tp=0.29% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=115066.72 | exit=115400.16 | reason=TP | net=+264.78 USD | equity=13503.54 USD
+[OPEN]  LONG | ts=2025-08-04 20:30:00+00:00 | entry=115022.00 | sl=114728.78 | tp=115608.44 | pct_to_tp=0.51% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=115022.00 | exit=114728.78 | reason=SL | net=-135.04 USD | equity=13368.50 USD
+[OPEN]  SHORT | ts=2025-08-05 21:45:00+00:00 | entry=113606.53 | sl=113690.71 | tp=113438.17 | pct_to_tp=0.15% | pct_to_sl=0.07%
+[CLOSE] SHORT | entry=113606.53 | exit=113690.71 | reason=SL | net=-133.68 USD | equity=13234.81 USD
+[OPEN]  SHORT | ts=2025-08-06 01:15:00+00:00 | entry=113594.10 | sl=113893.01 | tp=112996.28 | pct_to_tp=0.53% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=113594.10 | exit=113893.01 | reason=SL | net=-132.35 USD | equity=13102.47 USD
+[OPEN]  LONG | ts=2025-08-06 22:00:00+00:00 | entry=115155.22 | sl=115048.77 | tp=115368.12 | pct_to_tp=0.18% | pct_to_sl=0.09%
+[CLOSE] LONG | entry=115155.22 | exit=115048.77 | reason=SL | net=-131.02 USD | equity=12971.44 USD
+[OPEN]  LONG | ts=2025-08-07 10:00:00+00:00 | entry=115500.01 | sl=115038.06 | tp=116423.91 | pct_to_tp=0.80% | pct_to_sl=0.40%
+[CLOSE] LONG | entry=115500.01 | exit=116423.91 | reason=TP | net=+259.43 USD | equity=13230.87 USD
+[OPEN]  LONG | ts=2025-08-07 11:00:00+00:00 | entry=116482.42 | sl=116347.23 | tp=116752.80 | pct_to_tp=0.23% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=116482.42 | exit=116752.80 | reason=TP | net=+264.62 USD | equity=13495.49 USD
+[OPEN]  LONG | ts=2025-08-07 17:45:00+00:00 | entry=116511.54 | sl=116352.91 | tp=116828.80 | pct_to_tp=0.27% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=116511.54 | exit=116352.91 | reason=SL | net=-134.95 USD | equity=13360.53 USD
+[OPEN]  LONG | ts=2025-08-08 03:00:00+00:00 | entry=116805.04 | sl=116699.60 | tp=117015.92 | pct_to_tp=0.18% | pct_to_sl=0.09%
+[CLOSE] LONG | entry=116805.04 | exit=116699.60 | reason=SL | net=-133.61 USD | equity=13226.93 USD
+[OPEN]  LONG | ts=2025-08-08 06:30:00+00:00 | entry=116723.19 | sl=116586.00 | tp=116997.57 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=116723.19 | exit=116586.00 | reason=SL | net=-132.27 USD | equity=13094.66 USD
+[OPEN]  LONG | ts=2025-08-08 07:15:00+00:00 | entry=116973.29 | sl=116676.18 | tp=117567.51 | pct_to_tp=0.51% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=116973.29 | exit=116676.18 | reason=SL | net=-130.95 USD | equity=12963.71 USD
+[OPEN]  LONG | ts=2025-08-08 09:45:00+00:00 | entry=116685.17 | sl=116585.05 | tp=116885.41 | pct_to_tp=0.17% | pct_to_sl=0.09%
+[CLOSE] LONG | entry=116685.17 | exit=116585.05 | reason=SL | net=-129.64 USD | equity=12834.08 USD
+[OPEN]  LONG | ts=2025-08-08 11:00:00+00:00 | entry=116765.69 | sl=116544.39 | tp=117208.29 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=116765.69 | exit=116544.39 | reason=SL | net=-128.34 USD | equity=12705.73 USD
+[OPEN]  LONG | ts=2025-08-08 13:15:00+00:00 | entry=116742.81 | sl=116530.00 | tp=117168.43 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=116742.81 | exit=116530.00 | reason=SL | net=-127.06 USD | equity=12578.68 USD
+[OPEN]  SHORT | ts=2025-08-08 21:00:00+00:00 | entry=116828.99 | sl=116888.53 | tp=116709.91 | pct_to_tp=0.10% | pct_to_sl=0.05%
+[CLOSE] SHORT | entry=116828.99 | exit=116888.53 | reason=SL | net=-125.79 USD | equity=12452.89 USD
+[OPEN]  LONG | ts=2025-08-09 09:00:00+00:00 | entry=117417.34 | sl=117045.54 | tp=118160.94 | pct_to_tp=0.63% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=117417.34 | exit=117045.54 | reason=SL | net=-124.53 USD | equity=12328.36 USD
+[OPEN]  LONG | ts=2025-08-10 08:15:00+00:00 | entry=118125.48 | sl=118002.19 | tp=118372.06 | pct_to_tp=0.21% | pct_to_sl=0.10%
+[CLOSE] LONG | entry=118125.48 | exit=118372.06 | reason=TP | net=+246.57 USD | equity=12574.93 USD
+[OPEN]  LONG | ts=2025-08-10 21:45:00+00:00 | entry=118716.90 | sl=118253.64 | tp=119643.42 | pct_to_tp=0.78% | pct_to_sl=0.39%
+[CLOSE] LONG | entry=118716.90 | exit=119643.42 | reason=TP | net=+251.50 USD | equity=12826.43 USD
+[OPEN]  SHORT | ts=2025-08-11 16:30:00+00:00 | entry=119954.00 | sl=120599.89 | tp=118662.22 | pct_to_tp=1.08% | pct_to_sl=0.54%
+[CLOSE] SHORT | entry=119954.00 | exit=118662.22 | reason=TP | net=+256.53 USD | equity=13082.96 USD
+[OPEN]  LONG | ts=2025-08-12 18:00:00+00:00 | entry=119784.31 | sl=119269.99 | tp=120812.95 | pct_to_tp=0.86% | pct_to_sl=0.43%
+[CLOSE] LONG | entry=119784.31 | exit=119269.99 | reason=SL | net=-130.83 USD | equity=12952.13 USD
+[OPEN]  LONG | ts=2025-08-12 19:15:00+00:00 | entry=119820.39 | sl=119535.99 | tp=120389.19 | pct_to_tp=0.47% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=119820.39 | exit=119535.99 | reason=SL | net=-129.52 USD | equity=12822.60 USD
+[OPEN]  LONG | ts=2025-08-12 20:30:00+00:00 | entry=120034.51 | sl=119818.29 | tp=120466.95 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=120034.51 | exit=119818.29 | reason=SL | net=-128.23 USD | equity=12694.38 USD
+[OPEN]  LONG | ts=2025-08-12 23:15:00+00:00 | entry=120196.04 | sl=120106.69 | tp=120374.74 | pct_to_tp=0.15% | pct_to_sl=0.07%
+[CLOSE] LONG | entry=120196.04 | exit=120106.69 | reason=SL | net=-126.94 USD | equity=12567.43 USD
+[OPEN]  LONG | ts=2025-08-13 10:00:00+00:00 | entry=120395.98 | sl=120047.58 | tp=121092.78 | pct_to_tp=0.58% | pct_to_sl=0.29%
+[CLOSE] LONG | entry=120395.98 | exit=121092.78 | reason=TP | net=+251.35 USD | equity=12818.78 USD
+[OPEN]  LONG | ts=2025-08-13 14:00:00+00:00 | entry=122070.75 | sl=121753.26 | tp=122705.73 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=122070.75 | exit=121753.26 | reason=SL | net=-128.19 USD | equity=12690.60 USD
+[OPEN]  LONG | ts=2025-08-13 16:00:00+00:00 | entry=121508.64 | sl=120920.61 | tp=122684.70 | pct_to_tp=0.97% | pct_to_sl=0.48%
+[CLOSE] LONG | entry=121508.64 | exit=122684.70 | reason=TP | net=+253.81 USD | equity=12944.41 USD
+[OPEN]  LONG | ts=2025-08-14 07:30:00+00:00 | entry=121911.30 | sl=121617.64 | tp=122498.62 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=121911.30 | exit=121617.64 | reason=SL | net=-129.44 USD | equity=12814.96 USD
+[OPEN]  LONG | ts=2025-08-14 08:15:00+00:00 | entry=122014.79 | sl=121808.00 | tp=122428.37 | pct_to_tp=0.34% | pct_to_sl=0.17%
+[CLOSE] LONG | entry=122014.79 | exit=121808.00 | reason=SL | net=-128.15 USD | equity=12686.81 USD
+[OPEN]  SHORT | ts=2025-08-15 04:30:00+00:00 | entry=118982.73 | sl=119199.20 | tp=118549.79 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=118982.73 | exit=119199.20 | reason=SL | net=-126.87 USD | equity=12559.95 USD
+[OPEN]  SHORT | ts=2025-08-15 06:45:00+00:00 | entry=119082.82 | sl=119216.82 | tp=118814.82 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=119082.82 | exit=118814.82 | reason=TP | net=+251.20 USD | equity=12811.14 USD
+[OPEN]  SHORT | ts=2025-08-15 08:45:00+00:00 | entry=118878.72 | sl=119134.68 | tp=118366.80 | pct_to_tp=0.43% | pct_to_sl=0.22%
+[CLOSE] SHORT | entry=118878.72 | exit=118366.80 | reason=TP | net=+256.22 USD | equity=13067.37 USD
+[OPEN]  SHORT | ts=2025-08-15 13:30:00+00:00 | entry=118026.01 | sl=118520.00 | tp=117038.03 | pct_to_tp=0.84% | pct_to_sl=0.42%
+[CLOSE] SHORT | entry=118026.01 | exit=117038.03 | reason=TP | net=+261.35 USD | equity=13328.72 USD
+[OPEN]  SHORT | ts=2025-08-15 23:00:00+00:00 | entry=117326.03 | sl=117761.88 | tp=116454.33 | pct_to_tp=0.74% | pct_to_sl=0.37%
+[CLOSE] SHORT | entry=117326.03 | exit=117761.88 | reason=SL | net=-133.29 USD | equity=13195.43 USD
+[OPEN]  SHORT | ts=2025-08-16 02:00:00+00:00 | entry=117643.12 | sl=117821.61 | tp=117286.14 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=117643.12 | exit=117821.61 | reason=SL | net=-131.95 USD | equity=13063.47 USD
+[OPEN]  SHORT | ts=2025-08-16 04:30:00+00:00 | entry=117726.93 | sl=117841.73 | tp=117497.33 | pct_to_tp=0.20% | pct_to_sl=0.10%
+[CLOSE] SHORT | entry=117726.93 | exit=117841.73 | reason=SL | net=-130.63 USD | equity=12932.84 USD
+[OPEN]  SHORT | ts=2025-08-16 05:00:00+00:00 | entry=117729.40 | sl=117852.25 | tp=117483.70 | pct_to_tp=0.21% | pct_to_sl=0.10%
+[CLOSE] SHORT | entry=117729.40 | exit=117483.70 | reason=TP | net=+258.66 USD | equity=13191.50 USD
+[OPEN]  SHORT | ts=2025-08-16 08:00:00+00:00 | entry=117540.00 | sl=117600.66 | tp=117418.68 | pct_to_tp=0.10% | pct_to_sl=0.05%
+[CLOSE] SHORT | entry=117540.00 | exit=117600.66 | reason=SL | net=-131.91 USD | equity=13059.58 USD
+[OPEN]  SHORT | ts=2025-08-16 09:45:00+00:00 | entry=117312.00 | sl=117660.88 | tp=116614.24 | pct_to_tp=0.59% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=117312.00 | exit=117660.88 | reason=SL | net=-130.60 USD | equity=12928.98 USD
+[OPEN]  SHORT | ts=2025-08-16 13:30:00+00:00 | entry=117662.89 | sl=117789.33 | tp=117410.01 | pct_to_tp=0.21% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=117662.89 | exit=117789.33 | reason=SL | net=-129.29 USD | equity=12799.70 USD
+[OPEN]  SHORT | ts=2025-08-18 00:15:00+00:00 | entry=117142.44 | sl=117512.98 | tp=116401.36 | pct_to_tp=0.63% | pct_to_sl=0.32%
+[CLOSE] SHORT | entry=117142.44 | exit=116401.36 | reason=TP | net=+255.99 USD | equity=13055.69 USD
+[OPEN]  SHORT | ts=2025-08-18 02:00:00+00:00 | entry=115995.20 | sl=116339.61 | tp=115306.38 | pct_to_tp=0.59% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=115995.20 | exit=115306.38 | reason=TP | net=+261.11 USD | equity=13316.80 USD
+[OPEN]  SHORT | ts=2025-08-18 14:30:00+00:00 | entry=115148.39 | sl=115375.29 | tp=114694.59 | pct_to_tp=0.39% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=115148.39 | exit=115375.29 | reason=SL | net=-133.17 USD | equity=13183.63 USD
+[OPEN]  SHORT | ts=2025-08-19 03:15:00+00:00 | entry=115371.85 | sl=115676.45 | tp=114762.65 | pct_to_tp=0.53% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=115371.85 | exit=114762.65 | reason=TP | net=+263.67 USD | equity=13447.31 USD
+[OPEN]  SHORT | ts=2025-08-19 11:30:00+00:00 | entry=115464.00 | sl=115586.67 | tp=115218.66 | pct_to_tp=0.21% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=115464.00 | exit=115586.67 | reason=SL | net=-134.47 USD | equity=13312.83 USD
+[OPEN]  SHORT | ts=2025-08-19 13:30:00+00:00 | entry=115124.21 | sl=115875.84 | tp=113620.95 | pct_to_tp=1.31% | pct_to_sl=0.65%
+[CLOSE] SHORT | entry=115124.21 | exit=113620.95 | reason=TP | net=+266.26 USD | equity=13579.09 USD
+[OPEN]  SHORT | ts=2025-08-19 15:45:00+00:00 | entry=113786.38 | sl=114105.76 | tp=113147.62 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] SHORT | entry=113786.38 | exit=113147.62 | reason=TP | net=+271.58 USD | equity=13850.67 USD
+[OPEN]  SHORT | ts=2025-08-20 05:00:00+00:00 | entry=113520.00 | sl=113633.47 | tp=113293.06 | pct_to_tp=0.20% | pct_to_sl=0.10%
+[CLOSE] SHORT | entry=113520.00 | exit=113633.47 | reason=SL | net=-138.51 USD | equity=13712.17 USD
+[OPEN]  SHORT | ts=2025-08-20 06:00:00+00:00 | entry=113523.35 | sl=113734.23 | tp=113101.59 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=113523.35 | exit=113734.23 | reason=SL | net=-137.12 USD | equity=13575.04 USD
+[OPEN]  SHORT | ts=2025-08-20 07:30:00+00:00 | entry=113612.01 | sl=113720.87 | tp=113394.29 | pct_to_tp=0.19% | pct_to_sl=0.10%
+[CLOSE] SHORT | entry=113612.01 | exit=113720.87 | reason=SL | net=-135.75 USD | equity=13439.29 USD
+[OPEN]  SHORT | ts=2025-08-20 09:00:00+00:00 | entry=113866.36 | sl=114010.01 | tp=113579.06 | pct_to_tp=0.25% | pct_to_sl=0.13%
+[CLOSE] SHORT | entry=113866.36 | exit=113579.06 | reason=TP | net=+268.79 USD | equity=13708.08 USD
+[OPEN]  SHORT | ts=2025-08-20 11:15:00+00:00 | entry=113460.01 | sl=113600.82 | tp=113178.39 | pct_to_tp=0.25% | pct_to_sl=0.12%
+[CLOSE] SHORT | entry=113460.01 | exit=113178.39 | reason=TP | net=+274.16 USD | equity=13982.24 USD
+[OPEN]  SHORT | ts=2025-08-20 12:45:00+00:00 | entry=113659.01 | sl=113870.00 | tp=113237.03 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=113659.01 | exit=113237.03 | reason=TP | net=+279.64 USD | equity=14261.89 USD
+[OPEN]  SHORT | ts=2025-08-20 13:45:00+00:00 | entry=112693.15 | sl=113156.21 | tp=111767.03 | pct_to_tp=0.82% | pct_to_sl=0.41%
+[CLOSE] SHORT | entry=112693.15 | exit=113156.21 | reason=SL | net=-142.62 USD | equity=14119.27 USD
+[OPEN]  SHORT | ts=2025-08-20 15:45:00+00:00 | entry=113353.94 | sl=113923.01 | tp=112215.80 | pct_to_tp=1.00% | pct_to_sl=0.50%
+[CLOSE] SHORT | entry=113353.94 | exit=113923.01 | reason=SL | net=-141.19 USD | equity=13978.07 USD
+[OPEN]  SHORT | ts=2025-08-20 18:00:00+00:00 | entry=113663.28 | sl=114269.63 | tp=112450.58 | pct_to_tp=1.07% | pct_to_sl=0.53%
+[CLOSE] SHORT | entry=113663.28 | exit=114269.63 | reason=SL | net=-139.78 USD | equity=13838.29 USD
+[OPEN]  SHORT | ts=2025-08-21 07:00:00+00:00 | entry=113656.01 | sl=113888.18 | tp=113191.67 | pct_to_tp=0.41% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=113656.01 | exit=113888.18 | reason=SL | net=-138.38 USD | equity=13699.91 USD
+[OPEN]  SHORT | ts=2025-08-21 08:45:00+00:00 | entry=113588.45 | sl=113812.48 | tp=113140.39 | pct_to_tp=0.39% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=113588.45 | exit=113140.39 | reason=TP | net=+274.00 USD | equity=13973.91 USD
+[OPEN]  SHORT | ts=2025-08-21 14:30:00+00:00 | entry=113190.96 | sl=113742.84 | tp=112087.20 | pct_to_tp=0.98% | pct_to_sl=0.49%
+[CLOSE] SHORT | entry=113190.96 | exit=112087.20 | reason=TP | net=+279.48 USD | equity=14253.39 USD
+[OPEN]  SHORT | ts=2025-08-22 01:00:00+00:00 | entry=112394.19 | sl=112676.56 | tp=111829.45 | pct_to_tp=0.50% | pct_to_sl=0.25%
+[CLOSE] SHORT | entry=112394.19 | exit=112676.56 | reason=SL | net=-142.53 USD | equity=14110.85 USD
+[OPEN]  SHORT | ts=2025-08-22 04:45:00+00:00 | entry=112847.63 | sl=113086.75 | tp=112369.39 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=112847.63 | exit=113086.75 | reason=SL | net=-141.11 USD | equity=13969.75 USD
+[OPEN]  SHORT | ts=2025-08-22 11:00:00+00:00 | entry=112314.00 | sl=112629.40 | tp=111683.20 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] SHORT | entry=112314.00 | exit=112629.40 | reason=SL | net=-139.70 USD | equity=13830.05 USD
+[OPEN]  LONG | ts=2025-08-23 04:00:00+00:00 | entry=115769.59 | sl=115551.20 | tp=116206.37 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=115769.59 | exit=115551.20 | reason=SL | net=-138.30 USD | equity=13691.75 USD
+[OPEN]  LONG | ts=2025-08-24 02:00:00+00:00 | entry=115623.67 | sl=115419.54 | tp=116031.93 | pct_to_tp=0.35% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=115623.67 | exit=115419.54 | reason=SL | net=-136.92 USD | equity=13554.83 USD
+[OPEN]  SHORT | ts=2025-08-24 16:45:00+00:00 | entry=114275.00 | sl=114402.47 | tp=114020.06 | pct_to_tp=0.22% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=114275.00 | exit=114402.47 | reason=SL | net=-135.55 USD | equity=13419.28 USD
+[OPEN]  SHORT | ts=2025-08-25 03:45:00+00:00 | entry=112916.84 | sl=113378.82 | tp=111992.88 | pct_to_tp=0.82% | pct_to_sl=0.41%
+[CLOSE] SHORT | entry=112916.84 | exit=111992.88 | reason=TP | net=+268.39 USD | equity=13687.67 USD
+[OPEN]  SHORT | ts=2025-08-25 15:45:00+00:00 | entry=112200.64 | sl=112426.46 | tp=111749.00 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=112200.64 | exit=112426.46 | reason=SL | net=-136.88 USD | equity=13550.79 USD
+[OPEN]  SHORT | ts=2025-08-25 16:45:00+00:00 | entry=112502.43 | sl=112797.14 | tp=111913.01 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=112502.43 | exit=112797.14 | reason=SL | net=-135.51 USD | equity=13415.28 USD
+[OPEN]  SHORT | ts=2025-08-25 17:30:00+00:00 | entry=112448.88 | sl=112779.39 | tp=111787.86 | pct_to_tp=0.59% | pct_to_sl=0.29%
+[CLOSE] SHORT | entry=112448.88 | exit=111787.86 | reason=TP | net=+268.31 USD | equity=13683.59 USD
+[OPEN]  SHORT | ts=2025-08-25 19:30:00+00:00 | entry=111164.11 | sl=111981.46 | tp=109529.41 | pct_to_tp=1.47% | pct_to_sl=0.74%
+[CLOSE] SHORT | entry=111164.11 | exit=109529.41 | reason=TP | net=+273.67 USD | equity=13957.26 USD
+[OPEN]  SHORT | ts=2025-08-25 20:45:00+00:00 | entry=109561.96 | sl=110052.00 | tp=108581.88 | pct_to_tp=0.89% | pct_to_sl=0.45%
+[CLOSE] SHORT | entry=109561.96 | exit=110052.00 | reason=SL | net=-139.57 USD | equity=13817.69 USD
+[OPEN]  SHORT | ts=2025-08-26 09:30:00+00:00 | entry=110072.98 | sl=110364.03 | tp=109490.88 | pct_to_tp=0.53% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=110072.98 | exit=110364.03 | reason=SL | net=-138.18 USD | equity=13679.51 USD
+[OPEN]  SHORT | ts=2025-08-26 11:00:00+00:00 | entry=110034.75 | sl=110224.09 | tp=109656.07 | pct_to_tp=0.34% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=110034.75 | exit=109656.07 | reason=TP | net=+273.59 USD | equity=13953.10 USD
+[OPEN]  SHORT | ts=2025-08-26 13:15:00+00:00 | entry=109855.63 | sl=110200.15 | tp=109166.59 | pct_to_tp=0.63% | pct_to_sl=0.31%
+[CLOSE] SHORT | entry=109855.63 | exit=110200.15 | reason=SL | net=-139.53 USD | equity=13813.57 USD
+[OPEN]  SHORT | ts=2025-08-26 15:30:00+00:00 | entry=109599.99 | sl=110075.21 | tp=108649.55 | pct_to_tp=0.87% | pct_to_sl=0.43%
+[CLOSE] SHORT | entry=109599.99 | exit=110075.21 | reason=SL | net=-138.14 USD | equity=13675.43 USD
+[OPEN]  SHORT | ts=2025-08-26 17:00:00+00:00 | entry=109854.41 | sl=110205.68 | tp=109151.87 | pct_to_tp=0.64% | pct_to_sl=0.32%
+[CLOSE] SHORT | entry=109854.41 | exit=110205.68 | reason=SL | net=-136.75 USD | equity=13538.68 USD
+[OPEN]  SHORT | ts=2025-08-26 18:45:00+00:00 | entry=110695.58 | sl=110933.19 | tp=110220.36 | pct_to_tp=0.43% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=110695.58 | exit=110933.19 | reason=SL | net=-135.39 USD | equity=13403.29 USD
+[OPEN]  LONG | ts=2025-08-27 17:15:00+00:00 | entry=112309.16 | sl=111897.43 | tp=113132.62 | pct_to_tp=0.73% | pct_to_sl=0.37%
+[CLOSE] LONG | entry=112309.16 | exit=111897.43 | reason=SL | net=-134.03 USD | equity=13269.26 USD
+[OPEN]  LONG | ts=2025-08-27 20:30:00+00:00 | entry=112329.18 | sl=112004.80 | tp=112977.94 | pct_to_tp=0.58% | pct_to_sl=0.29%
+[CLOSE] LONG | entry=112329.18 | exit=112004.80 | reason=SL | net=-132.69 USD | equity=13136.57 USD
+[OPEN]  LONG | ts=2025-08-28 16:00:00+00:00 | entry=112925.99 | sl=112636.50 | tp=113504.97 | pct_to_tp=0.51% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=112925.99 | exit=112636.50 | reason=SL | net=-131.37 USD | equity=13005.20 USD
+[OPEN]  SHORT | ts=2025-08-29 13:15:00+00:00 | entry=110503.36 | sl=110704.00 | tp=110102.08 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=110503.36 | exit=110102.08 | reason=TP | net=+260.10 USD | equity=13265.31 USD
+[OPEN]  SHORT | ts=2025-08-29 13:45:00+00:00 | entry=109106.14 | sl=109726.43 | tp=107865.56 | pct_to_tp=1.14% | pct_to_sl=0.57%
+[CLOSE] SHORT | entry=109106.14 | exit=107865.56 | reason=TP | net=+265.31 USD | equity=13530.61 USD
+[OPEN]  SHORT | ts=2025-08-30 05:00:00+00:00 | entry=108248.06 | sl=108480.71 | tp=107782.76 | pct_to_tp=0.43% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=108248.06 | exit=108480.71 | reason=SL | net=-135.31 USD | equity=13395.31 USD
+[OPEN]  SHORT | ts=2025-08-30 08:30:00+00:00 | entry=108604.22 | sl=108727.26 | tp=108358.14 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=108604.22 | exit=108358.14 | reason=TP | net=+267.91 USD | equity=13663.21 USD
+[OPEN]  SHORT | ts=2025-08-30 13:00:00+00:00 | entry=108275.14 | sl=108614.86 | tp=107595.70 | pct_to_tp=0.63% | pct_to_sl=0.31%
+[CLOSE] SHORT | entry=108275.14 | exit=108614.86 | reason=SL | net=-136.63 USD | equity=13526.58 USD
+[OPEN]  SHORT | ts=2025-08-30 15:00:00+00:00 | entry=108593.98 | sl=108662.00 | tp=108457.94 | pct_to_tp=0.13% | pct_to_sl=0.06%
+[CLOSE] SHORT | entry=108593.98 | exit=108662.00 | reason=SL | net=-135.27 USD | equity=13391.31 USD
+[OPEN]  SHORT | ts=2025-08-30 15:45:00+00:00 | entry=108869.98 | sl=108925.79 | tp=108758.36 | pct_to_tp=0.10% | pct_to_sl=0.05%
+[CLOSE] SHORT | entry=108869.98 | exit=108758.36 | reason=TP | net=+267.83 USD | equity=13659.14 USD
+[OPEN]  LONG | ts=2025-08-30 16:30:00+00:00 | entry=108815.70 | sl=108692.63 | tp=109061.84 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=108815.70 | exit=108692.63 | reason=SL | net=-136.59 USD | equity=13522.55 USD
+[OPEN]  SHORT | ts=2025-08-31 09:45:00+00:00 | entry=108507.68 | sl=108744.69 | tp=108033.66 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] SHORT | entry=108507.68 | exit=108744.69 | reason=SL | net=-135.23 USD | equity=13387.32 USD
+[OPEN]  SHORT | ts=2025-09-01 02:00:00+00:00 | entry=107970.59 | sl=108197.67 | tp=107516.43 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=107970.59 | exit=107516.43 | reason=TP | net=+267.75 USD | equity=13655.07 USD
+[OPEN]  LONG | ts=2025-09-01 13:15:00+00:00 | entry=109450.63 | sl=109094.26 | tp=110163.37 | pct_to_tp=0.65% | pct_to_sl=0.33%
+[CLOSE] LONG | entry=109450.63 | exit=109094.26 | reason=SL | net=-136.55 USD | equity=13518.52 USD
+[OPEN]  LONG | ts=2025-09-02 14:15:00+00:00 | entry=111483.87 | sl=110817.10 | tp=112817.41 | pct_to_tp=1.20% | pct_to_sl=0.60%
+[CLOSE] LONG | entry=111483.87 | exit=110817.10 | reason=SL | net=-135.19 USD | equity=13383.33 USD
+[OPEN]  LONG | ts=2025-09-02 20:00:00+00:00 | entry=111195.99 | sl=110716.77 | tp=112154.43 | pct_to_tp=0.86% | pct_to_sl=0.43%
+[CLOSE] LONG | entry=111195.99 | exit=110716.77 | reason=SL | net=-133.83 USD | equity=13249.50 USD
+[OPEN]  LONG | ts=2025-09-03 06:15:00+00:00 | entry=110806.97 | sl=110651.36 | tp=111118.19 | pct_to_tp=0.28% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=110806.97 | exit=110651.36 | reason=SL | net=-132.50 USD | equity=13117.01 USD
+[OPEN]  LONG | ts=2025-09-03 07:30:00+00:00 | entry=110942.77 | sl=110780.00 | tp=111268.31 | pct_to_tp=0.29% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=110942.77 | exit=111268.31 | reason=TP | net=+262.34 USD | equity=13379.35 USD
+[OPEN]  LONG | ts=2025-09-03 09:15:00+00:00 | entry=111134.53 | sl=110914.89 | tp=111573.81 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=111134.53 | exit=111573.81 | reason=TP | net=+267.59 USD | equity=13646.93 USD
+[OPEN]  LONG | ts=2025-09-03 13:00:00+00:00 | entry=111346.12 | sl=111065.56 | tp=111907.24 | pct_to_tp=0.50% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=111346.12 | exit=111907.24 | reason=TP | net=+272.94 USD | equity=13919.87 USD
+[OPEN]  LONG | ts=2025-09-03 14:30:00+00:00 | entry=112475.99 | sl=111443.86 | tp=114540.25 | pct_to_tp=1.84% | pct_to_sl=0.92%
+[CLOSE] LONG | entry=112475.99 | exit=111443.86 | reason=SL | net=-139.20 USD | equity=13780.67 USD
+[OPEN]  LONG | ts=2025-09-08 21:00:00+00:00 | entry=112142.23 | sl=111930.73 | tp=112565.23 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=112142.23 | exit=111930.73 | reason=SL | net=-137.81 USD | equity=13642.87 USD
+[OPEN]  LONG | ts=2025-09-09 07:15:00+00:00 | entry=113232.00 | sl=113001.90 | tp=113692.20 | pct_to_tp=0.41% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=113232.00 | exit=113001.90 | reason=SL | net=-136.43 USD | equity=13506.44 USD
+[OPEN]  LONG | ts=2025-09-09 12:00:00+00:00 | entry=112723.30 | sl=112393.40 | tp=113383.10 | pct_to_tp=0.59% | pct_to_sl=0.29%
+[CLOSE] LONG | entry=112723.30 | exit=112393.40 | reason=SL | net=-135.06 USD | equity=13371.37 USD
+[OPEN]  SHORT | ts=2025-09-10 00:45:00+00:00 | entry=111010.46 | sl=111267.05 | tp=110497.28 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=111010.46 | exit=111267.05 | reason=SL | net=-133.71 USD | equity=13237.66 USD
+[OPEN]  LONG | ts=2025-09-11 10:00:00+00:00 | entry=113961.99 | sl=113895.29 | tp=114095.39 | pct_to_tp=0.12% | pct_to_sl=0.06%
+[CLOSE] LONG | entry=113961.99 | exit=113895.29 | reason=SL | net=-132.38 USD | equity=13105.28 USD
+[OPEN]  LONG | ts=2025-09-11 13:15:00+00:00 | entry=113719.28 | sl=113430.00 | tp=114297.84 | pct_to_tp=0.51% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=113719.28 | exit=114297.84 | reason=TP | net=+262.11 USD | equity=13367.39 USD
+[OPEN]  LONG | ts=2025-09-11 14:30:00+00:00 | entry=114534.60 | sl=114110.33 | tp=115383.14 | pct_to_tp=0.74% | pct_to_sl=0.37%
+[CLOSE] LONG | entry=114534.60 | exit=114110.33 | reason=SL | net=-133.67 USD | equity=13233.71 USD
+[OPEN]  LONG | ts=2025-09-11 16:00:00+00:00 | entry=114314.09 | sl=114180.31 | tp=114581.65 | pct_to_tp=0.23% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=114314.09 | exit=114581.65 | reason=TP | net=+264.67 USD | equity=13498.39 USD
+[OPEN]  LONG | ts=2025-09-11 17:30:00+00:00 | entry=114580.00 | sl=114459.64 | tp=114820.72 | pct_to_tp=0.21% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=114580.00 | exit=114459.64 | reason=SL | net=-134.98 USD | equity=13363.40 USD
+[OPEN]  LONG | ts=2025-09-11 19:30:00+00:00 | entry=114399.85 | sl=114335.77 | tp=114528.01 | pct_to_tp=0.11% | pct_to_sl=0.06%
+[CLOSE] LONG | entry=114399.85 | exit=114335.77 | reason=SL | net=-133.63 USD | equity=13229.77 USD
+[OPEN]  LONG | ts=2025-09-11 20:45:00+00:00 | entry=114395.99 | sl=114279.59 | tp=114628.79 | pct_to_tp=0.20% | pct_to_sl=0.10%
+[CLOSE] LONG | entry=114395.99 | exit=114628.79 | reason=TP | net=+264.60 USD | equity=13494.37 USD
+[OPEN]  LONG | ts=2025-09-11 23:00:00+00:00 | entry=115368.23 | sl=115084.00 | tp=115936.69 | pct_to_tp=0.49% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=115368.23 | exit=115936.69 | reason=TP | net=+269.89 USD | equity=13764.25 USD
+[OPEN]  LONG | ts=2025-09-12 09:45:00+00:00 | entry=115048.01 | sl=114908.75 | tp=115326.53 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=115048.01 | exit=114908.75 | reason=SL | net=-137.64 USD | equity=13626.61 USD
+[OPEN]  LONG | ts=2025-09-12 11:15:00+00:00 | entry=115121.65 | sl=114904.58 | tp=115555.79 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=115121.65 | exit=114904.58 | reason=SL | net=-136.27 USD | equity=13490.34 USD
+[OPEN]  LONG | ts=2025-09-12 12:15:00+00:00 | entry=115126.66 | sl=114819.81 | tp=115740.36 | pct_to_tp=0.53% | pct_to_sl=0.27%
+[CLOSE] LONG | entry=115126.66 | exit=115740.36 | reason=TP | net=+269.81 USD | equity=13760.15 USD
+[OPEN]  LONG | ts=2025-09-13 02:00:00+00:00 | entry=115969.99 | sl=115686.47 | tp=116537.03 | pct_to_tp=0.49% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=115969.99 | exit=115686.47 | reason=SL | net=-137.60 USD | equity=13622.55 USD
+[OPEN]  LONG | ts=2025-09-13 14:15:00+00:00 | entry=115905.88 | sl=115688.34 | tp=116340.96 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=115905.88 | exit=115688.34 | reason=SL | net=-136.23 USD | equity=13486.32 USD
+[OPEN]  LONG | ts=2025-09-14 02:00:00+00:00 | entry=116109.00 | sl=115938.10 | tp=116450.80 | pct_to_tp=0.29% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=116109.00 | exit=115938.10 | reason=SL | net=-134.86 USD | equity=13351.46 USD
+[OPEN]  SHORT | ts=2025-09-15 14:45:00+00:00 | entry=114679.56 | sl=114976.18 | tp=114086.32 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=114679.56 | exit=114976.18 | reason=SL | net=-133.51 USD | equity=13217.95 USD
+[OPEN]  LONG | ts=2025-09-17 05:00:00+00:00 | entry=116559.15 | sl=116313.49 | tp=117050.47 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=116559.15 | exit=117050.47 | reason=TP | net=+264.36 USD | equity=13482.31 USD
+[OPEN]  SHORT | ts=2025-09-17 18:30:00+00:00 | entry=114902.33 | sl=115965.89 | tp=112775.21 | pct_to_tp=1.85% | pct_to_sl=0.93%
+[CLOSE] SHORT | entry=114902.33 | exit=115965.89 | reason=SL | net=-134.82 USD | equity=13347.48 USD
+[OPEN]  LONG | ts=2025-09-18 02:45:00+00:00 | entry=116950.47 | sl=116623.29 | tp=117604.83 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] LONG | entry=116950.47 | exit=117604.83 | reason=TP | net=+266.95 USD | equity=13614.43 USD
+[OPEN]  LONG | ts=2025-09-18 12:00:00+00:00 | entry=117243.75 | sl=116977.59 | tp=117776.07 | pct_to_tp=0.45% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=117243.75 | exit=117776.07 | reason=TP | net=+272.29 USD | equity=13886.72 USD
+[OPEN]  LONG | ts=2025-09-18 20:30:00+00:00 | entry=117652.83 | sl=117501.44 | tp=117955.61 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] LONG | entry=117652.83 | exit=117501.44 | reason=SL | net=-138.87 USD | equity=13747.85 USD
+[OPEN]  LONG | ts=2025-09-18 21:15:00+00:00 | entry=117437.98 | sl=117304.11 | tp=117705.72 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=117437.98 | exit=117304.11 | reason=SL | net=-137.48 USD | equity=13610.37 USD
+[OPEN]  SHORT | ts=2025-09-19 15:00:00+00:00 | entry=115519.82 | sl=115900.00 | tp=114759.46 | pct_to_tp=0.66% | pct_to_sl=0.33%
+[CLOSE] SHORT | entry=115519.82 | exit=115900.00 | reason=SL | net=-136.10 USD | equity=13474.27 USD
+[OPEN]  SHORT | ts=2025-09-22 00:30:00+00:00 | entry=114846.87 | sl=115169.88 | tp=114200.85 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] SHORT | entry=114846.87 | exit=114200.85 | reason=TP | net=+269.49 USD | equity=13743.76 USD
+[OPEN]  SHORT | ts=2025-09-22 22:00:00+00:00 | entry=112753.48 | sl=112970.00 | tp=112320.44 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=112753.48 | exit=112320.44 | reason=TP | net=+274.88 USD | equity=14018.63 USD
+[OPEN]  SHORT | ts=2025-09-23 01:30:00+00:00 | entry=112266.00 | sl=112498.51 | tp=111800.98 | pct_to_tp=0.41% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=112266.00 | exit=111800.98 | reason=TP | net=+280.37 USD | equity=14299.00 USD
+[OPEN]  LONG | ts=2025-09-23 10:45:00+00:00 | entry=112969.32 | sl=112840.47 | tp=113227.02 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=112969.32 | exit=112840.47 | reason=SL | net=-142.99 USD | equity=14156.01 USD
+[OPEN]  LONG | ts=2025-09-23 11:15:00+00:00 | entry=112847.28 | sl=112714.62 | tp=113112.60 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=112847.28 | exit=113112.60 | reason=TP | net=+283.12 USD | equity=14439.13 USD
+[OPEN]  LONG | ts=2025-09-23 16:15:00+00:00 | entry=112804.68 | sl=112537.64 | tp=113338.76 | pct_to_tp=0.47% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=112804.68 | exit=112537.64 | reason=SL | net=-144.39 USD | equity=14294.74 USD
+[OPEN]  LONG | ts=2025-09-23 16:45:00+00:00 | entry=112823.63 | sl=112591.98 | tp=113286.93 | pct_to_tp=0.41% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=112823.63 | exit=112591.98 | reason=SL | net=-142.95 USD | equity=14151.80 USD
+[OPEN]  SHORT | ts=2025-09-23 17:15:00+00:00 | entry=112395.09 | sl=112654.30 | tp=111876.67 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=112395.09 | exit=111876.67 | reason=TP | net=+283.04 USD | equity=14434.83 USD
+[OPEN]  SHORT | ts=2025-09-23 18:30:00+00:00 | entry=111725.68 | sl=112010.40 | tp=111156.24 | pct_to_tp=0.51% | pct_to_sl=0.25%
+[CLOSE] SHORT | entry=111725.68 | exit=112010.40 | reason=SL | net=-144.35 USD | equity=14290.48 USD
+[OPEN]  SHORT | ts=2025-09-24 02:00:00+00:00 | entry=112171.70 | sl=112500.00 | tp=111515.10 | pct_to_tp=0.59% | pct_to_sl=0.29%
+[CLOSE] SHORT | entry=112171.70 | exit=111515.10 | reason=TP | net=+285.81 USD | equity=14576.29 USD
+[OPEN]  LONG | ts=2025-09-24 22:00:00+00:00 | entry=113639.01 | sl=113339.63 | tp=114237.77 | pct_to_tp=0.53% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=113639.01 | exit=113339.63 | reason=SL | net=-145.76 USD | equity=14430.53 USD
+[OPEN]  SHORT | ts=2025-09-25 10:30:00+00:00 | entry=111612.98 | sl=111819.00 | tp=111200.94 | pct_to_tp=0.37% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=111612.98 | exit=111200.94 | reason=TP | net=+288.61 USD | equity=14719.14 USD
+[OPEN]  SHORT | ts=2025-09-25 17:00:00+00:00 | entry=110160.00 | sl=110968.40 | tp=108543.20 | pct_to_tp=1.47% | pct_to_sl=0.73%
+[CLOSE] SHORT | entry=110160.00 | exit=110968.40 | reason=SL | net=-147.19 USD | equity=14571.95 USD
+[OPEN]  LONG | ts=2025-09-29 14:00:00+00:00 | entry=113803.51 | sl=113220.21 | tp=114970.11 | pct_to_tp=1.03% | pct_to_sl=0.51%
+[CLOSE] LONG | entry=113803.51 | exit=113220.21 | reason=SL | net=-145.72 USD | equity=14426.23 USD
+[OPEN]  LONG | ts=2025-09-30 20:15:00+00:00 | entry=114387.29 | sl=114158.80 | tp=114844.27 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=114387.29 | exit=114158.80 | reason=SL | net=-144.26 USD | equity=14281.97 USD
+[OPEN]  LONG | ts=2025-09-30 23:45:00+00:00 | entry=114048.93 | sl=113945.86 | tp=114255.07 | pct_to_tp=0.18% | pct_to_sl=0.09%
+[CLOSE] LONG | entry=114048.93 | exit=114255.07 | reason=TP | net=+285.64 USD | equity=14567.61 USD
+[OPEN]  LONG | ts=2025-10-01 00:45:00+00:00 | entry=114239.53 | sl=113969.18 | tp=114780.23 | pct_to_tp=0.47% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=114239.53 | exit=114780.23 | reason=TP | net=+291.35 USD | equity=14858.96 USD
+[OPEN]  LONG | ts=2025-10-01 08:30:00+00:00 | entry=115635.37 | sl=115089.82 | tp=116726.47 | pct_to_tp=0.94% | pct_to_sl=0.47%
+[CLOSE] LONG | entry=115635.37 | exit=116726.47 | reason=TP | net=+297.18 USD | equity=15156.14 USD
+[OPEN]  LONG | ts=2025-10-03 02:00:00+00:00 | entry=120132.51 | sl=119866.18 | tp=120665.17 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=120132.51 | exit=119866.18 | reason=SL | net=-151.56 USD | equity=15004.58 USD
+[OPEN]  LONG | ts=2025-10-03 08:30:00+00:00 | entry=119859.16 | sl=119648.60 | tp=120280.28 | pct_to_tp=0.35% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=119859.16 | exit=120280.28 | reason=TP | net=+300.09 USD | equity=15304.67 USD
+[OPEN]  LONG | ts=2025-10-03 09:45:00+00:00 | entry=120300.00 | sl=120192.87 | tp=120514.26 | pct_to_tp=0.18% | pct_to_sl=0.09%
+[CLOSE] LONG | entry=120300.00 | exit=120514.26 | reason=TP | net=+306.09 USD | equity=15610.76 USD
+[OPEN]  LONG | ts=2025-10-03 13:15:00+00:00 | entry=120529.70 | sl=120225.20 | tp=121138.70 | pct_to_tp=0.51% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=120529.70 | exit=120225.20 | reason=SL | net=-156.11 USD | equity=15454.65 USD
+[OPEN]  LONG | ts=2025-10-03 14:45:00+00:00 | entry=120917.85 | sl=120645.40 | tp=121462.75 | pct_to_tp=0.45% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=120917.85 | exit=120645.40 | reason=SL | net=-154.55 USD | equity=15300.11 USD
+[OPEN]  LONG | ts=2025-10-03 15:15:00+00:00 | entry=121293.73 | sl=120849.99 | tp=122181.21 | pct_to_tp=0.73% | pct_to_sl=0.37%
+[CLOSE] LONG | entry=121293.73 | exit=122181.21 | reason=TP | net=+306.00 USD | equity=15606.11 USD
+[OPEN]  LONG | ts=2025-10-04 03:15:00+00:00 | entry=122051.16 | sl=121887.99 | tp=122377.50 | pct_to_tp=0.27% | pct_to_sl=0.13%
+[CLOSE] LONG | entry=122051.16 | exit=122377.50 | reason=TP | net=+312.12 USD | equity=15918.23 USD
+[OPEN]  LONG | ts=2025-10-04 04:30:00+00:00 | entry=122481.77 | sl=122296.00 | tp=122853.31 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=122481.77 | exit=122296.00 | reason=SL | net=-159.18 USD | equity=15759.05 USD
+[OPEN]  LONG | ts=2025-10-04 12:00:00+00:00 | entry=122100.00 | sl=121973.25 | tp=122353.50 | pct_to_tp=0.21% | pct_to_sl=0.10%
+[CLOSE] LONG | entry=122100.00 | exit=121973.25 | reason=SL | net=-157.59 USD | equity=15601.46 USD
+[OPEN]  LONG | ts=2025-10-04 13:00:00+00:00 | entry=122391.51 | sl=122005.62 | tp=123163.29 | pct_to_tp=0.63% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=122391.51 | exit=122005.62 | reason=SL | net=-156.01 USD | equity=15445.44 USD
+[OPEN]  LONG | ts=2025-10-04 15:30:00+00:00 | entry=121894.35 | sl=121711.00 | tp=122261.05 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=121894.35 | exit=121711.00 | reason=SL | net=-154.45 USD | equity=15290.99 USD
+[OPEN]  LONG | ts=2025-10-04 16:30:00+00:00 | entry=121833.00 | sl=121710.78 | tp=122077.44 | pct_to_tp=0.20% | pct_to_sl=0.10%
+[CLOSE] LONG | entry=121833.00 | exit=121710.78 | reason=SL | net=-152.91 USD | equity=15138.08 USD
+[OPEN]  SHORT | ts=2025-10-04 20:45:00+00:00 | entry=121892.89 | sl=122061.83 | tp=121555.01 | pct_to_tp=0.28% | pct_to_sl=0.14%
+[CLOSE] SHORT | entry=121892.89 | exit=122061.83 | reason=SL | net=-151.38 USD | equity=14986.70 USD
+[OPEN]  SHORT | ts=2025-10-04 21:45:00+00:00 | entry=122190.67 | sl=122319.72 | tp=121932.57 | pct_to_tp=0.21% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=122190.67 | exit=122319.72 | reason=SL | net=-149.87 USD | equity=14836.83 USD
+[OPEN]  LONG | ts=2025-10-05 01:00:00+00:00 | entry=122306.52 | sl=122157.70 | tp=122604.16 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=122306.52 | exit=122157.70 | reason=SL | net=-148.37 USD | equity=14688.46 USD
+[OPEN]  LONG | ts=2025-10-05 01:30:00+00:00 | entry=122390.98 | sl=122248.01 | tp=122676.92 | pct_to_tp=0.23% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=122390.98 | exit=122676.92 | reason=TP | net=+293.77 USD | equity=14982.23 USD
+[OPEN]  LONG | ts=2025-10-05 02:45:00+00:00 | entry=124031.44 | sl=123537.27 | tp=125019.78 | pct_to_tp=0.80% | pct_to_sl=0.40%
+[CLOSE] LONG | entry=124031.44 | exit=123537.27 | reason=SL | net=-149.82 USD | equity=14832.41 USD
+[OPEN]  LONG | ts=2025-10-05 10:45:00+00:00 | entry=123028.01 | sl=122816.65 | tp=123450.73 | pct_to_tp=0.34% | pct_to_sl=0.17%
+[CLOSE] LONG | entry=123028.01 | exit=123450.73 | reason=TP | net=+296.65 USD | equity=15129.06 USD
+[OPEN]  LONG | ts=2025-10-05 13:00:00+00:00 | entry=123246.88 | sl=123070.46 | tp=123599.72 | pct_to_tp=0.29% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=123246.88 | exit=123070.46 | reason=SL | net=-151.29 USD | equity=14977.77 USD
+[OPEN]  LONG | ts=2025-10-06 01:45:00+00:00 | entry=124035.32 | sl=123781.10 | tp=124543.76 | pct_to_tp=0.41% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=124035.32 | exit=123781.10 | reason=SL | net=-149.78 USD | equity=14827.99 USD
+[OPEN]  LONG | ts=2025-10-06 02:45:00+00:00 | entry=124110.61 | sl=123839.07 | tp=124653.69 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=124110.61 | exit=123839.07 | reason=SL | net=-148.28 USD | equity=14679.71 USD
+[OPEN]  LONG | ts=2025-10-06 05:15:00+00:00 | entry=123603.55 | sl=123317.00 | tp=124176.65 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=123603.55 | exit=123317.00 | reason=SL | net=-146.80 USD | equity=14532.91 USD
+[OPEN]  LONG | ts=2025-10-06 08:00:00+00:00 | entry=123635.79 | sl=123390.46 | tp=124126.45 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=123635.79 | exit=124126.45 | reason=TP | net=+290.66 USD | equity=14823.57 USD
+[OPEN]  LONG | ts=2025-10-06 12:45:00+00:00 | entry=124556.64 | sl=124325.96 | tp=125018.00 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=124556.64 | exit=125018.00 | reason=TP | net=+296.47 USD | equity=15120.04 USD
+[OPEN]  LONG | ts=2025-10-06 22:45:00+00:00 | entry=125039.13 | sl=124890.94 | tp=125335.51 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=125039.13 | exit=124890.94 | reason=SL | net=-151.20 USD | equity=14968.84 USD
+[OPEN]  LONG | ts=2025-10-07 00:30:00+00:00 | entry=124882.51 | sl=124600.00 | tp=125447.53 | pct_to_tp=0.45% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=124882.51 | exit=124600.00 | reason=SL | net=-149.69 USD | equity=14819.15 USD
+[OPEN]  SHORT | ts=2025-10-07 14:00:00+00:00 | entry=122831.93 | sl=124000.00 | tp=120495.79 | pct_to_tp=1.90% | pct_to_sl=0.95%
+[CLOSE] SHORT | entry=122831.93 | exit=124000.00 | reason=SL | net=-148.19 USD | equity=14670.96 USD
+[OPEN]  SHORT | ts=2025-10-09 23:00:00+00:00 | entry=121460.13 | sl=121686.19 | tp=121008.01 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=121460.13 | exit=121686.19 | reason=SL | net=-146.71 USD | equity=14524.25 USD
+[OPEN]  SHORT | ts=2025-10-10 03:45:00+00:00 | entry=121026.01 | sl=121575.99 | tp=119926.05 | pct_to_tp=0.91% | pct_to_sl=0.45%
+[CLOSE] SHORT | entry=121026.01 | exit=121575.99 | reason=SL | net=-145.24 USD | equity=14379.01 USD
+[OPEN]  SHORT | ts=2025-10-10 07:30:00+00:00 | entry=121119.39 | sl=121345.43 | tp=120667.31 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=121119.39 | exit=121345.43 | reason=SL | net=-143.79 USD | equity=14235.22 USD
+[OPEN]  SHORT | ts=2025-10-10 15:15:00+00:00 | entry=119252.86 | sl=120497.96 | tp=116762.66 | pct_to_tp=2.09% | pct_to_sl=1.04%
+[CLOSE] SHORT | entry=119252.86 | exit=116762.66 | reason=TP | net=+284.70 USD | equity=14519.93 USD
+[OPEN]  SHORT | ts=2025-10-12 05:00:00+00:00 | entry=111296.75 | sl=111524.88 | tp=110840.49 | pct_to_tp=0.41% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=111296.75 | exit=111524.88 | reason=SL | net=-145.20 USD | equity=14374.73 USD
+[OPEN]  SHORT | ts=2025-10-12 06:30:00+00:00 | entry=111730.31 | sl=111933.63 | tp=111323.67 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=111730.31 | exit=111933.63 | reason=SL | net=-143.75 USD | equity=14230.98 USD
+[OPEN]  SHORT | ts=2025-10-12 08:30:00+00:00 | entry=111600.01 | sl=111762.09 | tp=111275.85 | pct_to_tp=0.29% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=111600.01 | exit=111275.85 | reason=TP | net=+284.62 USD | equity=14515.60 USD
+[OPEN]  LONG | ts=2025-10-12 09:15:00+00:00 | entry=111388.99 | sl=111194.87 | tp=111777.23 | pct_to_tp=0.35% | pct_to_sl=0.17%
+[CLOSE] LONG | entry=111388.99 | exit=111777.23 | reason=TP | net=+290.31 USD | equity=14805.91 USD
+[OPEN]  LONG | ts=2025-10-12 12:00:00+00:00 | entry=112134.48 | sl=111835.25 | tp=112732.94 | pct_to_tp=0.53% | pct_to_sl=0.27%
+[CLOSE] LONG | entry=112134.48 | exit=111835.25 | reason=SL | net=-148.06 USD | equity=14657.85 USD
+[OPEN]  LONG | ts=2025-10-13 17:45:00+00:00 | entry=115040.55 | sl=114215.79 | tp=116690.07 | pct_to_tp=1.43% | pct_to_sl=0.72%
+[CLOSE] LONG | entry=115040.55 | exit=114215.79 | reason=SL | net=-146.58 USD | equity=14511.27 USD
+[OPEN]  SHORT | ts=2025-10-14 16:00:00+00:00 | entry=112509.99 | sl=112929.26 | tp=111671.45 | pct_to_tp=0.75% | pct_to_sl=0.37%
+[CLOSE] SHORT | entry=112509.99 | exit=112929.26 | reason=SL | net=-145.11 USD | equity=14366.16 USD
+[OPEN]  SHORT | ts=2025-10-14 16:45:00+00:00 | entry=112328.83 | sl=112875.19 | tp=111236.11 | pct_to_tp=0.97% | pct_to_sl=0.49%
+[CLOSE] SHORT | entry=112328.83 | exit=112875.19 | reason=SL | net=-143.66 USD | equity=14222.50 USD
+[OPEN]  SHORT | ts=2025-10-14 19:30:00+00:00 | entry=112104.75 | sl=113435.00 | tp=109444.25 | pct_to_tp=2.37% | pct_to_sl=1.19%
+[CLOSE] SHORT | entry=112104.75 | exit=113435.00 | reason=SL | net=-142.22 USD | equity=14080.27 USD
+[OPEN]  SHORT | ts=2025-10-15 05:45:00+00:00 | entry=112431.95 | sl=112550.90 | tp=112194.05 | pct_to_tp=0.21% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=112431.95 | exit=112194.05 | reason=TP | net=+281.61 USD | equity=14361.88 USD
+[OPEN]  SHORT | ts=2025-10-15 06:15:00+00:00 | entry=111944.00 | sl=112256.00 | tp=111320.00 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] SHORT | entry=111944.00 | exit=112256.00 | reason=SL | net=-143.62 USD | equity=14218.26 USD
+[OPEN]  SHORT | ts=2025-10-15 10:15:00+00:00 | entry=112397.99 | sl=112603.68 | tp=111986.61 | pct_to_tp=0.37% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=112397.99 | exit=111986.61 | reason=TP | net=+284.37 USD | equity=14502.63 USD
+[OPEN]  SHORT | ts=2025-10-15 11:45:00+00:00 | entry=111905.73 | sl=112100.00 | tp=111517.19 | pct_to_tp=0.35% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=111905.73 | exit=111517.19 | reason=TP | net=+290.05 USD | equity=14792.68 USD
+[OPEN]  SHORT | ts=2025-10-16 03:45:00+00:00 | entry=111329.48 | sl=111621.57 | tp=110745.30 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=111329.48 | exit=111621.57 | reason=SL | net=-147.93 USD | equity=14644.75 USD
+[OPEN]  SHORT | ts=2025-10-16 04:30:00+00:00 | entry=110998.34 | sl=111584.99 | tp=109825.04 | pct_to_tp=1.06% | pct_to_sl=0.53%
+[CLOSE] SHORT | entry=110998.34 | exit=111584.99 | reason=SL | net=-146.45 USD | equity=14498.30 USD
+[OPEN]  SHORT | ts=2025-10-16 07:15:00+00:00 | entry=110771.28 | sl=111402.59 | tp=109508.66 | pct_to_tp=1.14% | pct_to_sl=0.57%
+[CLOSE] SHORT | entry=110771.28 | exit=111402.59 | reason=SL | net=-144.98 USD | equity=14353.32 USD
+[OPEN]  SHORT | ts=2025-10-16 11:15:00+00:00 | entry=111112.14 | sl=111469.63 | tp=110397.16 | pct_to_tp=0.64% | pct_to_sl=0.32%
+[CLOSE] SHORT | entry=111112.14 | exit=111469.63 | reason=SL | net=-143.53 USD | equity=14209.79 USD
+[OPEN]  SHORT | ts=2025-10-16 15:15:00+00:00 | entry=110044.97 | sl=110627.99 | tp=108878.93 | pct_to_tp=1.06% | pct_to_sl=0.53%
+[CLOSE] SHORT | entry=110044.97 | exit=108878.93 | reason=TP | net=+284.20 USD | equity=14493.98 USD
+[OPEN]  SHORT | ts=2025-10-17 05:30:00+00:00 | entry=108553.40 | sl=108866.82 | tp=107926.56 | pct_to_tp=0.58% | pct_to_sl=0.29%
+[CLOSE] SHORT | entry=108553.40 | exit=107926.56 | reason=TP | net=+289.88 USD | equity=14783.86 USD
+[OPEN]  SHORT | ts=2025-10-17 17:15:00+00:00 | entry=106218.58 | sl=106729.00 | tp=105197.74 | pct_to_tp=0.96% | pct_to_sl=0.48%
+[CLOSE] SHORT | entry=106218.58 | exit=106729.00 | reason=SL | net=-147.84 USD | equity=14636.02 USD
+[OPEN]  SHORT | ts=2025-10-17 21:30:00+00:00 | entry=107276.79 | sl=107419.99 | tp=106990.39 | pct_to_tp=0.27% | pct_to_sl=0.13%
+[CLOSE] SHORT | entry=107276.79 | exit=107419.99 | reason=SL | net=-146.36 USD | equity=14489.66 USD
+[OPEN]  SHORT | ts=2025-10-17 22:30:00+00:00 | entry=106912.85 | sl=107150.00 | tp=106438.55 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] SHORT | entry=106912.85 | exit=106438.55 | reason=TP | net=+289.79 USD | equity=14779.46 USD
+[OPEN]  LONG | ts=2025-10-18 00:15:00+00:00 | entry=106744.04 | sl=106322.20 | tp=107587.72 | pct_to_tp=0.79% | pct_to_sl=0.40%
+[CLOSE] LONG | entry=106744.04 | exit=106322.20 | reason=SL | net=-147.79 USD | equity=14631.66 USD
+[OPEN]  SHORT | ts=2025-10-19 08:30:00+00:00 | entry=106493.40 | sl=106726.54 | tp=106027.12 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] SHORT | entry=106493.40 | exit=106726.54 | reason=SL | net=-146.32 USD | equity=14485.35 USD
+[OPEN]  LONG | ts=2025-10-19 14:15:00+00:00 | entry=108396.57 | sl=107940.00 | tp=109309.71 | pct_to_tp=0.84% | pct_to_sl=0.42%
+[CLOSE] LONG | entry=108396.57 | exit=109309.71 | reason=TP | net=+289.71 USD | equity=14775.05 USD
+[OPEN]  LONG | ts=2025-10-20 02:15:00+00:00 | entry=108441.58 | sl=107981.80 | tp=109361.14 | pct_to_tp=0.85% | pct_to_sl=0.42%
+[CLOSE] LONG | entry=108441.58 | exit=109361.14 | reason=TP | net=+295.50 USD | equity=15070.55 USD
+[OPEN]  LONG | ts=2025-10-20 04:30:00+00:00 | entry=110251.26 | sl=110062.10 | tp=110629.58 | pct_to_tp=0.34% | pct_to_sl=0.17%
+[CLOSE] LONG | entry=110251.26 | exit=110629.58 | reason=TP | net=+301.41 USD | equity=15371.97 USD
+[OPEN]  LONG | ts=2025-10-20 18:15:00+00:00 | entry=110660.21 | sl=110220.00 | tp=111540.63 | pct_to_tp=0.80% | pct_to_sl=0.40%
+[CLOSE] LONG | entry=110660.21 | exit=110220.00 | reason=SL | net=-153.72 USD | equity=15218.25 USD
+[OPEN]  LONG | ts=2025-10-21 00:15:00+00:00 | entry=110331.47 | sl=110168.00 | tp=110658.41 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=110331.47 | exit=110168.00 | reason=SL | net=-152.18 USD | equity=15066.06 USD
+[OPEN]  LONG | ts=2025-10-21 01:15:00+00:00 | entry=110279.34 | sl=110128.08 | tp=110581.86 | pct_to_tp=0.27% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=110279.34 | exit=110128.08 | reason=SL | net=-150.66 USD | equity=14915.40 USD
+[OPEN]  LONG | ts=2025-10-21 21:00:00+00:00 | entry=111095.21 | sl=110685.59 | tp=111914.45 | pct_to_tp=0.74% | pct_to_sl=0.37%
+[CLOSE] LONG | entry=111095.21 | exit=110685.59 | reason=SL | net=-149.15 USD | equity=14766.25 USD
+[OPEN]  LONG | ts=2025-10-21 21:30:00+00:00 | entry=110894.68 | sl=110398.39 | tp=111887.26 | pct_to_tp=0.90% | pct_to_sl=0.45%
+[CLOSE] LONG | entry=110894.68 | exit=110398.39 | reason=SL | net=-147.66 USD | equity=14618.59 USD
+[OPEN]  SHORT | ts=2025-10-22 14:00:00+00:00 | entry=108177.91 | sl=108807.17 | tp=106919.39 | pct_to_tp=1.16% | pct_to_sl=0.58%
+[CLOSE] SHORT | entry=108177.91 | exit=108807.17 | reason=SL | net=-146.19 USD | equity=14472.40 USD
+[OPEN]  SHORT | ts=2025-10-22 15:00:00+00:00 | entry=108402.89 | sl=109163.88 | tp=106880.91 | pct_to_tp=1.40% | pct_to_sl=0.70%
+[CLOSE] SHORT | entry=108402.89 | exit=106880.91 | reason=TP | net=+289.45 USD | equity=14761.85 USD
+[OPEN]  LONG | ts=2025-10-23 22:00:00+00:00 | entry=109858.00 | sl=109517.37 | tp=110539.26 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] LONG | entry=109858.00 | exit=110539.26 | reason=TP | net=+295.24 USD | equity=15057.08 USD
+[OPEN]  LONG | ts=2025-10-24 22:15:00+00:00 | entry=111073.11 | sl=110942.86 | tp=111333.61 | pct_to_tp=0.23% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=111073.11 | exit=110942.86 | reason=SL | net=-150.57 USD | equity=14906.51 USD
+[OPEN]  LONG | ts=2025-10-25 01:00:00+00:00 | entry=110888.00 | sl=110750.00 | tp=111164.00 | pct_to_tp=0.25% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=110888.00 | exit=111164.00 | reason=TP | net=+298.13 USD | equity=15204.64 USD
+[OPEN]  LONG | ts=2025-10-25 01:45:00+00:00 | entry=111070.31 | sl=110950.01 | tp=111310.91 | pct_to_tp=0.22% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=111070.31 | exit=111310.91 | reason=TP | net=+304.09 USD | equity=15508.74 USD
+[OPEN]  LONG | ts=2025-10-25 05:30:00+00:00 | entry=111287.67 | sl=111189.42 | tp=111484.17 | pct_to_tp=0.18% | pct_to_sl=0.09%
+[CLOSE] LONG | entry=111287.67 | exit=111484.17 | reason=TP | net=+310.17 USD | equity=15818.91 USD
+[OPEN]  LONG | ts=2025-10-25 15:15:00+00:00 | entry=111470.86 | sl=111418.11 | tp=111576.36 | pct_to_tp=0.09% | pct_to_sl=0.05%
+[CLOSE] LONG | entry=111470.86 | exit=111418.11 | reason=SL | net=-158.19 USD | equity=15660.72 USD
+[OPEN]  LONG | ts=2025-10-26 00:15:00+00:00 | entry=111742.26 | sl=111576.23 | tp=112074.32 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=111742.26 | exit=111576.23 | reason=SL | net=-156.61 USD | equity=15504.12 USD
+[OPEN]  LONG | ts=2025-10-26 02:15:00+00:00 | entry=111660.61 | sl=111540.96 | tp=111899.91 | pct_to_tp=0.21% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=111660.61 | exit=111540.96 | reason=SL | net=-155.04 USD | equity=15349.07 USD
+[OPEN]  LONG | ts=2025-10-26 09:15:00+00:00 | entry=112667.24 | sl=111708.63 | tp=114584.46 | pct_to_tp=1.70% | pct_to_sl=0.85%
+[CLOSE] LONG | entry=112667.24 | exit=114584.46 | reason=TP | net=+306.98 USD | equity=15656.06 USD
+[OPEN]  LONG | ts=2025-10-27 15:00:00+00:00 | entry=115055.99 | sl=114778.00 | tp=115611.97 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=115055.99 | exit=115611.97 | reason=TP | net=+313.12 USD | equity=15969.18 USD
+[OPEN]  LONG | ts=2025-10-27 17:30:00+00:00 | entry=115634.18 | sl=115311.19 | tp=116280.16 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] LONG | entry=115634.18 | exit=115311.19 | reason=SL | net=-159.69 USD | equity=15809.49 USD
+[OPEN]  LONG | ts=2025-10-28 13:00:00+00:00 | entry=114759.98 | sl=114449.55 | tp=115380.84 | pct_to_tp=0.54% | pct_to_sl=0.27%
+[CLOSE] LONG | entry=114759.98 | exit=115380.84 | reason=TP | net=+316.19 USD | equity=16125.67 USD
+[OPEN]  LONG | ts=2025-10-28 15:00:00+00:00 | entry=115335.17 | sl=115068.18 | tp=115869.15 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=115335.17 | exit=115068.18 | reason=SL | net=-161.26 USD | equity=15964.42 USD
+[OPEN]  LONG | ts=2025-10-28 16:45:00+00:00 | entry=115341.59 | sl=115086.90 | tp=115850.97 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=115341.59 | exit=115086.90 | reason=SL | net=-159.64 USD | equity=15804.77 USD
+[OPEN]  SHORT | ts=2025-10-29 08:30:00+00:00 | entry=113119.24 | sl=113325.06 | tp=112707.60 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=113119.24 | exit=113325.06 | reason=SL | net=-158.05 USD | equity=15646.73 USD
+[OPEN]  SHORT | ts=2025-10-29 12:15:00+00:00 | entry=113074.01 | sl=113290.59 | tp=112640.85 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=113074.01 | exit=113290.59 | reason=SL | net=-156.47 USD | equity=15490.26 USD
+[OPEN]  SHORT | ts=2025-10-29 13:30:00+00:00 | entry=113017.11 | sl=113602.35 | tp=111846.63 | pct_to_tp=1.04% | pct_to_sl=0.52%
+[CLOSE] SHORT | entry=113017.11 | exit=111846.63 | reason=TP | net=+309.81 USD | equity=15800.06 USD
+[OPEN]  SHORT | ts=2025-10-30 08:00:00+00:00 | entry=110851.05 | sl=111467.01 | tp=109619.13 | pct_to_tp=1.11% | pct_to_sl=0.56%
+[CLOSE] SHORT | entry=110851.05 | exit=109619.13 | reason=TP | net=+316.00 USD | equity=16116.07 USD
+[OPEN]  LONG | ts=2025-10-31 03:45:00+00:00 | entry=109227.86 | sl=108881.55 | tp=109920.48 | pct_to_tp=0.63% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=109227.86 | exit=109920.48 | reason=TP | net=+322.32 USD | equity=16438.39 USD
+[OPEN]  LONG | ts=2025-11-02 07:30:00+00:00 | entry=110690.76 | sl=110473.91 | tp=111124.46 | pct_to_tp=0.39% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=110690.76 | exit=110473.91 | reason=SL | net=-164.38 USD | equity=16274.00 USD
+[OPEN]  LONG | ts=2025-11-02 11:15:00+00:00 | entry=110844.05 | sl=110645.37 | tp=111241.41 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=110844.05 | exit=111241.41 | reason=TP | net=+325.48 USD | equity=16599.48 USD
+[OPEN]  SHORT | ts=2025-11-03 15:00:00+00:00 | entry=107648.43 | sl=108148.81 | tp=106647.67 | pct_to_tp=0.93% | pct_to_sl=0.46%
+[CLOSE] SHORT | entry=107648.43 | exit=106647.67 | reason=TP | net=+331.99 USD | equity=16931.47 USD
+[OPEN]  SHORT | ts=2025-11-03 18:00:00+00:00 | entry=107190.00 | sl=107599.85 | tp=106370.30 | pct_to_tp=0.76% | pct_to_sl=0.38%
+[CLOSE] SHORT | entry=107190.00 | exit=106370.30 | reason=TP | net=+338.63 USD | equity=17270.10 USD
+[OPEN]  SHORT | ts=2025-11-04 02:45:00+00:00 | entry=106482.60 | sl=106763.31 | tp=105921.18 | pct_to_tp=0.53% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=106482.60 | exit=106763.31 | reason=SL | net=-172.70 USD | equity=17097.40 USD
+[OPEN]  SHORT | ts=2025-11-04 04:15:00+00:00 | entry=106939.09 | sl=107193.80 | tp=106429.67 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] SHORT | entry=106939.09 | exit=106429.67 | reason=TP | net=+341.95 USD | equity=17439.35 USD
+[OPEN]  SHORT | ts=2025-11-04 05:30:00+00:00 | entry=104944.32 | sl=105678.20 | tp=103476.56 | pct_to_tp=1.40% | pct_to_sl=0.70%
+[CLOSE] SHORT | entry=104944.32 | exit=103476.56 | reason=TP | net=+348.79 USD | equity=17788.14 USD
+[OPEN]  SHORT | ts=2025-11-05 04:15:00+00:00 | entry=101566.32 | sl=101999.99 | tp=100698.98 | pct_to_tp=0.85% | pct_to_sl=0.43%
+[CLOSE] SHORT | entry=101566.32 | exit=101999.99 | reason=SL | net=-177.88 USD | equity=17610.25 USD
+[OPEN]  SHORT | ts=2025-11-05 08:00:00+00:00 | entry=101706.58 | sl=102000.02 | tp=101119.70 | pct_to_tp=0.58% | pct_to_sl=0.29%
+[CLOSE] SHORT | entry=101706.58 | exit=102000.02 | reason=SL | net=-176.10 USD | equity=17434.15 USD
+[OPEN]  SHORT | ts=2025-11-05 10:00:00+00:00 | entry=101758.69 | sl=101995.29 | tp=101285.49 | pct_to_tp=0.47% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=101758.69 | exit=101285.49 | reason=TP | net=+348.68 USD | equity=17782.84 USD
+[OPEN]  SHORT | ts=2025-11-06 11:00:00+00:00 | entry=102878.58 | sl=103122.54 | tp=102390.66 | pct_to_tp=0.47% | pct_to_sl=0.24%
+[CLOSE] SHORT | entry=102878.58 | exit=103122.54 | reason=SL | net=-177.83 USD | equity=17605.01 USD
+[OPEN]  SHORT | ts=2025-11-06 12:00:00+00:00 | entry=103014.41 | sl=103333.18 | tp=102376.87 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] SHORT | entry=103014.41 | exit=103333.18 | reason=SL | net=-176.05 USD | equity=17428.96 USD
+[OPEN]  SHORT | ts=2025-11-06 15:30:00+00:00 | entry=101806.60 | sl=102463.38 | tp=100493.04 | pct_to_tp=1.29% | pct_to_sl=0.65%
+[CLOSE] SHORT | entry=101806.60 | exit=100493.04 | reason=TP | net=+348.58 USD | equity=17777.54 USD
+[OPEN]  SHORT | ts=2025-11-07 02:15:00+00:00 | entry=101243.01 | sl=101699.91 | tp=100329.21 | pct_to_tp=0.90% | pct_to_sl=0.45%
+[CLOSE] SHORT | entry=101243.01 | exit=101699.91 | reason=SL | net=-177.78 USD | equity=17599.76 USD
+[OPEN]  SHORT | ts=2025-11-07 03:30:00+00:00 | entry=102130.03 | sl=102285.72 | tp=101818.65 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=102130.03 | exit=101818.65 | reason=TP | net=+352.00 USD | equity=17951.76 USD
+[OPEN]  SHORT | ts=2025-11-07 04:30:00+00:00 | entry=101829.48 | sl=101995.57 | tp=101497.30 | pct_to_tp=0.33% | pct_to_sl=0.16%
+[CLOSE] SHORT | entry=101829.48 | exit=101995.57 | reason=SL | net=-179.52 USD | equity=17772.24 USD
+[OPEN]  SHORT | ts=2025-11-07 06:30:00+00:00 | entry=102080.83 | sl=102250.01 | tp=101742.47 | pct_to_tp=0.33% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=102080.83 | exit=101742.47 | reason=TP | net=+355.44 USD | equity=18127.68 USD
+[OPEN]  LONG | ts=2025-11-07 07:45:00+00:00 | entry=102010.00 | sl=101816.68 | tp=102396.64 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=102010.00 | exit=101816.68 | reason=SL | net=-181.28 USD | equity=17946.41 USD
+[OPEN]  SHORT | ts=2025-11-07 09:15:00+00:00 | entry=101006.26 | sl=101493.99 | tp=100030.80 | pct_to_tp=0.97% | pct_to_sl=0.48%
+[CLOSE] SHORT | entry=101006.26 | exit=100030.80 | reason=TP | net=+358.93 USD | equity=18305.33 USD
+[OPEN]  SHORT | ts=2025-11-08 17:00:00+00:00 | entry=101648.57 | sl=101865.40 | tp=101214.91 | pct_to_tp=0.43% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=101648.57 | exit=101865.40 | reason=SL | net=-183.05 USD | equity=18122.28 USD
+[OPEN]  LONG | ts=2025-11-10 17:30:00+00:00 | entry=105700.00 | sl=105365.59 | tp=106368.82 | pct_to_tp=0.63% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=105700.00 | exit=105365.59 | reason=SL | net=-181.22 USD | equity=17941.06 USD
+[OPEN]  LONG | ts=2025-11-10 22:15:00+00:00 | entry=105618.00 | sl=105443.82 | tp=105966.36 | pct_to_tp=0.33% | pct_to_sl=0.16%
+[CLOSE] LONG | entry=105618.00 | exit=105966.36 | reason=TP | net=+358.82 USD | equity=18299.88 USD
+[OPEN]  LONG | ts=2025-11-11 03:00:00+00:00 | entry=106906.33 | sl=106603.96 | tp=107511.07 | pct_to_tp=0.57% | pct_to_sl=0.28%
+[CLOSE] LONG | entry=106906.33 | exit=106603.96 | reason=SL | net=-183.00 USD | equity=18116.88 USD
+[OPEN]  SHORT | ts=2025-11-12 06:30:00+00:00 | entry=103432.58 | sl=103544.00 | tp=103209.74 | pct_to_tp=0.22% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=103432.58 | exit=103209.74 | reason=TP | net=+362.34 USD | equity=18479.22 USD
+[OPEN]  SHORT | ts=2025-11-13 03:00:00+00:00 | entry=101346.81 | sl=102094.07 | tp=99852.29 | pct_to_tp=1.47% | pct_to_sl=0.74%
+[CLOSE] SHORT | entry=101346.81 | exit=102094.07 | reason=SL | net=-184.79 USD | equity=18294.43 USD
+[OPEN]  SHORT | ts=2025-11-13 03:45:00+00:00 | entry=102130.21 | sl=102543.41 | tp=101303.81 | pct_to_tp=0.81% | pct_to_sl=0.40%
+[CLOSE] SHORT | entry=102130.21 | exit=102543.41 | reason=SL | net=-182.94 USD | equity=18111.48 USD
+[OPEN]  SHORT | ts=2025-11-15 03:30:00+00:00 | entry=96316.02 | sl=96689.22 | tp=95569.62 | pct_to_tp=0.77% | pct_to_sl=0.39%
+[CLOSE] SHORT | entry=96316.02 | exit=95569.62 | reason=TP | net=+362.23 USD | equity=18473.71 USD
+[OPEN]  SHORT | ts=2025-11-15 12:30:00+00:00 | entry=95694.02 | sl=95871.12 | tp=95339.82 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=95694.02 | exit=95871.12 | reason=SL | net=-184.74 USD | equity=18288.97 USD
+[OPEN]  SHORT | ts=2025-11-15 14:15:00+00:00 | entry=96140.81 | sl=96470.00 | tp=95482.43 | pct_to_tp=0.68% | pct_to_sl=0.34%
+[CLOSE] SHORT | entry=96140.81 | exit=95482.43 | reason=TP | net=+365.78 USD | equity=18654.75 USD
+[OPEN]  SHORT | ts=2025-11-16 01:30:00+00:00 | entry=95003.54 | sl=95453.51 | tp=94103.60 | pct_to_tp=0.95% | pct_to_sl=0.47%
+[CLOSE] SHORT | entry=95003.54 | exit=95453.51 | reason=SL | net=-186.55 USD | equity=18468.21 USD
+[OPEN]  SHORT | ts=2025-11-16 03:00:00+00:00 | entry=95780.76 | sl=95979.79 | tp=95382.70 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=95780.76 | exit=95979.79 | reason=SL | net=-184.68 USD | equity=18283.52 USD
+[OPEN]  LONG | ts=2025-11-16 07:30:00+00:00 | entry=95919.27 | sl=95820.75 | tp=96116.31 | pct_to_tp=0.21% | pct_to_sl=0.10%
+[CLOSE] LONG | entry=95919.27 | exit=96116.31 | reason=TP | net=+365.67 USD | equity=18649.19 USD
+[OPEN]  LONG | ts=2025-11-16 08:30:00+00:00 | entry=96046.09 | sl=95869.43 | tp=96399.41 | pct_to_tp=0.37% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=96046.09 | exit=96399.41 | reason=TP | net=+372.98 USD | equity=19022.18 USD
+[OPEN]  LONG | ts=2025-11-16 14:30:00+00:00 | entry=95596.23 | sl=95366.01 | tp=96056.67 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=95596.23 | exit=95366.01 | reason=SL | net=-190.22 USD | equity=18831.96 USD
+[OPEN]  SHORT | ts=2025-11-16 15:45:00+00:00 | entry=94573.46 | sl=95436.43 | tp=92847.52 | pct_to_tp=1.82% | pct_to_sl=0.91%
+[CLOSE] SHORT | entry=94573.46 | exit=95436.43 | reason=SL | net=-188.32 USD | equity=18643.64 USD
+[OPEN]  SHORT | ts=2025-11-17 01:30:00+00:00 | entry=94907.06 | sl=95147.60 | tp=94425.98 | pct_to_tp=0.51% | pct_to_sl=0.25%
+[CLOSE] SHORT | entry=94907.06 | exit=95147.60 | reason=SL | net=-186.44 USD | equity=18457.20 USD
+[OPEN]  SHORT | ts=2025-11-17 16:00:00+00:00 | entry=93176.54 | sl=94010.39 | tp=91508.84 | pct_to_tp=1.79% | pct_to_sl=0.89%
+[CLOSE] SHORT | entry=93176.54 | exit=94010.39 | reason=SL | net=-184.57 USD | equity=18272.63 USD
+[OPEN]  SHORT | ts=2025-11-18 11:00:00+00:00 | entry=91431.07 | sl=91615.43 | tp=91062.35 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=91431.07 | exit=91615.43 | reason=SL | net=-182.73 USD | equity=18089.90 USD
+[OPEN]  SHORT | ts=2025-11-18 12:45:00+00:00 | entry=91518.54 | sl=91840.00 | tp=90875.62 | pct_to_tp=0.70% | pct_to_sl=0.35%
+[CLOSE] SHORT | entry=91518.54 | exit=91840.00 | reason=SL | net=-180.90 USD | equity=17909.00 USD
+[OPEN]  LONG | ts=2025-11-18 16:15:00+00:00 | entry=93733.14 | sl=93054.50 | tp=95090.42 | pct_to_tp=1.45% | pct_to_sl=0.72%
+[CLOSE] LONG | entry=93733.14 | exit=93054.50 | reason=SL | net=-179.09 USD | equity=17729.91 USD
+[OPEN]  SHORT | ts=2025-11-19 04:30:00+00:00 | entry=91450.02 | sl=91706.86 | tp=90936.34 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] SHORT | entry=91450.02 | exit=90936.34 | reason=TP | net=+354.60 USD | equity=18084.51 USD
+[OPEN]  SHORT | ts=2025-11-19 08:30:00+00:00 | entry=91600.00 | sl=91923.79 | tp=90952.42 | pct_to_tp=0.71% | pct_to_sl=0.35%
+[CLOSE] SHORT | entry=91600.00 | exit=91923.79 | reason=SL | net=-180.85 USD | equity=17903.67 USD
+[OPEN]  SHORT | ts=2025-11-19 15:15:00+00:00 | entry=91235.13 | sl=92384.61 | tp=88936.17 | pct_to_tp=2.52% | pct_to_sl=1.26%
+[CLOSE] SHORT | entry=91235.13 | exit=88936.17 | reason=TP | net=+358.07 USD | equity=18261.74 USD
+[OPEN]  SHORT | ts=2025-11-19 22:00:00+00:00 | entry=90344.50 | sl=90628.01 | tp=89777.48 | pct_to_tp=0.63% | pct_to_sl=0.31%
+[CLOSE] SHORT | entry=90344.50 | exit=90628.01 | reason=SL | net=-182.62 USD | equity=18079.12 USD
+[OPEN]  SHORT | ts=2025-11-20 15:00:00+00:00 | entry=90406.01 | sl=91171.78 | tp=88874.47 | pct_to_tp=1.69% | pct_to_sl=0.85%
+[CLOSE] SHORT | entry=90406.01 | exit=88874.47 | reason=TP | net=+361.58 USD | equity=18440.70 USD
+[OPEN]  SHORT | ts=2025-11-21 15:00:00+00:00 | entry=84173.05 | sl=85103.42 | tp=82312.31 | pct_to_tp=2.21% | pct_to_sl=1.11%
+[CLOSE] SHORT | entry=84173.05 | exit=85103.42 | reason=SL | net=-184.41 USD | equity=18256.30 USD
+[OPEN]  SHORT | ts=2025-11-21 18:00:00+00:00 | entry=83674.03 | sl=84949.99 | tp=81122.11 | pct_to_tp=3.05% | pct_to_sl=1.52%
+[CLOSE] SHORT | entry=83674.03 | exit=84949.99 | reason=SL | net=-182.56 USD | equity=18073.73 USD
+[OPEN]  SHORT | ts=2025-11-21 19:30:00+00:00 | entry=84446.10 | sl=84996.92 | tp=83344.46 | pct_to_tp=1.30% | pct_to_sl=0.65%
+[CLOSE] SHORT | entry=84446.10 | exit=84996.92 | reason=SL | net=-180.74 USD | equity=17893.00 USD
+[OPEN]  SHORT | ts=2025-11-21 22:15:00+00:00 | entry=84828.99 | sl=85206.57 | tp=84073.83 | pct_to_tp=0.89% | pct_to_sl=0.45%
+[CLOSE] SHORT | entry=84828.99 | exit=85206.57 | reason=SL | net=-178.93 USD | equity=17714.07 USD
+[OPEN]  SHORT | ts=2025-11-22 00:15:00+00:00 | entry=84895.97 | sl=85515.72 | tp=83656.47 | pct_to_tp=1.46% | pct_to_sl=0.73%
+[CLOSE] SHORT | entry=84895.97 | exit=83656.47 | reason=TP | net=+354.28 USD | equity=18068.35 USD
+[OPEN]  SHORT | ts=2025-11-22 12:00:00+00:00 | entry=83694.22 | sl=84160.80 | tp=82761.06 | pct_to_tp=1.11% | pct_to_sl=0.56%
+[CLOSE] SHORT | entry=83694.22 | exit=84160.80 | reason=SL | net=-180.68 USD | equity=17887.67 USD
+[OPEN]  SHORT | ts=2025-11-22 15:30:00+00:00 | entry=84119.53 | sl=84442.39 | tp=83473.81 | pct_to_tp=0.77% | pct_to_sl=0.38%
+[CLOSE] SHORT | entry=84119.53 | exit=84442.39 | reason=SL | net=-178.88 USD | equity=17708.79 USD
+[OPEN]  SHORT | ts=2025-11-22 17:30:00+00:00 | entry=84547.55 | sl=84724.58 | tp=84193.49 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] SHORT | entry=84547.55 | exit=84724.58 | reason=SL | net=-177.09 USD | equity=17531.70 USD
+[OPEN]  LONG | ts=2025-11-22 20:00:00+00:00 | entry=84765.07 | sl=84599.98 | tp=85095.25 | pct_to_tp=0.39% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=84765.07 | exit=84599.98 | reason=SL | net=-175.32 USD | equity=17356.38 USD
+[OPEN]  LONG | ts=2025-11-22 21:30:00+00:00 | entry=84403.26 | sl=84285.14 | tp=84639.50 | pct_to_tp=0.28% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=84403.26 | exit=84285.14 | reason=SL | net=-173.56 USD | equity=17182.82 USD
+[OPEN]  LONG | ts=2025-11-22 22:30:00+00:00 | entry=84760.58 | sl=84566.33 | tp=85149.08 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=84760.58 | exit=85149.08 | reason=TP | net=+343.66 USD | equity=17526.48 USD
+[OPEN]  LONG | ts=2025-11-23 01:30:00+00:00 | entry=85890.72 | sl=85458.01 | tp=86756.14 | pct_to_tp=1.01% | pct_to_sl=0.50%
+[CLOSE] LONG | entry=85890.72 | exit=86756.14 | reason=TP | net=+350.53 USD | equity=17877.01 USD
+[OPEN]  LONG | ts=2025-11-23 08:00:00+00:00 | entry=85988.32 | sl=85768.22 | tp=86428.52 | pct_to_tp=0.51% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=85988.32 | exit=86428.52 | reason=TP | net=+357.54 USD | equity=18234.55 USD
+[OPEN]  LONG | ts=2025-11-24 01:45:00+00:00 | entry=87068.51 | sl=86448.61 | tp=88308.31 | pct_to_tp=1.42% | pct_to_sl=0.71%
+[CLOSE] LONG | entry=87068.51 | exit=86448.61 | reason=SL | net=-182.35 USD | equity=18052.20 USD
+[OPEN]  SHORT | ts=2025-11-24 14:15:00+00:00 | entry=85935.63 | sl=86100.00 | tp=85606.89 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=85935.63 | exit=85606.89 | reason=TP | net=+361.04 USD | equity=18413.24 USD
+[OPEN]  LONG | ts=2025-11-24 18:45:00+00:00 | entry=88715.31 | sl=88407.14 | tp=89331.65 | pct_to_tp=0.69% | pct_to_sl=0.35%
+[CLOSE] LONG | entry=88715.31 | exit=88407.14 | reason=SL | net=-184.13 USD | equity=18229.11 USD
+[OPEN]  LONG | ts=2025-11-25 02:45:00+00:00 | entry=87909.40 | sl=87657.68 | tp=88412.84 | pct_to_tp=0.57% | pct_to_sl=0.29%
+[CLOSE] LONG | entry=87909.40 | exit=87657.68 | reason=SL | net=-182.29 USD | equity=18046.82 USD
+[OPEN]  LONG | ts=2025-11-25 04:00:00+00:00 | entry=88133.33 | sl=87790.17 | tp=88819.65 | pct_to_tp=0.78% | pct_to_sl=0.39%
+[CLOSE] LONG | entry=88133.33 | exit=87790.17 | reason=SL | net=-180.47 USD | equity=17866.35 USD
+[OPEN]  LONG | ts=2025-11-27 15:15:00+00:00 | entry=90931.97 | sl=90692.69 | tp=91410.53 | pct_to_tp=0.53% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=90931.97 | exit=91410.53 | reason=TP | net=+357.33 USD | equity=18223.68 USD
+[OPEN]  LONG | ts=2025-11-27 16:45:00+00:00 | entry=91467.13 | sl=91232.38 | tp=91936.63 | pct_to_tp=0.51% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=91467.13 | exit=91232.38 | reason=SL | net=-182.24 USD | equity=18041.44 USD
+[OPEN]  LONG | ts=2025-11-27 22:15:00+00:00 | entry=91569.77 | sl=91466.66 | tp=91775.99 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=91569.77 | exit=91466.66 | reason=SL | net=-180.41 USD | equity=17861.03 USD
+[OPEN]  LONG | ts=2025-11-27 23:00:00+00:00 | entry=91510.00 | sl=91314.64 | tp=91900.72 | pct_to_tp=0.43% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=91510.00 | exit=91314.64 | reason=SL | net=-178.61 USD | equity=17682.42 USD
+[OPEN]  LONG | ts=2025-11-28 02:00:00+00:00 | entry=90898.00 | sl=90745.90 | tp=91202.20 | pct_to_tp=0.33% | pct_to_sl=0.17%
+[CLOSE] LONG | entry=90898.00 | exit=90745.90 | reason=SL | net=-176.82 USD | equity=17505.59 USD
+[OPEN]  LONG | ts=2025-11-28 02:30:00+00:00 | entry=90822.15 | sl=90652.55 | tp=91161.35 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=90822.15 | exit=91161.35 | reason=TP | net=+350.11 USD | equity=17855.71 USD
+[OPEN]  LONG | ts=2025-11-28 03:45:00+00:00 | entry=91208.85 | sl=91124.51 | tp=91377.53 | pct_to_tp=0.18% | pct_to_sl=0.09%
+[CLOSE] LONG | entry=91208.85 | exit=91377.53 | reason=TP | net=+357.11 USD | equity=18212.82 USD
+[OPEN]  LONG | ts=2025-11-28 07:00:00+00:00 | entry=91400.96 | sl=91300.00 | tp=91602.88 | pct_to_tp=0.22% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=91400.96 | exit=91300.00 | reason=SL | net=-182.13 USD | equity=18030.69 USD
+[OPEN]  LONG | ts=2025-11-28 08:00:00+00:00 | entry=91125.77 | sl=90907.98 | tp=91561.35 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=91125.77 | exit=91561.35 | reason=TP | net=+360.61 USD | equity=18391.31 USD
+[OPEN]  LONG | ts=2025-11-28 09:45:00+00:00 | entry=91599.99 | sl=91479.50 | tp=91840.97 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] LONG | entry=91599.99 | exit=91840.97 | reason=TP | net=+367.83 USD | equity=18759.13 USD
+[OPEN]  LONG | ts=2025-11-28 11:45:00+00:00 | entry=91437.64 | sl=91296.85 | tp=91719.22 | pct_to_tp=0.31% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=91437.64 | exit=91719.22 | reason=TP | net=+375.18 USD | equity=19134.31 USD
+[OPEN]  LONG | ts=2025-11-28 13:45:00+00:00 | entry=92377.01 | sl=91839.99 | tp=93451.05 | pct_to_tp=1.16% | pct_to_sl=0.58%
+[CLOSE] LONG | entry=92377.01 | exit=91839.99 | reason=SL | net=-191.34 USD | equity=18942.97 USD
+[OPEN]  LONG | ts=2025-11-30 12:30:00+00:00 | entry=91443.56 | sl=91214.31 | tp=91902.06 | pct_to_tp=0.50% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=91443.56 | exit=91902.06 | reason=TP | net=+378.86 USD | equity=19321.83 USD
+[OPEN]  LONG | ts=2025-11-30 15:15:00+00:00 | entry=91576.62 | sl=91354.85 | tp=92020.16 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=91576.62 | exit=91354.85 | reason=SL | net=-193.22 USD | equity=19128.61 USD
+[OPEN]  SHORT | ts=2025-12-01 23:30:00+00:00 | entry=86509.67 | sl=86833.55 | tp=85861.91 | pct_to_tp=0.75% | pct_to_sl=0.37%
+[CLOSE] SHORT | entry=86509.67 | exit=86833.55 | reason=SL | net=-191.29 USD | equity=18937.33 USD
+[OPEN]  LONG | ts=2025-12-02 03:30:00+00:00 | entry=86974.00 | sl=86214.99 | tp=88492.02 | pct_to_tp=1.75% | pct_to_sl=0.87%
+[CLOSE] LONG | entry=86974.00 | exit=88492.02 | reason=TP | net=+378.75 USD | equity=19316.07 USD
+[OPEN]  LONG | ts=2025-12-02 14:15:00+00:00 | entry=88675.45 | sl=88272.18 | tp=89481.99 | pct_to_tp=0.91% | pct_to_sl=0.45%
+[CLOSE] LONG | entry=88675.45 | exit=89481.99 | reason=TP | net=+386.32 USD | equity=19702.39 USD
+[OPEN]  LONG | ts=2025-12-03 16:15:00+00:00 | entry=92268.45 | sl=91982.10 | tp=92841.15 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] LONG | entry=92268.45 | exit=92841.15 | reason=TP | net=+394.05 USD | equity=20096.44 USD
+[OPEN]  LONG | ts=2025-12-03 18:00:00+00:00 | entry=93421.05 | sl=92956.22 | tp=94350.71 | pct_to_tp=1.00% | pct_to_sl=0.50%
+[CLOSE] LONG | entry=93421.05 | exit=92956.22 | reason=SL | net=-200.96 USD | equity=19895.48 USD
+[OPEN]  LONG | ts=2025-12-03 19:45:00+00:00 | entry=93024.99 | sl=92805.34 | tp=93464.29 | pct_to_tp=0.47% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=93024.99 | exit=93464.29 | reason=TP | net=+397.91 USD | equity=20293.39 USD
+[OPEN]  LONG | ts=2025-12-04 01:00:00+00:00 | entry=93691.82 | sl=92981.35 | tp=95112.76 | pct_to_tp=1.52% | pct_to_sl=0.76%
+[CLOSE] LONG | entry=93691.82 | exit=92981.35 | reason=SL | net=-202.93 USD | equity=20090.45 USD
+[OPEN]  LONG | ts=2025-12-04 06:15:00+00:00 | entry=93206.39 | sl=93022.51 | tp=93574.15 | pct_to_tp=0.39% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=93206.39 | exit=93022.51 | reason=SL | net=-200.90 USD | equity=19889.55 USD
+[OPEN]  LONG | ts=2025-12-04 07:30:00+00:00 | entry=93271.67 | sl=93101.13 | tp=93612.75 | pct_to_tp=0.37% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=93271.67 | exit=93101.13 | reason=SL | net=-198.90 USD | equity=19690.65 USD
+[OPEN]  LONG | ts=2025-12-04 08:30:00+00:00 | entry=93332.81 | sl=93044.41 | tp=93909.61 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] LONG | entry=93332.81 | exit=93044.41 | reason=SL | net=-196.91 USD | equity=19493.75 USD
+[OPEN]  LONG | ts=2025-12-04 12:30:00+00:00 | entry=93097.00 | sl=92854.80 | tp=93581.40 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=93097.00 | exit=92854.80 | reason=SL | net=-194.94 USD | equity=19298.81 USD
+[OPEN]  LONG | ts=2025-12-04 13:15:00+00:00 | entry=92786.79 | sl=92549.49 | tp=93261.39 | pct_to_tp=0.51% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=92786.79 | exit=92549.49 | reason=SL | net=-192.99 USD | equity=19105.82 USD
+[OPEN]  SHORT | ts=2025-12-05 10:45:00+00:00 | entry=91272.85 | sl=91488.00 | tp=90842.55 | pct_to_tp=0.47% | pct_to_sl=0.24%
+[CLOSE] SHORT | entry=91272.85 | exit=91488.00 | reason=SL | net=-191.06 USD | equity=18914.76 USD
+[OPEN]  SHORT | ts=2025-12-05 16:00:00+00:00 | entry=89362.56 | sl=90498.59 | tp=87090.50 | pct_to_tp=2.54% | pct_to_sl=1.27%
+[CLOSE] SHORT | entry=89362.56 | exit=90498.59 | reason=SL | net=-189.15 USD | equity=18725.62 USD
+[OPEN]  LONG | ts=2025-12-07 18:00:00+00:00 | entry=91327.99 | sl=90945.17 | tp=92093.63 | pct_to_tp=0.84% | pct_to_sl=0.42%
+[CLOSE] LONG | entry=91327.99 | exit=90945.17 | reason=SL | net=-187.26 USD | equity=18538.36 USD
+[OPEN]  LONG | ts=2025-12-08 01:00:00+00:00 | entry=90680.56 | sl=90301.86 | tp=91437.96 | pct_to_tp=0.84% | pct_to_sl=0.42%
+[CLOSE] LONG | entry=90680.56 | exit=91437.96 | reason=TP | net=+370.77 USD | equity=18909.13 USD
+[OPEN]  LONG | ts=2025-12-08 02:30:00+00:00 | entry=91206.06 | sl=90972.37 | tp=91673.44 | pct_to_tp=0.51% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=91206.06 | exit=91673.44 | reason=TP | net=+378.18 USD | equity=19287.31 USD
+[OPEN]  SHORT | ts=2025-12-09 04:30:00+00:00 | entry=89921.88 | sl=90400.47 | tp=88964.70 | pct_to_tp=1.06% | pct_to_sl=0.53%
+[CLOSE] SHORT | entry=89921.88 | exit=90400.47 | reason=SL | net=-192.87 USD | equity=19094.44 USD
+[OPEN]  LONG | ts=2025-12-09 16:00:00+00:00 | entry=93442.26 | sl=92693.50 | tp=94939.78 | pct_to_tp=1.60% | pct_to_sl=0.80%
+[CLOSE] LONG | entry=93442.26 | exit=92693.50 | reason=SL | net=-190.94 USD | equity=18903.49 USD
+[OPEN]  LONG | ts=2025-12-10 02:15:00+00:00 | entry=92502.87 | sl=92217.09 | tp=93074.43 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] LONG | entry=92502.87 | exit=93074.43 | reason=TP | net=+378.07 USD | equity=19281.56 USD
+[OPEN]  SHORT | ts=2025-12-10 19:15:00+00:00 | entry=92467.72 | sl=93168.00 | tp=91067.16 | pct_to_tp=1.51% | pct_to_sl=0.76%
+[CLOSE] SHORT | entry=92467.72 | exit=93168.00 | reason=SL | net=-192.82 USD | equity=19088.75 USD
+[OPEN]  LONG | ts=2025-12-10 20:00:00+00:00 | entry=94252.99 | sl=92662.13 | tp=97434.71 | pct_to_tp=3.38% | pct_to_sl=1.69%
+[CLOSE] LONG | entry=94252.99 | exit=92662.13 | reason=SL | net=-190.89 USD | equity=18897.86 USD
+[OPEN]  SHORT | ts=2025-12-11 15:30:00+00:00 | entry=89806.84 | sl=90276.00 | tp=88868.52 | pct_to_tp=1.04% | pct_to_sl=0.52%
+[CLOSE] SHORT | entry=89806.84 | exit=90276.00 | reason=SL | net=-188.98 USD | equity=18708.88 USD
+[OPEN]  LONG | ts=2025-12-11 21:00:00+00:00 | entry=92461.40 | sl=91706.06 | tp=93972.08 | pct_to_tp=1.63% | pct_to_sl=0.82%
+[CLOSE] LONG | entry=92461.40 | exit=91706.06 | reason=SL | net=-187.09 USD | equity=18521.79 USD
+[OPEN]  SHORT | ts=2025-12-13 09:15:00+00:00 | entry=90430.89 | sl=90481.79 | tp=90329.09 | pct_to_tp=0.11% | pct_to_sl=0.06%
+[CLOSE] SHORT | entry=90430.89 | exit=90481.79 | reason=SL | net=-185.22 USD | equity=18336.57 USD
+[OPEN]  SHORT | ts=2025-12-13 11:30:00+00:00 | entry=90358.77 | sl=90447.80 | tp=90180.71 | pct_to_tp=0.20% | pct_to_sl=0.10%
+[CLOSE] SHORT | entry=90358.77 | exit=90447.80 | reason=SL | net=-183.37 USD | equity=18153.21 USD
+[OPEN]  SHORT | ts=2025-12-13 12:15:00+00:00 | entry=90325.42 | sl=90427.89 | tp=90120.48 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=90325.42 | exit=90427.89 | reason=SL | net=-181.53 USD | equity=17971.68 USD
+[OPEN]  SHORT | ts=2025-12-13 14:15:00+00:00 | entry=89961.12 | sl=90288.43 | tp=89306.50 | pct_to_tp=0.73% | pct_to_sl=0.36%
+[CLOSE] SHORT | entry=89961.12 | exit=90288.43 | reason=SL | net=-179.72 USD | equity=17791.96 USD
+[OPEN]  SHORT | ts=2025-12-13 14:45:00+00:00 | entry=90079.70 | sl=90214.73 | tp=89809.64 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=90079.70 | exit=90214.73 | reason=SL | net=-177.92 USD | equity=17614.04 USD
+[OPEN]  SHORT | ts=2025-12-13 16:15:00+00:00 | entry=90073.23 | sl=90187.68 | tp=89844.33 | pct_to_tp=0.25% | pct_to_sl=0.13%
+[CLOSE] SHORT | entry=90073.23 | exit=90187.68 | reason=SL | net=-176.14 USD | equity=17437.90 USD
+[OPEN]  SHORT | ts=2025-12-14 05:15:00+00:00 | entry=90090.17 | sl=90156.55 | tp=89957.41 | pct_to_tp=0.15% | pct_to_sl=0.07%
+[CLOSE] SHORT | entry=90090.17 | exit=90156.55 | reason=SL | net=-174.38 USD | equity=17263.52 USD
+[OPEN]  SHORT | ts=2025-12-14 10:00:00+00:00 | entry=89802.55 | sl=90044.26 | tp=89319.13 | pct_to_tp=0.54% | pct_to_sl=0.27%
+[CLOSE] SHORT | entry=89802.55 | exit=90044.26 | reason=SL | net=-172.64 USD | equity=17090.88 USD
+[OPEN]  SHORT | ts=2025-12-14 10:45:00+00:00 | entry=89853.69 | sl=89922.86 | tp=89715.35 | pct_to_tp=0.15% | pct_to_sl=0.08%
+[CLOSE] SHORT | entry=89853.69 | exit=89715.35 | reason=TP | net=+341.82 USD | equity=17432.70 USD
+[OPEN]  SHORT | ts=2025-12-14 11:15:00+00:00 | entry=89514.85 | sl=89779.36 | tp=88985.83 | pct_to_tp=0.59% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=89514.85 | exit=88985.83 | reason=TP | net=+348.65 USD | equity=17781.36 USD
+[OPEN]  SHORT | ts=2025-12-15 15:00:00+00:00 | entry=87476.92 | sl=88184.28 | tp=86062.20 | pct_to_tp=1.62% | pct_to_sl=0.81%
+[CLOSE] SHORT | entry=87476.92 | exit=86062.20 | reason=TP | net=+355.63 USD | equity=18136.98 USD
+[OPEN]  SHORT | ts=2025-12-16 07:30:00+00:00 | entry=85896.35 | sl=86241.66 | tp=85205.73 | pct_to_tp=0.80% | pct_to_sl=0.40%
+[CLOSE] SHORT | entry=85896.35 | exit=86241.66 | reason=SL | net=-181.37 USD | equity=17955.61 USD
+[OPEN]  SHORT | ts=2025-12-17 08:00:00+00:00 | entry=86800.00 | sl=87045.59 | tp=86308.82 | pct_to_tp=0.57% | pct_to_sl=0.28%
+[CLOSE] SHORT | entry=86800.00 | exit=86308.82 | reason=TP | net=+359.11 USD | equity=18314.73 USD
+[OPEN]  SHORT | ts=2025-12-17 12:30:00+00:00 | entry=86847.47 | sl=87097.99 | tp=86346.43 | pct_to_tp=0.58% | pct_to_sl=0.29%
+[CLOSE] SHORT | entry=86847.47 | exit=87097.99 | reason=SL | net=-183.15 USD | equity=18131.58 USD
+[OPEN]  LONG | ts=2025-12-17 16:45:00+00:00 | entry=86986.51 | sl=86469.81 | tp=88019.91 | pct_to_tp=1.19% | pct_to_sl=0.59%
+[CLOSE] LONG | entry=86986.51 | exit=86469.81 | reason=SL | net=-181.32 USD | equity=17950.26 USD
+[OPEN]  SHORT | ts=2025-12-18 03:15:00+00:00 | entry=86307.00 | sl=86598.17 | tp=85724.66 | pct_to_tp=0.67% | pct_to_sl=0.34%
+[CLOSE] SHORT | entry=86307.00 | exit=86598.17 | reason=SL | net=-179.50 USD | equity=17770.76 USD
+[OPEN]  SHORT | ts=2025-12-18 05:45:00+00:00 | entry=86440.90 | sl=86678.61 | tp=85965.48 | pct_to_tp=0.55% | pct_to_sl=0.27%
+[CLOSE] SHORT | entry=86440.90 | exit=86678.61 | reason=SL | net=-177.71 USD | equity=17593.05 USD
+[OPEN]  LONG | ts=2025-12-19 15:00:00+00:00 | entry=88762.41 | sl=87962.30 | tp=90362.63 | pct_to_tp=1.80% | pct_to_sl=0.90%
+[CLOSE] LONG | entry=88762.41 | exit=87962.30 | reason=SL | net=-175.93 USD | equity=17417.12 USD
+[OPEN]  LONG | ts=2025-12-19 19:15:00+00:00 | entry=87658.01 | sl=87297.49 | tp=88379.05 | pct_to_tp=0.82% | pct_to_sl=0.41%
+[CLOSE] LONG | entry=87658.01 | exit=88379.05 | reason=TP | net=+348.34 USD | equity=17765.46 USD
+[OPEN]  LONG | ts=2025-12-20 13:30:00+00:00 | entry=88190.72 | sl=88001.80 | tp=88568.56 | pct_to_tp=0.43% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=88190.72 | exit=88001.80 | reason=SL | net=-177.65 USD | equity=17587.81 USD
+[OPEN]  LONG | ts=2025-12-21 09:30:00+00:00 | entry=88834.10 | sl=88639.62 | tp=89223.06 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=88834.10 | exit=88639.62 | reason=SL | net=-175.88 USD | equity=17411.93 USD
+[OPEN]  LONG | ts=2025-12-21 23:45:00+00:00 | entry=88658.86 | sl=88483.85 | tp=89008.88 | pct_to_tp=0.39% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=88658.86 | exit=89008.88 | reason=TP | net=+348.24 USD | equity=17760.17 USD
+[OPEN]  LONG | ts=2025-12-22 03:15:00+00:00 | entry=88771.60 | sl=88579.14 | tp=89156.52 | pct_to_tp=0.43% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=88771.60 | exit=89156.52 | reason=TP | net=+355.20 USD | equity=18115.37 USD
+[OPEN]  LONG | ts=2025-12-22 16:15:00+00:00 | entry=90084.06 | sl=89815.07 | tp=90622.04 | pct_to_tp=0.60% | pct_to_sl=0.30%
+[CLOSE] LONG | entry=90084.06 | exit=89815.07 | reason=SL | net=-181.15 USD | equity=17934.22 USD
+[OPEN]  SHORT | ts=2025-12-23 14:45:00+00:00 | entry=86874.00 | sl=87440.05 | tp=85741.90 | pct_to_tp=1.30% | pct_to_sl=0.65%
+[CLOSE] SHORT | entry=86874.00 | exit=87440.05 | reason=SL | net=-179.34 USD | equity=17754.88 USD
+[OPEN]  SHORT | ts=2025-12-23 17:45:00+00:00 | entry=87180.01 | sl=87816.10 | tp=85907.83 | pct_to_tp=1.46% | pct_to_sl=0.73%
+[CLOSE] SHORT | entry=87180.01 | exit=87816.10 | reason=SL | net=-177.55 USD | equity=17577.33 USD
+[OPEN]  SHORT | ts=2025-12-23 20:45:00+00:00 | entry=87691.50 | sl=88372.35 | tp=86329.80 | pct_to_tp=1.55% | pct_to_sl=0.78%
+[CLOSE] SHORT | entry=87691.50 | exit=88372.35 | reason=SL | net=-175.77 USD | equity=17401.56 USD
+[OPEN]  LONG | ts=2025-12-26 08:45:00+00:00 | entry=88742.28 | sl=88597.23 | tp=89032.38 | pct_to_tp=0.33% | pct_to_sl=0.16%
+[CLOSE] LONG | entry=88742.28 | exit=88597.23 | reason=SL | net=-174.02 USD | equity=17227.54 USD
+[OPEN]  LONG | ts=2025-12-26 12:00:00+00:00 | entry=88690.52 | sl=88533.42 | tp=89004.72 | pct_to_tp=0.35% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=88690.52 | exit=89004.72 | reason=TP | net=+344.55 USD | equity=17572.09 USD
+[OPEN]  LONG | ts=2025-12-29 02:00:00+00:00 | entry=89265.33 | sl=88445.57 | tp=90904.85 | pct_to_tp=1.84% | pct_to_sl=0.92%
+[CLOSE] LONG | entry=89265.33 | exit=88445.57 | reason=SL | net=-175.72 USD | equity=17396.37 USD
+[OPEN]  SHORT | ts=2025-12-30 04:45:00+00:00 | entry=87300.00 | sl=87468.59 | tp=86962.82 | pct_to_tp=0.39% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=87300.00 | exit=87468.59 | reason=SL | net=-173.96 USD | equity=17222.41 USD
+[OPEN]  LONG | ts=2025-12-30 15:30:00+00:00 | entry=88775.89 | sl=88431.19 | tp=89465.29 | pct_to_tp=0.78% | pct_to_sl=0.39%
+[CLOSE] LONG | entry=88775.89 | exit=88431.19 | reason=SL | net=-172.22 USD | equity=17050.18 USD
+[OPEN]  LONG | ts=2025-12-30 22:00:00+00:00 | entry=88469.99 | sl=88287.28 | tp=88835.41 | pct_to_tp=0.41% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=88469.99 | exit=88287.28 | reason=SL | net=-170.50 USD | equity=16879.68 USD
+[OPEN]  LONG | ts=2025-12-31 01:15:00+00:00 | entry=88588.57 | sl=88308.52 | tp=89148.67 | pct_to_tp=0.63% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=88588.57 | exit=89148.67 | reason=TP | net=+337.59 USD | equity=17217.27 USD
+[OPEN]  SHORT | ts=2026-01-01 04:30:00+00:00 | entry=87550.48 | sl=87670.07 | tp=87311.30 | pct_to_tp=0.27% | pct_to_sl=0.14%
+[CLOSE] SHORT | entry=87550.48 | exit=87670.07 | reason=SL | net=-172.17 USD | equity=17045.10 USD
+[OPEN]  LONG | ts=2026-01-02 03:00:00+00:00 | entry=88963.05 | sl=88573.64 | tp=89741.87 | pct_to_tp=0.88% | pct_to_sl=0.44%
+[CLOSE] LONG | entry=88963.05 | exit=89741.87 | reason=TP | net=+340.90 USD | equity=17386.00 USD
+[OPEN]  LONG | ts=2026-01-02 15:30:00+00:00 | entry=89757.89 | sl=89066.00 | tp=91141.67 | pct_to_tp=1.54% | pct_to_sl=0.77%
+[CLOSE] LONG | entry=89757.89 | exit=91141.67 | reason=TP | net=+347.72 USD | equity=17733.72 USD
+[OPEN]  LONG | ts=2026-01-04 13:45:00+00:00 | entry=91264.00 | sl=91224.00 | tp=91344.00 | pct_to_tp=0.09% | pct_to_sl=0.04%
+[CLOSE] LONG | entry=91264.00 | exit=91344.00 | reason=TP | net=+354.67 USD | equity=18088.40 USD
+[OPEN]  LONG | ts=2026-01-04 14:45:00+00:00 | entry=91336.39 | sl=91146.86 | tp=91715.45 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=91336.39 | exit=91146.86 | reason=SL | net=-180.88 USD | equity=17907.51 USD
+[OPEN]  LONG | ts=2026-01-04 16:45:00+00:00 | entry=91321.00 | sl=91300.00 | tp=91363.00 | pct_to_tp=0.05% | pct_to_sl=0.02%
+[CLOSE] LONG | entry=91321.00 | exit=91363.00 | reason=TP | net=+358.15 USD | equity=18265.66 USD
+[OPEN]  LONG | ts=2026-01-04 19:45:00+00:00 | entry=91138.07 | sl=91068.00 | tp=91278.21 | pct_to_tp=0.15% | pct_to_sl=0.08%
+[CLOSE] LONG | entry=91138.07 | exit=91278.21 | reason=TP | net=+365.31 USD | equity=18630.98 USD
+[OPEN]  LONG | ts=2026-01-04 20:15:00+00:00 | entry=91339.99 | sl=91240.00 | tp=91539.97 | pct_to_tp=0.22% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=91339.99 | exit=91240.00 | reason=SL | net=-186.31 USD | equity=18444.67 USD
+[OPEN]  LONG | ts=2026-01-04 21:45:00+00:00 | entry=91279.99 | sl=91182.71 | tp=91474.55 | pct_to_tp=0.21% | pct_to_sl=0.11%
+[CLOSE] LONG | entry=91279.99 | exit=91182.71 | reason=SL | net=-184.45 USD | equity=18260.22 USD
+[OPEN]  LONG | ts=2026-01-04 22:15:00+00:00 | entry=91285.37 | sl=91150.47 | tp=91555.17 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=91285.37 | exit=91555.17 | reason=TP | net=+365.20 USD | equity=18625.43 USD
+[OPEN]  LONG | ts=2026-01-05 00:00:00+00:00 | entry=91895.35 | sl=91514.81 | tp=92656.43 | pct_to_tp=0.83% | pct_to_sl=0.41%
+[CLOSE] LONG | entry=91895.35 | exit=92656.43 | reason=TP | net=+372.51 USD | equity=18997.93 USD
+[OPEN]  LONG | ts=2026-01-05 15:30:00+00:00 | entry=93857.89 | sl=93316.06 | tp=94941.55 | pct_to_tp=1.15% | pct_to_sl=0.58%
+[CLOSE] LONG | entry=93857.89 | exit=93316.06 | reason=SL | net=-189.98 USD | equity=18807.95 USD
+[OPEN]  LONG | ts=2026-01-06 01:15:00+00:00 | entry=94116.72 | sl=93883.88 | tp=94582.40 | pct_to_tp=0.49% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=94116.72 | exit=93883.88 | reason=SL | net=-188.08 USD | equity=18619.88 USD
+[OPEN]  LONG | ts=2026-01-06 03:00:00+00:00 | entry=93757.12 | sl=93601.96 | tp=94067.44 | pct_to_tp=0.33% | pct_to_sl=0.17%
+[CLOSE] LONG | entry=93757.12 | exit=93601.96 | reason=SL | net=-186.20 USD | equity=18433.68 USD
+[OPEN]  LONG | ts=2026-01-06 06:00:00+00:00 | entry=93756.86 | sl=93538.83 | tp=94192.92 | pct_to_tp=0.47% | pct_to_sl=0.23%
+[CLOSE] LONG | entry=93756.86 | exit=93538.83 | reason=SL | net=-184.34 USD | equity=18249.34 USD
+[OPEN]  LONG | ts=2026-01-06 14:00:00+00:00 | entry=94092.62 | sl=93716.52 | tp=94844.82 | pct_to_tp=0.80% | pct_to_sl=0.40%
+[CLOSE] LONG | entry=94092.62 | exit=93716.52 | reason=SL | net=-182.49 USD | equity=18066.85 USD
+[OPEN]  LONG | ts=2026-01-06 15:15:00+00:00 | entry=94130.53 | sl=93756.01 | tp=94879.57 | pct_to_tp=0.80% | pct_to_sl=0.40%
+[CLOSE] LONG | entry=94130.53 | exit=93756.01 | reason=SL | net=-180.67 USD | equity=17886.18 USD
+[OPEN]  SHORT | ts=2026-01-06 17:45:00+00:00 | entry=91589.24 | sl=92239.67 | tp=90288.38 | pct_to_tp=1.42% | pct_to_sl=0.71%
+[CLOSE] SHORT | entry=91589.24 | exit=92239.67 | reason=SL | net=-178.86 USD | equity=17707.32 USD
+[OPEN]  SHORT | ts=2026-01-08 01:30:00+00:00 | entry=91362.40 | sl=91525.59 | tp=91036.02 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=91362.40 | exit=91036.02 | reason=TP | net=+354.15 USD | equity=18061.46 USD
+[OPEN]  SHORT | ts=2026-01-08 03:15:00+00:00 | entry=90949.88 | sl=91109.35 | tp=90630.94 | pct_to_tp=0.35% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=90949.88 | exit=90630.94 | reason=TP | net=+361.23 USD | equity=18422.69 USD
+[OPEN]  SHORT | ts=2026-01-08 17:15:00+00:00 | entry=90865.59 | sl=91181.67 | tp=90233.43 | pct_to_tp=0.70% | pct_to_sl=0.35%
+[CLOSE] SHORT | entry=90865.59 | exit=91181.67 | reason=SL | net=-184.23 USD | equity=18238.46 USD
+[OPEN]  LONG | ts=2026-01-08 20:30:00+00:00 | entry=90793.90 | sl=90590.77 | tp=91200.16 | pct_to_tp=0.45% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=90793.90 | exit=91200.16 | reason=TP | net=+364.77 USD | equity=18603.23 USD
+[OPEN]  SHORT | ts=2026-01-09 14:00:00+00:00 | entry=90343.86 | sl=90607.67 | tp=89816.24 | pct_to_tp=0.58% | pct_to_sl=0.29%
+[CLOSE] SHORT | entry=90343.86 | exit=90607.67 | reason=SL | net=-186.03 USD | equity=18417.20 USD
+[OPEN]  SHORT | ts=2026-01-09 22:00:00+00:00 | entry=90392.52 | sl=90571.24 | tp=90035.08 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=90392.52 | exit=90571.24 | reason=SL | net=-184.17 USD | equity=18233.03 USD
+[OPEN]  LONG | ts=2026-01-12 18:15:00+00:00 | entry=91924.00 | sl=91705.69 | tp=92360.62 | pct_to_tp=0.47% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=91924.00 | exit=91705.69 | reason=SL | net=-182.33 USD | equity=18050.70 USD
+[OPEN]  LONG | ts=2026-01-12 19:15:00+00:00 | entry=91825.00 | sl=91662.64 | tp=92149.72 | pct_to_tp=0.35% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=91825.00 | exit=91662.64 | reason=SL | net=-180.51 USD | equity=17870.19 USD
+[OPEN]  LONG | ts=2026-01-13 06:45:00+00:00 | entry=92184.36 | sl=91991.31 | tp=92570.46 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=92184.36 | exit=91991.31 | reason=SL | net=-178.70 USD | equity=17691.49 USD
+[OPEN]  LONG | ts=2026-01-13 13:15:00+00:00 | entry=92139.99 | sl=92000.01 | tp=92419.95 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=92139.99 | exit=92419.95 | reason=TP | net=+353.83 USD | equity=18045.32 USD
+[OPEN]  LONG | ts=2026-01-13 15:30:00+00:00 | entry=92931.98 | sl=92371.74 | tp=94052.46 | pct_to_tp=1.21% | pct_to_sl=0.60%
+[CLOSE] LONG | entry=92931.98 | exit=94052.46 | reason=TP | net=+360.91 USD | equity=18406.23 USD
+[OPEN]  LONG | ts=2026-01-14 12:00:00+00:00 | entry=95019.00 | sl=94680.67 | tp=95695.66 | pct_to_tp=0.71% | pct_to_sl=0.36%
+[CLOSE] LONG | entry=95019.00 | exit=95695.66 | reason=TP | net=+368.12 USD | equity=18774.35 USD
+[OPEN]  LONG | ts=2026-01-14 15:45:00+00:00 | entry=96764.57 | sl=96300.00 | tp=97693.71 | pct_to_tp=0.96% | pct_to_sl=0.48%
+[CLOSE] LONG | entry=96764.57 | exit=97693.71 | reason=TP | net=+375.49 USD | equity=19149.84 USD
+[OPEN]  LONG | ts=2026-01-15 02:15:00+00:00 | entry=96527.45 | sl=96382.89 | tp=96816.57 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=96527.45 | exit=96382.89 | reason=SL | net=-191.50 USD | equity=18958.34 USD
+[OPEN]  LONG | ts=2026-01-15 05:30:00+00:00 | entry=96435.05 | sl=96247.64 | tp=96809.87 | pct_to_tp=0.39% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=96435.05 | exit=96247.64 | reason=SL | net=-189.58 USD | equity=18768.76 USD
+[OPEN]  LONG | ts=2026-01-15 07:15:00+00:00 | entry=96478.28 | sl=96206.69 | tp=97021.46 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] LONG | entry=96478.28 | exit=97021.46 | reason=TP | net=+375.38 USD | equity=19144.13 USD
+[OPEN]  LONG | ts=2026-01-15 12:30:00+00:00 | entry=96746.99 | sl=96606.93 | tp=97027.11 | pct_to_tp=0.29% | pct_to_sl=0.14%
+[CLOSE] LONG | entry=96746.99 | exit=97027.11 | reason=TP | net=+382.88 USD | equity=19527.01 USD
+[OPEN]  LONG | ts=2026-01-15 14:00:00+00:00 | entry=97139.27 | sl=96846.74 | tp=97724.33 | pct_to_tp=0.60% | pct_to_sl=0.30%
+[CLOSE] LONG | entry=97139.27 | exit=96846.74 | reason=SL | net=-195.27 USD | equity=19331.74 USD
+[OPEN]  LONG | ts=2026-01-15 15:45:00+00:00 | entry=96737.04 | sl=95435.91 | tp=99339.30 | pct_to_tp=2.69% | pct_to_sl=1.35%
+[CLOSE] LONG | entry=96737.04 | exit=95435.91 | reason=SL | net=-193.32 USD | equity=19138.43 USD
+[OPEN]  SHORT | ts=2026-01-16 19:15:00+00:00 | entry=94861.39 | sl=95000.95 | tp=94582.27 | pct_to_tp=0.29% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=94861.39 | exit=95000.95 | reason=SL | net=-191.38 USD | equity=18947.04 USD
+[OPEN]  SHORT | ts=2026-01-19 17:30:00+00:00 | entry=93196.39 | sl=93301.35 | tp=92986.47 | pct_to_tp=0.23% | pct_to_sl=0.11%
+[CLOSE] SHORT | entry=93196.39 | exit=92986.47 | reason=TP | net=+378.94 USD | equity=19325.98 USD
+[OPEN]  SHORT | ts=2026-01-19 20:30:00+00:00 | entry=93131.60 | sl=93251.56 | tp=92891.68 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] SHORT | entry=93131.60 | exit=93251.56 | reason=SL | net=-193.26 USD | equity=19132.72 USD
+[OPEN]  SHORT | ts=2026-01-19 21:45:00+00:00 | entry=93003.42 | sl=93053.90 | tp=92902.46 | pct_to_tp=0.11% | pct_to_sl=0.05%
+[CLOSE] SHORT | entry=93003.42 | exit=92902.46 | reason=TP | net=+382.65 USD | equity=19515.38 USD
+[OPEN]  SHORT | ts=2026-01-19 22:30:00+00:00 | entry=92819.61 | sl=92983.85 | tp=92491.13 | pct_to_tp=0.35% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=92819.61 | exit=92491.13 | reason=TP | net=+390.31 USD | equity=19905.69 USD
+[OPEN]  SHORT | ts=2026-01-21 06:30:00+00:00 | entry=89616.78 | sl=89885.39 | tp=89079.56 | pct_to_tp=0.60% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=89616.78 | exit=89079.56 | reason=TP | net=+398.11 USD | equity=20303.80 USD
+[OPEN]  LONG | ts=2026-01-22 00:00:00+00:00 | entry=89710.40 | sl=89454.72 | tp=90221.76 | pct_to_tp=0.57% | pct_to_sl=0.29%
+[CLOSE] LONG | entry=89710.40 | exit=90221.76 | reason=TP | net=+406.08 USD | equity=20709.87 USD
+[OPEN]  SHORT | ts=2026-01-22 15:15:00+00:00 | entry=88658.05 | sl=89369.77 | tp=87234.61 | pct_to_tp=1.61% | pct_to_sl=0.80%
+[CLOSE] SHORT | entry=88658.05 | exit=89369.77 | reason=SL | net=-207.10 USD | equity=20502.78 USD
+[OPEN]  SHORT | ts=2026-01-22 18:45:00+00:00 | entry=89333.94 | sl=89715.61 | tp=88570.60 | pct_to_tp=0.85% | pct_to_sl=0.43%
+[CLOSE] SHORT | entry=89333.94 | exit=89715.61 | reason=SL | net=-205.03 USD | equity=20297.75 USD
+[OPEN]  SHORT | ts=2026-01-22 20:45:00+00:00 | entry=89409.72 | sl=89552.86 | tp=89123.44 | pct_to_tp=0.32% | pct_to_sl=0.16%
+[CLOSE] SHORT | entry=89409.72 | exit=89552.86 | reason=SL | net=-202.98 USD | equity=20094.77 USD
+[OPEN]  SHORT | ts=2026-01-22 21:30:00+00:00 | entry=89392.01 | sl=89600.00 | tp=88976.03 | pct_to_tp=0.47% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=89392.01 | exit=89600.00 | reason=SL | net=-200.95 USD | equity=19893.82 USD
+[OPEN]  SHORT | ts=2026-01-23 14:30:00+00:00 | entry=88965.48 | sl=89733.71 | tp=87429.02 | pct_to_tp=1.73% | pct_to_sl=0.86%
+[CLOSE] SHORT | entry=88965.48 | exit=89733.71 | reason=SL | net=-198.94 USD | equity=19694.88 USD
+[OPEN]  SHORT | ts=2026-01-25 04:45:00+00:00 | entry=89006.96 | sl=89086.68 | tp=88847.52 | pct_to_tp=0.18% | pct_to_sl=0.09%
+[CLOSE] SHORT | entry=89006.96 | exit=88847.52 | reason=TP | net=+393.90 USD | equity=20088.78 USD
+[OPEN]  SHORT | ts=2026-01-25 15:30:00+00:00 | entry=88682.81 | sl=88742.64 | tp=88563.15 | pct_to_tp=0.13% | pct_to_sl=0.07%
+[CLOSE] SHORT | entry=88682.81 | exit=88563.15 | reason=TP | net=+401.78 USD | equity=20490.56 USD
+[OPEN]  SHORT | ts=2026-01-25 16:00:00+00:00 | entry=87904.72 | sl=88448.85 | tp=86816.46 | pct_to_tp=1.24% | pct_to_sl=0.62%
+[CLOSE] SHORT | entry=87904.72 | exit=86816.46 | reason=TP | net=+409.81 USD | equity=20900.37 USD
+[OPEN]  SHORT | ts=2026-01-26 02:00:00+00:00 | entry=87509.31 | sl=87698.74 | tp=87130.45 | pct_to_tp=0.43% | pct_to_sl=0.22%
+[CLOSE] SHORT | entry=87509.31 | exit=87698.74 | reason=SL | net=-209.00 USD | equity=20691.37 USD
+[OPEN]  SHORT | ts=2026-01-26 02:30:00+00:00 | entry=87625.22 | sl=87973.11 | tp=86929.44 | pct_to_tp=0.79% | pct_to_sl=0.40%
+[CLOSE] SHORT | entry=87625.22 | exit=87973.11 | reason=SL | net=-206.91 USD | equity=20484.45 USD
+[OPEN]  SHORT | ts=2026-01-26 07:15:00+00:00 | entry=87788.20 | sl=88074.48 | tp=87215.64 | pct_to_tp=0.65% | pct_to_sl=0.33%
+[CLOSE] SHORT | entry=87788.20 | exit=88074.48 | reason=SL | net=-204.84 USD | equity=20279.61 USD
+[OPEN]  LONG | ts=2026-01-26 10:00:00+00:00 | entry=87842.47 | sl=87660.00 | tp=88207.41 | pct_to_tp=0.42% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=87842.47 | exit=87660.00 | reason=SL | net=-202.80 USD | equity=20076.81 USD
+[OPEN]  LONG | ts=2026-01-26 15:00:00+00:00 | entry=88721.46 | sl=88040.28 | tp=90083.82 | pct_to_tp=1.54% | pct_to_sl=0.77%
+[CLOSE] LONG | entry=88721.46 | exit=88040.28 | reason=SL | net=-200.77 USD | equity=19876.04 USD
+[OPEN]  LONG | ts=2026-01-26 17:45:00+00:00 | entry=87700.62 | sl=87509.06 | tp=88083.74 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=87700.62 | exit=88083.74 | reason=TP | net=+397.52 USD | equity=20273.56 USD
+[OPEN]  SHORT | ts=2026-01-27 14:30:00+00:00 | entry=87689.65 | sl=88340.76 | tp=86387.43 | pct_to_tp=1.49% | pct_to_sl=0.74%
+[CLOSE] SHORT | entry=87689.65 | exit=88340.76 | reason=SL | net=-202.74 USD | equity=20070.83 USD
+[OPEN]  LONG | ts=2026-01-28 05:45:00+00:00 | entry=89084.10 | sl=88886.75 | tp=89478.80 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=89084.10 | exit=88886.75 | reason=SL | net=-200.71 USD | equity=19870.12 USD
+[OPEN]  LONG | ts=2026-01-28 09:30:00+00:00 | entry=89319.28 | sl=88993.43 | tp=89970.98 | pct_to_tp=0.73% | pct_to_sl=0.36%
+[CLOSE] LONG | entry=89319.28 | exit=89970.98 | reason=TP | net=+397.40 USD | equity=20267.52 USD
+[OPEN]  LONG | ts=2026-01-28 15:30:00+00:00 | entry=89500.01 | sl=89230.73 | tp=90038.57 | pct_to_tp=0.60% | pct_to_sl=0.30%
+[CLOSE] LONG | entry=89500.01 | exit=90038.57 | reason=TP | net=+405.35 USD | equity=20672.87 USD
+[OPEN]  LONG | ts=2026-01-28 20:00:00+00:00 | entry=89584.86 | sl=89332.00 | tp=90090.58 | pct_to_tp=0.56% | pct_to_sl=0.28%
+[CLOSE] LONG | entry=89584.86 | exit=89332.00 | reason=SL | net=-206.73 USD | equity=20466.14 USD
+[OPEN]  SHORT | ts=2026-01-30 15:15:00+00:00 | entry=82620.28 | sl=83578.60 | tp=80703.64 | pct_to_tp=2.32% | pct_to_sl=1.16%
+[CLOSE] SHORT | entry=82620.28 | exit=83578.60 | reason=SL | net=-204.66 USD | equity=20261.48 USD
+[OPEN]  LONG | ts=2026-01-30 22:45:00+00:00 | entry=84219.99 | sl=83950.28 | tp=84759.41 | pct_to_tp=0.64% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=84219.99 | exit=83950.28 | reason=SL | net=-202.61 USD | equity=20058.87 USD
+[OPEN]  LONG | ts=2026-01-31 02:30:00+00:00 | entry=84138.66 | sl=83815.02 | tp=84785.94 | pct_to_tp=0.77% | pct_to_sl=0.38%
+[CLOSE] LONG | entry=84138.66 | exit=83815.02 | reason=SL | net=-200.59 USD | equity=19858.28 USD
+[OPEN]  LONG | ts=2026-01-31 06:30:00+00:00 | entry=83774.72 | sl=83670.64 | tp=83982.88 | pct_to_tp=0.25% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=83774.72 | exit=83670.64 | reason=SL | net=-198.58 USD | equity=19659.70 USD
+[OPEN]  LONG | ts=2026-01-31 07:45:00+00:00 | entry=83546.81 | sl=83482.06 | tp=83676.31 | pct_to_tp=0.16% | pct_to_sl=0.08%
+[CLOSE] LONG | entry=83546.81 | exit=83482.06 | reason=SL | net=-196.60 USD | equity=19463.10 USD
+[OPEN]  SHORT | ts=2026-01-31 09:45:00+00:00 | entry=83109.10 | sl=83228.25 | tp=82870.80 | pct_to_tp=0.29% | pct_to_sl=0.14%
+[CLOSE] SHORT | entry=83109.10 | exit=82870.80 | reason=TP | net=+389.26 USD | equity=19852.36 USD
+[OPEN]  SHORT | ts=2026-02-01 19:00:00+00:00 | entry=77736.00 | sl=78106.10 | tp=76995.80 | pct_to_tp=0.95% | pct_to_sl=0.48%
+[CLOSE] SHORT | entry=77736.00 | exit=76995.80 | reason=TP | net=+397.05 USD | equity=20249.41 USD
+[OPEN]  SHORT | ts=2026-02-02 01:00:00+00:00 | entry=76824.00 | sl=77942.28 | tp=74587.44 | pct_to_tp=2.91% | pct_to_sl=1.46%
+[CLOSE] SHORT | entry=76824.00 | exit=77942.28 | reason=SL | net=-202.49 USD | equity=20046.91 USD
+[OPEN]  SHORT | ts=2026-02-03 14:30:00+00:00 | entry=77875.71 | sl=78429.91 | tp=76767.31 | pct_to_tp=1.42% | pct_to_sl=0.71%
+[CLOSE] SHORT | entry=77875.71 | exit=76767.31 | reason=TP | net=+400.94 USD | equity=20447.85 USD
+[OPEN]  SHORT | ts=2026-02-03 16:45:00+00:00 | entry=76488.08 | sl=76859.80 | tp=75744.64 | pct_to_tp=0.97% | pct_to_sl=0.49%
+[CLOSE] SHORT | entry=76488.08 | exit=75744.64 | reason=TP | net=+408.96 USD | equity=20856.81 USD
+[OPEN]  SHORT | ts=2026-02-03 17:30:00+00:00 | entry=75147.94 | sl=75960.00 | tp=73523.82 | pct_to_tp=2.16% | pct_to_sl=1.08%
+[CLOSE] SHORT | entry=75147.94 | exit=73523.82 | reason=TP | net=+417.14 USD | equity=21273.95 USD
+[OPEN]  SHORT | ts=2026-02-03 22:00:00+00:00 | entry=75838.59 | sl=76299.19 | tp=74917.39 | pct_to_tp=1.21% | pct_to_sl=0.61%
+[CLOSE] SHORT | entry=75838.59 | exit=76299.19 | reason=SL | net=-212.74 USD | equity=21061.21 USD
+[OPEN]  SHORT | ts=2026-02-04 03:15:00+00:00 | entry=76390.12 | sl=76709.61 | tp=75751.14 | pct_to_tp=0.84% | pct_to_sl=0.42%
+[CLOSE] SHORT | entry=76390.12 | exit=76709.61 | reason=SL | net=-210.61 USD | equity=20850.59 USD
+[OPEN]  SHORT | ts=2026-02-04 04:15:00+00:00 | entry=76595.94 | sl=76735.14 | tp=76317.54 | pct_to_tp=0.36% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=76595.94 | exit=76735.14 | reason=SL | net=-208.51 USD | equity=20642.09 USD
+[OPEN]  SHORT | ts=2026-02-04 04:45:00+00:00 | entry=76479.75 | sl=76594.39 | tp=76250.47 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=76479.75 | exit=76250.47 | reason=TP | net=+412.84 USD | equity=21054.93 USD
+[OPEN]  SHORT | ts=2026-02-04 07:15:00+00:00 | entry=76452.28 | sl=76626.24 | tp=76104.36 | pct_to_tp=0.46% | pct_to_sl=0.23%
+[CLOSE] SHORT | entry=76452.28 | exit=76104.36 | reason=TP | net=+421.10 USD | equity=21476.03 USD
+[OPEN]  SHORT | ts=2026-02-04 09:00:00+00:00 | entry=76319.22 | sl=76607.69 | tp=75742.28 | pct_to_tp=0.76% | pct_to_sl=0.38%
+[CLOSE] SHORT | entry=76319.22 | exit=75742.28 | reason=TP | net=+429.52 USD | equity=21905.55 USD
+[OPEN]  SHORT | ts=2026-02-04 14:45:00+00:00 | entry=74359.53 | sl=75520.23 | tp=72038.13 | pct_to_tp=3.12% | pct_to_sl=1.56%
+[CLOSE] SHORT | entry=74359.53 | exit=72038.13 | reason=TP | net=+438.11 USD | equity=22343.66 USD
+[OPEN]  SHORT | ts=2026-02-06 06:30:00+00:00 | entry=65082.62 | sl=65850.19 | tp=63547.48 | pct_to_tp=2.36% | pct_to_sl=1.18%
+[CLOSE] SHORT | entry=65082.62 | exit=65850.19 | reason=SL | net=-223.44 USD | equity=22120.22 USD
+[OPEN]  LONG | ts=2026-02-08 17:30:00+00:00 | entry=70813.00 | sl=70560.33 | tp=71318.34 | pct_to_tp=0.71% | pct_to_sl=0.36%
+[CLOSE] LONG | entry=70813.00 | exit=71318.34 | reason=TP | net=+442.40 USD | equity=22562.63 USD
+[OPEN]  LONG | ts=2026-02-08 22:00:00+00:00 | entry=70835.63 | sl=70692.44 | tp=71122.01 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=70835.63 | exit=70692.44 | reason=SL | net=-225.63 USD | equity=22337.00 USD
+[OPEN]  LONG | ts=2026-02-09 00:00:00+00:00 | entry=70609.99 | sl=70260.70 | tp=71308.57 | pct_to_tp=0.99% | pct_to_sl=0.49%
+[CLOSE] LONG | entry=70609.99 | exit=70260.70 | reason=SL | net=-223.37 USD | equity=22113.63 USD
+[OPEN]  LONG | ts=2026-02-09 02:30:00+00:00 | entry=70875.06 | sl=70443.93 | tp=71737.32 | pct_to_tp=1.22% | pct_to_sl=0.61%
+[CLOSE] LONG | entry=70875.06 | exit=70443.93 | reason=SL | net=-221.14 USD | equity=21892.50 USD
+[OPEN]  LONG | ts=2026-02-09 06:30:00+00:00 | entry=70550.84 | sl=70379.43 | tp=70893.66 | pct_to_tp=0.49% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=70550.84 | exit=70893.66 | reason=TP | net=+437.85 USD | equity=22330.35 USD
+[OPEN]  SHORT | ts=2026-02-09 15:15:00+00:00 | entry=68921.04 | sl=69670.09 | tp=67422.94 | pct_to_tp=2.17% | pct_to_sl=1.09%
+[CLOSE] SHORT | entry=68921.04 | exit=69670.09 | reason=SL | net=-223.30 USD | equity=22107.04 USD
+[OPEN]  SHORT | ts=2026-02-09 17:45:00+00:00 | entry=70612.29 | sl=70938.14 | tp=69960.59 | pct_to_tp=0.92% | pct_to_sl=0.46%
+[CLOSE] SHORT | entry=70612.29 | exit=70938.14 | reason=SL | net=-221.07 USD | equity=21885.97 USD
+[OPEN]  SHORT | ts=2026-02-10 21:15:00+00:00 | entry=68652.27 | sl=68927.72 | tp=68101.37 | pct_to_tp=0.80% | pct_to_sl=0.40%
+[CLOSE] SHORT | entry=68652.27 | exit=68927.72 | reason=SL | net=-218.86 USD | equity=21667.11 USD
+[OPEN]  SHORT | ts=2026-02-11 01:15:00+00:00 | entry=68959.72 | sl=69265.73 | tp=68347.70 | pct_to_tp=0.89% | pct_to_sl=0.44%
+[CLOSE] SHORT | entry=68959.72 | exit=68347.70 | reason=TP | net=+433.34 USD | equity=22100.45 USD
+[OPEN]  SHORT | ts=2026-02-11 03:45:00+00:00 | entry=68187.99 | sl=68528.24 | tp=67507.49 | pct_to_tp=1.00% | pct_to_sl=0.50%
+[CLOSE] SHORT | entry=68187.99 | exit=67507.49 | reason=TP | net=+442.01 USD | equity=22542.46 USD
+[OPEN]  SHORT | ts=2026-02-11 14:15:00+00:00 | entry=68000.00 | sl=68582.42 | tp=66835.16 | pct_to_tp=1.71% | pct_to_sl=0.86%
+[CLOSE] SHORT | entry=68000.00 | exit=66835.16 | reason=TP | net=+450.85 USD | equity=22993.31 USD
+[OPEN]  SHORT | ts=2026-02-11 19:15:00+00:00 | entry=67436.32 | sl=67763.34 | tp=66782.28 | pct_to_tp=0.97% | pct_to_sl=0.48%
+[CLOSE] SHORT | entry=67436.32 | exit=67763.34 | reason=SL | net=-229.93 USD | equity=22763.38 USD
+[OPEN]  SHORT | ts=2026-02-11 19:45:00+00:00 | entry=67586.67 | sl=67830.82 | tp=67098.37 | pct_to_tp=0.72% | pct_to_sl=0.36%
+[CLOSE] SHORT | entry=67586.67 | exit=67830.82 | reason=SL | net=-227.63 USD | equity=22535.75 USD
+[OPEN]  SHORT | ts=2026-02-11 21:45:00+00:00 | entry=67811.17 | sl=68021.12 | tp=67391.27 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] SHORT | entry=67811.17 | exit=67391.27 | reason=TP | net=+450.71 USD | equity=22986.46 USD
+[OPEN]  LONG | ts=2026-02-12 00:00:00+00:00 | entry=67365.56 | sl=67055.53 | tp=67985.62 | pct_to_tp=0.92% | pct_to_sl=0.46%
+[CLOSE] LONG | entry=67365.56 | exit=67985.62 | reason=TP | net=+459.73 USD | equity=23446.19 USD
+[OPEN]  SHORT | ts=2026-02-12 07:00:00+00:00 | entry=66992.17 | sl=67156.79 | tp=66662.93 | pct_to_tp=0.49% | pct_to_sl=0.25%
+[CLOSE] SHORT | entry=66992.17 | exit=67156.79 | reason=SL | net=-234.46 USD | equity=23211.73 USD
+[OPEN]  SHORT | ts=2026-02-12 07:30:00+00:00 | entry=67130.01 | sl=67254.48 | tp=66881.07 | pct_to_tp=0.37% | pct_to_sl=0.19%
+[CLOSE] SHORT | entry=67130.01 | exit=67254.48 | reason=SL | net=-232.12 USD | equity=22979.61 USD
+[OPEN]  SHORT | ts=2026-02-12 08:15:00+00:00 | entry=66932.00 | sl=67248.41 | tp=66299.18 | pct_to_tp=0.95% | pct_to_sl=0.47%
+[CLOSE] SHORT | entry=66932.00 | exit=67248.41 | reason=SL | net=-229.80 USD | equity=22749.82 USD
+[OPEN]  LONG | ts=2026-02-12 11:15:00+00:00 | entry=68208.64 | sl=67836.83 | tp=68952.26 | pct_to_tp=1.09% | pct_to_sl=0.55%
+[CLOSE] LONG | entry=68208.64 | exit=67836.83 | reason=SL | net=-227.50 USD | equity=22522.32 USD
+[OPEN]  SHORT | ts=2026-02-13 00:15:00+00:00 | entry=66026.92 | sl=66382.01 | tp=65316.74 | pct_to_tp=1.08% | pct_to_sl=0.54%
+[CLOSE] SHORT | entry=66026.92 | exit=66382.01 | reason=SL | net=-225.22 USD | equity=22297.09 USD
+[OPEN]  SHORT | ts=2026-02-13 04:30:00+00:00 | entry=66365.87 | sl=66478.30 | tp=66141.01 | pct_to_tp=0.34% | pct_to_sl=0.17%
+[CLOSE] SHORT | entry=66365.87 | exit=66478.30 | reason=SL | net=-222.97 USD | equity=22074.12 USD
+[OPEN]  SHORT | ts=2026-02-13 07:30:00+00:00 | entry=66127.51 | sl=66514.42 | tp=65353.69 | pct_to_tp=1.17% | pct_to_sl=0.59%
+[CLOSE] SHORT | entry=66127.51 | exit=66514.42 | reason=SL | net=-220.74 USD | equity=21853.38 USD
+[OPEN]  LONG | ts=2026-02-13 15:00:00+00:00 | entry=68382.00 | sl=67692.00 | tp=69762.00 | pct_to_tp=2.02% | pct_to_sl=1.01%
+[CLOSE] LONG | entry=68382.00 | exit=69762.00 | reason=TP | net=+437.07 USD | equity=22290.45 USD
+[OPEN]  LONG | ts=2026-02-14 14:30:00+00:00 | entry=69673.60 | sl=69455.60 | tp=70109.60 | pct_to_tp=0.63% | pct_to_sl=0.31%
+[CLOSE] LONG | entry=69673.60 | exit=69455.60 | reason=SL | net=-222.90 USD | equity=22067.54 USD
+[OPEN]  LONG | ts=2026-02-15 01:00:00+00:00 | entry=69902.69 | sl=69753.80 | tp=70200.47 | pct_to_tp=0.43% | pct_to_sl=0.21%
+[CLOSE] LONG | entry=69902.69 | exit=69753.80 | reason=SL | net=-220.68 USD | equity=21846.87 USD
+[OPEN]  LONG | ts=2026-02-15 01:45:00+00:00 | entry=69717.65 | sl=69393.69 | tp=70365.57 | pct_to_tp=0.93% | pct_to_sl=0.46%
+[CLOSE] LONG | entry=69717.65 | exit=69393.69 | reason=SL | net=-218.47 USD | equity=21628.40 USD
+[OPEN]  LONG | ts=2026-02-15 03:45:00+00:00 | entry=69954.50 | sl=69360.11 | tp=71143.28 | pct_to_tp=1.70% | pct_to_sl=0.85%
+[CLOSE] LONG | entry=69954.50 | exit=69360.11 | reason=SL | net=-216.28 USD | equity=21412.12 USD
+[OPEN]  SHORT | ts=2026-02-15 23:00:00+00:00 | entry=68490.80 | sl=68999.96 | tp=67472.48 | pct_to_tp=1.49% | pct_to_sl=0.74%
+[CLOSE] SHORT | entry=68490.80 | exit=68999.96 | reason=SL | net=-214.12 USD | equity=21198.00 USD
+[OPEN]  SHORT | ts=2026-02-16 02:15:00+00:00 | entry=68350.51 | sl=68574.94 | tp=67901.65 | pct_to_tp=0.66% | pct_to_sl=0.33%
+[CLOSE] SHORT | entry=68350.51 | exit=68574.94 | reason=SL | net=-211.98 USD | equity=20986.02 USD
+[OPEN]  SHORT | ts=2026-02-16 05:00:00+00:00 | entry=68473.16 | sl=68900.00 | tp=67619.48 | pct_to_tp=1.25% | pct_to_sl=0.62%
+[CLOSE] SHORT | entry=68473.16 | exit=68900.00 | reason=SL | net=-209.86 USD | equity=20776.16 USD
+[OPEN]  SHORT | ts=2026-02-16 11:00:00+00:00 | entry=68515.88 | sl=68848.49 | tp=67850.66 | pct_to_tp=0.97% | pct_to_sl=0.49%
+[CLOSE] SHORT | entry=68515.88 | exit=68848.49 | reason=SL | net=-207.76 USD | equity=20568.39 USD
+[OPEN]  SHORT | ts=2026-02-17 08:15:00+00:00 | entry=68299.56 | sl=68388.00 | tp=68122.68 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] SHORT | entry=68299.56 | exit=68122.68 | reason=TP | net=+411.37 USD | equity=20979.76 USD
+[OPEN]  SHORT | ts=2026-02-17 13:30:00+00:00 | entry=68019.92 | sl=68125.20 | tp=67809.36 | pct_to_tp=0.31% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=68019.92 | exit=68125.20 | reason=SL | net=-209.80 USD | equity=20769.96 USD
+[OPEN]  SHORT | ts=2026-02-17 14:30:00+00:00 | entry=67103.87 | sl=68250.46 | tp=64810.69 | pct_to_tp=3.42% | pct_to_sl=1.71%
+[CLOSE] SHORT | entry=67103.87 | exit=68250.46 | reason=SL | net=-207.70 USD | equity=20562.26 USD
+[OPEN]  SHORT | ts=2026-02-18 13:30:00+00:00 | entry=67287.84 | sl=67490.64 | tp=66882.24 | pct_to_tp=0.60% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=67287.84 | exit=66882.24 | reason=TP | net=+411.25 USD | equity=20973.51 USD
+[OPEN]  SHORT | ts=2026-02-18 16:00:00+00:00 | entry=67072.01 | sl=67706.94 | tp=65802.15 | pct_to_tp=1.89% | pct_to_sl=0.95%
+[CLOSE] SHORT | entry=67072.01 | exit=65802.15 | reason=TP | net=+419.47 USD | equity=21392.98 USD
+[OPEN]  LONG | ts=2026-02-20 05:30:00+00:00 | entry=67910.17 | sl=67407.34 | tp=68915.83 | pct_to_tp=1.48% | pct_to_sl=0.74%
+[CLOSE] LONG | entry=67910.17 | exit=67407.34 | reason=SL | net=-213.93 USD | equity=21179.05 USD
+[OPEN]  LONG | ts=2026-02-20 20:00:00+00:00 | entry=67816.34 | sl=67636.30 | tp=68176.42 | pct_to_tp=0.53% | pct_to_sl=0.27%
+[CLOSE] LONG | entry=67816.34 | exit=67636.30 | reason=SL | net=-211.79 USD | equity=20967.26 USD
+[OPEN]  LONG | ts=2026-02-20 20:30:00+00:00 | entry=67734.00 | sl=67520.30 | tp=68161.40 | pct_to_tp=0.63% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=67734.00 | exit=68161.40 | reason=TP | net=+419.35 USD | equity=21386.60 USD
+[OPEN]  LONG | ts=2026-02-21 01:00:00+00:00 | entry=67928.82 | sl=67841.00 | tp=68104.46 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] LONG | entry=67928.82 | exit=67841.00 | reason=SL | net=-213.87 USD | equity=21172.74 USD
+[OPEN]  LONG | ts=2026-02-21 09:15:00+00:00 | entry=68235.09 | sl=68000.27 | tp=68704.73 | pct_to_tp=0.69% | pct_to_sl=0.34%
+[CLOSE] LONG | entry=68235.09 | exit=68000.27 | reason=SL | net=-211.73 USD | equity=20961.01 USD
+[OPEN]  LONG | ts=2026-02-21 13:15:00+00:00 | entry=68237.93 | sl=68106.89 | tp=68500.01 | pct_to_tp=0.38% | pct_to_sl=0.19%
+[CLOSE] LONG | entry=68237.93 | exit=68500.01 | reason=TP | net=+419.22 USD | equity=21380.23 USD
+[OPEN]  LONG | ts=2026-02-21 17:30:00+00:00 | entry=68425.60 | sl=68264.38 | tp=68748.04 | pct_to_tp=0.47% | pct_to_sl=0.24%
+[CLOSE] LONG | entry=68425.60 | exit=68264.38 | reason=SL | net=-213.80 USD | equity=21166.43 USD
+[OPEN]  LONG | ts=2026-02-21 21:45:00+00:00 | entry=68379.95 | sl=68289.65 | tp=68560.55 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] LONG | entry=68379.95 | exit=68289.65 | reason=SL | net=-211.66 USD | equity=20954.76 USD
+[OPEN]  SHORT | ts=2026-02-23 00:30:00+00:00 | entry=67180.25 | sl=67474.00 | tp=66592.75 | pct_to_tp=0.87% | pct_to_sl=0.44%
+[CLOSE] SHORT | entry=67180.25 | exit=66592.75 | reason=TP | net=+419.10 USD | equity=21373.86 USD
+[OPEN]  SHORT | ts=2026-02-23 01:15:00+00:00 | entry=65050.00 | sl=65510.00 | tp=64130.00 | pct_to_tp=1.41% | pct_to_sl=0.71%
+[CLOSE] SHORT | entry=65050.00 | exit=65510.00 | reason=SL | net=-213.74 USD | equity=21160.12 USD
+[OPEN]  SHORT | ts=2026-02-23 11:30:00+00:00 | entry=66128.00 | sl=66325.31 | tp=65733.38 | pct_to_tp=0.60% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=66128.00 | exit=66325.31 | reason=SL | net=-211.60 USD | equity=20948.52 USD
+[OPEN]  SHORT | ts=2026-02-23 13:45:00+00:00 | entry=66132.66 | sl=66370.06 | tp=65657.86 | pct_to_tp=0.72% | pct_to_sl=0.36%
+[CLOSE] SHORT | entry=66132.66 | exit=65657.86 | reason=TP | net=+418.97 USD | equity=21367.49 USD
+[OPEN]  SHORT | ts=2026-02-23 16:00:00+00:00 | entry=65225.99 | sl=65689.99 | tp=64297.99 | pct_to_tp=1.42% | pct_to_sl=0.71%
+[CLOSE] SHORT | entry=65225.99 | exit=65689.99 | reason=SL | net=-213.67 USD | equity=21153.82 USD
+[OPEN]  SHORT | ts=2026-02-23 16:45:00+00:00 | entry=65364.65 | sl=65603.17 | tp=64887.61 | pct_to_tp=0.73% | pct_to_sl=0.36%
+[CLOSE] SHORT | entry=65364.65 | exit=64887.61 | reason=TP | net=+423.08 USD | equity=21576.89 USD
+[OPEN]  SHORT | ts=2026-02-24 16:15:00+00:00 | entry=63956.21 | sl=64219.38 | tp=63429.87 | pct_to_tp=0.82% | pct_to_sl=0.41%
+[CLOSE] SHORT | entry=63956.21 | exit=64219.38 | reason=SL | net=-215.77 USD | equity=21361.12 USD
+[OPEN]  LONG | ts=2026-02-24 19:30:00+00:00 | entry=64472.18 | sl=64303.75 | tp=64809.04 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=64472.18 | exit=64303.75 | reason=SL | net=-213.61 USD | equity=21147.51 USD
+[OPEN]  LONG | ts=2026-02-24 22:00:00+00:00 | entry=64219.60 | sl=63973.79 | tp=64711.22 | pct_to_tp=0.77% | pct_to_sl=0.38%
+[CLOSE] LONG | entry=64219.60 | exit=63973.79 | reason=SL | net=-211.48 USD | equity=20936.04 USD
+[OPEN]  LONG | ts=2026-02-24 23:15:00+00:00 | entry=64185.01 | sl=64067.55 | tp=64419.93 | pct_to_tp=0.37% | pct_to_sl=0.18%
+[CLOSE] LONG | entry=64185.01 | exit=64067.55 | reason=SL | net=-209.36 USD | equity=20726.68 USD
+[OPEN]  LONG | ts=2026-02-25 00:30:00+00:00 | entry=64257.60 | sl=63960.00 | tp=64852.80 | pct_to_tp=0.93% | pct_to_sl=0.46%
+[CLOSE] LONG | entry=64257.60 | exit=64852.80 | reason=TP | net=+414.53 USD | equity=21141.21 USD
+[OPEN]  LONG | ts=2026-02-25 02:00:00+00:00 | entry=66229.81 | sl=65890.62 | tp=66908.19 | pct_to_tp=1.02% | pct_to_sl=0.51%
+[CLOSE] LONG | entry=66229.81 | exit=65890.62 | reason=SL | net=-211.41 USD | equity=20929.80 USD
+[OPEN]  LONG | ts=2026-02-25 08:15:00+00:00 | entry=65192.31 | sl=65011.99 | tp=65552.95 | pct_to_tp=0.55% | pct_to_sl=0.28%
+[CLOSE] LONG | entry=65192.31 | exit=65552.95 | reason=TP | net=+418.60 USD | equity=21348.39 USD
+[OPEN]  LONG | ts=2026-02-26 08:00:00+00:00 | entry=68048.93 | sl=67792.00 | tp=68562.79 | pct_to_tp=0.76% | pct_to_sl=0.38%
+[CLOSE] LONG | entry=68048.93 | exit=68562.79 | reason=TP | net=+426.97 USD | equity=21775.36 USD
+[OPEN]  LONG | ts=2026-02-26 12:00:00+00:00 | entry=68202.45 | sl=68027.85 | tp=68551.65 | pct_to_tp=0.51% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=68202.45 | exit=68027.85 | reason=SL | net=-217.75 USD | equity=21557.61 USD
+[OPEN]  SHORT | ts=2026-02-27 04:30:00+00:00 | entry=67759.60 | sl=67964.60 | tp=67349.60 | pct_to_tp=0.61% | pct_to_sl=0.30%
+[CLOSE] SHORT | entry=67759.60 | exit=67964.60 | reason=SL | net=-215.58 USD | equity=21342.03 USD
+[OPEN]  SHORT | ts=2026-02-27 05:45:00+00:00 | entry=67724.99 | sl=67861.79 | tp=67451.39 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=67724.99 | exit=67861.79 | reason=SL | net=-213.42 USD | equity=21128.61 USD
+[OPEN]  LONG | ts=2026-02-27 08:15:00+00:00 | entry=67967.90 | sl=67866.46 | tp=68170.78 | pct_to_tp=0.30% | pct_to_sl=0.15%
+[CLOSE] LONG | entry=67967.90 | exit=67866.46 | reason=SL | net=-211.29 USD | equity=20917.33 USD
+[OPEN]  SHORT | ts=2026-02-27 11:30:00+00:00 | entry=66002.58 | sl=66575.95 | tp=64855.84 | pct_to_tp=1.74% | pct_to_sl=0.87%
+[CLOSE] SHORT | entry=66002.58 | exit=64855.84 | reason=TP | net=+418.35 USD | equity=21335.67 USD
+[OPEN]  SHORT | ts=2026-02-28 14:45:00+00:00 | entry=64435.61 | sl=65033.38 | tp=63240.07 | pct_to_tp=1.86% | pct_to_sl=0.93%
+[CLOSE] SHORT | entry=64435.61 | exit=65033.38 | reason=SL | net=-213.36 USD | equity=21122.32 USD
+[OPEN]  SHORT | ts=2026-02-28 17:00:00+00:00 | entry=64945.79 | sl=65106.90 | tp=64623.57 | pct_to_tp=0.50% | pct_to_sl=0.25%
+[CLOSE] SHORT | entry=64945.79 | exit=65106.90 | reason=SL | net=-211.22 USD | equity=20911.09 USD
+[OPEN]  LONG | ts=2026-03-01 02:00:00+00:00 | entry=67895.95 | sl=67339.36 | tp=69009.13 | pct_to_tp=1.64% | pct_to_sl=0.82%
+[CLOSE] LONG | entry=67895.95 | exit=67339.36 | reason=SL | net=-209.11 USD | equity=20701.98 USD
+[OPEN]  SHORT | ts=2026-03-01 23:15:00+00:00 | entry=65635.74 | sl=65884.00 | tp=65139.22 | pct_to_tp=0.76% | pct_to_sl=0.38%
+[CLOSE] SHORT | entry=65635.74 | exit=65884.00 | reason=SL | net=-207.02 USD | equity=20494.96 USD
+[OPEN]  LONG | ts=2026-03-02 04:15:00+00:00 | entry=66937.99 | sl=66667.23 | tp=67479.51 | pct_to_tp=0.81% | pct_to_sl=0.40%
+[CLOSE] LONG | entry=66937.99 | exit=66667.23 | reason=SL | net=-204.95 USD | equity=20290.01 USD
+[OPEN]  LONG | ts=2026-03-03 05:00:00+00:00 | entry=68391.35 | sl=68044.00 | tp=69086.05 | pct_to_tp=1.02% | pct_to_sl=0.51%
+[CLOSE] LONG | entry=68391.35 | exit=68044.00 | reason=SL | net=-202.90 USD | equity=20087.11 USD
+[OPEN]  LONG | ts=2026-03-03 06:30:00+00:00 | entry=67995.05 | sl=67859.57 | tp=68266.01 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] LONG | entry=67995.05 | exit=67859.57 | reason=SL | net=-200.87 USD | equity=19886.24 USD
+[OPEN]  SHORT | ts=2026-03-03 08:45:00+00:00 | entry=67003.30 | sl=67362.00 | tp=66285.90 | pct_to_tp=1.07% | pct_to_sl=0.54%
+[CLOSE] SHORT | entry=67003.30 | exit=67362.00 | reason=SL | net=-198.86 USD | equity=19687.38 USD
+[OPEN]  SHORT | ts=2026-03-03 13:00:00+00:00 | entry=66979.93 | sl=67435.00 | tp=66069.79 | pct_to_tp=1.36% | pct_to_sl=0.68%
+[CLOSE] SHORT | entry=66979.93 | exit=67435.00 | reason=SL | net=-196.87 USD | equity=19490.50 USD
+[OPEN]  SHORT | ts=2026-03-03 16:30:00+00:00 | entry=67726.29 | sl=68828.96 | tp=65520.95 | pct_to_tp=3.26% | pct_to_sl=1.63%
+[CLOSE] SHORT | entry=67726.29 | exit=68828.96 | reason=SL | net=-194.91 USD | equity=19295.60 USD
+[OPEN]  LONG | ts=2026-03-03 22:30:00+00:00 | entry=68398.00 | sl=68187.77 | tp=68818.46 | pct_to_tp=0.61% | pct_to_sl=0.31%
+[CLOSE] LONG | entry=68398.00 | exit=68818.46 | reason=TP | net=+385.91 USD | equity=19681.51 USD
+[OPEN]  LONG | ts=2026-03-04 01:30:00+00:00 | entry=68711.48 | sl=68212.00 | tp=69710.44 | pct_to_tp=1.45% | pct_to_sl=0.73%
+[CLOSE] LONG | entry=68711.48 | exit=68212.00 | reason=SL | net=-196.82 USD | equity=19484.70 USD
+[OPEN]  LONG | ts=2026-03-04 02:45:00+00:00 | entry=68323.33 | sl=68106.15 | tp=68757.69 | pct_to_tp=0.64% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=68323.33 | exit=68106.15 | reason=SL | net=-194.85 USD | equity=19289.85 USD
+[OPEN]  LONG | ts=2026-03-04 05:30:00+00:00 | entry=68206.36 | sl=67733.21 | tp=69152.66 | pct_to_tp=1.39% | pct_to_sl=0.69%
+[CLOSE] LONG | entry=68206.36 | exit=69152.66 | reason=TP | net=+385.80 USD | equity=19675.65 USD
+[OPEN]  LONG | ts=2026-03-05 08:30:00+00:00 | entry=72178.73 | sl=71796.78 | tp=72942.63 | pct_to_tp=1.06% | pct_to_sl=0.53%
+[CLOSE] LONG | entry=72178.73 | exit=72942.63 | reason=TP | net=+393.51 USD | equity=20069.16 USD
+[OPEN]  LONG | ts=2026-03-05 14:45:00+00:00 | entry=72609.29 | sl=71967.38 | tp=73893.11 | pct_to_tp=1.77% | pct_to_sl=0.88%
+[CLOSE] LONG | entry=72609.29 | exit=71967.38 | reason=SL | net=-200.69 USD | equity=19868.47 USD
+[OPEN]  SHORT | ts=2026-03-06 09:00:00+00:00 | entry=70572.00 | sl=70808.65 | tp=70098.70 | pct_to_tp=0.67% | pct_to_sl=0.34%
+[CLOSE] SHORT | entry=70572.00 | exit=70098.70 | reason=TP | net=+397.37 USD | equity=20265.84 USD
+[OPEN]  SHORT | ts=2026-03-07 12:30:00+00:00 | entry=67937.64 | sl=68034.31 | tp=67744.30 | pct_to_tp=0.28% | pct_to_sl=0.14%
+[CLOSE] SHORT | entry=67937.64 | exit=68034.31 | reason=SL | net=-202.66 USD | equity=20063.18 USD
+[OPEN]  SHORT | ts=2026-03-08 09:30:00+00:00 | entry=67752.19 | sl=67856.67 | tp=67543.23 | pct_to_tp=0.31% | pct_to_sl=0.15%
+[CLOSE] SHORT | entry=67752.19 | exit=67856.67 | reason=SL | net=-200.63 USD | equity=19862.55 USD
+[OPEN]  LONG | ts=2026-03-08 12:15:00+00:00 | entry=67431.46 | sl=66888.00 | tp=68518.38 | pct_to_tp=1.61% | pct_to_sl=0.81%
+[CLOSE] LONG | entry=67431.46 | exit=66888.00 | reason=SL | net=-198.63 USD | equity=19663.92 USD
+[OPEN]  LONG | ts=2026-03-08 13:45:00+00:00 | entry=67234.86 | sl=67051.43 | tp=67601.72 | pct_to_tp=0.55% | pct_to_sl=0.27%
+[CLOSE] LONG | entry=67234.86 | exit=67051.43 | reason=SL | net=-196.64 USD | equity=19467.28 USD
+[OPEN]  SHORT | ts=2026-03-08 16:45:00+00:00 | entry=66872.15 | sl=67004.35 | tp=66607.75 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=66872.15 | exit=67004.35 | reason=SL | net=-194.67 USD | equity=19272.61 USD
+[OPEN]  SHORT | ts=2026-03-08 17:15:00+00:00 | entry=67070.24 | sl=67162.37 | tp=66885.98 | pct_to_tp=0.27% | pct_to_sl=0.14%
+[CLOSE] SHORT | entry=67070.24 | exit=66885.98 | reason=TP | net=+385.45 USD | equity=19658.06 USD
+[OPEN]  SHORT | ts=2026-03-08 20:00:00+00:00 | entry=67101.68 | sl=67337.42 | tp=66630.20 | pct_to_tp=0.70% | pct_to_sl=0.35%
+[CLOSE] SHORT | entry=67101.68 | exit=67337.42 | reason=SL | net=-196.58 USD | equity=19461.48 USD
+[OPEN]  SHORT | ts=2026-03-08 21:00:00+00:00 | entry=66779.83 | sl=67266.00 | tp=65807.49 | pct_to_tp=1.46% | pct_to_sl=0.73%
+[CLOSE] SHORT | entry=66779.83 | exit=65807.49 | reason=TP | net=+389.23 USD | equity=19850.71 USD
+[OPEN]  SHORT | ts=2026-03-09 04:45:00+00:00 | entry=67130.14 | sl=67528.84 | tp=66332.74 | pct_to_tp=1.19% | pct_to_sl=0.59%
+[CLOSE] SHORT | entry=67130.14 | exit=67528.84 | reason=SL | net=-198.51 USD | equity=19652.20 USD
+[OPEN]  LONG | ts=2026-03-09 12:00:00+00:00 | entry=67910.24 | sl=67759.57 | tp=68211.58 | pct_to_tp=0.44% | pct_to_sl=0.22%
+[CLOSE] LONG | entry=67910.24 | exit=68211.58 | reason=TP | net=+393.04 USD | equity=20045.25 USD
+[OPEN]  LONG | ts=2026-03-10 00:15:00+00:00 | entry=68980.01 | sl=68396.16 | tp=70147.71 | pct_to_tp=1.69% | pct_to_sl=0.85%
+[CLOSE] LONG | entry=68980.01 | exit=70147.71 | reason=TP | net=+400.90 USD | equity=20446.15 USD
+[OPEN]  LONG | ts=2026-03-10 14:30:00+00:00 | entry=70457.31 | sl=69791.20 | tp=71789.53 | pct_to_tp=1.89% | pct_to_sl=0.95%
+[CLOSE] LONG | entry=70457.31 | exit=69791.20 | reason=SL | net=-204.46 USD | equity=20241.69 USD
+[OPEN]  SHORT | ts=2026-03-11 00:30:00+00:00 | entry=69838.71 | sl=70055.16 | tp=69405.81 | pct_to_tp=0.62% | pct_to_sl=0.31%
+[CLOSE] SHORT | entry=69838.71 | exit=70055.16 | reason=SL | net=-202.42 USD | equity=20039.27 USD
+[OPEN]  SHORT | ts=2026-03-11 01:30:00+00:00 | entry=69955.98 | sl=70099.00 | tp=69669.94 | pct_to_tp=0.41% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=69955.98 | exit=70099.00 | reason=SL | net=-200.39 USD | equity=19838.88 USD
+[OPEN]  SHORT | ts=2026-03-11 02:00:00+00:00 | entry=69991.30 | sl=70119.59 | tp=69734.72 | pct_to_tp=0.37% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=69991.30 | exit=69734.72 | reason=TP | net=+396.78 USD | equity=20235.66 USD
+[OPEN]  SHORT | ts=2026-03-11 05:00:00+00:00 | entry=70007.62 | sl=70200.96 | tp=69620.94 | pct_to_tp=0.55% | pct_to_sl=0.28%
+[CLOSE] SHORT | entry=70007.62 | exit=69620.94 | reason=TP | net=+404.71 USD | equity=20640.37 USD
+[OPEN]  LONG | ts=2026-03-11 16:00:00+00:00 | entry=70455.06 | sl=70161.78 | tp=71041.62 | pct_to_tp=0.83% | pct_to_sl=0.42%
+[CLOSE] LONG | entry=70455.06 | exit=71041.62 | reason=TP | net=+412.81 USD | equity=21053.18 USD
+[OPEN]  LONG | ts=2026-03-11 23:00:00+00:00 | entry=70458.88 | sl=70373.00 | tp=70630.64 | pct_to_tp=0.24% | pct_to_sl=0.12%
+[CLOSE] LONG | entry=70458.88 | exit=70373.00 | reason=SL | net=-210.53 USD | equity=20842.65 USD
+[OPEN]  LONG | ts=2026-03-12 14:00:00+00:00 | entry=70381.33 | sl=69964.56 | tp=71214.87 | pct_to_tp=1.18% | pct_to_sl=0.59%
+[CLOSE] LONG | entry=70381.33 | exit=69964.56 | reason=SL | net=-208.43 USD | equity=20634.22 USD
+[OPEN]  LONG | ts=2026-03-12 16:30:00+00:00 | entry=70381.51 | sl=70040.00 | tp=71064.53 | pct_to_tp=0.97% | pct_to_sl=0.49%
+[CLOSE] LONG | entry=70381.51 | exit=70040.00 | reason=SL | net=-206.34 USD | equity=20427.88 USD
+[OPEN]  LONG | ts=2026-03-12 21:00:00+00:00 | entry=70386.91 | sl=70164.50 | tp=70831.73 | pct_to_tp=0.63% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=70386.91 | exit=70164.50 | reason=SL | net=-204.28 USD | equity=20223.60 USD
+[OPEN]  LONG | ts=2026-03-12 23:00:00+00:00 | entry=70470.01 | sl=70159.35 | tp=71091.33 | pct_to_tp=0.88% | pct_to_sl=0.44%
+[CLOSE] LONG | entry=70470.01 | exit=71091.33 | reason=TP | net=+404.47 USD | equity=20628.07 USD
+[OPEN]  LONG | ts=2026-03-13 16:30:00+00:00 | entry=71830.49 | sl=71379.70 | tp=72732.07 | pct_to_tp=1.26% | pct_to_sl=0.63%
+[CLOSE] LONG | entry=71830.49 | exit=71379.70 | reason=SL | net=-206.28 USD | equity=20421.79 USD
+[OPEN]  LONG | ts=2026-03-15 14:45:00+00:00 | entry=71622.03 | sl=71431.83 | tp=72002.43 | pct_to_tp=0.53% | pct_to_sl=0.27%
+[CLOSE] LONG | entry=71622.03 | exit=71431.83 | reason=SL | net=-204.22 USD | equity=20217.57 USD
+[OPEN]  LONG | ts=2026-03-15 17:45:00+00:00 | entry=71819.95 | sl=71521.37 | tp=72417.11 | pct_to_tp=0.83% | pct_to_sl=0.42%
+[CLOSE] LONG | entry=71819.95 | exit=71521.37 | reason=SL | net=-202.18 USD | equity=20015.40 USD
+[OPEN]  LONG | ts=2026-03-15 20:30:00+00:00 | entry=71846.68 | sl=71485.61 | tp=72568.82 | pct_to_tp=1.01% | pct_to_sl=0.50%
+[CLOSE] LONG | entry=71846.68 | exit=72568.82 | reason=TP | net=+400.31 USD | equity=20415.71 USD
+[OPEN]  LONG | ts=2026-03-15 23:30:00+00:00 | entry=72701.07 | sl=72420.44 | tp=73262.33 | pct_to_tp=0.77% | pct_to_sl=0.39%
+[CLOSE] LONG | entry=72701.07 | exit=72420.44 | reason=SL | net=-204.16 USD | equity=20211.55 USD
+[OPEN]  LONG | ts=2026-03-16 16:30:00+00:00 | entry=73657.29 | sl=73322.98 | tp=74325.91 | pct_to_tp=0.91% | pct_to_sl=0.45%
+[CLOSE] LONG | entry=73657.29 | exit=74325.91 | reason=TP | net=+404.23 USD | equity=20615.78 USD
+[OPEN]  LONG | ts=2026-03-17 04:00:00+00:00 | entry=74674.06 | sl=74432.26 | tp=75157.66 | pct_to_tp=0.65% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=74674.06 | exit=74432.26 | reason=SL | net=-206.16 USD | equity=20409.62 USD
+[OPEN]  LONG | ts=2026-03-17 04:45:00+00:00 | entry=74252.01 | sl=74014.56 | tp=74726.91 | pct_to_tp=0.64% | pct_to_sl=0.32%
+[CLOSE] LONG | entry=74252.01 | exit=74014.56 | reason=SL | net=-204.10 USD | equity=20205.53 USD
+[OPEN]  LONG | ts=2026-03-17 07:00:00+00:00 | entry=74324.03 | sl=74066.40 | tp=74839.29 | pct_to_tp=0.69% | pct_to_sl=0.35%
+[CLOSE] LONG | entry=74324.03 | exit=74066.40 | reason=SL | net=-202.06 USD | equity=20003.47 USD
+[OPEN]  SHORT | ts=2026-03-17 09:30:00+00:00 | entry=74194.85 | sl=74330.81 | tp=73922.93 | pct_to_tp=0.37% | pct_to_sl=0.18%
+[CLOSE] SHORT | entry=74194.85 | exit=73922.93 | reason=TP | net=+400.07 USD | equity=20403.54 USD
+[OPEN]  LONG | ts=2026-03-17 18:30:00+00:00 | entry=74612.85 | sl=74417.97 | tp=75002.61 | pct_to_tp=0.52% | pct_to_sl=0.26%
+[CLOSE] LONG | entry=74612.85 | exit=74417.97 | reason=SL | net=-204.04 USD | equity=20199.50 USD
+[OPEN]  LONG | ts=2026-03-17 21:00:00+00:00 | entry=74705.09 | sl=74450.01 | tp=75215.25 | pct_to_tp=0.68% | pct_to_sl=0.34%
+[CLOSE] LONG | entry=74705.09 | exit=74450.01 | reason=SL | net=-202.00 USD | equity=19997.51 USD
+[OPEN]  LONG | ts=2026-03-18 01:30:00+00:00 | entry=74141.73 | sl=74019.65 | tp=74385.89 | pct_to_tp=0.33% | pct_to_sl=0.16%
+[CLOSE] LONG | entry=74141.73 | exit=74019.65 | reason=SL | net=-199.98 USD | equity=19797.53 USD
+[OPEN]  SHORT | ts=2026-03-18 04:15:00+00:00 | entry=74253.78 | sl=74432.98 | tp=73895.38 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] SHORT | entry=74253.78 | exit=73895.38 | reason=TP | net=+395.95 USD | equity=20193.49 USD
+[OPEN]  SHORT | ts=2026-03-19 21:15:00+00:00 | entry=70550.47 | sl=70688.51 | tp=70274.39 | pct_to_tp=0.39% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=70550.47 | exit=70274.39 | reason=TP | net=+403.87 USD | equity=20597.35 USD
+[OPEN]  SHORT | ts=2026-03-19 23:30:00+00:00 | entry=69845.66 | sl=70183.68 | tp=69169.62 | pct_to_tp=0.97% | pct_to_sl=0.48%
+[CLOSE] SHORT | entry=69845.66 | exit=70183.68 | reason=SL | net=-205.97 USD | equity=20391.38 USD
+[OPEN]  SHORT | ts=2026-03-20 01:45:00+00:00 | entry=70403.79 | sl=70584.60 | tp=70042.17 | pct_to_tp=0.51% | pct_to_sl=0.26%
+[CLOSE] SHORT | entry=70403.79 | exit=70584.60 | reason=SL | net=-203.91 USD | equity=20187.47 USD
+[OPEN]  LONG | ts=2026-03-20 07:15:00+00:00 | entry=70451.32 | sl=70261.91 | tp=70830.14 | pct_to_tp=0.54% | pct_to_sl=0.27%
+[CLOSE] LONG | entry=70451.32 | exit=70830.14 | reason=TP | net=+403.75 USD | equity=20591.22 USD
+[OPEN]  LONG | ts=2026-03-20 10:45:00+00:00 | entry=70611.68 | sl=70521.32 | tp=70792.40 | pct_to_tp=0.26% | pct_to_sl=0.13%
+[CLOSE] LONG | entry=70611.68 | exit=70792.40 | reason=TP | net=+411.82 USD | equity=21003.04 USD
+[OPEN]  SHORT | ts=2026-03-20 20:15:00+00:00 | entry=69977.25 | sl=70206.40 | tp=69518.95 | pct_to_tp=0.65% | pct_to_sl=0.33%
+[CLOSE] SHORT | entry=69977.25 | exit=70206.40 | reason=SL | net=-210.03 USD | equity=20793.01 USD
+[OPEN]  SHORT | ts=2026-03-21 23:00:00+00:00 | entry=70153.13 | sl=70293.82 | tp=69871.75 | pct_to_tp=0.40% | pct_to_sl=0.20%
+[CLOSE] SHORT | entry=70153.13 | exit=69871.75 | reason=TP | net=+415.86 USD | equity=21208.87 USD
+[OPEN]  SHORT | ts=2026-03-23 03:45:00+00:00 | entry=68074.60 | sl=68235.29 | tp=67753.22 | pct_to_tp=0.47% | pct_to_sl=0.24%
+[CLOSE] SHORT | entry=68074.60 | exit=68235.29 | reason=SL | net=-212.09 USD | equity=20996.78 USD
+[OPEN]  SHORT | ts=2026-03-23 08:15:00+00:00 | entry=68469.71 | sl=68696.91 | tp=68015.31 | pct_to_tp=0.66% | pct_to_sl=0.33%
+[CLOSE] SHORT | entry=68469.71 | exit=68015.31 | reason=TP | net=+419.94 USD | equity=21416.72 USD
+[OPEN]  SHORT | ts=2026-03-23 10:15:00+00:00 | entry=68462.79 | sl=68627.66 | tp=68133.05 | pct_to_tp=0.48% | pct_to_sl=0.24%
+[CLOSE] SHORT | entry=68462.79 | exit=68627.66 | reason=SL | net=-214.17 USD | equity=21202.55 USD
+[OPEN]  SHORT | ts=2026-03-23 11:45:00+00:00 | entry=70122.15 | sl=70700.80 | tp=68964.85 | pct_to_tp=1.65% | pct_to_sl=0.83%
+[CLOSE] SHORT | entry=70122.15 | exit=70700.80 | reason=SL | net=-212.03 USD | equity=20990.53 USD
+[OPEN]  LONG | ts=2026-03-24 05:30:00+00:00 | entry=70326.12 | sl=70152.00 | tp=70674.36 | pct_to_tp=0.50% | pct_to_sl=0.25%
+[CLOSE] LONG | entry=70326.12 | exit=70674.36 | reason=TP | net=+419.81 USD | equity=21410.34 USD
+[OPEN]  LONG | ts=2026-03-24 07:45:00+00:00 | entry=71291.70 | sl=70828.74 | tp=72217.62 | pct_to_tp=1.30% | pct_to_sl=0.65%
+[CLOSE] LONG | entry=71291.70 | exit=70828.74 | reason=SL | net=-214.10 USD | equity=21196.23 USD
+W1: Apr 2025 – Jul 2025         trades=210  WR=35%  ret= +10.4%  DD= 11.7%  PF=1.071
+W2: Jul 2025 – Oct 2025         trades=200  WR=38%  ret= +29.5%  DD=  9.6%  PF=1.197
+W3: Oct 2025 – Jan 2026         trades=222  WR=36%  ret= +20.6%  DD= 16.8%  PF=1.122
+W4: Jan 2026 – Apr 2026         trades=211  WR=37%  ret= +23.1%  DD= 17.8%  PF=1.146
