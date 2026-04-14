@@ -1,0 +1,130 @@
+{
+  "BTC": {
+    "metrics": {
+      "total_trades": 99,
+      "win_rate_pct": 39.4,
+      "net_pnl": 1844.55,
+      "return_pct": 18.45,
+      "max_dd_pct": 7.78,
+      "profit_factor": 1.297,
+      "expectancy_usd": 18.63
+    },
+    "monthly": [
+      {
+        "month": "2025-09",
+        "trades": 1,
+        "win_rate_pct": 0.0,
+        "net_pnl": -100.0,
+        "profit_factor": 0.0
+      },
+      {
+        "month": "2025-10",
+        "trades": 21,
+        "win_rate_pct": 38.1,
+        "net_pnl": 278.74,
+        "profit_factor": 1.215
+      },
+      {
+        "month": "2025-11",
+        "trades": 13,
+        "win_rate_pct": 15.4,
+        "net_pnl": -697.14,
+        "profit_factor": 0.361
+      },
+      {
+        "month": "2025-12",
+        "trades": 15,
+        "win_rate_pct": 40.0,
+        "net_pnl": 272.77,
+        "profit_factor": 1.31
+      },
+      {
+        "month": "2026-01",
+        "trades": 20,
+        "win_rate_pct": 50.0,
+        "net_pnl": 999.21,
+        "profit_factor": 1.953
+      },
+      {
+        "month": "2026-02",
+        "trades": 14,
+        "win_rate_pct": 35.7,
+        "net_pnl": 92.45,
+        "profit_factor": 1.094
+      },
+      {
+        "month": "2026-03",
+        "trades": 15,
+        "win_rate_pct": 53.3,
+        "net_pnl": 998.52,
+        "profit_factor": 2.234
+      }
+    ],
+    "final_equity": 11844.5448,
+    "rej_direction": 179
+  },
+  "ETH": {
+    "metrics": {
+      "total_trades": 207,
+      "win_rate_pct": 41.1,
+      "net_pnl": 5794.59,
+      "return_pct": 57.95,
+      "max_dd_pct": 10.76,
+      "profit_factor": 1.375,
+      "expectancy_usd": 27.99
+    },
+    "monthly": [
+      {
+        "month": "2025-09",
+        "trades": 6,
+        "win_rate_pct": 16.7,
+        "net_pnl": -299.9,
+        "profit_factor": 0.39
+      },
+      {
+        "month": "2025-10",
+        "trades": 41,
+        "win_rate_pct": 48.8,
+        "net_pnl": 1971.19,
+        "profit_factor": 1.862
+      },
+      {
+        "month": "2025-11",
+        "trades": 28,
+        "win_rate_pct": 39.3,
+        "net_pnl": 561.32,
+        "profit_factor": 1.264
+      },
+      {
+        "month": "2025-12",
+        "trades": 32,
+        "win_rate_pct": 31.2,
+        "net_pnl": -279.11,
+        "profit_factor": 0.894
+      },
+      {
+        "month": "2026-01",
+        "trades": 38,
+        "win_rate_pct": 39.5,
+        "net_pnl": 814.04,
+        "profit_factor": 1.28
+      },
+      {
+        "month": "2026-02",
+        "trades": 30,
+        "win_rate_pct": 53.3,
+        "net_pnl": 2459.05,
+        "profit_factor": 2.243
+      },
+      {
+        "month": "2026-03",
+        "trades": 32,
+        "win_rate_pct": 37.5,
+        "net_pnl": 568.01,
+        "profit_factor": 1.189
+      }
+    ],
+    "final_equity": 15794.5894,
+    "rej_direction": 0
+  }
+}

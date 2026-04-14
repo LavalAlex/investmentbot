@@ -165,7 +165,14 @@ class PaperEngine:
         minutes = int((delta.total_seconds() % 3600) // 60)
         return f'{hours}h{minutes:02d}m'
 
-    def log_status(self, logger, asset: str, current_price: float) -> None:
+    def log_status(
+        self,
+        logger,
+        asset: str,
+        current_price: float,
+        candle_high: float = None,
+        candle_low: float = None,
+    ) -> None:
         pos = self.get_position(asset)
         if pos is None:
             return
@@ -173,8 +180,14 @@ class PaperEngine:
         progress = self.progress_to_tp(asset, current_price)
         elapsed  = self.time_in_trade(asset)
         sign     = '+' if progress >= 0 else ''
+        hl_str   = (
+            f" | candle_hi={candle_high:.4f} candle_lo={candle_low:.4f}"
+            if candle_high is not None and candle_low is not None
+            else ''
+        )
         logger.info(
             f"[STATUS] {side} {asset} | entry={pos['entry']:.4f} | current={current_price:.4f}"
+            f"{hl_str}"
             f" | tp={pos['tp']:.4f} | sl={pos['sl']:.4f}"
             f" | progress_to_tp={sign}{progress:.1f}% | time_in_trade={elapsed}"
         )

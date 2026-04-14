@@ -47,6 +47,8 @@ CANDLE_LIMIT_1H  = 260   # EMA50 warmup (50) + slope lookback (5) + alignment bu
 CANDLE_LIMIT_15M = 150   # avg_range window (5) + alignment + buffer
 RISK_PCT         = 0.01  # 1% equity risked per trade
 MIN_RISK_PRICE   = 1.0   # minimum SL distance in USD (avoids degenerate sizing)
+MIN_SL_DIST_PCT  = 0.0015  # EXP007: reject entries where SL < 0.15% of entry (compressed trigger candle)
+BTC_LONGS_ONLY   = True    # EXP009: BTC short side structurally unprofitable — longs only
 SCAN_INTERVAL    = 30    # seconds between full scans
 
 
@@ -112,7 +114,7 @@ def scan_asset(
                 engine.equity,
             )
         else:
-            engine.log_status(logger, asset, row['close'])
+            engine.log_status(logger, asset, row['close'], row['high'], row['low'])
 
         # After an exit, update seen candle and return — never enter same bar as exit
         last_candle_ts[asset] = candle_time
@@ -155,12 +157,22 @@ def scan_asset(
     entry     = row['close']
     direction = 'long' if trend == 'up' else 'short'
 
+    # EXP009: BTC longs only
+    if BTC_LONGS_ONLY and asset == 'BTC/USDT' and direction == 'short':
+        logger.info(f"[{asset}] SKIP short (EXP009: longs only)")
+        return
+
     sl, tp = calculate_sl_tp(entry, direction, row['low'], row['high'])
     if sl is None:
         return
 
     risk_price = abs(entry - sl)
     if risk_price < MIN_RISK_PRICE:
+        return
+
+    # EXP007: reject compressed trigger candles (SL too close to entry)
+    if risk_price / entry < MIN_SL_DIST_PCT:
+        logger.info(f"[{asset}] SKIP sl_dist={risk_price/entry*100:.3f}% < {MIN_SL_DIST_PCT*100:.2f}% min")
         return
 
     risk_usd = engine.equity * RISK_PCT
@@ -184,13 +196,14 @@ def scan_asset(
 def run_scan(exchange, engine: PaperEngine, logger, last_candle_ts: dict) -> None:
     ts = datetime.now(timezone.utc).isoformat(timespec='seconds')
     logger.info(f"\n[SCAN] {ts}")
-    # One open position at a time across all assets.
-    open_positions = sum(1 for a in ASSETS if engine.has_position(a))
     for asset in ASSETS:
         try:
+            # Re-evaluate inside the loop: if a previous asset opened a position
+            # in this same scan, block entry for all remaining assets.
+            open_count = sum(1 for a in ASSETS if engine.has_position(a))
             scan_asset(
                 exchange, asset, engine, logger, last_candle_ts,
-                allow_entry=(open_positions == 0),
+                allow_entry=(open_count == 0),
             )
         except Exception as e:
             logger.info(f"[{asset}] ERROR: {e}")
