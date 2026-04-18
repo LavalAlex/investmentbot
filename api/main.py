@@ -59,12 +59,16 @@ def _run_monitor() -> None:
     try:
         from core.exchange import create_exchange, ping_exchange
         from core.paper_engine import PaperEngine
+        from core import gcs_storage
         from paper_monitor import run_scan, ASSETS, SCAN_INTERVAL, RISK_PCT
     except Exception as e:
         logger.info(f"[MONITOR] ERROR — Failed to load modules: {e}")
         _monitor_status["binance_ok"]  = False
         _monitor_status["binance_msg"] = str(e)
         return
+
+    # ── Sync today's log from GCS (resume after restart) ─────────────────────
+    gcs_storage.download(f'logs/paper_{log_date}.log', Path(f'logs/paper_{log_date}.log'))
 
     exchange = create_exchange()
     ok, msg  = ping_exchange(exchange)
@@ -89,10 +93,12 @@ def _run_monitor() -> None:
         current_date = datetime.now(timezone.utc).strftime('%Y%m%d')
         if current_date != log_date:
             log_date = current_date
+            gcs_storage.download(f'logs/paper_{log_date}.log', Path(f'logs/paper_{log_date}.log'))
             logger   = setup_logger('paper_monitor', log_file=f'logs/paper_{log_date}.log', mode='a')
             logger.info(f"[MONITOR] Log rotated — new day: {log_date}")
 
         run_scan(exchange, engine, logger, last_candle_ts)
+        gcs_storage.upload(Path(f'logs/paper_{log_date}.log'), f'logs/paper_{log_date}.log')
         time.sleep(SCAN_INTERVAL)
 
 

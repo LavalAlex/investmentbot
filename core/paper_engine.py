@@ -10,18 +10,24 @@ No orders are placed. This is simulation only.
 import json
 import os
 from datetime import datetime, timezone
+from pathlib import Path
 
 from .trade_logic import check_exit
+from . import gcs_storage
 
-STATE_FILE   = 'paper_state.json'
+STATE_FILE      = 'paper_state.json'
+_STATE_PATH     = Path(STATE_FILE)
+_GCS_STATE      = 'paper_state.json'
 INITIAL_CAPITAL = 10_000.0
 
 
 # ── State I/O ─────────────────────────────────────────────────────────────────
 
 def _load() -> dict:
-    if os.path.exists(STATE_FILE):
-        with open(STATE_FILE) as f:
+    if not _STATE_PATH.exists():
+        gcs_storage.download(_GCS_STATE, _STATE_PATH)
+    if _STATE_PATH.exists():
+        with open(_STATE_PATH) as f:
             return json.load(f)
     return {'equity': INITIAL_CAPITAL, 'positions': {}, 'trades': []}
 
@@ -29,6 +35,7 @@ def _load() -> dict:
 def _save(state: dict) -> None:
     with open(STATE_FILE, 'w') as f:
         json.dump(state, f, indent=2, default=str)
+    gcs_storage.upload(_STATE_PATH, _GCS_STATE)
 
 
 # ── Engine ────────────────────────────────────────────────────────────────────

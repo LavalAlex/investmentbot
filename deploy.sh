@@ -9,6 +9,10 @@ REPOSITORY=investmentbot
 IMAGE_NAME=investmentbot
 IMAGE_URI="us-central1-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE_NAME:latest"
 SERVICE_ACCOUNT="investmentbot-sa@$PROJECT_ID.iam.gserviceaccount.com"
+# GCS bucket for persisting paper_state.json and logs across restarts.
+# Create once: gsutil mb -l europe-west1 gs://$GCS_BUCKET
+# Grant access: gsutil iam ch serviceAccount:$SERVICE_ACCOUNT:roles/storage.objectAdmin gs://$GCS_BUCKET
+GCS_BUCKET="investmentbot-state-$PROJECT_ID"
 
 echo "=============================="
 echo "Project: $PROJECT_ID"
@@ -29,11 +33,12 @@ gcloud run deploy "$SERVICE_NAME" \
   --allow-unauthenticated \
   --service-account="$SERVICE_ACCOUNT" \
   --set-secrets BINANCE_API_KEY=binance-api-key:latest,BINANCE_SECRET=binance-secret:latest \
+  --set-env-vars GCS_BUCKET="$GCS_BUCKET" \
   --memory=512Mi \
   --cpu=1 \
   --timeout=300 \
   --concurrency=1 \
-  --min-instances=0 \
+  --min-instances=1 \
   --max-instances=1
 
 # ========= OUTPUT =========
