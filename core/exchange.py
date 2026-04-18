@@ -12,6 +12,19 @@ def create_exchange() -> ccxt.binance:
     })
 
 
+def ping_exchange(exchange: ccxt.binance) -> tuple[bool, str]:
+    """
+    Test connectivity by fetching BTC/USDT ticker.
+    Returns (ok, message).
+    """
+    try:
+        ticker = exchange.fetch_ticker("BTC/USDT")
+        price  = ticker.get("last") or ticker.get("close")
+        return True, f"BTC/USDT last={price}"
+    except Exception as e:
+        return False, str(e)
+
+
 def fetch_ohlcv(exchange: ccxt.binance, symbol: str, timeframe: str, limit: int) -> pd.DataFrame:
     """
     Fetch OHLCV candles and return a DataFrame.

@@ -91,6 +91,71 @@ python reset_paper_logs.py
 
 ---
 
+## Deploy to Google Cloud (GCE)
+
+Google Compute Engine is recommended over Cloud Run for this project because the monitor is a long-running stateful process. Cloud Run scales to zero and has an ephemeral filesystem — logs and paper state would be lost on restart.
+
+### 1. Build and push the image
+
+```bash
+# Authenticate
+gcloud auth configure-docker
+
+# Build and tag  (replace PROJECT_ID)
+docker build -t gcr.io/PROJECT_ID/investmentbot .
+docker push gcr.io/PROJECT_ID/investmentbot
+```
+
+### 2. Create the VM (first time only)
+
+```bash
+gcloud compute instances create-with-container investmentbot \
+  --zone=us-central1-a \
+  --machine-type=e2-micro \
+  --container-image=gcr.io/PROJECT_ID/investmentbot \
+  --container-env=BINANCE_API_KEY=your_key,BINANCE_SECRET=your_secret \
+  --container-mount-host-path=mount-path=/app/logs,host-path=/var/investmentbot/logs \
+  --container-mount-host-path=mount-path=/app/paper_state.json,host-path=/var/investmentbot/paper_state.json \
+  --tags=http-server
+```
+
+The host-path mounts keep logs and state on the VM's persistent disk — they survive container restarts and redeployments.
+
+### 3. Open the API port
+
+```bash
+gcloud compute firewall-rules create allow-investmentbot \
+  --allow tcp:8080 \
+  --target-tags http-server
+```
+
+The API is then reachable at `http://EXTERNAL_IP:8080`.
+
+### 4. Redeploy after code changes
+
+```bash
+docker build -t gcr.io/PROJECT_ID/investmentbot .
+docker push gcr.io/PROJECT_ID/investmentbot
+
+gcloud compute instances update-container investmentbot \
+  --zone=us-central1-a \
+  --container-image=gcr.io/PROJECT_ID/investmentbot
+```
+
+The container restarts automatically. Logs and state on the host disk are preserved.
+
+### 5. Check logs from your machine
+
+```bash
+# SSH into the VM
+gcloud compute ssh investmentbot --zone=us-central1-a
+
+# Tail the current day's log
+tail -f /var/investmentbot/logs/paper_$(date -u +%Y%m%d).log
+```
+
+---
+
 ## API endpoints
 
 Base URL: `http://localhost:8000`

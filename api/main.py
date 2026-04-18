@@ -32,20 +32,55 @@ INITIAL_CAPITAL = 10_000.0
 
 # ── Monitor background thread ─────────────────────────────────────────────────
 
+_monitor_status: dict = {"binance_ok": None, "binance_msg": "", "started_at": None}
+
+
 def _run_monitor() -> None:
     """Run the paper trading monitor loop in a background thread."""
     import time
-    from core.exchange import create_exchange, fetch_ohlcv
-    from core.paper_engine import PaperEngine
+    import os
     from core.logger_v2 import setup_logger
-    from paper_monitor import run_scan, ASSETS, SCAN_INTERVAL, RISK_PCT
 
     log_date = datetime.now(timezone.utc).strftime('%Y%m%d')
     logger   = setup_logger('paper_monitor', log_file=f'logs/paper_{log_date}.log', mode='a')
 
-    exchange       = create_exchange()
+    # ── Credential check ──────────────────────────────────────────────────────
+    from dotenv import load_dotenv
+    load_dotenv()
+    api_key = os.getenv("BINANCE_API_KEY")
+    secret  = os.getenv("BINANCE_SECRET")
+    if not api_key or not secret:
+        logger.info("[MONITOR] ERROR — Missing Binance credentials. Set BINANCE_API_KEY and BINANCE_SECRET.")
+        _monitor_status["binance_ok"]  = False
+        _monitor_status["binance_msg"] = "Missing credentials"
+        return
+
+    # ── Connectivity check ────────────────────────────────────────────────────
+    try:
+        from core.exchange import create_exchange, ping_exchange
+        from core.paper_engine import PaperEngine
+        from paper_monitor import run_scan, ASSETS, SCAN_INTERVAL, RISK_PCT
+    except Exception as e:
+        logger.info(f"[MONITOR] ERROR — Failed to load modules: {e}")
+        _monitor_status["binance_ok"]  = False
+        _monitor_status["binance_msg"] = str(e)
+        return
+
+    exchange = create_exchange()
+    ok, msg  = ping_exchange(exchange)
+    _monitor_status["binance_ok"]  = ok
+    _monitor_status["binance_msg"] = msg
+
+    if not ok:
+        logger.info(f"[MONITOR] ERROR — Binance connection failed: {msg}")
+        return
+
+    logger.info(f"[MONITOR] Binance connection OK — {msg}")
+
+    # ── Start loop ────────────────────────────────────────────────────────────
     engine         = PaperEngine()
     last_candle_ts: dict = {}
+    _monitor_status["started_at"] = datetime.now(timezone.utc).isoformat(timespec='seconds')
 
     logger.info(f"[MONITOR] EXP002 paper trading started.")
     logger.info(f"[MONITOR] Assets: {ASSETS} | Risk: {RISK_PCT*100:.0f}% | Interval: {SCAN_INTERVAL}s")
@@ -220,3 +255,45 @@ def download_logs(
         status_code=400,
         detail="Provide 'date' for a single day, or both 'from' and 'to' for a range.",
     )
+
+
+@app.get('/health')
+def get_health():
+    """Service health — API status, Binance connectivity, monitor state, and uptime info."""
+    state  = _load_state()
+    trades = state.get('trades', [])
+    equity = state.get('equity', INITIAL_CAPITAL)
+
+    # Most recent log file
+    today    = datetime.now(timezone.utc).strftime('%Y%m%d')
+    log_path = LOGS_DIR / f'paper_{today}.log'
+    if not log_path.exists():
+        log_path = _most_recent_log()
+
+    last_scan = None
+    if log_path and log_path.exists():
+        text = log_path.read_text(encoding='utf-8')
+        idx  = text.rfind('[SCAN]')
+        if idx != -1:
+            last_scan = text[idx:].split('\n')[0].replace('[SCAN]', '').strip()
+
+    binance_ok = _monitor_status.get("binance_ok")
+
+    return {
+        "api":     "ok",
+        "binance": {
+            "connected": binance_ok,
+            "detail":    _monitor_status.get("binance_msg", ""),
+        },
+        "monitor": {
+            "running":    binance_ok is True,
+            "started_at": _monitor_status.get("started_at"),
+            "last_scan":  last_scan,
+        },
+        "paper_trading": {
+            "equity":       round(equity, 2),
+            "return_pct":   round((equity - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100, 2),
+            "total_trades": len(trades),
+            "open_positions": list(state.get("positions", {}).keys()),
+        },
+    }

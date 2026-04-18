@@ -1,0 +1,14 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+data/
+logs/
+paper_state.json
+archive/
+experiments/
+*.md
+.git/
+.gitignore
