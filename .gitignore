@@ -2,3 +2,9 @@
 .venv
 __pycache__/
 *.pyc
+venv/
+
+# Runtime artifacts — regenerable, not versioned
+data/
+logs/
+paper_state.json

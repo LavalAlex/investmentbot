@@ -1,7 +1,0 @@
-symbol,verdict,total_trades,wins,losses,win_rate_pct,cumulative_return_pct,max_drawdown_pct,profit_factor,expectancy_pct,longest_loss_streak,long_trades,long_win_rate_pct,long_cumulative_pct,long_profit_factor,short_trades,short_win_rate_pct,short_cumulative_pct,short_profit_factor,circuit_breaker_events
-BTC/USDT,APPROVE,134,47,87,35.07,15.4125,8.2937,1.2784,0.1128,10,61,40.98,3.5216,1.1688,73,30.14,11.4864,1.3516,35
-ETH/USDT,REJECT,123,22,101,17.89,-26.9697,28.4662,0.5143,-0.2513,21,59,20.34,-15.3865,0.4352,64,15.62,-13.6895,0.5817,46
-BNB/USDT,REJECT,136,34,102,25.0,-14.1336,21.3268,0.7862,-0.1058,10,67,29.85,-10.0584,0.6582,69,20.29,-4.5309,0.8915,44
-SOL/USDT,REJECT,120,19,101,15.83,-36.3506,36.5881,0.4068,-0.3712,26,52,17.31,-17.4086,0.3507,68,14.71,-22.9345,0.4424,46
-XRP/USDT,REJECT,125,19,106,15.2,-36.2131,36.3566,0.369,-0.3557,22,44,27.27,-10.3048,0.5281,81,8.64,-28.8848,0.2932,49
-DOGE/USDT,REJECT,141,30,111,21.28,-24.2433,24.2433,0.6356,-0.1916,19,50,30.0,-7.9887,0.666,91,16.48,-17.6658,0.6207,48

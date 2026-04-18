@@ -17,7 +17,7 @@ import os
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from exchange import create_exchange
+from core.exchange import create_exchange
 
 SYMBOL = "BTC/USDT"
 SYMBOL_RAW = "BTCUSDT"

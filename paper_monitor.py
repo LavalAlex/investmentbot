@@ -24,8 +24,8 @@ import argparse
 import time
 from datetime import datetime, timezone
 
-from exchange import create_exchange, fetch_ohlcv
-from strategy_pullback import (
+from core.exchange import create_exchange, fetch_ohlcv
+from core.strategy_pullback import (
     prepare_1h,
     prepare_15m,
     align_1h_to_15m,
@@ -37,9 +37,9 @@ from strategy_pullback import (
     is_range_sufficient,
     is_market_efficient,
 )
-from trade_logic import calculate_sl_tp
-from paper_engine import PaperEngine
-from logger_v2 import setup_logger, log_open, log_close
+from core.trade_logic import calculate_sl_tp
+from core.paper_engine import PaperEngine
+from core.logger_v2 import setup_logger, log_open, log_close
 
 # ── Config ────────────────────────────────────────────────────────────────────
 ASSETS           = ['BTC/USDT', 'ETH/USDT']
@@ -240,6 +240,16 @@ def main():
     logger.info(f"[MONITOR] Assets: {ASSETS} | Risk: {RISK_PCT*100:.0f}% | Interval: {SCAN_INTERVAL}s")
 
     while True:
+        current_date = datetime.now(timezone.utc).strftime('%Y%m%d')
+        if current_date != log_date:
+            log_date = current_date
+            logger = setup_logger(
+                'paper_monitor',
+                log_file=f'logs/paper_{log_date}.log',
+                mode='a',
+            )
+            logger.info(f"[MONITOR] Log rotated — new day: {log_date}")
+
         run_scan(exchange, engine, logger, last_candle_ts)
         time.sleep(SCAN_INTERVAL)
 
