@@ -14,13 +14,14 @@ def create_exchange() -> ccxt.binance:
 
 def ping_exchange(exchange: ccxt.binance) -> tuple[bool, str]:
     """
-    Test connectivity by fetching BTC/USDT ticker.
+    Test connectivity using the same public klines endpoint the monitor uses.
+    Avoids SAPI account endpoints that trigger geo-restrictions.
     Returns (ok, message).
     """
     try:
-        ticker = exchange.fetch_ticker("BTC/USDT")
-        price  = ticker.get("last") or ticker.get("close")
-        return True, f"BTC/USDT last={price}"
+        raw = exchange.publicGetKlines({"symbol": "BTCUSDT", "interval": "1m", "limit": 1})
+        close = float(raw[0][4]) if raw else None
+        return True, f"BTC/USDT last={close}"
     except Exception as e:
         return False, str(e)
 
