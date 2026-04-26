@@ -47,8 +47,9 @@ CANDLE_LIMIT_1H  = 260   # EMA50 warmup (50) + slope lookback (5) + alignment bu
 CANDLE_LIMIT_15M = 150   # avg_range window (5) + alignment + buffer
 RISK_PCT         = 0.01  # 1% equity risked per trade
 MIN_RISK_PRICE   = 1.0   # minimum SL distance in USD (avoids degenerate sizing)
-MIN_SL_DIST_PCT  = 0.0015  # EXP007: reject entries where SL < 0.15% of entry (compressed trigger candle)
-BTC_LONGS_ONLY   = True    # EXP009: BTC short side structurally unprofitable — longs only
+MIN_SL_DIST_PCT     = 0.0015  # EXP007: BTC — reject entries where SL < 0.15% of entry
+ETH_MIN_SL_DIST_PCT = 0.0050  # EXP016A: ETH — SL≥0.50% cubre el fee Taker (0.05%/lado)
+BTC_LONGS_ONLY      = True    # EXP009: BTC short side structurally unprofitable — longs only
 SCAN_INTERVAL    = 30    # seconds between full scans
 
 
@@ -112,6 +113,7 @@ def scan_asset(
                 trade['reason'],
                 trade['pnl'],
                 engine.equity,
+                fee_usd=trade.get('fee_usd', 0.0),
             )
         else:
             engine.log_status(logger, asset, row['close'], row['high'], row['low'])
@@ -170,9 +172,11 @@ def scan_asset(
     if risk_price < MIN_RISK_PRICE:
         return
 
-    # EXP007: reject compressed trigger candles (SL too close to entry)
-    if risk_price / entry < MIN_SL_DIST_PCT:
-        logger.info(f"[{asset}] SKIP sl_dist={risk_price/entry*100:.3f}% < {MIN_SL_DIST_PCT*100:.2f}% min")
+    # EXP007/016A: reject compressed trigger candles (SL too close to entry)
+    # ETH uses a higher threshold (0.50%) to ensure fee/edge ratio is favorable
+    sl_min_pct = ETH_MIN_SL_DIST_PCT if asset == 'ETH/USDT' else MIN_SL_DIST_PCT
+    if risk_price / entry < sl_min_pct:
+        logger.info(f"[{asset}] SKIP sl_dist={risk_price/entry*100:.3f}% < {sl_min_pct*100:.2f}% min")
         return
 
     risk_usd = engine.equity * RISK_PCT

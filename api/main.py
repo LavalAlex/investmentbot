@@ -7,6 +7,10 @@ Single deploy command:
 
 Endpoints:
     GET /status              → equity, positions, trade summary, last scan timestamp
+    GET /trades              → full trade history with computed fields
+                               ?asset=BTC/USDT|ETH/USDT  filter by asset
+                               ?result=win|loss           filter by outcome
+                               ?limit=N                   last N trades (default: all)
     GET /logs/latest         → last scan block from the most recent log file
     GET /logs/download       → download log file(s)
                                ?date=YYYY-MM-DD          single day
@@ -180,6 +184,111 @@ def get_status():
         'profit_factor':  profit_factor,
         'open_positions': state.get('positions', {}),
         'last_scan':      last_scan,
+    }
+
+
+@app.get('/trades')
+def get_trades(
+    asset:  Optional[str] = Query(None, description='Filter: BTC/USDT or ETH/USDT'),
+    result: Optional[str] = Query(None, description='Filter: win or loss'),
+    limit:  Optional[int] = Query(None, description='Last N trades (default: all)'),
+):
+    """
+    Full trade history with entry/exit, duration, PnL, and outcome.
+    Sorted newest first.
+    """
+    state  = _load_state()
+    trades = state.get('trades', [])
+    equity = state.get('equity', INITIAL_CAPITAL)
+
+    def _enrich(t: dict, idx_from_end: int) -> dict:
+        pnl       = t.get('pnl', 0.0)
+        entry     = t.get('entry', 0.0)
+        exit_px   = t.get('exit', 0.0)
+        direction = t.get('direction', '')
+        reason    = t.get('reason', '')
+
+        outcome = 'win' if pnl > 0 else ('loss' if pnl < 0 else 'breakeven')
+
+        # Duration
+        duration_min = None
+        try:
+            open_dt  = datetime.fromisoformat(t['open_ts'])
+            close_dt = datetime.fromisoformat(t['close_ts'])
+            duration_min = round((close_dt - open_dt).total_seconds() / 60, 1)
+        except Exception:
+            pass
+
+        # Price move entry→exit as % (signed, from direction's perspective)
+        move_pct = None
+        if entry:
+            raw = (exit_px - entry) / entry * 100
+            move_pct = round(raw if direction == 'long' else -raw, 3)
+
+        # PnL as % of equity at trade open (approx: equity_after - pnl = equity_before)
+        equity_before = t.get('equity', 0.0) - pnl
+        pnl_pct = round(pnl / equity_before * 100, 3) if equity_before else None
+
+        reason_label = {
+            'TP': 'Take Profit',
+            'SL': 'Stop Loss',
+            'BE': 'Break-Even Stop',
+        }.get(reason, reason)
+
+        return {
+            'n':             idx_from_end,
+            'asset':         t.get('asset'),
+            'type':          direction,
+            'result':        outcome,
+            'entry':         entry,
+            'exit':          exit_px,
+            'sl':            t.get('sl'),
+            'tp':            t.get('tp'),
+            'qty':           round(t.get('qty', 0), 6),
+            'open_ts':       t.get('open_ts'),
+            'close_ts':      t.get('close_ts'),
+            'duration_min':  duration_min,
+            'move_pct':      move_pct,
+            'pnl_usd':       round(pnl, 2),
+            'pnl_pct':       pnl_pct,
+            'equity_after':  round(t.get('equity', 0.0), 2),
+            'exit_reason':   reason_label,
+            'be_triggered':  t.get('be_triggered', False),
+        }
+
+    enriched = [_enrich(t, len(trades) - i) for i, t in enumerate(reversed(trades))]
+
+    # Filters
+    if asset:
+        enriched = [t for t in enriched if t['asset'] == asset]
+    if result:
+        enriched = [t for t in enriched if t['result'] == result]
+    if limit and limit > 0:
+        enriched = enriched[:limit]
+
+    # Summary over the filtered set
+    wins         = sum(1 for t in enriched if t['result'] == 'win')
+    total_pnl    = sum(t['pnl_usd'] for t in enriched)
+    gross_profit = sum(t['pnl_usd'] for t in enriched if t['pnl_usd'] > 0)
+    gross_loss   = abs(sum(t['pnl_usd'] for t in enriched if t['pnl_usd'] < 0))
+    pf           = round(gross_profit / gross_loss, 3) if gross_loss > 0 else None
+    avg_win      = round(gross_profit / wins, 2) if wins else None
+    avg_loss     = round(gross_loss / (len(enriched) - wins), 2) if (len(enriched) - wins) else None
+
+    return {
+        'summary': {
+            'equity':        round(equity, 2),
+            'return_pct':    round((equity - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100, 2),
+            'total_trades':  len(enriched),
+            'wins':          wins,
+            'losses':        len(enriched) - wins,
+            'win_rate_pct':  round(wins / len(enriched) * 100, 1) if enriched else None,
+            'profit_factor': pf,
+            'total_pnl_usd': round(total_pnl, 2),
+            'avg_win_usd':   avg_win,
+            'avg_loss_usd':  avg_loss,
+        },
+        'trades': enriched,
     }
 
 

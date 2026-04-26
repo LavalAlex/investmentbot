@@ -15,10 +15,11 @@ from pathlib import Path
 from .trade_logic import check_exit
 from . import gcs_storage
 
-STATE_FILE      = 'paper_state.json'
-_STATE_PATH     = Path(STATE_FILE)
-_GCS_STATE      = 'paper_state.json'
-INITIAL_CAPITAL = 10_000.0
+STATE_FILE       = 'paper_state.json'
+_STATE_PATH      = Path(STATE_FILE)
+_GCS_STATE       = 'paper_state.json'
+INITIAL_CAPITAL  = 10_000.0
+FEE_PER_SIDE_PCT = 0.0005   # 0.05% taker, Binance USDM Futures VIP0
 
 
 # ── State I/O ─────────────────────────────────────────────────────────────────
@@ -115,25 +116,30 @@ class PaperEngine:
         reason, exit_price = result
 
         if pos['direction'] == 'long':
-            pnl = (exit_price - pos['entry']) * pos['qty']
+            gross_pnl = (exit_price - pos['entry']) * pos['qty']
         else:
-            pnl = (pos['entry'] - exit_price) * pos['qty']
+            gross_pnl = (pos['entry'] - exit_price) * pos['qty']
+
+        fee_usd = (pos['entry'] + exit_price) * pos['qty'] * FEE_PER_SIDE_PCT
+        pnl     = gross_pnl - fee_usd
 
         self.state['equity'] = round(self.state['equity'] + pnl, 4)
 
         trade = {
-            'asset':     asset,
-            'direction': pos['direction'],
-            'entry':     pos['entry'],
-            'exit':      round(exit_price, 8),
-            'sl':        pos['sl'],
-            'tp':        pos['tp'],
-            'qty':       pos['qty'],
-            'open_ts':   pos['open_ts'],
-            'close_ts':  str(bar['open_time']),
-            'reason':    reason,
-            'pnl':       round(pnl, 4),
-            'equity':    self.state['equity'],
+            'asset':      asset,
+            'direction':  pos['direction'],
+            'entry':      pos['entry'],
+            'exit':       round(exit_price, 8),
+            'sl':         pos['sl'],
+            'tp':         pos['tp'],
+            'qty':        pos['qty'],
+            'open_ts':    pos['open_ts'],
+            'close_ts':   str(bar['open_time']),
+            'reason':     reason,
+            'gross_pnl':  round(gross_pnl, 4),
+            'fee_usd':    round(fee_usd, 4),
+            'pnl':        round(pnl, 4),
+            'equity':     self.state['equity'],
         }
         self.state['trades'].append(trade)
         del self.state['positions'][asset]

@@ -50,10 +50,12 @@ def log_close(
     reason: str,
     net: float,
     equity: float,
+    fee_usd: float = 0.0,
 ) -> None:
     side = 'LONG' if direction == 'long' else 'SHORT'
     sign = '+' if net >= 0 else ''
+    fee_str = f" | fee={fee_usd:.2f} USD" if fee_usd else ''
     logger.info(
-        f"[CLOSE] {side} | entry={entry:.2f} | exit={exit_price:.2f} | reason={reason} "
-        f"| net={sign}{net:.2f} USD | equity={equity:.2f} USD"
+        f"[CLOSE] {side} | entry={entry:.2f} | exit={exit_price:.2f} | reason={reason}"
+        f"{fee_str} | net={sign}{net:.2f} USD | equity={equity:.2f} USD"
     )
