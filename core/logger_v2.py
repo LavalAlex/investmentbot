@@ -27,6 +27,7 @@ def setup_logger(name: str, log_file: str | None = None, mode: str = 'w') -> log
 
 def log_open(
     logger: logging.Logger,
+    asset: str,
     direction: str,
     ts,
     entry: float,
@@ -37,13 +38,14 @@ def log_open(
     pct_to_tp = abs(tp - entry) / entry * 100
     pct_to_sl = abs(entry - sl) / entry * 100
     logger.info(
-        f"[OPEN]  {side} | ts={ts} | entry={entry:.2f} | sl={sl:.2f} | tp={tp:.2f} "
+        f"[OPEN]  {asset} {side} | ts={ts} | entry={entry:.2f} | sl={sl:.2f} | tp={tp:.2f} "
         f"| pct_to_tp={pct_to_tp:.2f}% | pct_to_sl={pct_to_sl:.2f}%"
     )
 
 
 def log_close(
     logger: logging.Logger,
+    asset: str,
     direction: str,
     entry: float,
     exit_price: float,
@@ -56,6 +58,6 @@ def log_close(
     sign = '+' if net >= 0 else ''
     fee_str = f" | fee={fee_usd:.2f} USD" if fee_usd else ''
     logger.info(
-        f"[CLOSE] {side} | entry={entry:.2f} | exit={exit_price:.2f} | reason={reason}"
+        f"[CLOSE] {asset} {side} | entry={entry:.2f} | exit={exit_price:.2f} | reason={reason}"
         f"{fee_str} | net={sign}{net:.2f} USD | equity={equity:.2f} USD"
     )

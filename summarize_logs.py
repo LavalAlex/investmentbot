@@ -1,7 +1,7 @@
 """
-summarize_logs.py — Resumen rápido del paper trading activo.
+summarize_logs.py — Resumen rápido del paper trading ETH/USDT (EXP016A).
 
-Lee todos los logs en logs/ y paper_state.json, e imprime:
+Lee todos los logs en logs/eth_*.log y eth_state.json, e imprime:
   - Tabla de todos los trades cerrados
   - Métricas globales (equity, WR, PF, return, DD)
   - Posiciones actualmente abiertas
@@ -19,21 +19,25 @@ from datetime import datetime, timezone, timedelta
 
 
 LOG_DIR    = Path('logs')
-STATE_FILE = Path('paper_state.json')
+STATE_FILE = Path('eth_state.json')
 
+# [OPEN]  ETH/USDT LONG | ts=... | entry=... | sl=... | tp=...
 OPEN_RE  = re.compile(
-    r'\[OPEN\]\s+(\w+)\s+\|\s+ts=([^\|]+)\|\s+entry=([\d.]+)\s+\|\s+sl=([\d.]+)\s+\|\s+tp=([\d.]+)'
+    r'\[OPEN\]\s+\S+\s+(\w+)\s+\|\s+ts=([^\|]+)\|\s+entry=([\d.]+)\s+\|\s+sl=([\d.]+)\s+\|\s+tp=([\d.]+)'
 )
+# [CLOSE] ETH/USDT LONG | entry=... | exit=... | reason=... | fee=... | net=... | equity=...
 CLOSE_RE = re.compile(
-    r'\[CLOSE\]\s+(\w+)\s+\|\s+entry=([\d.]+)\s+\|\s+exit=([\d.]+)\s+\|\s+reason=(\w+)\s+\|\s+net=([+-][\d.]+)\s+USD\s+\|\s+equity=([\d.]+)'
+    r'\[CLOSE\]\s+\S+\s+(\w+)\s+\|\s+entry=([\d.]+)\s+\|\s+exit=([\d.]+)\s+\|\s+reason=(\w+)'
+    r'(?:\s+\|\s+fee=([\d.]+)\s+USD)?'
+    r'\s+\|\s+net=([+-][\d.]+)\s+USD\s+\|\s+equity=([\d.]+)'
 )
 
 
 def parse_logs(days: int | None = None) -> list[dict]:
     trades = []
-    paper_log_re = re.compile(r'^logs_paper_(\d{8})$')
+    eth_log_re = re.compile(r'^eth_(\d{8})$')
     log_files = sorted(
-        f for f in LOG_DIR.glob('*.log') if paper_log_re.match(f.stem)
+        f for f in LOG_DIR.glob('eth_*.log') if eth_log_re.match(f.stem)
     )
 
     if days is not None:
@@ -42,7 +46,7 @@ def parse_logs(days: int | None = None) -> list[dict]:
         )
         log_files = [
             f for f in log_files
-            if datetime.strptime(paper_log_re.match(f.stem).group(1), '%Y%m%d').replace(tzinfo=timezone.utc) >= cutoff
+            if datetime.strptime(eth_log_re.match(f.stem).group(1), '%Y%m%d').replace(tzinfo=timezone.utc) >= cutoff
         ]
 
     open_positions: dict[str, dict] = {}
@@ -63,7 +67,7 @@ def parse_logs(days: int | None = None) -> list[dict]:
                 continue
             m = CLOSE_RE.search(line)
             if m:
-                direction, entry, exit_p, reason, net, equity = m.groups()
+                direction, entry, exit_p, reason, fee, net, equity = m.groups()
                 pos = open_positions.pop(direction, {})
                 trades.append({
                     'open_time':  pos.get('open_time', '?'),
@@ -73,6 +77,7 @@ def parse_logs(days: int | None = None) -> list[dict]:
                     'sl':         pos.get('sl'),
                     'tp':         pos.get('tp'),
                     'reason':     reason,
+                    'fee':        float(fee) if fee else 0.0,
                     'net':        float(net),
                     'equity':     float(equity),
                 })
@@ -117,44 +122,45 @@ def metrics(trades: list[dict]) -> dict:
 
 def print_report(trades: list[dict], days: int | None) -> None:
     period = f'(últimos {days} días)' if days else '(todos los logs)'
-    print(f'\n{"="*75}')
-    print(f'  PAPER TRADING — RESUMEN DE TRADES  {period}')
-    print(f'{"="*75}')
+    print(f'\n{"="*78}')
+    print(f'  ETH/USDT PAPER TRADING — EXP016A  {period}')
+    print(f'{"="*78}')
 
     if not trades:
         print('  No se encontraron trades cerrados.\n')
         return
 
     # Tabla de trades
-    print(f'\n  {"#":>3}  {"Apertura":20}  {"Dir":5}  {"Entry":>10}  {"Exit":>10}  {"Razón":6}  {"Net USD":>9}  {"Equity":>10}')
-    print(f'  {"-"*73}')
+    print(f'\n  {"#":>3}  {"Apertura":20}  {"Dir":5}  {"Entry":>10}  {"Exit":>10}  {"Razón":4}  {"Fee":>6}  {"Net USD":>9}  {"Equity":>10}')
+    print(f'  {"-"*78}')
     for i, t in enumerate(trades, 1):
-        ts    = str(t['open_time'])[:16]
-        sign  = '+' if t['net'] > 0 else ''
-        print(f'  {i:>3}  {ts:20}  {t["direction"].upper():5}  {t["entry"]:>10.2f}  {t["exit"]:>10.2f}  {t["reason"]:6}  {sign}{t["net"]:>8.2f}  {t["equity"]:>10.2f}')
+        ts   = str(t['open_time'])[:16]
+        sign = '+' if t['net'] > 0 else ''
+        fee  = t.get('fee', 0.0)
+        print(f'  {i:>3}  {ts:20}  {t["direction"].upper():5}  {t["entry"]:>10.2f}  {t["exit"]:>10.2f}  {t["reason"]:4}  {fee:>6.2f}  {sign}{t["net"]:>8.2f}  {t["equity"]:>10.2f}')
 
     # Métricas
     m = metrics(trades)
-    print(f'\n{"─"*75}')
+    total_fees = sum(t.get('fee', 0.0) for t in trades)
+    print(f'\n{"─"*78}')
     print(f'  Trades       : {m["total"]} ({m["wins"]} wins / {m["losses"]} losses)')
     print(f'  Win rate     : {m["win_rate"]:.1f}%')
     print(f'  Profit Factor: {m["pf"]:.3f}')
     print(f'  Net P&L      : {m["net_usd"]:+.2f} USD')
+    print(f'  Fees pagados : {total_fees:.2f} USD')
     print(f'  Return       : {m["return_pct"]:+.2f}%')
     print(f'  Max DD       : {m["max_dd"]:.2f}%')
     print(f'  Equity actual: {m["equity"]:.2f} USD')
 
-    # Comparar vs baseline EXP009
-    print(f'\n  vs EXP009 backtest:')
-    print(f'  {"":2} WR backtest     : BTC 39.4% | ETH 41.1%')
-    print(f'  {"":2} PF backtest     : BTC 1.297 | ETH 1.375')
-    print(f'  {"":2} Max DD backtest : BTC 7.78% | ETH 10.76%')
+    # Comparar vs baseline EXP016A
+    print(f'\n  vs EXP016A backtest (180d con fees):')
+    print(f'     WR:    46.6%  |  PF: 1.413  |  Return: +30.11%  |  MaxDD: 4.90%')
 
-    # Estado del motor (paper_state.json)
+    # Estado del motor (eth_state.json)
     if STATE_FILE.exists():
         state = json.loads(STATE_FILE.read_text())
-        print(f'\n{"─"*75}')
-        print(f'  ESTADO LIVE (paper_state.json)')
+        print(f'\n{"─"*78}')
+        print(f'  ESTADO LIVE (eth_state.json)')
         print(f'  Equity            : {state.get("equity", "?"):.2f} USD')
         positions = state.get('positions', {})
         if positions:
@@ -170,7 +176,7 @@ def print_report(trades: list[dict], days: int | None) -> None:
         if cb_consec:
             print(f'  Pérdidas consecutivas: {cb_consec}')
 
-    print(f'{"="*75}\n')
+    print(f'{"="*78}\n')
 
 
 def main():

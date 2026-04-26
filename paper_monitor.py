@@ -1,11 +1,11 @@
 """
-EXP002 Paper Trading Monitor — Phase 2
+ETH/USDT Paper Trading Monitor — Phase 2 (EXP016A)
 
-Multi-asset live signal scanner + paper trading engine.
+Single-asset live signal scanner + paper trading engine.
 
-Assets    : BTC/USDT, ETH/USDT
+Asset     : ETH/USDT (longs + shorts)
 Timeframes: 15m (entry trigger) + 1h (trend context)
-Strategy  : EXP002 pullback continuation with quality filters
+Strategy  : EXP002 pullback continuation — EXP016A: SL≥0.50% (fee/edge fix)
 Risk      : 1% equity per trade (fixed, same as backtest)
 
 Usage:
@@ -15,9 +15,9 @@ Usage:
 No real orders are placed. Paper simulation only.
 
 Log format:
-    [OPEN]   LONG  | ts=... | entry=... | sl=... | tp=...
-    [STATUS] LONG  BTC/USDT | entry=... | current=... | progress_to_tp=...% | time_in_trade=...
-    [CLOSE]  LONG  | entry=... | exit=... | reason=TP/SL | net=... | equity=...
+    [OPEN]   ETH/USDT LONG  | ts=... | entry=... | sl=... | tp=...
+    [STATUS] LONG ETH/USDT  | entry=... | current=... | progress_to_tp=...% | time_in_trade=...
+    [CLOSE]  ETH/USDT LONG  | entry=... | exit=... | reason=TP/SL | fee=... | net=... | equity=...
 """
 
 import argparse
@@ -42,14 +42,12 @@ from core.paper_engine import PaperEngine
 from core.logger_v2 import setup_logger, log_open, log_close
 
 # ── Config ────────────────────────────────────────────────────────────────────
-ASSETS           = ['BTC/USDT', 'ETH/USDT']
+ASSET            = 'ETH/USDT'
 CANDLE_LIMIT_1H  = 260   # EMA50 warmup (50) + slope lookback (5) + alignment buffer
 CANDLE_LIMIT_15M = 150   # avg_range window (5) + alignment + buffer
 RISK_PCT         = 0.01  # 1% equity risked per trade
 MIN_RISK_PRICE   = 1.0   # minimum SL distance in USD (avoids degenerate sizing)
-MIN_SL_DIST_PCT     = 0.0015  # EXP007: BTC — reject entries where SL < 0.15% of entry
-ETH_MIN_SL_DIST_PCT = 0.0050  # EXP016A: ETH — SL≥0.50% cubre el fee Taker (0.05%/lado)
-BTC_LONGS_ONLY      = True    # EXP009: BTC short side structurally unprofitable — longs only
+MIN_SL_DIST_PCT  = 0.0050  # EXP016A: SL≥0.50% cubre el fee Taker (0.05%/lado)
 SCAN_INTERVAL    = 30    # seconds between full scans
 
 
@@ -61,13 +59,8 @@ def scan_asset(
     engine: PaperEngine,
     logger,
     last_candle_ts: dict,
-    allow_entry: bool = True,
 ) -> None:
-    """
-    Fetch, compute indicators, check EXP002 signal for one asset.
-    Updates last_candle_ts[asset] in place.
-    allow_entry: when False, exit management still runs but no new position is opened.
-    """
+    """Fetch, compute indicators, check EXP016A signal for ETH/USDT."""
 
     # ── Fetch closed candles ──────────────────────────────────────────────────
     df_1h_raw  = fetch_ohlcv(exchange, asset, '1h',  CANDLE_LIMIT_1H)
@@ -107,6 +100,7 @@ def scan_asset(
         if trade is not None:
             log_close(
                 logger,
+                asset,
                 trade['direction'],
                 trade['entry'],
                 trade['exit'],
@@ -128,11 +122,7 @@ def scan_asset(
 
     last_candle_ts[asset] = candle_time
 
-    # ── Portfolio cap: skip entry if another position is already open ──────────
-    if not allow_entry:
-        return
-
-    # ── EXP002 entry filters (all must pass) ──────────────────────────────────
+    # ── EXP016A entry filters (all must pass) ─────────────────────────────────
     trend = get_trend(row)
     if trend is None:
         return
@@ -159,11 +149,6 @@ def scan_asset(
     entry     = row['close']
     direction = 'long' if trend == 'up' else 'short'
 
-    # EXP009: BTC longs only
-    if BTC_LONGS_ONLY and asset == 'BTC/USDT' and direction == 'short':
-        logger.info(f"[{asset}] SKIP short (EXP009: longs only)")
-        return
-
     sl, tp = calculate_sl_tp(entry, direction, row['low'], row['high'])
     if sl is None:
         return
@@ -172,11 +157,9 @@ def scan_asset(
     if risk_price < MIN_RISK_PRICE:
         return
 
-    # EXP007/016A: reject compressed trigger candles (SL too close to entry)
-    # ETH uses a higher threshold (0.50%) to ensure fee/edge ratio is favorable
-    sl_min_pct = ETH_MIN_SL_DIST_PCT if asset == 'ETH/USDT' else MIN_SL_DIST_PCT
-    if risk_price / entry < sl_min_pct:
-        logger.info(f"[{asset}] SKIP sl_dist={risk_price/entry*100:.3f}% < {sl_min_pct*100:.2f}% min")
+    # EXP016A: reject entries where SL < 0.50% — required to cover Taker fees
+    if risk_price / entry < MIN_SL_DIST_PCT:
+        logger.info(f"[{asset}] SKIP sl_dist={risk_price/entry*100:.3f}% < {MIN_SL_DIST_PCT*100:.2f}% (EXP016A)")
         return
 
     risk_usd = engine.equity * RISK_PCT
@@ -192,7 +175,7 @@ def scan_asset(
         ts=candle_time,
         risk_usd=risk_usd,
     )
-    log_open(logger, direction, candle_time, entry, sl, tp)
+    log_open(logger, asset, direction, candle_time, entry, sl, tp)
 
 
 # ── Scan loop ─────────────────────────────────────────────────────────────────
@@ -200,17 +183,10 @@ def scan_asset(
 def run_scan(exchange, engine: PaperEngine, logger, last_candle_ts: dict) -> None:
     ts = datetime.now(timezone.utc).isoformat(timespec='seconds')
     logger.info(f"\n[SCAN] {ts}")
-    for asset in ASSETS:
-        try:
-            # Re-evaluate inside the loop: if a previous asset opened a position
-            # in this same scan, block entry for all remaining assets.
-            open_count = sum(1 for a in ASSETS if engine.has_position(a))
-            scan_asset(
-                exchange, asset, engine, logger, last_candle_ts,
-                allow_entry=(open_count == 0),
-            )
-        except Exception as e:
-            logger.info(f"[{asset}] ERROR: {e}")
+    try:
+        scan_asset(exchange, ASSET, engine, logger, last_candle_ts)
+    except Exception as e:
+        logger.info(f"[{ASSET}] ERROR: {e}")
     engine.print_summary(logger)
 
 
@@ -228,7 +204,7 @@ def main():
     log_date = datetime.now(timezone.utc).strftime('%Y%m%d')
     logger   = setup_logger(
         'paper_monitor',
-        log_file=f'logs/paper_{log_date}.log',
+        log_file=f'logs/eth_{log_date}.log',
         mode='a',   # append — restarts do not wipe the day's log
     )
 
@@ -240,8 +216,8 @@ def main():
         run_scan(exchange, engine, logger, last_candle_ts)
         return
 
-    logger.info(f"[MONITOR] EXP002 paper trading started.")
-    logger.info(f"[MONITOR] Assets: {ASSETS} | Risk: {RISK_PCT*100:.0f}% | Interval: {SCAN_INTERVAL}s")
+    logger.info(f"[MONITOR] ETH/USDT paper trading started — EXP016A (SL≥0.50%)")
+    logger.info(f"[MONITOR] Asset: {ASSET} | Risk: {RISK_PCT*100:.0f}% | SL_min: {MIN_SL_DIST_PCT*100:.2f}% | Interval: {SCAN_INTERVAL}s")
 
     while True:
         current_date = datetime.now(timezone.utc).strftime('%Y%m%d')
@@ -249,7 +225,7 @@ def main():
             log_date = current_date
             logger = setup_logger(
                 'paper_monitor',
-                log_file=f'logs/paper_{log_date}.log',
+                log_file=f'logs/eth_{log_date}.log',
                 mode='a',
             )
             logger.info(f"[MONITOR] Log rotated — new day: {log_date}")

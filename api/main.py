@@ -8,7 +8,7 @@ Single deploy command:
 Endpoints:
     GET /status              → equity, positions, trade summary, last scan timestamp
     GET /trades              → full trade history with computed fields
-                               ?asset=BTC/USDT|ETH/USDT  filter by asset
+                               ?asset=ETH/USDT            filter by asset
                                ?result=win|loss           filter by outcome
                                ?limit=N                   last N trades (default: all)
     GET /logs/latest         → last scan block from the most recent log file
@@ -30,7 +30,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, StreamingResponse
 
 LOGS_DIR        = Path('logs')
-STATE_FILE      = Path('paper_state.json')
+STATE_FILE      = Path('eth_state.json')
 INITIAL_CAPITAL = 10_000.0
 
 
@@ -46,7 +46,7 @@ def _run_monitor() -> None:
     from core.logger_v2 import setup_logger
 
     log_date = datetime.now(timezone.utc).strftime('%Y%m%d')
-    logger   = setup_logger('paper_monitor', log_file=f'logs/paper_{log_date}.log', mode='a')
+    logger   = setup_logger('paper_monitor', log_file=f'logs/eth_{log_date}.log', mode='a')
 
     # ── Credential check ──────────────────────────────────────────────────────
     from dotenv import load_dotenv
@@ -64,7 +64,7 @@ def _run_monitor() -> None:
         from core.exchange import create_exchange, ping_exchange
         from core.paper_engine import PaperEngine
         from core import gcs_storage
-        from paper_monitor import run_scan, ASSETS, SCAN_INTERVAL, RISK_PCT
+        from paper_monitor import run_scan, ASSET, SCAN_INTERVAL, RISK_PCT
     except Exception as e:
         logger.info(f"[MONITOR] ERROR — Failed to load modules: {e}")
         _monitor_status["binance_ok"]  = False
@@ -72,7 +72,7 @@ def _run_monitor() -> None:
         return
 
     # ── Sync today's log from GCS (resume after restart) ─────────────────────
-    gcs_storage.download(f'logs/paper_{log_date}.log', Path(f'logs/paper_{log_date}.log'))
+    gcs_storage.download(f'logs/eth_{log_date}.log', Path(f'logs/eth_{log_date}.log'))
 
     exchange = create_exchange()
     ok, msg  = ping_exchange(exchange)
@@ -90,19 +90,19 @@ def _run_monitor() -> None:
     last_candle_ts: dict = {}
     _monitor_status["started_at"] = datetime.now(timezone.utc).isoformat(timespec='seconds')
 
-    logger.info(f"[MONITOR] EXP002 paper trading started.")
-    logger.info(f"[MONITOR] Assets: {ASSETS} | Risk: {RISK_PCT*100:.0f}% | Interval: {SCAN_INTERVAL}s")
+    logger.info(f"[MONITOR] ETH/USDT paper trading started — EXP016A (SL≥0.50%)")
+    logger.info(f"[MONITOR] Asset: {ASSET} | Risk: {RISK_PCT*100:.0f}% | SL_min: 0.50% | Interval: {SCAN_INTERVAL}s")
 
     while True:
         current_date = datetime.now(timezone.utc).strftime('%Y%m%d')
         if current_date != log_date:
             log_date = current_date
-            gcs_storage.download(f'logs/paper_{log_date}.log', Path(f'logs/paper_{log_date}.log'))
-            logger   = setup_logger('paper_monitor', log_file=f'logs/paper_{log_date}.log', mode='a')
+            gcs_storage.download(f'logs/eth_{log_date}.log', Path(f'logs/eth_{log_date}.log'))
+            logger   = setup_logger('paper_monitor', log_file=f'logs/eth_{log_date}.log', mode='a')
             logger.info(f"[MONITOR] Log rotated — new day: {log_date}")
 
         run_scan(exchange, engine, logger, last_candle_ts)
-        gcs_storage.upload(Path(f'logs/paper_{log_date}.log'), f'logs/paper_{log_date}.log')
+        gcs_storage.upload(Path(f'logs/eth_{log_date}.log'), f'logs/eth_{log_date}.log')
         time.sleep(SCAN_INTERVAL)
 
 
@@ -135,13 +135,13 @@ def _last_scan_block(log_path: Path) -> str:
 
 
 def _most_recent_log() -> Optional[Path]:
-    logs = sorted(LOGS_DIR.glob('paper_*.log'))
+    logs = sorted(LOGS_DIR.glob('eth_*.log'))
     return logs[-1] if logs else None
 
 
 def _log_for_date(date_str: str) -> Path:
     """date_str = YYYY-MM-DD"""
-    return LOGS_DIR / f"paper_{date_str.replace('-', '')}.log"
+    return LOGS_DIR / f"eth_{date_str.replace('-', '')}.log"
 
 
 # ── Endpoints ─────────────────────────────────────────────────────────────────
@@ -162,7 +162,7 @@ def get_status():
 
     # Last scan timestamp from today's log (or most recent)
     today    = datetime.now(timezone.utc).strftime('%Y%m%d')
-    log_path = LOGS_DIR / f'paper_{today}.log'
+    log_path = LOGS_DIR / f'eth_{today}.log'
     if not log_path.exists():
         log_path = _most_recent_log()
 
@@ -189,7 +189,7 @@ def get_status():
 
 @app.get('/trades')
 def get_trades(
-    asset:  Optional[str] = Query(None, description='Filter: BTC/USDT or ETH/USDT'),
+    asset:  Optional[str] = Query(None, description='Filter: ETH/USDT'),
     result: Optional[str] = Query(None, description='Filter: win or loss'),
     limit:  Optional[int] = Query(None, description='Last N trades (default: all)'),
 ):
@@ -296,7 +296,7 @@ def get_trades(
 def get_latest_logs():
     """Last scan block (signals, status, summary) from the most recent log file."""
     today    = datetime.now(timezone.utc).strftime('%Y%m%d')
-    log_path = LOGS_DIR / f'paper_{today}.log'
+    log_path = LOGS_DIR / f'eth_{today}.log'
 
     if not log_path.exists():
         log_path = _most_recent_log()
@@ -381,7 +381,7 @@ def get_health():
 
     # Most recent log file
     today    = datetime.now(timezone.utc).strftime('%Y%m%d')
-    log_path = LOGS_DIR / f'paper_{today}.log'
+    log_path = LOGS_DIR / f'eth_{today}.log'
     if not log_path.exists():
         log_path = _most_recent_log()
 

@@ -1,7 +1,7 @@
 """
 Paper Trading Engine — state management for paper trades.
 
-Persists all state to paper_state.json. One open position allowed per asset
+Persists all state to eth_state.json. One open position allowed per asset
 (same constraint as the backtest).
 
 No orders are placed. This is simulation only.
@@ -15,9 +15,9 @@ from pathlib import Path
 from .trade_logic import check_exit
 from . import gcs_storage
 
-STATE_FILE       = 'paper_state.json'
+STATE_FILE       = 'eth_state.json'
 _STATE_PATH      = Path(STATE_FILE)
-_GCS_STATE       = 'paper_state.json'
+_GCS_STATE       = 'eth_state.json'
 INITIAL_CAPITAL  = 10_000.0
 FEE_PER_SIDE_PCT = 0.0005   # 0.05% taker, Binance USDM Futures VIP0
 
@@ -211,7 +211,7 @@ class PaperEngine:
         trades = self.state['trades']
         n      = len(trades)
         logger.info(f"\n{'─'*55}")
-        logger.info(f"PAPER TRADING SUMMARY")
+        logger.info(f"ETH/USDT PAPER TRADING SUMMARY")
         logger.info(f"{'─'*55}")
         logger.info(f"Equity       : {self.equity:.2f} USD")
         logger.info(f"Return       : {(self.equity - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100:+.2f}%")
