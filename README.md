@@ -91,67 +91,37 @@ python reset_paper_logs.py
 
 ---
 
-## Deploy to Google Cloud (GCE)
+## Deploy to Google Cloud (Cloud Run — europe-west1)
 
-Google Compute Engine is recommended over Cloud Run for this project because the monitor is a long-running stateful process. Cloud Run scales to zero and has an ephemeral filesystem — logs and paper state would be lost on restart.
+The service runs on **Cloud Run** in `europe-west1`. The region is required because Binance blocks API access from US-based IPs. State (`paper_state.json`) and logs are persisted in a **GCS bucket** so they survive container restarts and redeployments.
 
-### 1. Build and push the image
+### One-command deploy
 
 ```bash
-# Authenticate
-gcloud auth configure-docker
-
-# Build and tag  (replace PROJECT_ID)
-docker build -t gcr.io/PROJECT_ID/investmentbot .
-docker push gcr.io/PROJECT_ID/investmentbot
+bash deploy.sh
 ```
 
-### 2. Create the VM (first time only)
+This builds the Docker image via Cloud Build, pushes it to Artifact Registry, and deploys to Cloud Run with 1 instance always running (`--min-instances=1`). Secrets (`BINANCE_API_KEY`, `BINANCE_SECRET`) are injected from Secret Manager — never hardcoded.
+
+### Prerequisites (first time only)
 
 ```bash
-gcloud compute instances create-with-container investmentbot \
-  --zone=us-central1-a \
-  --machine-type=e2-micro \
-  --container-image=gcr.io/PROJECT_ID/investmentbot \
-  --container-env=BINANCE_API_KEY=your_key,BINANCE_SECRET=your_secret \
-  --container-mount-host-path=mount-path=/app/logs,host-path=/var/investmentbot/logs \
-  --container-mount-host-path=mount-path=/app/paper_state.json,host-path=/var/investmentbot/paper_state.json \
-  --tags=http-server
+# Create the GCS bucket for state persistence
+gsutil mb -l europe-west1 gs://investmentbot-state-$PROJECT_ID
+
+# Grant the service account access
+gsutil iam ch serviceAccount:investmentbot-sa@$PROJECT_ID.iam.gserviceaccount.com:roles/storage.objectAdmin \
+  gs://investmentbot-state-$PROJECT_ID
 ```
 
-The host-path mounts keep logs and state on the VM's persistent disk — they survive container restarts and redeployments.
-
-### 3. Open the API port
+### Check logs
 
 ```bash
-gcloud compute firewall-rules create allow-investmentbot \
-  --allow tcp:8080 \
-  --target-tags http-server
-```
+# Stream live logs from Cloud Run
+gcloud run services logs tail investmentbot --region=europe-west1
 
-The API is then reachable at `http://EXTERNAL_IP:8080`.
-
-### 4. Redeploy after code changes
-
-```bash
-docker build -t gcr.io/PROJECT_ID/investmentbot .
-docker push gcr.io/PROJECT_ID/investmentbot
-
-gcloud compute instances update-container investmentbot \
-  --zone=us-central1-a \
-  --container-image=gcr.io/PROJECT_ID/investmentbot
-```
-
-The container restarts automatically. Logs and state on the host disk are preserved.
-
-### 5. Check logs from your machine
-
-```bash
-# SSH into the VM
-gcloud compute ssh investmentbot --zone=us-central1-a
-
-# Tail the current day's log
-tail -f /var/investmentbot/logs/paper_$(date -u +%Y%m%d).log
+# Or download a specific day's log via the API
+curl "https://<SERVICE_URL>/logs/download?date=$(date -u +%Y-%m-%d)" -o log.txt
 ```
 
 ---
