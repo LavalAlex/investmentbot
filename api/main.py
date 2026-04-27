@@ -90,8 +90,15 @@ def _run_monitor() -> None:
     last_candle_ts: dict = {}
     _monitor_status["started_at"] = datetime.now(timezone.utc).isoformat(timespec='seconds')
 
-    logger.info(f"[MONITOR] ETH/USDT paper trading started — EXP016A (SL≥0.50%)")
-    logger.info(f"[MONITOR] Asset: {ASSET} | Risk: {RISK_PCT*100:.0f}% | SL_min: 0.50% | Interval: {SCAN_INTERVAL}s")
+    logger.info(f"[MONITOR] {'─'*50}")
+    logger.info(f"[MONITOR] ETH/USDT PAPER TRADING — EXP016A")
+    logger.info(f"[MONITOR] Asset    : {ASSET} (longs + shorts)")
+    logger.info(f"[MONITOR] Strategy : Pullback continuation EXP002 + EXP016A")
+    logger.info(f"[MONITOR] SL min   : {MIN_SL_DIST_PCT*100:.2f}%  (fee/edge fix)")
+    logger.info(f"[MONITOR] Risk     : {RISK_PCT*100:.0f}% equity/trade  |  R:R 2:1")
+    logger.info(f"[MONITOR] Equity   : {engine.equity:.2f} USD")
+    logger.info(f"[MONITOR] Interval : {SCAN_INTERVAL}s")
+    logger.info(f"[MONITOR] {'─'*50}")
 
     while True:
         current_date = datetime.now(timezone.utc).strftime('%Y%m%d')
