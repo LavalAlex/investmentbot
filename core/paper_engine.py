@@ -1,8 +1,8 @@
 """
 Paper Trading Engine — state management for paper trades.
 
-Persists all state to eth_state.json. One open position allowed per asset
-(same constraint as the backtest).
+One open position allowed per asset (same constraint as the backtest).
+State is persisted to a per-asset JSON file (eth_state.json, btc_state.json).
 
 No orders are placed. This is simulation only.
 """
@@ -15,45 +15,41 @@ from pathlib import Path
 from .trade_logic import check_exit
 from . import gcs_storage
 
-STATE_FILE       = 'eth_state.json'
-_STATE_PATH      = Path(STATE_FILE)
-_GCS_STATE       = 'eth_state.json'
 INITIAL_CAPITAL  = 10_000.0
 FEE_PER_SIDE_PCT = 0.0005   # 0.05% taker, Binance USDM Futures VIP0
-
-
-# ── State I/O ─────────────────────────────────────────────────────────────────
-
-def _load() -> dict:
-    if not _STATE_PATH.exists():
-        gcs_storage.download(_GCS_STATE, _STATE_PATH)
-    if _STATE_PATH.exists():
-        with open(_STATE_PATH) as f:
-            return json.load(f)
-    return {'equity': INITIAL_CAPITAL, 'positions': {}, 'trades': []}
-
-
-def _save(state: dict) -> None:
-    with open(STATE_FILE, 'w') as f:
-        json.dump(state, f, indent=2, default=str)
-    gcs_storage.upload(_STATE_PATH, _GCS_STATE)
 
 
 # ── Engine ────────────────────────────────────────────────────────────────────
 
 class PaperEngine:
     """
-    Manages paper positions and equity.
+    Manages paper positions and equity for a single asset.
 
     Usage:
-        engine = PaperEngine()
+        engine = PaperEngine('eth_state.json')
         engine.open_position(...)   # when signal fires
         trade = engine.check_and_close(asset, bar)  # on each new bar
         engine.log_status(logger, asset, current_price)
     """
 
-    def __init__(self):
-        self.state = _load()
+    def __init__(self, state_file: str = 'eth_state.json'):
+        self._state_file = state_file
+        self._state_path = Path(state_file)
+        self._gcs_state  = state_file
+        self.state = self._load()
+
+    def _load(self) -> dict:
+        if not self._state_path.exists():
+            gcs_storage.download(self._gcs_state, self._state_path)
+        if self._state_path.exists():
+            with open(self._state_path) as f:
+                return json.load(f)
+        return {'equity': INITIAL_CAPITAL, 'positions': {}, 'trades': []}
+
+    def _save(self) -> None:
+        with open(self._state_file, 'w') as f:
+            json.dump(self.state, f, indent=2, default=str)
+        gcs_storage.upload(self._state_path, self._gcs_state)
 
     # ── Read ─────────────────────────────────────────────────────────────────
 
@@ -90,7 +86,7 @@ class PaperEngine:
             'open_ts':   ts,
             'risk_usd':  round(risk_usd, 4),
         }
-        _save(self.state)
+        self._save()
 
     def check_and_close(self, asset: str, bar) -> dict | None:
         """
@@ -143,7 +139,7 @@ class PaperEngine:
         }
         self.state['trades'].append(trade)
         del self.state['positions'][asset]
-        _save(self.state)
+        self._save()
         return trade
 
     # ── Status ───────────────────────────────────────────────────────────────
@@ -207,11 +203,11 @@ class PaperEngine:
 
     # ── Summary ───────────────────────────────────────────────────────────────
 
-    def print_summary(self, logger) -> None:
+    def print_summary(self, logger, label: str = 'PAPER TRADING SUMMARY') -> None:
         trades = self.state['trades']
         n      = len(trades)
         logger.info(f"\n{'─'*55}")
-        logger.info(f"ETH/USDT PAPER TRADING SUMMARY")
+        logger.info(f"{label}")
         logger.info(f"{'─'*55}")
         logger.info(f"Equity       : {self.equity:.2f} USD")
         logger.info(f"Return       : {(self.equity - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100:+.2f}%")

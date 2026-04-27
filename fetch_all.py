@@ -41,6 +41,22 @@ CONFIGS_RECENT = [
     ('ETHUSDT', '1h',   60, 'ETHUSDT_1h_recent.csv'),
 ]
 
+# 370 días: cubre Apr 2025 → Apr 2026 (ciclo completo bull recovery + bear)
+CONFIGS_EXTENDED = [
+    ('BTCUSDT', '15m', 370, 'BTCUSDT_15m_last_370d.csv'),
+    ('BTCUSDT', '1h',  380, 'BTCUSDT_1h_last_380d.csv'),
+    ('ETHUSDT', '15m', 370, 'ETHUSDT_15m_last_370d.csv'),
+    ('ETHUSDT', '1h',  380, 'ETHUSDT_1h_last_380d.csv'),
+]
+
+# 730 días: cubre Apr 2024 → Apr 2026 (bull 2024 + recovery 2025 + bear 2025-26)
+CONFIGS_2Y = [
+    ('BTCUSDT', '15m', 730, 'BTCUSDT_15m_last_730d.csv'),
+    ('BTCUSDT', '1h',  740, 'BTCUSDT_1h_last_740d.csv'),
+    ('ETHUSDT', '15m', 730, 'ETHUSDT_15m_last_730d.csv'),
+    ('ETHUSDT', '1h',  740, 'ETHUSDT_1h_last_740d.csv'),
+]
+
 
 def ms_to_iso(ms: int) -> str:
     return datetime.fromtimestamp(ms / 1000, tz=timezone.utc).isoformat()
@@ -110,12 +126,27 @@ def main():
     parser = argparse.ArgumentParser(description='Descarga datos históricos de Binance')
     parser.add_argument('--recent', action='store_true',
                         help='Descarga solo los últimos 14d (15m) y 60d (1h) — más rápido')
+    parser.add_argument('--extended', action='store_true',
+                        help='Descarga 370d BTC+ETH — ciclo completo Apr 2025 → Apr 2026')
+    parser.add_argument('--2y', dest='two_years', action='store_true',
+                        help='Descarga 730d BTC+ETH — bull 2024 + recovery 2025 + bear 2025-26')
     args = parser.parse_args()
 
     exchange = create_exchange()
-    configs  = CONFIGS_RECENT if args.recent else CONFIGS
+    if args.recent:
+        configs = CONFIGS_RECENT
+        label   = 'datos recientes (14d/60d)'
+    elif args.extended:
+        configs = CONFIGS_EXTENDED
+        label   = 'histórico extendido (370d — ciclo completo)'
+    elif args.two_years:
+        configs = CONFIGS_2Y
+        label   = '2 años (730d — bull 2024 + recovery 2025 + bear 2025-26)'
+    else:
+        configs = CONFIGS
+        label   = 'histórico estándar (180d/200d)'
 
-    print(f'\nDescargando {"datos recientes" if args.recent else "histórico completo"} de Binance...\n')
+    print(f'\nDescargando {label} de Binance...\n')
 
     for symbol_raw, interval, days, filename in configs:
         rows = fetch_candles(exchange, symbol_raw, interval, days)
@@ -123,6 +154,9 @@ def main():
             save_csv(rows, OUTPUT_DIR / filename)
 
     print('\nListo.\n')
+    if args.extended:
+        print('  Datos disponibles para EXP017 (BTC 12 meses con fees):')
+        print('  python backtest/backtest_exp017.py')
 
 
 if __name__ == '__main__':

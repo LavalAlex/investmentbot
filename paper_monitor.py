@@ -1,23 +1,22 @@
 """
-ETH/USDT Paper Trading Monitor — Phase 2 (EXP016A)
+Paper Trading Monitor — Phase 2 (EXP016A + EXP017-B)
 
-Single-asset live signal scanner + paper trading engine.
+Dual-asset live signal scanner + paper trading engine.
 
-Asset     : ETH/USDT (longs + shorts)
+Assets:
+  BTC/USDT — longs only  (EXP009 + EXP017-B: SL≥0.30%)
+  ETH/USDT — longs+shorts (EXP016A: SL≥0.50%)
+
 Timeframes: 15m (entry trigger) + 1h (trend context)
-Strategy  : EXP002 pullback continuation — EXP016A: SL≥0.50% (fee/edge fix)
+Strategy  : EXP002 pullback continuation
 Risk      : 1% equity per trade (fixed, same as backtest)
 
 Usage:
     python paper_monitor.py           → single scan, then exit
     python paper_monitor.py --loop    → continuous loop (every SCAN_INTERVAL seconds)
 
-No real orders are placed. Paper simulation only.
-
-Log format:
-    [OPEN]   ETH/USDT LONG  | ts=... | entry=... | sl=... | tp=...
-    [STATUS] LONG ETH/USDT  | entry=... | current=... | progress_to_tp=...% | time_in_trade=...
-    [CLOSE]  ETH/USDT LONG  | entry=... | exit=... | reason=TP/SL | fee=... | net=... | equity=...
+Log files: logs/btc_YYYYMMDD.log  and  logs/eth_YYYYMMDD.log
+State files: btc_state.json  and  eth_state.json
 """
 
 import argparse
@@ -41,13 +40,29 @@ from core.trade_logic import calculate_sl_tp
 from core.paper_engine import PaperEngine
 from core.logger_v2 import setup_logger, log_open, log_close
 
-# ── Config ────────────────────────────────────────────────────────────────────
-ASSET            = 'ETH/USDT'
-CANDLE_LIMIT_1H  = 260   # EMA50 warmup (50) + slope lookback (5) + alignment buffer
-CANDLE_LIMIT_15M = 150   # avg_range window (5) + alignment + buffer
-RISK_PCT         = 0.01  # 1% equity risked per trade
-MIN_RISK_PRICE   = 1.0   # minimum SL distance in USD (avoids degenerate sizing)
-MIN_SL_DIST_PCT  = 0.0050  # EXP016A: SL≥0.50% cubre el fee Taker (0.05%/lado)
+# ── Per-asset configuration ───────────────────────────────────────────────────
+
+ASSETS_CONFIG = {
+    'BTC/USDT': {
+        'state_file':      'btc_state.json',
+        'log_prefix':      'btc',
+        'min_sl_dist_pct': 0.0030,  # EXP017-B: SL≥0.30% (viable over 730d)
+        'longs_only':      True,    # EXP009: BTC longs only
+        'label':           'BTC/USDT (EXP009+EXP017-B, SL≥0.30%, longs only)',
+    },
+    'ETH/USDT': {
+        'state_file':      'eth_state.json',
+        'log_prefix':      'eth',
+        'min_sl_dist_pct': 0.0050,  # EXP016A: SL≥0.50% (viable over 180d)
+        'longs_only':      False,
+        'label':           'ETH/USDT (EXP016A, SL≥0.50%, longs+shorts)',
+    },
+}
+
+CANDLE_LIMIT_1H  = 260
+CANDLE_LIMIT_15M = 150
+RISK_PCT         = 0.01
+MIN_RISK_PRICE   = 1.0
 SCAN_INTERVAL    = 30    # seconds between full scans
 
 
@@ -56,13 +71,14 @@ SCAN_INTERVAL    = 30    # seconds between full scans
 def scan_asset(
     exchange,
     asset: str,
+    cfg: dict,
     engine: PaperEngine,
     logger,
     last_candle_ts: dict,
 ) -> None:
-    """Fetch, compute indicators, check EXP016A signal for ETH/USDT."""
+    min_sl_dist_pct = cfg['min_sl_dist_pct']
+    longs_only      = cfg['longs_only']
 
-    # ── Fetch closed candles ──────────────────────────────────────────────────
     df_1h_raw  = fetch_ohlcv(exchange, asset, '1h',  CANDLE_LIMIT_1H)
     df_15m_raw = fetch_ohlcv(exchange, asset, '15m', CANDLE_LIMIT_15M)
 
@@ -70,7 +86,6 @@ def scan_asset(
         logger.info(f"[{asset}] Data fetch failed — skipping.")
         return
 
-    # Drop last row: it is the currently-forming candle, not yet closed.
     df_1h_raw  = df_1h_raw.iloc[:-1]
     df_15m_raw = df_15m_raw.iloc[:-1]
 
@@ -78,11 +93,9 @@ def scan_asset(
         logger.info(f"[{asset}] Insufficient closed candles — skipping.")
         return
 
-    # exchange.py returns timestamp as index; strategy modules expect open_time column
     df_1h_raw  = df_1h_raw.reset_index().rename(columns={'timestamp': 'open_time'})
     df_15m_raw = df_15m_raw.reset_index().rename(columns={'timestamp': 'open_time'})
 
-    # ── Compute indicators ────────────────────────────────────────────────────
     df_1h  = prepare_1h(df_1h_raw)
     df_15m = prepare_15m(df_15m_raw)
     df     = align_1h_to_15m(df_15m, df_1h)
@@ -94,7 +107,7 @@ def scan_asset(
     row         = df.iloc[-1]
     candle_time = str(row['open_time'])
 
-    # ── Check exit for any open position first (runs every scan, not just new candles) ──
+    # ── Check exit for any open position first ────────────────────────────────
     if engine.has_position(asset):
         trade = engine.check_and_close(asset, row)
         if trade is not None:
@@ -112,19 +125,22 @@ def scan_asset(
         else:
             engine.log_status(logger, asset, row['close'], row['high'], row['low'])
 
-        # After an exit, update seen candle and return — never enter same bar as exit
         last_candle_ts[asset] = candle_time
         return
 
-    # ── Dedup: skip entry logic if this candle was already processed ──────────
+    # ── Dedup ─────────────────────────────────────────────────────────────────
     if last_candle_ts.get(asset) == candle_time:
         return
 
     last_candle_ts[asset] = candle_time
 
-    # ── EXP016A entry filters (all must pass) ─────────────────────────────────
+    # ── Entry filters ─────────────────────────────────────────────────────────
     trend = get_trend(row)
     if trend is None:
+        return
+
+    # BTC: longs only (EXP009)
+    if longs_only and trend != 'up':
         return
 
     if not is_trend_strong(row):
@@ -145,7 +161,7 @@ def scan_asset(
     if not is_market_efficient(row):
         return
 
-    # ── Signal confirmed — size and open paper position ───────────────────────
+    # ── Size and open paper position ──────────────────────────────────────────
     entry     = row['close']
     direction = 'long' if trend == 'up' else 'short'
 
@@ -157,9 +173,11 @@ def scan_asset(
     if risk_price < MIN_RISK_PRICE:
         return
 
-    # EXP016A: reject entries where SL < 0.50% — required to cover Taker fees
-    if risk_price / entry < MIN_SL_DIST_PCT:
-        logger.info(f"[{asset}] SKIP sl_dist={risk_price/entry*100:.3f}% < {MIN_SL_DIST_PCT*100:.2f}% (EXP016A)")
+    if risk_price / entry < min_sl_dist_pct:
+        logger.info(
+            f"[{asset}] SKIP sl_dist={risk_price/entry*100:.3f}% "
+            f"< {min_sl_dist_pct*100:.2f}% (SL filter)"
+        )
         return
 
     risk_usd = engine.equity * RISK_PCT
@@ -180,20 +198,31 @@ def scan_asset(
 
 # ── Scan loop ─────────────────────────────────────────────────────────────────
 
-def run_scan(exchange, engine: PaperEngine, logger, last_candle_ts: dict) -> None:
+def run_scan(
+    exchange,
+    engines: dict,
+    loggers: dict,
+    last_candle_ts: dict,
+) -> None:
+    """
+    Scan all assets. engines and loggers are dicts keyed by asset symbol.
+    """
     ts = datetime.now(timezone.utc).isoformat(timespec='seconds')
-    logger.info(f"\n[SCAN] {ts}")
-    try:
-        scan_asset(exchange, ASSET, engine, logger, last_candle_ts)
-    except Exception as e:
-        logger.info(f"[{ASSET}] ERROR: {e}")
-    engine.print_summary(logger)
+    for asset, cfg in ASSETS_CONFIG.items():
+        engine = engines[asset]
+        logger = loggers[asset]
+        logger.info(f"\n[SCAN] {ts}")
+        try:
+            scan_asset(exchange, asset, cfg, engine, logger, last_candle_ts)
+        except Exception as e:
+            logger.info(f"[{asset}] ERROR: {e}")
+        engine.print_summary(logger, label=f"{asset} PAPER TRADING SUMMARY")
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description='EXP002 Paper Trading Monitor')
+    parser = argparse.ArgumentParser(description='InvestmentBot Paper Trading Monitor')
     parser.add_argument(
         '--loop',
         action='store_true',
@@ -202,35 +231,46 @@ def main():
     args = parser.parse_args()
 
     log_date = datetime.now(timezone.utc).strftime('%Y%m%d')
-    logger   = setup_logger(
-        'paper_monitor',
-        log_file=f'logs/eth_{log_date}.log',
-        mode='a',   # append — restarts do not wipe the day's log
-    )
 
-    exchange         = create_exchange()
-    engine           = PaperEngine()
+    loggers = {
+        asset: setup_logger(
+            f'paper_monitor_{cfg["log_prefix"]}',
+            log_file=f'logs/{cfg["log_prefix"]}_{log_date}.log',
+            mode='a',
+        )
+        for asset, cfg in ASSETS_CONFIG.items()
+    }
+
+    exchange = create_exchange()
+    engines  = {
+        asset: PaperEngine(state_file=cfg['state_file'])
+        for asset, cfg in ASSETS_CONFIG.items()
+    }
     last_candle_ts: dict = {}
 
     if not args.loop:
-        run_scan(exchange, engine, logger, last_candle_ts)
+        run_scan(exchange, engines, loggers, last_candle_ts)
         return
 
-    logger.info(f"[MONITOR] ETH/USDT paper trading started — EXP016A (SL≥0.50%)")
-    logger.info(f"[MONITOR] Asset: {ASSET} | Risk: {RISK_PCT*100:.0f}% | SL_min: {MIN_SL_DIST_PCT*100:.2f}% | Interval: {SCAN_INTERVAL}s")
+    for asset, cfg in ASSETS_CONFIG.items():
+        loggers[asset].info(f"[MONITOR] Started — {cfg['label']}")
+        loggers[asset].info(
+            f"[MONITOR] Risk: {RISK_PCT*100:.0f}%  |  SL_min: {cfg['min_sl_dist_pct']*100:.2f}%  |  Interval: {SCAN_INTERVAL}s"
+        )
 
     while True:
         current_date = datetime.now(timezone.utc).strftime('%Y%m%d')
         if current_date != log_date:
             log_date = current_date
-            logger = setup_logger(
-                'paper_monitor',
-                log_file=f'logs/eth_{log_date}.log',
-                mode='a',
-            )
-            logger.info(f"[MONITOR] Log rotated — new day: {log_date}")
+            for asset, cfg in ASSETS_CONFIG.items():
+                loggers[asset] = setup_logger(
+                    f'paper_monitor_{cfg["log_prefix"]}',
+                    log_file=f'logs/{cfg["log_prefix"]}_{log_date}.log',
+                    mode='a',
+                )
+                loggers[asset].info(f"[MONITOR] Log rotated — new day: {log_date}")
 
-        run_scan(exchange, engine, logger, last_candle_ts)
+        run_scan(exchange, engines, loggers, last_candle_ts)
         time.sleep(SCAN_INTERVAL)
 
 

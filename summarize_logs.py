@@ -1,14 +1,13 @@
 """
-summarize_logs.py — Resumen rápido del paper trading ETH/USDT (EXP016A).
+summarize_logs.py — Resumen de paper trading BTC/USDT y ETH/USDT.
 
-Lee todos los logs en logs/eth_*.log y eth_state.json, e imprime:
-  - Tabla de todos los trades cerrados
-  - Métricas globales (equity, WR, PF, return, DD)
-  - Posiciones actualmente abiertas
+Lee logs/btc_*.log + btc_state.json y/o logs/eth_*.log + eth_state.json.
 
 Uso:
-    python summarize_logs.py
-    python summarize_logs.py --days 7   # solo últimos 7 días de logs
+    python summarize_logs.py                # ambos assets
+    python summarize_logs.py --asset eth    # solo ETH
+    python summarize_logs.py --asset btc    # solo BTC
+    python summarize_logs.py --days 7       # últimos 7 días
 """
 
 import json
@@ -18,8 +17,22 @@ from pathlib import Path
 from datetime import datetime, timezone, timedelta
 
 
-LOG_DIR    = Path('logs')
-STATE_FILE = Path('eth_state.json')
+LOG_DIR = Path('logs')
+
+ASSET_CONFIG = {
+    'btc': {
+        'state_file': Path('btc_state.json'),
+        'symbol':     'BTC/USDT',
+        'label':      'BTC/USDT — EXP009+EXP017-B (SL≥0.30%, longs only)',
+        'baseline':   'WR: ~38%  |  PF: 1.126  |  Return: +23.6%  |  MaxDD: 11.8%  (730d con fees)',
+    },
+    'eth': {
+        'state_file': Path('eth_state.json'),
+        'symbol':     'ETH/USDT',
+        'label':      'ETH/USDT — EXP016A (SL≥0.50%, longs+shorts)',
+        'baseline':   'WR: 46.6%  |  PF: 1.413  |  Return: +30.11%  |  MaxDD: 4.90%  (180d con fees)',
+    },
+}
 
 # [OPEN]  ETH/USDT LONG | ts=... | entry=... | sl=... | tp=...
 OPEN_RE  = re.compile(
@@ -33,11 +46,11 @@ CLOSE_RE = re.compile(
 )
 
 
-def parse_logs(days: int | None = None) -> list[dict]:
+def parse_logs(prefix: str, days: int | None = None) -> list[dict]:
     trades = []
-    eth_log_re = re.compile(r'^eth_(\d{8})$')
+    log_re = re.compile(rf'^{prefix}_(\d{{8}})$')
     log_files = sorted(
-        f for f in LOG_DIR.glob('eth_*.log') if eth_log_re.match(f.stem)
+        f for f in LOG_DIR.glob(f'{prefix}_*.log') if log_re.match(f.stem)
     )
 
     if days is not None:
@@ -46,7 +59,7 @@ def parse_logs(days: int | None = None) -> list[dict]:
         )
         log_files = [
             f for f in log_files
-            if datetime.strptime(eth_log_re.match(f.stem).group(1), '%Y%m%d').replace(tzinfo=timezone.utc) >= cutoff
+            if datetime.strptime(log_re.match(f.stem).group(1), '%Y%m%d').replace(tzinfo=timezone.utc) >= cutoff
         ]
 
     open_positions: dict[str, dict] = {}
@@ -70,16 +83,16 @@ def parse_logs(days: int | None = None) -> list[dict]:
                 direction, entry, exit_p, reason, fee, net, equity = m.groups()
                 pos = open_positions.pop(direction, {})
                 trades.append({
-                    'open_time':  pos.get('open_time', '?'),
-                    'direction':  direction.lower(),
-                    'entry':      float(entry),
-                    'exit':       float(exit_p),
-                    'sl':         pos.get('sl'),
-                    'tp':         pos.get('tp'),
-                    'reason':     reason,
-                    'fee':        float(fee) if fee else 0.0,
-                    'net':        float(net),
-                    'equity':     float(equity),
+                    'open_time': pos.get('open_time', '?'),
+                    'direction': direction.lower(),
+                    'entry':     float(entry),
+                    'exit':      float(exit_p),
+                    'sl':        pos.get('sl'),
+                    'tp':        pos.get('tp'),
+                    'reason':    reason,
+                    'fee':       float(fee) if fee else 0.0,
+                    'net':       float(net),
+                    'equity':    float(equity),
                 })
 
     return trades
@@ -108,59 +121,55 @@ def metrics(trades: list[dict]) -> dict:
         max_dd = max(max_dd, dd)
 
     return {
-        'total':     len(trades),
-        'wins':      len(wins),
-        'losses':    len(losses),
-        'win_rate':  len(wins) / len(trades) * 100,
-        'pf':        pf,
-        'net_usd':   sum(t['net'] for t in trades),
+        'total':      len(trades),
+        'wins':       len(wins),
+        'losses':     len(losses),
+        'win_rate':   len(wins) / len(trades) * 100,
+        'pf':         pf,
+        'net_usd':    sum(t['net'] for t in trades),
         'return_pct': ret_pct,
-        'max_dd':    max_dd,
-        'equity':    final,
+        'max_dd':     max_dd,
+        'equity':     final,
     }
 
 
-def print_report(trades: list[dict], days: int | None) -> None:
+def print_asset_report(prefix: str, trades: list[dict], days: int | None) -> None:
+    cfg    = ASSET_CONFIG[prefix]
     period = f'(últimos {days} días)' if days else '(todos los logs)'
     print(f'\n{"="*78}')
-    print(f'  ETH/USDT PAPER TRADING — EXP016A  {period}')
+    print(f'  {cfg["label"]}  {period}')
     print(f'{"="*78}')
 
     if not trades:
-        print('  No se encontraron trades cerrados.\n')
-        return
+        print('  No se encontraron trades cerrados.')
+    else:
+        print(f'\n  {"#":>3}  {"Apertura":20}  {"Dir":5}  {"Entry":>10}  {"Exit":>10}  {"Razón":4}  {"Fee":>6}  {"Net USD":>9}  {"Equity":>10}')
+        print(f'  {"-"*78}')
+        for i, t in enumerate(trades, 1):
+            ts   = str(t['open_time'])[:16]
+            sign = '+' if t['net'] > 0 else ''
+            fee  = t.get('fee', 0.0)
+            print(f'  {i:>3}  {ts:20}  {t["direction"].upper():5}  {t["entry"]:>10.2f}  {t["exit"]:>10.2f}  {t["reason"]:4}  {fee:>6.2f}  {sign}{t["net"]:>8.2f}  {t["equity"]:>10.2f}')
 
-    # Tabla de trades
-    print(f'\n  {"#":>3}  {"Apertura":20}  {"Dir":5}  {"Entry":>10}  {"Exit":>10}  {"Razón":4}  {"Fee":>6}  {"Net USD":>9}  {"Equity":>10}')
-    print(f'  {"-"*78}')
-    for i, t in enumerate(trades, 1):
-        ts   = str(t['open_time'])[:16]
-        sign = '+' if t['net'] > 0 else ''
-        fee  = t.get('fee', 0.0)
-        print(f'  {i:>3}  {ts:20}  {t["direction"].upper():5}  {t["entry"]:>10.2f}  {t["exit"]:>10.2f}  {t["reason"]:4}  {fee:>6.2f}  {sign}{t["net"]:>8.2f}  {t["equity"]:>10.2f}')
-
-    # Métricas
-    m = metrics(trades)
-    total_fees = sum(t.get('fee', 0.0) for t in trades)
-    print(f'\n{"─"*78}')
-    print(f'  Trades       : {m["total"]} ({m["wins"]} wins / {m["losses"]} losses)')
-    print(f'  Win rate     : {m["win_rate"]:.1f}%')
-    print(f'  Profit Factor: {m["pf"]:.3f}')
-    print(f'  Net P&L      : {m["net_usd"]:+.2f} USD')
-    print(f'  Fees pagados : {total_fees:.2f} USD')
-    print(f'  Return       : {m["return_pct"]:+.2f}%')
-    print(f'  Max DD       : {m["max_dd"]:.2f}%')
-    print(f'  Equity actual: {m["equity"]:.2f} USD')
-
-    # Comparar vs baseline EXP016A
-    print(f'\n  vs EXP016A backtest (180d con fees):')
-    print(f'     WR:    46.6%  |  PF: 1.413  |  Return: +30.11%  |  MaxDD: 4.90%')
-
-    # Estado del motor (eth_state.json)
-    if STATE_FILE.exists():
-        state = json.loads(STATE_FILE.read_text())
+        m          = metrics(trades)
+        total_fees = sum(t.get('fee', 0.0) for t in trades)
         print(f'\n{"─"*78}')
-        print(f'  ESTADO LIVE (eth_state.json)')
+        print(f'  Trades       : {m["total"]} ({m["wins"]} wins / {m["losses"]} losses)')
+        print(f'  Win rate     : {m["win_rate"]:.1f}%')
+        print(f'  Profit Factor: {m["pf"]:.3f}')
+        print(f'  Net P&L      : {m["net_usd"]:+.2f} USD')
+        print(f'  Fees pagados : {total_fees:.2f} USD')
+        print(f'  Return       : {m["return_pct"]:+.2f}%')
+        print(f'  Max DD       : {m["max_dd"]:.2f}%')
+        print(f'  Equity actual: {m["equity"]:.2f} USD')
+        print(f'\n  vs backtest: {cfg["baseline"]}')
+
+    # Live state from state file
+    state_file = cfg['state_file']
+    if state_file.exists():
+        state = json.loads(state_file.read_text())
+        print(f'\n{"─"*78}')
+        print(f'  ESTADO LIVE ({state_file.name})')
         print(f'  Equity            : {state.get("equity", "?"):.2f} USD')
         positions = state.get('positions', {})
         if positions:
@@ -176,11 +185,13 @@ def print_report(trades: list[dict], days: int | None) -> None:
         if cb_consec:
             print(f'  Pérdidas consecutivas: {cb_consec}')
 
-    print(f'{"="*78}\n')
+    print(f'{"="*78}')
 
 
 def main():
     parser = argparse.ArgumentParser(description='Resumen de paper trading')
+    parser.add_argument('--asset', choices=['btc', 'eth', 'all'], default='all',
+                        help='Asset a mostrar (default: all)')
     parser.add_argument('--days', type=int, default=None,
                         help='Limitar a los últimos N días de logs')
     args = parser.parse_args()
@@ -189,8 +200,10 @@ def main():
         print(f'No se encontró el directorio {LOG_DIR}.')
         return
 
-    trades = parse_logs(days=args.days)
-    print_report(trades, days=args.days)
+    prefixes = ['btc', 'eth'] if args.asset == 'all' else [args.asset]
+    for prefix in prefixes:
+        trades = parse_logs(prefix, days=args.days)
+        print_asset_report(prefix, trades, days=args.days)
 
 
 if __name__ == '__main__':
