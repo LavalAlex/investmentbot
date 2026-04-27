@@ -64,7 +64,7 @@ def _run_monitor() -> None:
         from core.exchange import create_exchange, ping_exchange
         from core.paper_engine import PaperEngine
         from core import gcs_storage
-        from paper_monitor import run_scan, ASSET, SCAN_INTERVAL, RISK_PCT
+        from paper_monitor import run_scan, ASSET, SCAN_INTERVAL, RISK_PCT, MIN_SL_DIST_PCT
     except Exception as e:
         logger.info(f"[MONITOR] ERROR — Failed to load modules: {e}")
         _monitor_status["binance_ok"]  = False
