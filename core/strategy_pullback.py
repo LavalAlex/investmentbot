@@ -1,5 +1,5 @@
 import pandas as pd
-from .indicators_v2 import ema, slope, efficiency_ratio
+from .indicators_v2 import ema, slope, efficiency_ratio, adx
 
 # ── EXP001 parameters ────────────────────────────────────────────────────────
 EMA_PERIOD = 20          # period for trend / pullback EMA on 1h
@@ -31,7 +31,8 @@ def prepare_1h(df: pd.DataFrame) -> pd.DataFrame:
     out['ema20_slope'] = slope(out['ema20'], SLOPE_LOOKBACK)
     out['ema50'] = ema(out['close'], EMA50_PERIOD)
     out['ema50_slope_pct'] = slope(out['ema50'], SLOPE_LOOKBACK) / out['ema50'] * 100
-    out['er24'] = efficiency_ratio(out['close'], ER_WINDOW)
+    out['er24']  = efficiency_ratio(out['close'], ER_WINDOW)
+    out['adx14'] = adx(out, period=14)
     # Mark when this bar's data is available (after it closes)
     out['available_at'] = out['open_time'] + pd.Timedelta(hours=1)
     return out
@@ -58,9 +59,10 @@ def align_1h_to_15m(df_15m: pd.DataFrame, df_1h_prep: pd.DataFrame) -> pd.DataFr
     left = df_15m.sort_values('open_time').reset_index(drop=True)
     right = (
         df_1h_prep[['available_at', 'ema20', 'ema20_slope',
-                     'ema50', 'ema50_slope_pct', 'er24',
+                     'ema50', 'ema50_slope_pct', 'er24', 'adx14',
                      'close', 'low', 'high']]
-        .rename(columns={'close': 'close_1h', 'low': 'low_1h', 'high': 'high_1h'})
+        .rename(columns={'close': 'close_1h', 'low': 'low_1h', 'high': 'high_1h',
+                         'adx14': 'adx_1h'})
         .dropna(subset=['ema20', 'ema20_slope'])
         .sort_values('available_at')
         .reset_index(drop=True)
