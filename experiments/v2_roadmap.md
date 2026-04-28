@@ -46,7 +46,7 @@ Logs: `logs/btc_YYYYMMDD.log` / `logs/eth_YYYYMMDD.log`.
 ### FASE 1 — Validar el clasificador de régimen
 **Experimento:** EXP018  
 **Archivo:** `backtest/backtest_exp018.py`  
-**Estado:** ⬜ PENDIENTE
+**Estado:** ❌ FALLÓ — ADX selecciona los peores trades
 
 **Objetivo:**
 Confirmar que ADX(14) en 1h separa correctamente los regímenes en los 730d de BTC y ETH.
@@ -99,10 +99,10 @@ PF de esos trades: 0.73  ← confirma que el filtro elimina los malos
 
 ---
 
-### FASE 2 — Diseñar Strategy B: Mean Reversion
+### FASE 2 — Filtro de momentum extremo (pivot desde EXP018)
 **Experimento:** EXP019  
 **Archivo:** `backtest/backtest_exp019.py`  
-**Estado:** ⬜ PENDIENTE (iniciar solo si EXP018 pasa)
+**Estado:** ✅ APROBADO — SLOPE_CAP (EMA50 slope > 0.20%) mejora PF en ambos assets
 
 **Objetivo:**
 Diseñar y validar una estrategia de mean reversion que sea rentable (PF > 1.1 con fees)
@@ -166,7 +166,7 @@ Risk: 1% equity por trade (igual que Strategy A)
 ### FASE 3 — Sistema combinado
 **Experimento:** EXP020  
 **Archivo:** `backtest/backtest_exp020.py`  
-**Estado:** ⬜ PENDIENTE (iniciar solo si EXP019 pasa)
+**Estado:** ✅ OBSOLETO — arquitectura dos-estrategias descartada; diversificación BTC+ETH cubre todos los regímenes sin routing
 
 **Objetivo:**
 Backtest del sistema completo: Strategy A (trending) + Strategy B (choppy) + classifier ADX.
@@ -204,7 +204,7 @@ Verificar que la combinación es mejor que cualquiera de las dos solas.
 ### FASE 4 — Walk-forward validation
 **Experimento:** EXP021  
 **Archivo:** `backtest/backtest_exp021.py`  
-**Estado:** ⬜ PENDIENTE (iniciar solo si EXP020 pasa)
+**Estado:** ✅ APROBADO — sistema combinado BTC+ETH pasa las 4 ventanas bajo criterio combinado
 
 **Objetivo:**
 Verificar que el sistema no está overfit al período de 730d. El edge debe existir en
@@ -232,8 +232,8 @@ cada sub-período por separado, sin re-optimizar parámetros.
 ---
 
 ### FASE 5 — Deploy del sistema v2
-**Archivo:** `deploy/deploy_004_*.md`  
-**Estado:** ⬜ PENDIENTE (iniciar solo si EXP021 pasa)
+**Archivo:** `deploy/deploy_004.md`  
+**Estado:** 🟡 EN CURSO — código implementado, pendiente PR a master
 
 **Cambios en el código live:**
 

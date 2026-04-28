@@ -23,6 +23,8 @@ import argparse
 import time
 from datetime import datetime, timezone
 
+import pandas as pd
+
 from core.exchange import create_exchange, fetch_ohlcv
 from core.strategy_pullback import (
     prepare_1h,
@@ -159,6 +161,14 @@ def scan_asset(
         return
 
     if not is_market_efficient(row):
+        return
+
+    # EXP019 — SLOPE_CAP: skip when EMA50 is in parabolic momentum (>0.20%/5bars)
+    slope_pct = row.get('ema50_slope_pct')
+    if slope_pct is not None and not pd.isna(slope_pct) and abs(slope_pct) > 0.20:
+        logger.info(
+            f"[{asset}] SKIP slope_cap ema50_slope={slope_pct*100:.3f}% > 0.20%"
+        )
         return
 
     # ── Size and open paper position ──────────────────────────────────────────
