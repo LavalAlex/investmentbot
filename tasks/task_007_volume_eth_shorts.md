@@ -1,7 +1,7 @@
 # Task 007 — Volume Filter solo en ETH shorts (iteración de Task 003)
 
-**Prioridad:** 2 (próxima sesión)  
-**Estado:** ⬜ PENDIENTE  
+**Prioridad:** 2  
+**Estado:** ✅ APROBADO — ETH-SHORT-C (vol ≥ 1.0× mean50) es la variante seleccionada  
 **Archivo backtest:** `backtest/backtest_task007.py`  
 **Depende de:** Task 006 (sistema COMBINED como nueva base)
 

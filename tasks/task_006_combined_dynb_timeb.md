@@ -1,7 +1,7 @@
 # Task 006 — Sistema combinado DYN-B + TIME-B
 
-**Prioridad:** 1 (próxima sesión)  
-**Estado:** ⬜ PENDIENTE  
+**Prioridad:** 1  
+**Estado:** ✅ APROBADO — COMBINED (DYN-B + TIME-B) es acumulativo en ambos assets  
 **Archivo backtest:** `backtest/backtest_task006.py`  
 **Depende de:** Task 002 (DYN-B ✅) + Task 004 (TIME-B ✅)
 
