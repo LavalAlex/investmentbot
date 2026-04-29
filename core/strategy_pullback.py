@@ -20,11 +20,18 @@ MIN_ER    = 0.15      # minimum directional efficiency — below this the market
 
 # ── Preparation ─────────────────────────────────────────────────────────────
 
+ATR_PERIOD_DYN     = 14
+ATR_MEAN_WINDOW    = 50
+DYN_SCALE_MIN      = 0.6
+DYN_SCALE_MAX      = 1.2
+
+
 def prepare_1h(df: pd.DataFrame) -> pd.DataFrame:
     """
     Add EMA20, EMA50, their slopes, and the availability timestamp.
     EXP001 uses only ema20 / ema20_slope.
     EXP002 additionally uses ema50 / ema50_slope_pct plus low_1h / high_1h / close_1h.
+    Task002: adds atr_ratio for dynamic position sizing (DYN-B).
     """
     out = df.copy()
     out['ema20'] = ema(out['close'], EMA_PERIOD)
@@ -33,6 +40,15 @@ def prepare_1h(df: pd.DataFrame) -> pd.DataFrame:
     out['ema50_slope_pct'] = slope(out['ema50'], SLOPE_LOOKBACK) / out['ema50'] * 100
     out['er24']  = efficiency_ratio(out['close'], ER_WINDOW)
     out['adx14'] = adx(out, period=14)
+    # ATR ratio for DYN-B dynamic sizing (Task002)
+    tr = pd.concat([
+        out['high'] - out['low'],
+        (out['high'] - out['close'].shift(1)).abs(),
+        (out['low']  - out['close'].shift(1)).abs(),
+    ], axis=1).max(axis=1)
+    out['atr14']      = tr.ewm(com=ATR_PERIOD_DYN - 1, min_periods=ATR_PERIOD_DYN, adjust=False).mean()
+    out['atr50_mean'] = out['atr14'].rolling(ATR_MEAN_WINDOW, min_periods=ATR_MEAN_WINDOW).mean()
+    out['atr_ratio']  = out['atr14'] / out['atr50_mean'].replace(0, float('nan'))
     # Mark when this bar's data is available (after it closes)
     out['available_at'] = out['open_time'] + pd.Timedelta(hours=1)
     return out
@@ -42,9 +58,11 @@ def prepare_15m(df: pd.DataFrame) -> pd.DataFrame:
     """
     EXP001: returns a clean copy.
     EXP002: also adds avg_range (5-bar rolling mean of high-low).
+    Task007: adds vol_mean50 for ETH-SHORT-C volume filter.
     """
     out = df.copy()
     out['avg_range'] = (out['high'] - out['low']).rolling(5, min_periods=1).mean()
+    out['vol_mean50'] = out['volume'].rolling(50, min_periods=50).mean()
     return out
 
 
@@ -59,7 +77,7 @@ def align_1h_to_15m(df_15m: pd.DataFrame, df_1h_prep: pd.DataFrame) -> pd.DataFr
     left = df_15m.sort_values('open_time').reset_index(drop=True)
     right = (
         df_1h_prep[['available_at', 'ema20', 'ema20_slope',
-                     'ema50', 'ema50_slope_pct', 'er24', 'adx14',
+                     'ema50', 'ema50_slope_pct', 'er24', 'adx14', 'atr_ratio',
                      'close', 'low', 'high']]
         .rename(columns={'close': 'close_1h', 'low': 'low_1h', 'high': 'high_1h',
                          'adx14': 'adx_1h'})

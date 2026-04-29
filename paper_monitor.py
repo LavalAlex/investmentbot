@@ -67,6 +67,17 @@ RISK_PCT         = 0.01
 MIN_RISK_PRICE   = 1.0
 SCAN_INTERVAL    = 30    # seconds between full scans
 
+# Task004 TIME-B: only enter trades in 07:00–21:00 UTC (skip Asian session)
+TIME_B_START_UTC = 7
+TIME_B_END_UTC   = 21
+
+# Task002 DYN-B: scale position size inversely with ATR ratio (1h)
+DYN_SCALE_MIN = 0.6
+DYN_SCALE_MAX = 1.2
+
+# Task007 ETH-SHORT-C: ETH shorts require volume >= 1.0× mean(50 bars) on 15m
+ETH_SHORT_VOL_MIN_RATIO = 1.0
+
 
 # ── Per-asset scan ────────────────────────────────────────────────────────────
 
@@ -171,9 +182,28 @@ def scan_asset(
         )
         return
 
+    # Task004 TIME-B: skip Asian session (00:00–07:00 UTC) and late US (21:00–24:00 UTC)
+    candle_ts = pd.Timestamp(row['open_time'])
+    hour_utc  = candle_ts.hour if candle_ts.tzinfo is None else candle_ts.tz_convert('UTC').hour
+    if not (TIME_B_START_UTC <= hour_utc < TIME_B_END_UTC):
+        logger.info(f"[{asset}] SKIP time_b hour={hour_utc:02d}UTC outside 07–21")
+        return
+
     # ── Size and open paper position ──────────────────────────────────────────
     entry     = row['close']
     direction = 'long' if trend == 'up' else 'short'
+
+    # Task007 ETH-SHORT-C: require volume >= 1.0× mean(50 bars) for ETH shorts
+    if asset == 'ETH/USDT' and direction == 'short':
+        vol       = row.get('volume')
+        vol_m50   = row.get('vol_mean50')
+        if vol is not None and vol_m50 is not None and not pd.isna(vol_m50) and vol_m50 > 0:
+            vol_ratio = vol / vol_m50
+            if vol_ratio < ETH_SHORT_VOL_MIN_RATIO:
+                logger.info(
+                    f"[{asset}] SKIP eth_short_vol vol_ratio={vol_ratio:.2f} < {ETH_SHORT_VOL_MIN_RATIO}"
+                )
+                return
 
     sl, tp = calculate_sl_tp(entry, direction, row['low'], row['high'])
     if sl is None:
@@ -190,7 +220,14 @@ def scan_asset(
         )
         return
 
-    risk_usd = engine.equity * RISK_PCT
+    # Task002 DYN-B: scale risk inversely with ATR ratio (quieter market → larger size)
+    atr_ratio = row.get('atr_ratio')
+    if atr_ratio is not None and not pd.isna(atr_ratio) and atr_ratio > 0:
+        raw_scale = 1.0 / atr_ratio
+        dyn_scale = max(DYN_SCALE_MIN, min(DYN_SCALE_MAX, raw_scale))
+    else:
+        dyn_scale = 1.0
+    risk_usd = engine.equity * RISK_PCT * dyn_scale
     qty      = risk_usd / risk_price
 
     engine.open_position(
@@ -204,6 +241,9 @@ def scan_asset(
         risk_usd=risk_usd,
     )
     log_open(logger, asset, direction, candle_time, entry, sl, tp)
+    logger.info(
+        f"[{asset}] dyn_scale={dyn_scale:.2f}  risk_usd={risk_usd:.2f}  hour={hour_utc:02d}UTC"
+    )
 
 
 # ── Scan loop ─────────────────────────────────────────────────────────────────
