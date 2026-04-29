@@ -1,14 +1,13 @@
 # Tasks — Mejoras al Sistema V2
 
-**Sistema base:** Pullback continuation + SLOPE_CAP (EXP019) sobre BTC/USDT y ETH/USDT.  
-**Resultados base (referencia para todas las comparaciones):**
+**Sistema base actual (deploy-004, live desde 2026-04-29):**
 
-| Asset | PF 730d | MaxDD | Trades | Win rate |
-|-------|---------|-------|--------|----------|
-| BTC   | 1.390   | 7.01% | 99     | 49.5%    |
-| ETH   | 1.386   | 13.38%| 112    | 46.4%    |
+| Asset | PF 730d | MaxDD | Trades | Win rate | Filtros activos |
+|-------|---------|-------|--------|----------|-----------------|
+| BTC   | 1.787   | 6.69% | 71     | 54.9%    | SLOPE_CAP + TIME-B + DYN-B |
+| ETH   | 1.568   | 7.05% | 69     | 47.8%    | SLOPE_CAP + TIME-B + DYN-B + ETH-SHORT-C |
 
-Walk-forward combinado BTC+ETH: PF > 1.0 en las 4 ventanas de 182d.
+Walk-forward combinado BTC+ETH: PF > 1.0 en las 4 ventanas de 182d ✅
 
 **Metodología para todas las tasks:**
 1. Crear `backtest/backtest_taskNNN.py` basado en EXP019 (SLOPE_CAP activo)
@@ -36,11 +35,23 @@ Walk-forward combinado BTC+ETH: PF > 1.0 en las 4 ventanas de 182d.
 | 004 | [Time-of-Day Filter](task_004_time_filter.md) | 4 — Media | ✅ KEEP (TIME-A/B) | Alto |
 | 005 | [Tercer Activo](task_005_third_asset.md) | 5 — Baja | ❌ REVERT (SOL) | Medio |
 
-| 006 | [Combinado DYN-B + TIME-B](task_006_combined_dynb_timeb.md) | 1 — Próxima sesión | ⬜ PENDIENTE | Alto |
-| 007 | [Volume ETH shorts only](task_007_volume_eth_shorts.md) | 2 — Próxima sesión | ⬜ PENDIENTE | Medio |
+| 006 | [Combinado DYN-B + TIME-B](task_006_combined_dynb_timeb.md) | — | ✅ KEEP (COMBINED) | Alto |
+| 007 | [Volume ETH shorts only](task_007_volume_eth_shorts.md) | — | ✅ KEEP (ETH-SHORT-C) | Medio |
 
-**Orden de ejecución:** secuencial por prioridad. Cada task que pase se integra como nueva base
-antes de testear la siguiente (mejoras acumulativas).
+---
+
+## Fase 3 — Live trading + Notificaciones
+
+| # | Task | Prioridad | Estado | Descripción |
+|---|------|-----------|--------|-------------|
+| 008 | [WhatsApp Notifier](task_008_whatsapp_notifier.md) | 1 | ⬜ PENDIENTE | Twilio WhatsApp en trades open/close |
+| 009 | [Análisis mínimos Binance](task_009_binance_minimums.md) | 2 | ⬜ PENDIENTE | Verificar viabilidad con $100–500 |
+| 010 | [Live Engine](task_010_live_engine.md) | 3 | ⬜ PENDIENTE | `core/live_engine.py` — órdenes reales |
+| 011 | [Modo live `--live`](task_011_live_mode.md) | 4 | ⬜ PENDIENTE | Flag en paper_monitor.py |
+
+**Orden de ejecución Fase 3:** 008 (independiente, hacer primero) → 009 (investigación) → 010 → 011
+
+**Criterio de go-live:** Tasks 008 + 009 + 010 completas + testnet 48h OK.
 
 ---
 
