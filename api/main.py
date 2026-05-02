@@ -111,10 +111,12 @@ def _run_monitor_inner() -> None:
         return
 
     # ── Sync today's logs from GCS (resume after restart) ────────────────────
+    print("[MONITOR] Syncing GCS logs...", flush=True)
     for asset, cfg in ASSETS_CONFIG.items():
         prefix = cfg['log_prefix']
         gcs_storage.download(f'logs/{prefix}_{log_date}.log', Path(f'logs/{prefix}_{log_date}.log'))
 
+    print("[MONITOR] Creating loggers...", flush=True)
     loggers = {
         asset: setup_logger(
             f'paper_monitor_{cfg["log_prefix"]}',
@@ -124,7 +126,9 @@ def _run_monitor_inner() -> None:
         for asset, cfg in ASSETS_CONFIG.items()
     }
 
+    print("[MONITOR] Creating exchange...", flush=True)
     exchange = create_futures_exchange() if LIVE_MODE else create_exchange()
+    print("[MONITOR] Pinging Binance...", flush=True)
     ok, msg  = ping_exchange(create_exchange())
     _monitor_status["binance_ok"]  = ok
     _monitor_status["binance_msg"] = msg
@@ -134,7 +138,9 @@ def _run_monitor_inner() -> None:
             logger.info(f"[MONITOR] ERROR — Binance connection failed: {msg}")
         return
 
+    print(f"[MONITOR] Binance ping: ok={ok} msg={msg}", flush=True)
     if LIVE_MODE:
+        print("[MONITOR] Creating LiveEngines...", flush=True)
         engines = {
             asset: LiveEngine(
                 exchange=exchange,
