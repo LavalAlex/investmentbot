@@ -552,20 +552,32 @@ def get_health():
         last_scans[prefix] = last_scan
 
     per_asset = {}
-    for sym, p in STATE_FILES.items():
+    with _engines_lock:
+        live_engines = dict(_engines)
+
+    for sym in STATE_FILES:
         s      = _load_state(sym)
-        equity = s.get('equity', INITIAL_CAPITAL)
+        engine = live_engines.get(sym)
+        equity = engine.equity if engine else s.get('equity', INITIAL_CAPITAL)
+        trades = s.get('trades', [])
+        wins   = sum(1 for t in trades if t.get('pnl', 0) > 0)
+        pnl    = sum(t.get('pnl', 0) for t in trades)
+        pos    = engine.state.get('positions', {}) if engine else s.get('positions', {})
         per_asset[sym] = {
             'equity':         round(equity, 2),
-            'return_pct':     round((equity - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100, 2),
-            'total_trades':   len(s.get('trades', [])),
-            'open_positions': list(s.get('positions', {}).keys()),
+            'mode':           'live' if LIVE_MODE else 'paper',
+            'total_trades':   len(trades),
+            'wins':           wins,
+            'losses':         len(trades) - wins,
+            'total_pnl':      round(pnl, 2),
+            'open_positions': list(pos.keys()),
         }
 
     binance_ok = _monitor_status.get("binance_ok")
 
     return {
         'api':     'ok',
+        'mode':    'live' if LIVE_MODE else 'paper',
         'binance': {
             'connected': binance_ok,
             'detail':    _monitor_status.get("binance_msg", ""),
