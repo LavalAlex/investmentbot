@@ -313,11 +313,12 @@ def main():
 
     if args.live:
         exchange = create_futures_exchange(testnet=args.testnet)
+        suffix   = '_live_testnet' if args.testnet else '_live'
         engines  = {
             asset: LiveEngine(
                 exchange=exchange,
                 symbol=asset + ':USDT',  # 'BTC/USDT' → 'BTC/USDT:USDT'
-                state_file=cfg['state_file'],
+                state_file=cfg['state_file'].replace('.json', f'{suffix}.json'),
                 testnet=args.testnet,
             )
             for asset, cfg in ASSETS_CONFIG.items()
