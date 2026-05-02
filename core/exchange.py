@@ -1,6 +1,6 @@
 import ccxt
 import pandas as pd
-from config import BINANCE_API_KEY, BINANCE_SECRET
+from config import BINANCE_API_KEY, BINANCE_SECRET, BINANCE_PRIVATE_KEY
 
 
 def create_exchange() -> ccxt.binance:
@@ -13,10 +13,13 @@ def create_exchange() -> ccxt.binance:
 
 
 def create_futures_exchange(testnet: bool = False) -> ccxt.binance:
-    """Binance USDM Futures exchange. testnet=True uses testnet.binancefuture.com."""
+    """Binance USDM Futures exchange. testnet=True uses testnet.binancefuture.com.
+    Uses Ed25519 private key if BINANCE_PRIVATE_KEY is set, else falls back to HMAC secret.
+    """
+    secret = BINANCE_PRIVATE_KEY if BINANCE_PRIVATE_KEY else BINANCE_SECRET
     params = {
         "apiKey": BINANCE_API_KEY,
-        "secret": BINANCE_SECRET,
+        "secret": secret,
         "enableRateLimit": True,
         "options": {
             "defaultType": "future",

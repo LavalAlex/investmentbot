@@ -7,4 +7,4 @@ venv/
 # Runtime artifacts — regenerable, not versioned
 data/
 logs/
-paper_state.json
+paper_state.jsonbinance_private.pem

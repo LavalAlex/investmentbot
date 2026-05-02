@@ -5,10 +5,18 @@ load_dotenv()
 
 # Binance credentials — loaded from .env, never hardcoded
 BINANCE_API_KEY = os.getenv("BINANCE_API_KEY")
-BINANCE_SECRET = os.getenv("BINANCE_SECRET")
+BINANCE_SECRET  = os.getenv("BINANCE_SECRET", "")
 
-if not BINANCE_API_KEY or not BINANCE_SECRET:
-    raise EnvironmentError("BINANCE_API_KEY and BINANCE_SECRET must be set in .env")
+# Ed25519 private key — read from file path or inline env var
+_key_file = os.getenv("BINANCE_PRIVATE_KEY_FILE", "")
+if _key_file and os.path.exists(_key_file):
+    with open(_key_file) as _f:
+        BINANCE_PRIVATE_KEY = _f.read()
+else:
+    BINANCE_PRIVATE_KEY = os.getenv("BINANCE_PRIVATE_KEY", "")
+
+if not BINANCE_API_KEY:
+    raise EnvironmentError("BINANCE_API_KEY must be set in .env")
 
 # Analysis target — BTC/USDT only (live monitoring)
 SYMBOL = "BTC/USDT"
