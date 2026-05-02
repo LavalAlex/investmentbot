@@ -35,12 +35,16 @@ from fastapi.responses import FileResponse, StreamingResponse
 _engines: dict = {}
 _engines_lock  = threading.Lock()
 
+import os
+
 LOGS_DIR        = Path('logs')
 INITIAL_CAPITAL = 10_000.0
+LIVE_MODE       = os.getenv('LIVE_TRADING', '0') == '1'
 
+_state_suffix = '_live' if LIVE_MODE else ''
 STATE_FILES = {
-    'BTC/USDT': Path('btc_state.json'),
-    'ETH/USDT': Path('eth_state.json'),
+    'BTC/USDT': Path(f'btc{_state_suffix}_state.json'),
+    'ETH/USDT': Path(f'eth{_state_suffix}_state.json'),
 }
 
 LOG_PREFIXES = {
@@ -77,8 +81,9 @@ def _run_monitor() -> None:
 
     # ── Load modules ──────────────────────────────────────────────────────────
     try:
-        from core.exchange import create_exchange, ping_exchange
+        from core.exchange import create_exchange, create_futures_exchange, ping_exchange
         from core.paper_engine import PaperEngine
+        from core.live_engine import LiveEngine
         from core import gcs_storage
         from paper_monitor import run_scan, ASSETS_CONFIG, SCAN_INTERVAL, RISK_PCT
     except Exception as e:
@@ -102,8 +107,8 @@ def _run_monitor() -> None:
         for asset, cfg in ASSETS_CONFIG.items()
     }
 
-    exchange = create_exchange()
-    ok, msg  = ping_exchange(exchange)
+    exchange = create_futures_exchange() if LIVE_MODE else create_exchange()
+    ok, msg  = ping_exchange(create_exchange())
     _monitor_status["binance_ok"]  = ok
     _monitor_status["binance_msg"] = msg
 
@@ -112,10 +117,20 @@ def _run_monitor() -> None:
             logger.info(f"[MONITOR] ERROR — Binance connection failed: {msg}")
         return
 
-    engines = {
-        asset: PaperEngine(state_file=cfg['state_file'])
-        for asset, cfg in ASSETS_CONFIG.items()
-    }
+    if LIVE_MODE:
+        engines = {
+            asset: LiveEngine(
+                exchange=exchange,
+                symbol=asset + ':USDT',
+                state_file=cfg['state_file'].replace('.json', '_live.json'),
+            )
+            for asset, cfg in ASSETS_CONFIG.items()
+        }
+    else:
+        engines = {
+            asset: PaperEngine(state_file=cfg['state_file'])
+            for asset, cfg in ASSETS_CONFIG.items()
+        }
     with _engines_lock:
         _engines.update(engines)
 
