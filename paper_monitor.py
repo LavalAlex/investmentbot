@@ -41,6 +41,7 @@ from core.strategy_pullback import (
 from core.trade_logic import calculate_sl_tp
 from core.paper_engine import PaperEngine
 from core.logger_v2 import setup_logger, log_open, log_close
+from core.notifier import notify_trade_open, notify_trade_close
 
 # ── Per-asset configuration ───────────────────────────────────────────────────
 
@@ -134,6 +135,10 @@ def scan_asset(
                 trade['pnl'],
                 engine.equity,
                 fee_usd=trade.get('fee_usd', 0.0),
+            )
+            notify_trade_close(
+                asset, trade['direction'], trade['entry'], trade['exit'],
+                trade['reason'], trade['pnl'], engine.equity,
             )
         else:
             engine.log_status(logger, asset, row['close'], row['high'], row['low'])
@@ -241,6 +246,7 @@ def scan_asset(
         risk_usd=risk_usd,
     )
     log_open(logger, asset, direction, candle_time, entry, sl, tp)
+    notify_trade_open(asset, direction, entry, sl, tp, risk_usd, dyn_scale)
     logger.info(
         f"[{asset}] dyn_scale={dyn_scale:.2f}  risk_usd={risk_usd:.2f}  hour={hour_utc:02d}UTC"
     )
