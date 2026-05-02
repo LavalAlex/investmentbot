@@ -10,7 +10,7 @@ BINANCE_SECRET  = os.getenv("BINANCE_SECRET", "")
 # Ed25519 private key — check file paths in order of preference
 _key_candidates = [
     os.getenv("BINANCE_PRIVATE_KEY_FILE", ""),  # explicit override
-    "/app/binance_private.pem",                  # Cloud Run secret volume mount
+    "/secrets/binance_private.pem",              # Cloud Run secret volume mount
     "binance_private.pem",                       # local dev
 ]
 BINANCE_PRIVATE_KEY = ""

@@ -32,7 +32,7 @@ gcloud run deploy "$SERVICE_NAME" \
   --region "$REGION" \
   --allow-unauthenticated \
   --service-account="$SERVICE_ACCOUNT" \
-  --set-secrets BINANCE_API_KEY=binance-api-key:latest,TWILIO_ACCOUNT_SID=twilio-account-sid:latest,TWILIO_AUTH_TOKEN=twilio-auth-token:latest,/app/binance_private.pem=binance-private-key:latest \
+  --set-secrets BINANCE_API_KEY=binance-api-key:latest,TWILIO_ACCOUNT_SID=twilio-account-sid:latest,TWILIO_AUTH_TOKEN=twilio-auth-token:latest,/secrets/binance_private.pem=binance-private-key:latest \
   --set-env-vars GCS_BUCKET="$GCS_BUCKET",LIVE_TRADING=1,TWILIO_WHATSAPP_FROM="whatsapp:+14155238886",TWILIO_WHATSAPP_TO="whatsapp:+5493412293382" \
   --memory=512Mi \
   --cpu=1 \
