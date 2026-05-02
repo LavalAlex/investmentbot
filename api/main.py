@@ -60,9 +60,19 @@ _monitor_status: dict = {"binance_ok": None, "binance_msg": "", "started_at": No
 
 def _run_monitor() -> None:
     """Run the paper trading monitor loop in a background thread."""
+    try:
+        _run_monitor_inner()
+    except Exception as e:
+        import traceback
+        print(f"[MONITOR] FATAL: {e}", flush=True)
+        traceback.print_exc()
+
+
+def _run_monitor_inner() -> None:
     import time
     import os
     from core.logger_v2 import setup_logger
+    print("[MONITOR] Thread started", flush=True)
 
     log_date = datetime.now(timezone.utc).strftime('%Y%m%d')
 
