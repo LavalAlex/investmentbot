@@ -23,11 +23,12 @@ def create_futures_exchange(testnet: bool = False) -> ccxt.binance:
         "enableRateLimit": True,
         "options": {
             "defaultType": "future",
-            "fetchCurrencies": False,  # avoid SAPI spot endpoint on load_markets
+            "fetchCurrencies": False,   # avoid SAPI /capital/config endpoint
+            "fetchMarkets": ["future"], # only load futures markets, skip spot/margin
         },
     }
     exchange = ccxt.binance(params)
-    exchange.has['fetchCurrencies'] = False  # prevent SAPI spot endpoint on load_markets
+    exchange.has['fetchCurrencies'] = False  # prevent SAPI /capital/config endpoint
     if testnet:
         exchange.set_sandbox_mode(True)
     return exchange
