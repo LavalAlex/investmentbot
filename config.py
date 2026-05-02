@@ -7,13 +7,18 @@ load_dotenv()
 BINANCE_API_KEY = os.getenv("BINANCE_API_KEY")
 BINANCE_SECRET  = os.getenv("BINANCE_SECRET", "")
 
-# Ed25519 private key — read from file path or inline env var
-_key_file = os.getenv("BINANCE_PRIVATE_KEY_FILE", "")
-if _key_file and os.path.exists(_key_file):
-    with open(_key_file) as _f:
-        BINANCE_PRIVATE_KEY = _f.read()
-else:
-    BINANCE_PRIVATE_KEY = os.getenv("BINANCE_PRIVATE_KEY", "")
+# Ed25519 private key — check file paths in order of preference
+_key_candidates = [
+    os.getenv("BINANCE_PRIVATE_KEY_FILE", ""),  # explicit override
+    "/app/binance_private.pem",                  # Cloud Run secret volume mount
+    "binance_private.pem",                       # local dev
+]
+BINANCE_PRIVATE_KEY = ""
+for _candidate in _key_candidates:
+    if _candidate and os.path.exists(_candidate):
+        with open(_candidate) as _f:
+            BINANCE_PRIVATE_KEY = _f.read()
+        break
 
 if not BINANCE_API_KEY:
     raise EnvironmentError("BINANCE_API_KEY must be set in .env")
