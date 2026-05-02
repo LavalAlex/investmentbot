@@ -201,6 +201,15 @@ class PaperEngine:
             f" | progress_to_tp={sign}{progress:.1f}% | time_in_trade={elapsed}"
         )
 
+    def reset(self) -> None:
+        """Wipe all trades, positions, and CB state. Equity back to INITIAL_CAPITAL."""
+        self.state = {
+            'equity':    INITIAL_CAPITAL,
+            'positions': {},
+            'trades':    [],
+        }
+        self._save()
+
     # ── Summary ───────────────────────────────────────────────────────────────
 
     def print_summary(self, logger, label: str = 'PAPER TRADING SUMMARY') -> None:

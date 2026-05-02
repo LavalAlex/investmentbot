@@ -31,6 +31,10 @@ from typing import Optional
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, StreamingResponse
 
+# Shared engine registry — populated by monitor thread, read by /reset
+_engines: dict = {}
+_engines_lock  = threading.Lock()
+
 LOGS_DIR        = Path('logs')
 INITIAL_CAPITAL = 10_000.0
 
@@ -112,6 +116,8 @@ def _run_monitor() -> None:
         asset: PaperEngine(state_file=cfg['state_file'])
         for asset, cfg in ASSETS_CONFIG.items()
     }
+    with _engines_lock:
+        _engines.update(engines)
 
     _monitor_status["started_at"] = datetime.now(timezone.utc).isoformat(timespec='seconds')
 
@@ -143,7 +149,8 @@ def _run_monitor() -> None:
                 )
                 loggers[asset].info(f"[MONITOR] Log rotated — new day: {log_date}")
 
-        run_scan(exchange, engines, loggers, last_candle_ts)
+        with _engines_lock:
+            run_scan(exchange, engines, loggers, last_candle_ts)
 
         for asset, cfg in ASSETS_CONFIG.items():
             prefix = cfg['log_prefix']
@@ -437,6 +444,68 @@ def download_logs(
         status_code=400,
         detail="Provide 'date' for a single day, or both 'from' and 'to' for a range.",
     )
+
+
+@app.post('/reset')
+def post_reset():
+    """
+    Reset paper trading to a clean initial state.
+
+    Actions (atomic under engine lock):
+      1. Reset in-memory engine state for all assets (equity, positions, trades)
+      2. Persist fresh state files to disk and GCS
+      3. Delete all local log files
+
+    The monitor thread continues running — next scan starts from clean state.
+    Call /status immediately after to confirm equity = 10 000 per asset.
+    """
+    from core import gcs_storage
+
+    reset_time = datetime.now(timezone.utc).isoformat(timespec='seconds')
+    results    = {}
+
+    with _engines_lock:
+        if not _engines:
+            raise HTTPException(
+                status_code=503,
+                detail='Monitor not ready yet — engines not initialised.',
+            )
+
+        for asset, engine in _engines.items():
+            engine.reset()
+            results[asset] = {
+                'equity':    engine.equity,
+                'positions': engine.state.get('positions', {}),
+                'trades':    len(engine.state.get('trades', [])),
+            }
+
+    # Delete local logs
+    deleted_logs = []
+    if LOGS_DIR.exists():
+        for f in sorted(LOGS_DIR.iterdir()):
+            if f.is_file() and f.suffix == '.log':
+                f.unlink()
+                deleted_logs.append(f.name)
+
+    # Delete GCS logs
+    gcs_logs_deleted = 0
+    try:
+        bucket_name = __import__('os').getenv('GCS_BUCKET', '')
+        if bucket_name:
+            from google.cloud import storage
+            bucket = storage.Client().bucket(bucket_name)
+            for blob in bucket.list_blobs(prefix='logs/'):
+                blob.delete()
+                gcs_logs_deleted += 1
+    except Exception:
+        pass
+
+    return {
+        'reset_at':        reset_time,
+        'assets':          results,
+        'logs_deleted':    deleted_logs,
+        'gcs_logs_deleted': gcs_logs_deleted,
+    }
 
 
 @app.get('/health')

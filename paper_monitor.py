@@ -178,7 +178,7 @@ def scan_asset(
     slope_pct = row.get('ema50_slope_pct')
     if slope_pct is not None and not pd.isna(slope_pct) and abs(slope_pct) > 0.20:
         logger.info(
-            f"[{asset}] SKIP slope_cap ema50_slope={slope_pct*100:.3f}% > 0.20%"
+            f"[{asset}] SKIP slope_cap ema50_slope={slope_pct:.3f}% > 0.20%"
         )
         return
 
