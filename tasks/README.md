@@ -46,8 +46,8 @@ Walk-forward combinado BTC+ETH: PF > 1.0 en las 4 ventanas de 182d ✅
 |---|------|-----------|--------|-------------|
 | 008 | [WhatsApp Notifier](task_008_whatsapp_notifier.md) | 1 | ✅ COMPLETADO | Twilio WhatsApp en trades open/close |
 | 009 | [Análisis mínimos Binance](task_009_binance_minimums.md) | 2 | ✅ COMPLETADO | Futuros BTC+ETH viables desde $200, ver task_009_analysis.md |
-| 010 | [Live Engine](task_010_live_engine.md) | 3 | ⬜ PENDIENTE | `core/live_engine.py` — órdenes reales |
-| 011 | [Modo live `--live`](task_011_live_mode.md) | 4 | ⬜ PENDIENTE | Flag en paper_monitor.py |
+| 010 | [Live Engine](task_010_live_engine.md) | 3 | ✅ COMPLETADO | `core/live_engine.py` — órdenes reales |
+| 011 | [Modo live `--live`](task_011_live_mode.md) | 4 | ✅ COMPLETADO | Flag en paper_monitor.py |
 
 **Orden de ejecución Fase 3:** 008 (independiente, hacer primero) → 009 (investigación) → 010 → 011
 

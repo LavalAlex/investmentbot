@@ -12,6 +12,20 @@ def create_exchange() -> ccxt.binance:
     })
 
 
+def create_futures_exchange(testnet: bool = False) -> ccxt.binance:
+    """Binance USDM Futures exchange. testnet=True uses testnet.binancefuture.com."""
+    params = {
+        "apiKey": BINANCE_API_KEY,
+        "secret": BINANCE_SECRET,
+        "enableRateLimit": True,
+        "options": {"defaultType": "future"},
+    }
+    exchange = ccxt.binance(params)
+    if testnet:
+        exchange.set_sandbox_mode(True)
+    return exchange
+
+
 def ping_exchange(exchange: ccxt.binance) -> tuple[bool, str]:
     """
     Test connectivity using the same public klines endpoint the monitor uses.

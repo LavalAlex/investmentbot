@@ -25,7 +25,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
-from core.exchange import create_exchange, fetch_ohlcv
+from core.exchange import create_exchange, create_futures_exchange, fetch_ohlcv
 from core.strategy_pullback import (
     prepare_1h,
     prepare_15m,
@@ -40,6 +40,7 @@ from core.strategy_pullback import (
 )
 from core.trade_logic import calculate_sl_tp
 from core.paper_engine import PaperEngine
+from core.live_engine import LiveEngine
 from core.logger_v2 import setup_logger, log_open, log_close
 from core.notifier import notify_trade_open, notify_trade_close
 
@@ -86,7 +87,7 @@ def scan_asset(
     exchange,
     asset: str,
     cfg: dict,
-    engine: PaperEngine,
+    engine,
     logger,
     last_candle_ts: dict,
 ) -> None:
@@ -259,11 +260,13 @@ def run_scan(
     engines: dict,
     loggers: dict,
     last_candle_ts: dict,
+    live: bool = False,
 ) -> None:
     """
     Scan all assets. engines and loggers are dicts keyed by asset symbol.
     """
     ts = datetime.now(timezone.utc).isoformat(timespec='seconds')
+    label_suffix = 'LIVE TRADING SUMMARY' if live else 'PAPER TRADING SUMMARY'
     for asset, cfg in ASSETS_CONFIG.items():
         engine = engines[asset]
         logger = loggers[asset]
@@ -272,7 +275,7 @@ def run_scan(
             scan_asset(exchange, asset, cfg, engine, logger, last_candle_ts)
         except Exception as e:
             logger.info(f"[{asset}] ERROR: {e}")
-        engine.print_summary(logger, label=f"{asset} PAPER TRADING SUMMARY")
+        engine.print_summary(logger, label=f"{asset} {label_suffix}")
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
@@ -284,32 +287,56 @@ def main():
         action='store_true',
         help=f'Run continuously, scanning every {SCAN_INTERVAL}s',
     )
+    parser.add_argument(
+        '--live',
+        action='store_true',
+        help='Use LiveEngine (real Binance Futures orders) instead of PaperEngine',
+    )
+    parser.add_argument(
+        '--testnet',
+        action='store_true',
+        help='Use Binance Futures testnet (only effective with --live)',
+    )
     args = parser.parse_args()
 
-    log_date = datetime.now(timezone.utc).strftime('%Y%m%d')
+    log_date   = datetime.now(timezone.utc).strftime('%Y%m%d')
+    log_prefix = 'live_monitor' if args.live else 'paper_monitor'
 
     loggers = {
         asset: setup_logger(
-            f'paper_monitor_{cfg["log_prefix"]}',
+            f'{log_prefix}_{cfg["log_prefix"]}',
             log_file=f'logs/{cfg["log_prefix"]}_{log_date}.log',
             mode='a',
         )
         for asset, cfg in ASSETS_CONFIG.items()
     }
 
-    exchange = create_exchange()
-    engines  = {
-        asset: PaperEngine(state_file=cfg['state_file'])
-        for asset, cfg in ASSETS_CONFIG.items()
-    }
+    if args.live:
+        exchange = create_futures_exchange(testnet=args.testnet)
+        engines  = {
+            asset: LiveEngine(
+                exchange=exchange,
+                symbol=asset + ':USDT',  # 'BTC/USDT' → 'BTC/USDT:USDT'
+                state_file=cfg['state_file'],
+                testnet=args.testnet,
+            )
+            for asset, cfg in ASSETS_CONFIG.items()
+        }
+    else:
+        exchange = create_exchange()
+        engines  = {
+            asset: PaperEngine(state_file=cfg['state_file'])
+            for asset, cfg in ASSETS_CONFIG.items()
+        }
     last_candle_ts: dict = {}
 
     if not args.loop:
-        run_scan(exchange, engines, loggers, last_candle_ts)
+        run_scan(exchange, engines, loggers, last_candle_ts, live=args.live)
         return
 
+    mode_label = 'LIVE' + (' (TESTNET)' if args.testnet else '') if args.live else 'PAPER'
     for asset, cfg in ASSETS_CONFIG.items():
-        loggers[asset].info(f"[MONITOR] Started — {cfg['label']}")
+        loggers[asset].info(f"[MONITOR] Started [{mode_label}] — {cfg['label']}")
         loggers[asset].info(
             f"[MONITOR] Risk: {RISK_PCT*100:.0f}%  |  SL_min: {cfg['min_sl_dist_pct']*100:.2f}%  |  Interval: {SCAN_INTERVAL}s"
         )
@@ -320,13 +347,13 @@ def main():
             log_date = current_date
             for asset, cfg in ASSETS_CONFIG.items():
                 loggers[asset] = setup_logger(
-                    f'paper_monitor_{cfg["log_prefix"]}',
+                    f'{log_prefix}_{cfg["log_prefix"]}',
                     log_file=f'logs/{cfg["log_prefix"]}_{log_date}.log',
                     mode='a',
                 )
                 loggers[asset].info(f"[MONITOR] Log rotated — new day: {log_date}")
 
-        run_scan(exchange, engines, loggers, last_candle_ts)
+        run_scan(exchange, engines, loggers, last_candle_ts, live=args.live)
         time.sleep(SCAN_INTERVAL)
 
 
