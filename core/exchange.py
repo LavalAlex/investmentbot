@@ -18,7 +18,10 @@ def create_futures_exchange(testnet: bool = False) -> ccxt.binance:
         "apiKey": BINANCE_API_KEY,
         "secret": BINANCE_SECRET,
         "enableRateLimit": True,
-        "options": {"defaultType": "future"},
+        "options": {
+            "defaultType": "future",
+            "fetchCurrencies": False,  # avoid SAPI spot endpoint on load_markets
+        },
     }
     exchange = ccxt.binance(params)
     if testnet:
