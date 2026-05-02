@@ -69,10 +69,11 @@ def _run_monitor() -> None:
     # ── Credential check ──────────────────────────────────────────────────────
     from dotenv import load_dotenv
     load_dotenv()
-    api_key = os.getenv("BINANCE_API_KEY")
-    secret  = os.getenv("BINANCE_SECRET")
+    api_key     = os.getenv("BINANCE_API_KEY")
+    secret      = os.getenv("BINANCE_SECRET", "")
+    private_key = os.getenv("BINANCE_PRIVATE_KEY", "")
 
-    if not api_key or not secret:
+    if not api_key or (not secret and not private_key):
         fallback = setup_logger('paper_monitor_eth', log_file=f'logs/eth_{log_date}.log', mode='a')
         fallback.info("[MONITOR] ERROR — Missing Binance credentials.")
         _monitor_status["binance_ok"]  = False
