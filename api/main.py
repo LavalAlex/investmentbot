@@ -188,7 +188,7 @@ def _run_monitor_inner() -> None:
                 loggers[asset].info(f"[MONITOR] Log rotated — new day: {log_date}")
 
         with _engines_lock:
-            run_scan(exchange, engines, loggers, last_candle_ts)
+            run_scan(exchange, engines, loggers, last_candle_ts, live=LIVE_MODE)
 
         for asset, cfg in ASSETS_CONFIG.items():
             prefix = cfg['log_prefix']
