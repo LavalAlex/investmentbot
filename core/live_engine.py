@@ -139,12 +139,14 @@ class LiveEngine:
         qty: float,
         ts: str,
         risk_usd: float,
-    ) -> None:
+        logger=None,
+    ) -> bool:
         """
         1. Validar qty vs mínimos Binance
         2. Orden MARKET (entry)
         3. Orden stop_market (SL) + limit (TP) — reduceOnly
         4. Guardar estado local
+        Returns True if position was opened, False if skipped.
         """
         side      = 'BUY' if direction == 'long' else 'SELL'
         side_exit = 'SELL' if direction == 'long' else 'BUY'
@@ -152,16 +154,17 @@ class LiveEngine:
         qty_floored = self._floor_qty(qty)
         notional    = qty_floored * entry
 
+        def _warn(msg):
+            _logger.warning(msg)
+            if logger:
+                logger.info(msg)
+
         if qty_floored < self._min_qty:
-            _logger.warning(
-                f'[{asset}] SKIP — qty {qty_floored} < min_qty {self._min_qty}'
-            )
-            return
+            _warn(f'[{asset}] SKIP — qty {qty_floored} < min_qty {self._min_qty}  (equity too low)')
+            return False
         if notional < self._min_cost:
-            _logger.warning(
-                f'[{asset}] SKIP — notional ${notional:.2f} < min_cost ${self._min_cost}'
-            )
-            return
+            _warn(f'[{asset}] SKIP — notional ${notional:.2f} < min_cost ${self._min_cost}  (equity too low)')
+            return False
 
         sl_price = self._round_price(sl)
         tp_price = self._round_price(tp)
@@ -182,7 +185,7 @@ class LiveEngine:
         except Exception as e:
             _logger.error(f'[{asset}] Entry MARKET failed: {e}')
             notify_trade_open(asset, direction, entry, sl, tp, risk_usd)
-            return
+            return False
 
         # ── 2. SL — stop_market ──────────────────────────────────────────────
         sl_order_id = None
@@ -207,7 +210,7 @@ class LiveEngine:
                 'sl_order_id': None, 'tp_order_id': None,
             }
             self._save()
-            return
+            return True
 
         # ── 3. TP — limit ────────────────────────────────────────────────────
         tp_order_id = None
@@ -238,6 +241,7 @@ class LiveEngine:
         }
         self._save()
         notify_trade_open(asset, direction, fill_price, sl_price, tp_price, risk_usd)
+        return True
 
     def check_and_close(self, asset: str, bar) -> Optional[dict]:
         """

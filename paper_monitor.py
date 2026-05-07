@@ -236,7 +236,7 @@ def scan_asset(
     risk_usd = engine.equity * RISK_PCT * dyn_scale
     qty      = risk_usd / risk_price
 
-    engine.open_position(
+    opened = engine.open_position(
         asset=asset,
         direction=direction,
         entry=entry,
@@ -245,9 +245,11 @@ def scan_asset(
         qty=qty,
         ts=candle_time,
         risk_usd=risk_usd,
+        logger=logger,
     )
-    log_open(logger, asset, direction, candle_time, entry, sl, tp)
-    notify_trade_open(asset, direction, entry, sl, tp, risk_usd, dyn_scale)
+    if opened is not False:
+        log_open(logger, asset, direction, candle_time, entry, sl, tp)
+        notify_trade_open(asset, direction, entry, sl, tp, risk_usd, dyn_scale)
     logger.info(
         f"[{asset}] dyn_scale={dyn_scale:.2f}  risk_usd={risk_usd:.2f}  hour={hour_utc:02d}UTC"
     )
