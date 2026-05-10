@@ -107,18 +107,18 @@ def notify_trade_opened_live(
 
 
 def notify_daily_status(engines: dict) -> bool:
-    lines = ['📊 ESTADO DIARIO — InvestmentBot']
-    total_equity = 0.0
+    # All engines share the same Binance account — fetch equity once
+    first_engine = next(iter(engines.values()), None)
+    account_equity = first_engine.equity if first_engine else 0.0
+
+    lines = [f'📊 ESTADO DIARIO — InvestmentBot\nEquity: ${account_equity:,.2f}']
+
     for asset, engine in engines.items():
-        eq = engine.equity
-        total_equity += eq
-        pos = engine.get_position(asset)
+        pos    = engine.get_position(asset)
         trades = engine.state.get('trades', [])
         last3  = trades[-3:] if trades else []
 
         lines.append(f'\n─ {asset} ─')
-        lines.append(f'Equity: ${eq:,.2f}')
-
         if pos:
             side = 'LONG' if pos['direction'] == 'long' else 'SHORT'
             lines.append(f'Posición: {side} @ ${pos["entry"]:,.2f}')
@@ -132,7 +132,6 @@ def notify_daily_status(engines: dict) -> bool:
                 sign = '+' if t['pnl'] >= 0 else ''
                 lines.append(f'  {t["reason"]} {sign}${t["pnl"]:.2f}')
 
-    lines.append(f'\nTotal equity: ${total_equity:,.2f}')
     return send_whatsapp('\n'.join(lines))
 
 

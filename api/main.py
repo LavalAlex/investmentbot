@@ -587,6 +587,18 @@ def post_reset():
     }
 
 
+@app.post('/wsp')
+def post_wsp():
+    """Send WhatsApp status message on demand."""
+    from core.notifier import notify_daily_status
+    with _engines_lock:
+        live_engines = dict(_engines)
+    if not live_engines:
+        raise HTTPException(status_code=503, detail='Monitor not ready yet.')
+    sent = notify_daily_status(live_engines)
+    return {'sent': sent}
+
+
 @app.get('/health')
 def get_health():
     """Service health — API status, Binance connectivity, monitor state, per-asset equity."""
