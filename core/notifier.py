@@ -79,6 +79,63 @@ def notify_trade_open(
     return send_whatsapp(msg)
 
 
+def notify_trade_opened_live(
+    asset: str,
+    direction: str,
+    entry: float,
+    sl: float,
+    tp: float,
+    risk_usd: float,
+    sl_ok: bool,
+    tp_ok: bool,
+    sl_error: str = '',
+    tp_error: str = '',
+) -> bool:
+    emoji = '🟢' if direction == 'long' else '🔴'
+    side  = 'LONG' if direction == 'long' else 'SHORT'
+    sl_line = f"SL: ✅ ${sl:,.2f}" if sl_ok else f"SL: ❌ FALLÓ — {sl_error[:60]}"
+    tp_line = f"TP: ✅ ${tp:,.2f}" if tp_ok else f"TP: ❌ FALLÓ — {tp_error[:60]}"
+    msg = (
+        f"{emoji} TRADE ABIERTO\n"
+        f"{asset} • {side}\n"
+        f"Entrada: ${entry:,.2f}\n"
+        f"{sl_line}\n"
+        f"{tp_line}\n"
+        f"Riesgo: ${risk_usd:.2f}"
+    )
+    return send_whatsapp(msg)
+
+
+def notify_daily_status(engines: dict) -> bool:
+    lines = ['📊 ESTADO DIARIO — InvestmentBot']
+    total_equity = 0.0
+    for asset, engine in engines.items():
+        eq = engine.equity
+        total_equity += eq
+        pos = engine.get_position(asset)
+        trades = engine.state.get('trades', [])
+        last3  = trades[-3:] if trades else []
+
+        lines.append(f'\n─ {asset} ─')
+        lines.append(f'Equity: ${eq:,.2f}')
+
+        if pos:
+            side = 'LONG' if pos['direction'] == 'long' else 'SHORT'
+            lines.append(f'Posición: {side} @ ${pos["entry"]:,.2f}')
+            lines.append(f'SL: ${pos["sl"]:,.2f}  TP: ${pos["tp"]:,.2f}')
+        else:
+            lines.append('Posición: ninguna')
+
+        if last3:
+            lines.append('Últimos trades:')
+            for t in reversed(last3):
+                sign = '+' if t['pnl'] >= 0 else ''
+                lines.append(f'  {t["reason"]} {sign}${t["pnl"]:.2f}')
+
+    lines.append(f'\nTotal equity: ${total_equity:,.2f}')
+    return send_whatsapp('\n'.join(lines))
+
+
 def notify_trade_close(
     asset: str,
     direction: str,

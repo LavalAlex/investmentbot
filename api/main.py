@@ -43,8 +43,8 @@ LIVE_MODE       = os.getenv('LIVE_TRADING', '0') == '1'
 
 _state_suffix = '_live' if LIVE_MODE else ''
 STATE_FILES = {
-    'BTC/USDT': Path(f'btc{_state_suffix}_state.json'),
-    'ETH/USDT': Path(f'eth{_state_suffix}_state.json'),
+    'BTC/USDT': Path(f'btc_state{_state_suffix}.json'),
+    'ETH/USDT': Path(f'eth_state{_state_suffix}.json'),
 }
 
 LOG_PREFIXES = {
@@ -172,6 +172,7 @@ def _run_monitor_inner() -> None:
         logger.info(f"[MONITOR] {'─'*50}")
 
     last_candle_ts: dict = {}
+    last_heartbeat: float = 0.0  # force send on startup
 
     while True:
         current_date = datetime.now(timezone.utc).strftime('%Y%m%d')
@@ -193,6 +194,14 @@ def _run_monitor_inner() -> None:
         for asset, cfg in ASSETS_CONFIG.items():
             prefix = cfg['log_prefix']
             gcs_storage.upload(Path(f'logs/{prefix}_{log_date}.log'), f'logs/{prefix}_{log_date}.log')
+
+        if time.time() - last_heartbeat >= 86400:
+            try:
+                from core.notifier import notify_daily_status
+                notify_daily_status(engines)
+                last_heartbeat = time.time()
+            except Exception as e:
+                print(f'[HEARTBEAT] Error: {e}', flush=True)
 
         time.sleep(SCAN_INTERVAL)
 
@@ -256,7 +265,8 @@ def _log_for_date(date_str: str, prefix: str = 'eth') -> Path:
 @app.get('/status')
 def get_status():
     """Equity, positions, and trade stats — per asset and combined."""
-    state = _load_state()
+    with _engines_lock:
+        live_engines = dict(_engines)
 
     def _asset_stats(trades: list, equity: float) -> dict:
         wins         = sum(1 for t in trades if t.get('pnl', 0) > 0)
@@ -289,15 +299,24 @@ def get_status():
                 last_scan = text[idx:].split('\n')[0].replace('[SCAN]', '').strip()
         last_scans[prefix] = last_scan
 
-    per_asset = {}
-    for sym, p in STATE_FILES.items():
-        s = _load_state(sym)
-        per_asset[sym] = _asset_stats(s.get('trades', []), s.get('equity', INITIAL_CAPITAL))
-        per_asset[sym]['open_positions'] = s.get('positions', {})
+    per_asset    = {}
+    total_equity = 0.0
 
-    all_trades  = state['trades']
-    all_equities = state['equities']
-    total_equity = sum(all_equities.values())
+    for sym in STATE_FILES:
+        engine = live_engines.get(sym)
+        if engine:
+            equity = engine.equity
+            trades = engine.state.get('trades', [])
+            pos    = engine.state.get('positions', {})
+        else:
+            s      = _load_state(sym)
+            equity = s.get('equity', INITIAL_CAPITAL)
+            trades = s.get('trades', [])
+            pos    = s.get('positions', {})
+        total_equity += equity
+        stats = _asset_stats(trades, equity)
+        stats['open_positions'] = pos
+        per_asset[sym] = stats
 
     return {
         'total_equity':     round(total_equity, 2),
@@ -314,9 +333,31 @@ def get_trades(
     limit:  Optional[int] = Query(None, description='Last N trades (default: all)'),
 ):
     """Full trade history. Sorted newest first."""
-    state  = _load_state(asset)
-    trades = state.get('trades', [])
-    equity = state.get('equity', state.get('equities', {}).get(asset, INITIAL_CAPITAL))
+    with _engines_lock:
+        live_engines = dict(_engines)
+
+    if asset and asset in STATE_FILES:
+        engine = live_engines.get(asset)
+        if engine:
+            trades = engine.state.get('trades', [])
+            equity = engine.equity
+        else:
+            s      = _load_state(asset)
+            trades = s.get('trades', [])
+            equity = s.get('equity', INITIAL_CAPITAL)
+    else:
+        trades = []
+        equity = 0.0
+        for sym in STATE_FILES:
+            engine = live_engines.get(sym)
+            if engine:
+                trades.extend(engine.state.get('trades', []))
+                equity += engine.equity
+            else:
+                s = _load_state(sym)
+                trades.extend(s.get('trades', []))
+                equity += s.get('equity', INITIAL_CAPITAL)
+        trades.sort(key=lambda t: t.get('close_ts', ''))
 
     def _enrich(t: dict, idx_from_end: int) -> dict:
         pnl       = t.get('pnl', 0.0)
@@ -568,13 +609,18 @@ def get_health():
         live_engines = dict(_engines)
 
     for sym in STATE_FILES:
-        s      = _load_state(sym)
         engine = live_engines.get(sym)
-        equity = engine.equity if engine else s.get('equity', INITIAL_CAPITAL)
-        trades = s.get('trades', [])
+        if engine:
+            equity = engine.equity
+            trades = engine.state.get('trades', [])
+            pos    = engine.state.get('positions', {})
+        else:
+            s      = _load_state(sym)
+            equity = s.get('equity', INITIAL_CAPITAL)
+            trades = s.get('trades', [])
+            pos    = s.get('positions', {})
         wins   = sum(1 for t in trades if t.get('pnl', 0) > 0)
         pnl    = sum(t.get('pnl', 0) for t in trades)
-        pos    = engine.state.get('positions', {}) if engine else s.get('positions', {})
         per_asset[sym] = {
             'equity':         round(equity, 2),
             'mode':           'live' if LIVE_MODE else 'paper',
