@@ -57,7 +57,8 @@ class LiveEngine:
         self._state_path = Path(state_file)
         self._testnet    = testnet
 
-        self._exchange.load_markets()
+        if not self._exchange.markets:
+            self._exchange.load_markets()
         self._market   = self._exchange.market(symbol)
         self._qty_step = float(self._market['precision']['amount'])
         self._min_qty  = float(self._market['limits']['amount']['min'])
