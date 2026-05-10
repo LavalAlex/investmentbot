@@ -8,3 +8,5 @@ venv/
 data/
 logs/
 paper_state.jsonbinance_private.pem
+binance_public.pem
+binance_private.pem
