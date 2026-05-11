@@ -163,6 +163,18 @@ La nueva revisión estaba en medio de la inicialización (7 min de imports en el
 
 ## 5. Pendientes
 
-- [ ] Deployar commits `bc23aab` y `9c207e8` (notify equity fix + startup perf)
+- [x] Deployar commits `bc23aab` y `9c207e8` (notify equity fix + startup perf)
 - [ ] Verificar que el próximo WSP de heartbeat muestre equity correcto ($139.07, no $278.14)
-- [ ] Considerar mover `last_heartbeat = 0.0` para que NO envíe en startup (solo en producción estable)
+
+---
+
+## 6. Estado de la rama v2-regime-agnostic
+
+La rama v2 es un callejón sin salida — no hay nada que mergear a master:
+
+- EXP018 (clasificador ADX) falló — ADX seleccionaba los peores trades
+- EXP020 (sistema combinado) marcado OBSOLETO — arquitectura dos-estrategias descartada
+- Lo único que sobrevivió de v2 (SLOPE_CAP) ya está en master
+- Master está más avanzado en todo: TIME-B, DYN-B, ETH-SHORT filter, algo orders, API fixes
+
+**Próximas sesiones:** arrancar directo desde master con un nuevo experimento. No volver a v2.
