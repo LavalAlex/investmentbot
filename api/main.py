@@ -31,11 +31,19 @@ from typing import Optional
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, StreamingResponse
 
+import os
+
+# Pre-load heavy modules at process start so the monitor thread finds them cached
+from core.exchange import create_exchange, create_futures_exchange, ping_exchange
+from core.paper_engine import PaperEngine
+from core.live_engine import LiveEngine
+from core import gcs_storage
+from core.logger_v2 import setup_logger
+from paper_monitor import run_scan, ASSETS_CONFIG, SCAN_INTERVAL, RISK_PCT
+
 # Shared engine registry — populated by monitor thread, read by /reset
 _engines: dict = {}
 _engines_lock  = threading.Lock()
-
-import os
 
 LOGS_DIR        = Path('logs')
 INITIAL_CAPITAL = 10_000.0
@@ -70,8 +78,6 @@ def _run_monitor() -> None:
 
 def _run_monitor_inner() -> None:
     import time
-    import os
-    from core.logger_v2 import setup_logger
     print("[MONITOR] Thread started", flush=True)
 
     log_date = datetime.now(timezone.utc).strftime('%Y%m%d')
@@ -94,20 +100,6 @@ def _run_monitor_inner() -> None:
         fallback.info("[MONITOR] ERROR — Missing Binance credentials.")
         _monitor_status["binance_ok"]  = False
         _monitor_status["binance_msg"] = "Missing credentials"
-        return
-
-    # ── Load modules ──────────────────────────────────────────────────────────
-    try:
-        from core.exchange import create_exchange, create_futures_exchange, ping_exchange
-        from core.paper_engine import PaperEngine
-        from core.live_engine import LiveEngine
-        from core import gcs_storage
-        from paper_monitor import run_scan, ASSETS_CONFIG, SCAN_INTERVAL, RISK_PCT
-    except Exception as e:
-        fallback = setup_logger('paper_monitor_eth', log_file=f'logs/eth_{log_date}.log', mode='a')
-        fallback.info(f"[MONITOR] ERROR — Failed to load modules: {e}")
-        _monitor_status["binance_ok"]  = False
-        _monitor_status["binance_msg"] = str(e)
         return
 
     # ── Sync today's logs from GCS (resume after restart) ────────────────────
