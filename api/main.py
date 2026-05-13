@@ -34,7 +34,7 @@ from fastapi.responses import FileResponse, StreamingResponse
 import os
 
 # Pre-load heavy modules at process start so the monitor thread finds them cached
-from core.exchange import create_exchange, create_futures_exchange, ping_exchange
+from core.exchange import create_exchange, create_futures_exchange, create_public_exchange, ping_exchange
 from core.paper_engine import PaperEngine
 from core.live_engine import LiveEngine
 from core import gcs_storage
@@ -119,9 +119,9 @@ def _run_monitor_inner() -> None:
     }
 
     print("[MONITOR] Creating exchange...", flush=True)
-    exchange = create_futures_exchange() if LIVE_MODE else create_exchange()
+    exchange = create_futures_exchange() if LIVE_MODE else create_public_exchange()
     print("[MONITOR] Pinging Binance...", flush=True)
-    ok, msg  = ping_exchange(create_exchange())
+    ok, msg  = ping_exchange(create_public_exchange())
     _monitor_status["binance_ok"]  = ok
     _monitor_status["binance_msg"] = msg
 
@@ -187,7 +187,7 @@ def _run_monitor_inner() -> None:
             prefix = cfg['log_prefix']
             gcs_storage.upload(Path(f'logs/{prefix}_{log_date}.log'), f'logs/{prefix}_{log_date}.log')
 
-        if time.time() - last_heartbeat >= 86400:
+        if time.time() - last_heartbeat >= 43200:
             try:
                 from core.notifier import notify_daily_status
                 notify_daily_status(engines)

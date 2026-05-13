@@ -12,6 +12,14 @@ def create_exchange() -> ccxt.binance:
     })
 
 
+def create_public_exchange() -> ccxt.binance:
+    """No-auth exchange for public market data (OHLCV). Avoids signature errors on public endpoints."""
+    return ccxt.binance({
+        "enableRateLimit": True,
+        "options": {"defaultType": "spot"},
+    })
+
+
 def create_futures_exchange(testnet: bool = False) -> ccxt.binanceusdm:
     """Binance USDM Futures exchange using ccxt.binanceusdm (no SAPI endpoints).
     Uses Ed25519 private key if BINANCE_PRIVATE_KEY is set, else falls back to HMAC secret.

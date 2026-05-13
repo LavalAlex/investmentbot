@@ -25,7 +25,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
-from core.exchange import create_exchange, create_futures_exchange, fetch_ohlcv
+from core.exchange import create_exchange, create_futures_exchange, create_public_exchange, fetch_ohlcv
 from core.strategy_pullback import (
     prepare_1h,
     prepare_15m,
@@ -326,7 +326,7 @@ def main():
             for asset, cfg in ASSETS_CONFIG.items()
         }
     else:
-        exchange = create_exchange()
+        exchange = create_public_exchange()
         engines  = {
             asset: PaperEngine(state_file=cfg['state_file'])
             for asset, cfg in ASSETS_CONFIG.items()
