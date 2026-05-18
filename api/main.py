@@ -11,6 +11,7 @@ Endpoints:
                                ?asset=BTC/USDT|ETH/USDT   filter by asset
                                ?result=win|loss            filter by outcome
                                ?limit=N                    last N trades (default: all)
+    GET /orders              → posiciones abiertas con SL/TP, precio actual y estado de órdenes Binance
     GET /logs/latest         → last scan block from the most recent log file
                                ?asset=btc|eth              (default: eth)
     GET /logs/download       → download log file(s)
@@ -39,11 +40,15 @@ from core.paper_engine import PaperEngine
 from core.live_engine import LiveEngine
 from core import gcs_storage
 from core.logger_v2 import setup_logger
+from core.order_monitor import run_loop as run_order_monitor, get_status as get_orders_status
 from paper_monitor import run_scan, ASSETS_CONFIG, SCAN_INTERVAL, RISK_PCT
 
 # Shared engine registry — populated by monitor thread, read by /reset
 _engines: dict = {}
 _engines_lock  = threading.Lock()
+
+ORDER_MONITOR_INTERVAL = int(os.getenv('ORDER_MONITOR_INTERVAL', '5'))
+_order_monitor_exchange = None  # set by monitor thread when exchange is ready
 
 LOGS_DIR        = Path('logs')
 INITIAL_CAPITAL = 10_000.0
@@ -120,6 +125,9 @@ def _run_monitor_inner() -> None:
 
     print("[MONITOR] Creating exchange...", flush=True)
     exchange = create_futures_exchange() if LIVE_MODE else create_public_exchange()
+    if LIVE_MODE:
+        global _order_monitor_exchange
+        _order_monitor_exchange = exchange
     print("[MONITOR] Pinging Binance...", flush=True)
     ok, msg  = ping_exchange(create_public_exchange())
     _monitor_status["binance_ok"]  = ok
@@ -202,7 +210,30 @@ def _run_monitor_inner() -> None:
 async def lifespan(app: FastAPI):
     t = threading.Thread(target=_run_monitor, daemon=True, name='paper-monitor')
     t.start()
+    if LIVE_MODE:
+        om = threading.Thread(
+            target=_run_order_monitor, daemon=True, name='order-monitor'
+        )
+        om.start()
     yield
+
+
+def _run_order_monitor() -> None:
+    global _order_monitor_exchange
+    import time as _time
+    # Esperar a que el monitor principal inicialice el exchange
+    for _ in range(60):
+        if _order_monitor_exchange is not None:
+            break
+        _time.sleep(1)
+    if _order_monitor_exchange is None:
+        print('[ORDER_MONITOR] Exchange no disponible — abortando', flush=True)
+        return
+    run_order_monitor(
+        _order_monitor_exchange, _engines, _engines_lock,
+        live_mode=LIVE_MODE,
+        interval=ORDER_MONITOR_INTERVAL,
+    )
 
 
 app = FastAPI(title='InvestmentBot Monitor', version='2.0', lifespan=lifespan)
@@ -576,6 +607,35 @@ def post_reset():
         'assets':          results,
         'logs_deleted':    deleted_logs,
         'gcs_logs_deleted': gcs_logs_deleted,
+    }
+
+
+@app.get('/orders')
+def get_orders():
+    """
+    Posiciones abiertas con SL/TP, precio actual y estado de órdenes Binance.
+
+    Campos por posición:
+      - entry / current_price / sl / tp / qty
+      - dist_sl_pct / dist_tp_pct — distancia en % al SL y TP
+      - pnl_usd — PnL no realizado
+      - binance_sl_active / binance_tp_active — si la orden algo sigue viva en Binance
+      - sl_order_id / tp_order_id — algoId de cada orden
+    """
+    with _engines_lock:
+        live_engines = dict(_engines)
+
+    exchange = _order_monitor_exchange or (
+        create_futures_exchange() if LIVE_MODE else None
+    )
+    if exchange is None:
+        return {'orders': [], 'monitor': 'paper_mode'}
+
+    orders = get_orders_status(exchange, live_engines, _engines_lock, LIVE_MODE)
+    return {
+        'monitor_interval_s': ORDER_MONITOR_INTERVAL,
+        'live_mode':          LIVE_MODE,
+        'orders':             orders,
     }
 
 
