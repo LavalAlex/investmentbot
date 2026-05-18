@@ -103,50 +103,56 @@ class LiveEngine:
         except Exception as e:
             _logger.warning(f'[{asset}] Error cancelando órdenes estándar: {e}')
         try:
-            open_algo = self._exchange.request(
-                'order/algo/openOrders', 'fapiPrivate', 'GET',
+            # DELETE /fapi/v1/algoOpenOrders cancela todas las conditional orders del symbol
+            self._exchange.request(
+                'algoOpenOrders', 'fapiPrivate', 'DELETE',
                 {'symbol': self._market['id']}
             )
-            for o in open_algo.get('orders', []):
-                self._cancel_algo_order(o['strategyId'])
+            _logger.info(f'[{asset}] Algo open orders canceladas')
         except Exception as e:
             _logger.warning(f'[{asset}] Error cancelando algo orders: {e}')
 
-    def _cancel_algo_order(self, strategy_id: int) -> None:
+    def _cancel_algo_order(self, algo_id: int) -> None:
+        # DELETE /fapi/v1/algoOrder — API de conditional orders (migrado dic 2025)
         try:
             self._exchange.request(
-                'order/algo', 'fapiPrivate', 'DELETE',
-                {'strategyId': strategy_id}
+                'algoOrder', 'fapiPrivate', 'DELETE',
+                {'algoId': algo_id}
             )
-            _logger.info(f'[algo] strategyId={strategy_id} cancelado')
+            _logger.info(f'[algo] algoId={algo_id} cancelado')
         except Exception as e:
-            _logger.warning(f'[algo] Error cancelando strategyId={strategy_id}: {e}')
+            _logger.warning(f'[algo] Error cancelando algoId={algo_id}: {e}')
 
     def _place_sl_algo(self, side: str, qty: float, stop_price: float) -> int:
+        # POST /fapi/v1/algoOrder — conditional orders API (migrado dic 2025)
         resp = self._exchange.request(
-            'order/algo/market', 'fapiPrivate', 'POST', {
-                'symbol': self._market['id'],
-                'side': side,
-                'quantity': str(qty),
-                'stopPrice': str(stop_price),
-                'reduceOnly': 'true',
-                'workingType': 'CONTRACT_PRICE',
+            'algoOrder', 'fapiPrivate', 'POST', {
+                'algoType':     'CONDITIONAL',
+                'symbol':       self._market['id'],
+                'side':         side,
+                'type':         'STOP_MARKET',
+                'quantity':     str(qty),
+                'triggerPrice': str(stop_price),
+                'reduceOnly':   'true',
+                'workingType':  'CONTRACT_PRICE',
             }
         )
-        return resp['strategyId']
+        return resp['algoId']
 
     def _place_tp_algo(self, side: str, qty: float, stop_price: float) -> int:
         resp = self._exchange.request(
-            'order/algo/takeProfit', 'fapiPrivate', 'POST', {
-                'symbol': self._market['id'],
-                'side': side,
-                'quantity': str(qty),
-                'stopPrice': str(stop_price),
-                'reduceOnly': 'true',
-                'workingType': 'CONTRACT_PRICE',
+            'algoOrder', 'fapiPrivate', 'POST', {
+                'algoType':     'CONDITIONAL',
+                'symbol':       self._market['id'],
+                'side':         side,
+                'type':         'TAKE_PROFIT_MARKET',
+                'quantity':     str(qty),
+                'triggerPrice': str(stop_price),
+                'reduceOnly':   'true',
+                'workingType':  'CONTRACT_PRICE',
             }
         )
-        return resp['strategyId']
+        return resp['algoId']
 
     def _place_exit_order(self, order_type: str, side: str, qty: float, stop_price: float) -> str:
         resp = self._exchange.create_order(
