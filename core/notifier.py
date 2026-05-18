@@ -90,11 +90,16 @@ def notify_trade_opened_live(
     tp_ok: bool,
     sl_error: str = '',
     tp_error: str = '',
+    software_sltp: bool = False,
 ) -> bool:
     emoji = '🟢' if direction == 'long' else '🔴'
     side  = 'LONG' if direction == 'long' else 'SHORT'
-    sl_line = f"SL: ✅ ${sl:,.2f}" if sl_ok else f"SL: ❌ FALLÓ — {sl_error[:60]}"
-    tp_line = f"TP: ✅ ${tp:,.2f}" if tp_ok else f"TP: ❌ FALLÓ — {tp_error[:60]}"
+    if software_sltp:
+        sl_line = f"SL: ⚙️ ${sl:,.2f} (software)"
+        tp_line = f"TP: ⚙️ ${tp:,.2f} (software)"
+    else:
+        sl_line = f"SL: ✅ ${sl:,.2f}" if sl_ok else f"SL: ❌ FALLÓ — {sl_error[:60]}"
+        tp_line = f"TP: ✅ ${tp:,.2f}" if tp_ok else f"TP: ❌ FALLÓ — {tp_error[:60]}"
     msg = (
         f"{emoji} TRADE ABIERTO\n"
         f"{asset} • {side}\n"

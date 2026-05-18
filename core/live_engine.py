@@ -31,6 +31,9 @@ from .notifier import notify_trade_open, notify_trade_close, notify_trade_opened
 INITIAL_CAPITAL  = 10_000.0
 FEE_PER_SIDE_PCT = 0.0005
 
+_ORDER_ALGO     = 'algo'
+_ORDER_STANDARD = 'standard'
+
 _logger = logging.getLogger('live_engine')
 
 
@@ -145,6 +148,45 @@ class LiveEngine:
         )
         return resp['strategyId']
 
+    def _place_exit_order(self, order_type: str, side: str, qty: float, stop_price: float) -> str:
+        resp = self._exchange.create_order(
+            self._symbol, order_type, side, qty,
+            params={'stopPrice': stop_price, 'reduceOnly': True, 'workingType': 'CONTRACT_PRICE'},
+        )
+        return str(resp['id'])
+
+    def _place_order_with_fallback(
+        self, asset: str, label: str,
+        algo_fn, std_order_type: str,
+        side: str, qty: float, price: float,
+    ) -> tuple:
+        order_id, order_type, ok, error = None, _ORDER_ALGO, False, ''
+        try:
+            order_id = algo_fn(side, qty, price)
+            ok = True
+            _logger.info(f'[{asset}] {label} algo @ {price}  (strategyId={order_id})')
+        except Exception as e:
+            _logger.warning(f'[{asset}] {label} algo failed ({e}), retrying with standard {std_order_type}')
+            try:
+                order_id   = self._place_exit_order(std_order_type, side, qty, price)
+                order_type = _ORDER_STANDARD
+                ok         = True
+                _logger.info(f'[{asset}] {label} standard {std_order_type} @ {price}  (orderId={order_id})')
+            except Exception as e2:
+                error = str(e2)
+                suffix = ' — POSICIÓN SIN PROTECCIÓN' if label == 'SL' else ''
+                _logger.error(f'[{asset}] {label} order failed: {e2}{suffix}')
+        return order_id, order_type, ok, error
+
+    def _cancel_order(self, order_id, order_type: str) -> None:
+        if order_type == _ORDER_STANDARD:
+            try:
+                self._exchange.cancel_order(order_id, self._symbol)
+            except Exception as e:
+                _logger.warning(f'[live] Error cancelando orden standard {order_id}: {e}')
+        else:
+            self._cancel_algo_order(order_id)
+
     # ── Read ─────────────────────────────────────────────────────────────────
 
     @property
@@ -235,53 +277,57 @@ class LiveEngine:
                                      sl_error=f'Entry falló: {e}', tp_error='')
             return False
 
-        # ── 2. SL — algo stop_market ─────────────────────────────────────────
-        sl_order_id = None
-        sl_ok       = False
-        sl_error    = ''
-        try:
-            sl_order_id = self._place_sl_algo(side_exit, qty_floored, sl_price)
-            sl_ok = True
-            _logger.info(f'[{asset}] SL algo_stop_market @ {sl_price}  (strategyId={sl_order_id})')
-        except Exception as e:
-            sl_error = str(e)
-            _logger.error(f'[{asset}] SL order failed: {e} — POSICIÓN SIN PROTECCIÓN')
-
-        # ── 3. TP — algo take_profit_market ──────────────────────────────────
-        tp_order_id = None
-        tp_ok       = False
-        tp_error    = ''
+        # ── 2. SL + 3. TP — algo con fallback a standard ─────────────────────
+        sl_order_id, sl_order_type, sl_ok, sl_error = self._place_order_with_fallback(
+            asset, 'SL', self._place_sl_algo, 'STOP_MARKET', side_exit, qty_floored, sl_price,
+        )
+        tp_order_id, tp_order_type, tp_ok, tp_error = None, _ORDER_ALGO, False, ''
         if sl_ok:
-            try:
-                tp_order_id = self._place_tp_algo(side_exit, qty_floored, tp_price)
-                tp_ok = True
-                _logger.info(f'[{asset}] TP algo_take_profit @ {tp_price}  (strategyId={tp_order_id})')
-            except Exception as e:
-                tp_error = str(e)
-                _logger.error(f'[{asset}] TP order failed: {e}')
+            tp_order_id, tp_order_type, tp_ok, tp_error = self._place_order_with_fallback(
+                asset, 'TP', self._place_tp_algo, 'TAKE_PROFIT_MARKET', side_exit, qty_floored, tp_price,
+            )
 
         # ── 4. Guardar estado ────────────────────────────────────────────────
         self.state.setdefault('positions', {})[asset] = {
-            'direction':   direction,
-            'entry':       fill_price,
-            'sl':          sl_price,
-            'tp':          tp_price,
-            'qty':         qty_floored,
-            'open_ts':     ts,
-            'risk_usd':    round(risk_usd, 4),
-            'sl_order_id': sl_order_id,
-            'tp_order_id': tp_order_id,
+            'direction':    direction,
+            'entry':        fill_price,
+            'sl':           sl_price,
+            'tp':           tp_price,
+            'qty':          qty_floored,
+            'open_ts':      ts,
+            'risk_usd':     round(risk_usd, 4),
+            'sl_order_id':  sl_order_id,
+            'tp_order_id':  tp_order_id,
+            'sl_order_type': sl_order_type,
+            'tp_order_type': tp_order_type,
         }
         self._save()
+        software_sltp = not sl_ok and not tp_ok
         notify_trade_opened_live(asset, direction, fill_price, sl_price, tp_price, risk_usd,
                                  sl_ok=sl_ok, tp_ok=tp_ok,
-                                 sl_error=sl_error, tp_error=tp_error)
+                                 sl_error=sl_error, tp_error=tp_error,
+                                 software_sltp=software_sltp)
         return True
+
+    def _close_market(self, asset: str, pos: dict, reason: str, target_price: float) -> Optional[float]:
+        """Place MARKET close for software-managed SL/TP. Returns fill price or None on failure."""
+        side_exit = 'SELL' if pos['direction'] == 'long' else 'BUY'
+        try:
+            order = self._exchange.create_order(
+                self._symbol, 'MARKET', side_exit, pos['qty'],
+                params={'reduceOnly': True},
+            )
+            fill = float(order.get('average') or order.get('price') or target_price)
+            _logger.info(f'[{asset}] Software {reason} → MARKET close @ {fill:.4f}')
+            return fill
+        except Exception as e:
+            _logger.error(f'[{asset}] Software {reason} MARKET close failed: {e}')
+            return None
 
     def check_and_close(self, asset: str, bar) -> Optional[dict]:
         """
-        Detecta si Binance ya ejecutó el SL o TP verificando las órdenes.
-        Si la posición ya no existe en Binance → registrar cierre.
+        Cierre primario via software SL/TP (bar high/low vs precios objetivo).
+        Fallback: detecta si Binance cerró la posición externamente.
         """
         pos = self.state.get('positions', {}).get(asset)
         if pos is None:
@@ -291,35 +337,59 @@ class LiveEngine:
         if str(bar['open_time']) == pos['open_ts']:
             return None
 
-        # Verificar si la posición sigue abierta en Binance
-        still_open = self.has_position(asset)
-        if still_open:
-            return None
+        direction = pos['direction']
+        sl_price  = pos['sl']
+        tp_price  = pos['tp']
+        bar_high  = float(bar['high'])
+        bar_low   = float(bar['low'])
 
-        # La posición se cerró — determinar precio y razón por trades recientes
+        # ── 1. Software SL/TP: comparar high/low del candle ─────────────────
+        reason     = None
+        exit_price = None
+        if direction == 'long':
+            if bar_low <= sl_price:
+                reason = 'SL'
+            elif bar_high >= tp_price:
+                reason = 'TP'
+        else:
+            if bar_high >= sl_price:
+                reason = 'SL'
+            elif bar_low <= tp_price:
+                reason = 'TP'
+
+        if reason:
+            target = sl_price if reason == 'SL' else tp_price
+            exit_price = self._close_market(asset, pos, reason, target)
+            if exit_price is None:
+                return None  # close failed; retry next scan
+        else:
+            # ── 2. Fallback: detectar cierre externo por Binance ─────────────
+            if self.has_position(asset):
+                return None
+
+            reason     = 'SL'
+            exit_price = pos['sl']
+            try:
+                recent = self._exchange.fetch_my_trades(self._symbol, limit=10)
+                closing_side = 'sell' if direction == 'long' else 'buy'
+                closing = [t for t in recent if t['side'] == closing_side]
+                if closing:
+                    exit_price = float(closing[-1]['price'])
+                    midpoint = (sl_price + tp_price) / 2
+                    if direction == 'long':
+                        reason = 'TP' if exit_price > midpoint else 'SL'
+                    else:
+                        reason = 'TP' if exit_price < midpoint else 'SL'
+            except Exception as e:
+                _logger.warning(f'[{asset}] Error fetching trades for close detection: {e}')
+
+        # Cancelar orden huérfana en Binance si se había colocado
         sl_id = pos.get('sl_order_id')
         tp_id = pos.get('tp_order_id')
-        reason     = 'SL'
-        exit_price = pos['sl']
-
-        try:
-            recent = self._exchange.fetch_my_trades(self._symbol, limit=10)
-            closing_side = 'sell' if pos['direction'] == 'long' else 'buy'
-            closing = [t for t in recent if t['side'] == closing_side]
-            if closing:
-                exit_price = float(closing[-1]['price'])
-                midpoint = (pos['sl'] + pos['tp']) / 2
-                if pos['direction'] == 'long':
-                    reason = 'TP' if exit_price > midpoint else 'SL'
-                else:
-                    reason = 'TP' if exit_price < midpoint else 'SL'
-        except Exception as e:
-            _logger.warning(f'[{asset}] Error fetching trades for close detection: {e}')
-
-        # Cancelar la orden algo huérfana
-        orphan_id = tp_id if reason == 'SL' else sl_id
+        orphan_id   = tp_id   if reason == 'SL' else sl_id
+        orphan_type = pos.get('tp_order_type', 'algo') if reason == 'SL' else pos.get('sl_order_type', 'algo')
         if orphan_id:
-            self._cancel_algo_order(orphan_id)
+            self._cancel_order(orphan_id, orphan_type)
 
         # Calcular PnL
         if pos['direction'] == 'long':
