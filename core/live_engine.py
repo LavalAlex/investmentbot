@@ -430,7 +430,8 @@ class LiveEngine:
 
     def reset(self) -> None:
         self._cancel_open_orders(self._symbol)
-        self.state = {'equity': INITIAL_CAPITAL, 'positions': {}, 'trades': []}
+        real_equity = self.equity  # fetch real Binance balance as baseline
+        self.state = {'equity': real_equity, 'initial_equity': real_equity, 'positions': {}, 'trades': []}
         self._save()
 
     # ── Status ───────────────────────────────────────────────────────────────

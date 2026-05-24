@@ -295,7 +295,7 @@ def get_status():
     with _engines_lock:
         live_engines = dict(_engines)
 
-    def _asset_stats(trades: list, equity: float) -> dict:
+    def _asset_stats(trades: list, equity: float, initial_equity: float = INITIAL_CAPITAL) -> dict:
         wins         = sum(1 for t in trades if t.get('pnl', 0) > 0)
         pnl_total    = sum(t.get('pnl', 0) for t in trades)
         gross_profit = sum(t['pnl'] for t in trades if t.get('pnl', 0) > 0)
@@ -303,7 +303,7 @@ def get_status():
         pf           = round(gross_profit / gross_loss, 3) if gross_loss > 0 else None
         return {
             'equity':        round(equity, 2),
-            'return_pct':    round((equity - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100, 2),
+            'return_pct':    round((equity - initial_equity) / initial_equity * 100, 2) if initial_equity else 0.0,
             'total_pnl':     round(pnl_total, 2),
             'total_trades':  len(trades),
             'wins':          wins,
@@ -326,28 +326,32 @@ def get_status():
                 last_scan = text[idx:].split('\n')[0].replace('[SCAN]', '').strip()
         last_scans[prefix] = last_scan
 
-    per_asset    = {}
-    total_equity = 0.0
+    per_asset     = {}
+    total_equity  = 0.0
+    total_initial = 0.0
 
     for sym in STATE_FILES:
         engine = live_engines.get(sym)
         if engine:
-            equity = engine.equity
-            trades = engine.state.get('trades', [])
-            pos    = engine.state.get('positions', {})
+            equity          = engine.equity
+            trades          = engine.state.get('trades', [])
+            pos             = engine.state.get('positions', {})
+            initial_equity  = engine.state.get('initial_equity', INITIAL_CAPITAL)
         else:
-            s      = _load_state(sym)
-            equity = s.get('equity', INITIAL_CAPITAL)
-            trades = s.get('trades', [])
-            pos    = s.get('positions', {})
-        total_equity += equity
-        stats = _asset_stats(trades, equity)
+            s               = _load_state(sym)
+            equity          = s.get('equity', INITIAL_CAPITAL)
+            trades          = s.get('trades', [])
+            pos             = s.get('positions', {})
+            initial_equity  = s.get('initial_equity', INITIAL_CAPITAL)
+        total_equity    += equity
+        total_initial   += initial_equity
+        stats = _asset_stats(trades, equity, initial_equity)
         stats['open_positions'] = pos
         per_asset[sym] = stats
 
     return {
         'total_equity':     round(total_equity, 2),
-        'total_return_pct': round((total_equity - INITIAL_CAPITAL * len(STATE_FILES)) / (INITIAL_CAPITAL * len(STATE_FILES)) * 100, 2),
+        'total_return_pct': round((total_equity - total_initial) / total_initial * 100, 2) if total_initial else 0.0,
         'last_scans':       last_scans,
         'assets':           per_asset,
     }
