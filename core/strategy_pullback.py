@@ -68,6 +68,53 @@ def prepare_15m(df: pd.DataFrame) -> pd.DataFrame:
 
 # ── Context alignment ────────────────────────────────────────────────────────
 
+EMA_PERIOD_4H  = 20
+SLOPE_LB_4H    = 5   # 5 × 4h bars = 20h lookback
+MIN_SLOPE_4H_B = 0.03  # % — variant B: require meaningful slope
+
+
+def prepare_4h(df_1h_raw: pd.DataFrame) -> pd.DataFrame:
+    """
+    Resample 1h OHLCV to 4h and compute EMA20 slope.
+    Task010-B: used as macro direction gate for BTC longs.
+    Returns df with available_at_4h and slope_4h_pct.
+    """
+    df = df_1h_raw.copy()
+    df['open_time'] = pd.to_datetime(df['open_time'], utc=True)
+    df = df.set_index('open_time')
+    df4 = df[['open', 'high', 'low', 'close', 'volume']].resample('4h').agg({
+        'open': 'first', 'high': 'max', 'low': 'min', 'close': 'last', 'volume': 'sum',
+    }).dropna().reset_index().rename(columns={'open_time': 'open_time_4h'})
+    df4['ema20_4h']     = ema(df4['close'], EMA_PERIOD_4H)
+    df4['slope_4h_pct'] = (df4['ema20_4h'] - df4['ema20_4h'].shift(SLOPE_LB_4H)) \
+                          / df4['ema20_4h'].shift(SLOPE_LB_4H) * 100
+    df4['available_at_4h'] = df4['open_time_4h'] + pd.Timedelta(hours=4)
+    return df4[['available_at_4h', 'slope_4h_pct']].dropna()
+
+
+def align_4h_to_15m(df_aligned: pd.DataFrame, df_4h: pd.DataFrame) -> pd.DataFrame:
+    """Attach the most recently completed 4h bar's slope to each 15m bar."""
+    df4 = df_4h.sort_values('available_at_4h').reset_index(drop=True)
+    out = df_aligned.sort_values('open_time').reset_index(drop=True)
+    out = pd.merge_asof(out, df4, left_on='open_time', right_on='available_at_4h',
+                        direction='backward')
+    return out
+
+
+def is_4h_aligned(row, direction: str, min_slope_pct: float = 0.0) -> bool:
+    """
+    Task010-B: BTC 4h macro gate.
+    Long only passes when EMA20 4h slope > min_slope_pct.
+    Returns True if no 4h data is available (fail-open to avoid blocking on startup).
+    """
+    slope_4h = row.get('slope_4h_pct')
+    if slope_4h is None or pd.isna(slope_4h):
+        return True
+    if direction == 'long':
+        return float(slope_4h) > min_slope_pct
+    return float(slope_4h) < -min_slope_pct
+
+
 def align_1h_to_15m(df_15m: pd.DataFrame, df_1h_prep: pd.DataFrame) -> pd.DataFrame:
     """
     For each 15m bar, attach the most recently *completed* 1h bar's context.

@@ -29,7 +29,9 @@ from core.exchange import create_exchange, create_futures_exchange, create_publi
 from core.strategy_pullback import (
     prepare_1h,
     prepare_15m,
+    prepare_4h,
     align_1h_to_15m,
+    align_4h_to_15m,
     get_trend,
     is_trend_strong,
     is_pullback_quality,
@@ -37,6 +39,7 @@ from core.strategy_pullback import (
     is_candle_quality,
     is_range_sufficient,
     is_market_efficient,
+    is_4h_aligned,
 )
 from core.trade_logic import calculate_sl_tp
 from core.paper_engine import PaperEngine
@@ -52,13 +55,15 @@ ASSETS_CONFIG = {
         'log_prefix':      'btc',
         'min_sl_dist_pct': 0.0030,  # EXP017-B: SL≥0.30% (viable over 730d)
         'longs_only':      True,    # EXP009: BTC longs only
-        'label':           'BTC/USDT (EXP009+EXP017-B, SL≥0.30%, longs only)',
+        'use_4h_filter':   True,    # Task010-B: 4h EMA20 slope gate (BTC only)
+        'label':           'BTC/USDT (EXP009+EXP017-B+Task010B, SL≥0.30%, longs only)',
     },
     'ETH/USDT': {
         'state_file':      'eth_state.json',
         'log_prefix':      'eth',
         'min_sl_dist_pct': 0.0050,  # EXP016A: SL≥0.50% (viable over 180d)
         'longs_only':      False,
+        'use_4h_filter':   False,
         'label':           'ETH/USDT (EXP016A, SL≥0.50%, longs+shorts)',
     },
 }
@@ -93,6 +98,7 @@ def scan_asset(
 ) -> None:
     min_sl_dist_pct = cfg['min_sl_dist_pct']
     longs_only      = cfg['longs_only']
+    use_4h_filter   = cfg.get('use_4h_filter', False)
 
     df_1h_raw  = fetch_ohlcv(exchange, asset, '1h',  CANDLE_LIMIT_1H)
     df_15m_raw = fetch_ohlcv(exchange, asset, '15m', CANDLE_LIMIT_15M)
@@ -114,6 +120,11 @@ def scan_asset(
     df_1h  = prepare_1h(df_1h_raw)
     df_15m = prepare_15m(df_15m_raw)
     df     = align_1h_to_15m(df_15m, df_1h)
+
+    # Task010-B: attach 4h context for BTC macro gate
+    if use_4h_filter:
+        df_4h = prepare_4h(df_1h_raw)
+        df    = align_4h_to_15m(df, df_4h)
 
     if df.empty:
         logger.info(f"[{asset}] Alignment produced empty frame — skipping.")
@@ -182,6 +193,11 @@ def scan_asset(
         return
 
     if not is_market_efficient(row):
+        return
+
+    # Task010-B — 4h macro gate: BTC longs only when 4h EMA20 slope is positive
+    if use_4h_filter and not is_4h_aligned(row, direction='long' if trend == 'up' else 'short'):
+        logger.info(f"[{asset}] SKIP 4h_gate slope_4h={row.get('slope_4h_pct', 'N/A'):.4f}%")
         return
 
     # EXP019 — SLOPE_CAP: skip when EMA50 is in parabolic momentum (>0.20%/5bars)
