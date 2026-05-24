@@ -149,17 +149,32 @@ def notify_trade_close(
     pnl: float,
     equity: float,
 ) -> bool:
-    icons = {'TP': '✅', 'SL': '🔴', 'BE': '🟡'}
-    labels = {'TP': 'TP ALCANZADO', 'SL': 'SL TOCADO', 'BE': 'BREAK-EVEN'}
-    icon  = icons.get(reason, '⚪')
-    label = labels.get(reason, reason)
-    side  = 'LONG' if direction == 'long' else 'SHORT'
-    sign  = '+' if pnl >= 0 else ''
+    icons  = {'TP': '✅', 'SL': '🛑', 'BE': '🟡'}
+    labels = {'TP': 'TAKE PROFIT', 'SL': 'STOP LOSS', 'BE': 'BREAK-EVEN'}
+    icon   = icons.get(reason, '⚪')
+    label  = labels.get(reason, reason)
+    side   = 'LONG' if direction == 'long' else 'SHORT'
+    sign   = '+' if pnl >= 0 else ''
+    move   = ((exit_price - entry) / entry * 100) if direction == 'long' else ((entry - exit_price) / entry * 100)
     msg = (
-        f"{icon} {label}\n"
-        f"{asset} • {side}\n"
-        f"Entrada: ${entry:,.2f} → Salida: ${exit_price:,.2f}\n"
+        f"{icon} {label} — {asset}\n"
+        f"{side}  {entry:,.2f} → {exit_price:,.2f}  ({move:+.2f}%)\n"
         f"PnL: {sign}${pnl:.2f}\n"
         f"Equity: ${equity:,.2f}"
     )
     return send_whatsapp(msg)
+
+
+def notify_ws_status(event: str, detail: str = '') -> bool:
+    """Notifica eventos operacionales del WebSocket order monitor."""
+    icons = {
+        'connected':    '🔗',
+        'reconnecting': '🔄',
+        'disconnected': '⚡',
+        'error':        '⚠️',
+    }
+    icon = icons.get(event, 'ℹ️')
+    text = f'{icon} WS Order Monitor: {event.upper()}'
+    if detail:
+        text += f'\n{detail[:120]}'
+    return send_whatsapp(text)

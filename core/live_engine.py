@@ -26,7 +26,7 @@ from pathlib import Path
 from typing import Optional
 
 from . import gcs_storage
-from .notifier import notify_trade_open, notify_trade_close, notify_trade_opened_live
+from .notifier import notify_trade_open, notify_trade_close, notify_trade_opened_live, notify_ws_status
 
 INITIAL_CAPITAL  = 10_000.0
 FEE_PER_SIDE_PCT = 0.0005
@@ -315,98 +315,46 @@ class LiveEngine:
                                  software_sltp=software_sltp)
         return True
 
-    def _close_market(self, asset: str, pos: dict, reason: str, target_price: float) -> Optional[float]:
-        """Place MARKET close for software-managed SL/TP. Returns fill price or None on failure."""
-        side_exit = 'SELL' if pos['direction'] == 'long' else 'BUY'
-        try:
-            order = self._exchange.create_order(
-                self._symbol, 'MARKET', side_exit, pos['qty'],
-                params={'reduceOnly': True},
-            )
-            fill = float(order.get('average') or order.get('price') or target_price)
-            _logger.info(f'[{asset}] Software {reason} → MARKET close @ {fill:.4f}')
-            return fill
-        except Exception as e:
-            _logger.error(f'[{asset}] Software {reason} MARKET close failed: {e}')
-            return None
-
-    def check_and_close(self, asset: str, bar) -> Optional[dict]:
+    def record_close(
+        self,
+        asset: str,
+        exit_price: float,
+        reason: str,
+        close_ts: str,
+        order_id: str = '',
+    ) -> Optional[dict]:
         """
-        Cierre primario via software SL/TP (bar high/low vs precios objetivo).
-        Fallback: detecta si Binance cerró la posición externamente.
+        Registra el cierre de una posición ejecutado por Binance (SL/TP algo).
+
+        Llamado desde dos paths:
+          1. order_monitor (WebSocket) — en tiempo real, < 200 ms tras el fill
+          2. check_and_close (scanner fallback) — cada 15 min como red de seguridad
+
+        La protección contra doble registro es implícita: si la posición ya fue
+        eliminada del state por el primer llamador, pos será None y retorna None.
+        Ambos paths están bajo engines_lock, por lo que no hay race condition.
         """
         pos = self.state.get('positions', {}).get(asset)
         if pos is None:
             return None
 
-        # No evaluar en la misma vela de entrada
-        if str(bar['open_time']) == pos['open_ts']:
-            return None
-
-        direction = pos['direction']
-        sl_price  = pos['sl']
-        tp_price  = pos['tp']
-        bar_high  = float(bar['high'])
-        bar_low   = float(bar['low'])
-
-        # ── 1. Software SL/TP: comparar high/low del candle ─────────────────
-        reason     = None
-        exit_price = None
-        if direction == 'long':
-            if bar_low <= sl_price:
-                reason = 'SL'
-            elif bar_high >= tp_price:
-                reason = 'TP'
-        else:
-            if bar_high >= sl_price:
-                reason = 'SL'
-            elif bar_low <= tp_price:
-                reason = 'TP'
-
-        if reason:
-            target = sl_price if reason == 'SL' else tp_price
-            exit_price = self._close_market(asset, pos, reason, target)
-            if exit_price is None:
-                return None  # close failed; retry next scan
-        else:
-            # ── 2. Fallback: detectar cierre externo por Binance ─────────────
-            if self.has_position(asset):
-                return None
-
-            reason     = 'SL'
-            exit_price = pos['sl']
-            try:
-                recent = self._exchange.fetch_my_trades(self._symbol, limit=10)
-                closing_side = 'sell' if direction == 'long' else 'buy'
-                closing = [t for t in recent if t['side'] == closing_side]
-                if closing:
-                    exit_price = float(closing[-1]['price'])
-                    midpoint = (sl_price + tp_price) / 2
-                    if direction == 'long':
-                        reason = 'TP' if exit_price > midpoint else 'SL'
-                    else:
-                        reason = 'TP' if exit_price < midpoint else 'SL'
-            except Exception as e:
-                _logger.warning(f'[{asset}] Error fetching trades for close detection: {e}')
-
-        # Cancelar orden huérfana en Binance si se había colocado
-        sl_id = pos.get('sl_order_id')
-        tp_id = pos.get('tp_order_id')
+        # Cancelar la orden huérfana (la que NO se ejecutó)
+        sl_id       = pos.get('sl_order_id')
+        tp_id       = pos.get('tp_order_id')
         orphan_id   = tp_id   if reason == 'SL' else sl_id
-        orphan_type = pos.get('tp_order_type', 'algo') if reason == 'SL' else pos.get('sl_order_type', 'algo')
-        if orphan_id:
+        orphan_type = (pos.get('tp_order_type', 'algo') if reason == 'SL'
+                       else pos.get('sl_order_type', 'algo'))
+        if orphan_id and str(orphan_id) != str(order_id):
             self._cancel_order(orphan_id, orphan_type)
 
-        # Calcular PnL
+        # PnL
         if pos['direction'] == 'long':
             gross_pnl = (exit_price - pos['entry']) * pos['qty']
         else:
             gross_pnl = (pos['entry'] - exit_price) * pos['qty']
 
-        fee_usd = (pos['entry'] + exit_price) * pos['qty'] * FEE_PER_SIDE_PCT
-        pnl     = gross_pnl - fee_usd
-
-        # Equity real desde Binance
+        fee_usd        = (pos['entry'] + exit_price) * pos['qty'] * FEE_PER_SIDE_PCT
+        pnl            = gross_pnl - fee_usd
         current_equity = self.equity
 
         trade = {
@@ -418,7 +366,7 @@ class LiveEngine:
             'tp':        pos['tp'],
             'qty':       pos['qty'],
             'open_ts':   pos['open_ts'],
-            'close_ts':  str(bar['open_time']),
+            'close_ts':  close_ts,
             'reason':    reason,
             'gross_pnl': round(gross_pnl, 4),
             'fee_usd':   round(fee_usd, 4),
@@ -436,6 +384,49 @@ class LiveEngine:
             reason, pnl, current_equity,
         )
         return trade
+
+    def check_and_close(self, asset: str, bar) -> Optional[dict]:
+        """
+        Fallback de seguridad: detecta cierres que el WebSocket pudo haber
+        perdido (reconexión, restart de Cloud Run, etc.).
+
+        Corre cada 15 min al cerrar vela. El path primario es el WebSocket
+        en order_monitor que detecta fills en tiempo real.
+        """
+        pos = self.state.get('positions', {}).get(asset)
+        if pos is None:
+            return None
+
+        # No evaluar en la misma vela de entrada
+        if str(bar['open_time']) == pos['open_ts']:
+            return None
+
+        # Si Binance todavía muestra posición abierta → nada que hacer
+        if self.has_position(asset):
+            return None
+
+        # Posición cerrada en Binance pero state no actualizado → detectar
+        _logger.warning(f'[{asset}] Posición cerrada en Binance (fallback scan) — detectando cierre')
+        notify_ws_status('error', f'{asset}: cierre detectado por fallback scan (WS pudo haber perdido el evento)')
+
+        direction  = pos['direction']
+        exit_price = pos['sl']
+        reason     = 'SL'
+        try:
+            recent       = self._exchange.fetch_my_trades(self._symbol, limit=10)
+            closing_side = 'sell' if direction == 'long' else 'buy'
+            closing      = [t for t in recent if t['side'] == closing_side]
+            if closing:
+                exit_price = float(closing[-1]['price'])
+                midpoint   = (pos['sl'] + pos['tp']) / 2
+                if direction == 'long':
+                    reason = 'TP' if exit_price > midpoint else 'SL'
+                else:
+                    reason = 'TP' if exit_price < midpoint else 'SL'
+        except Exception as e:
+            _logger.warning(f'[{asset}] Error fetching trades for fallback close: {e}')
+
+        return self.record_close(asset, exit_price, reason, str(bar['open_time']))
 
     def reset(self) -> None:
         self._cancel_open_orders(self._symbol)

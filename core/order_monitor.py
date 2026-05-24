@@ -1,118 +1,201 @@
 """
-Order Monitor — doble seguridad para SL/TP de posiciones live.
+Order Monitor — Binance WebSocket User Data Stream.
 
-Corre en un thread independiente. Cada INTERVAL segundos:
-  1. Obtiene precio actual de Binance (ticker)
-  2. Compara contra SL y TP de cada posición abierta
-  3. Si el precio cruzó el nivel → ejecuta MARKET close via check_and_close
-  4. Verifica si las órdenes algo de Binance siguen activas (registro)
+Reemplaza el polling de precio con detección event-driven:
+  1. POST /fapi/v1/listenKey → obtiene clave de sesión (válida 60 min)
+  2. wss://fstream.binance.com/ws/{listenKey} → push en tiempo real
+  3. ORDER_TRADE_UPDATE con status=FILLED → llama engine.record_close()
+  4. Keepalive thread: PUT /fapi/v1/listenKey cada 30 min
+  5. Reconexión automática ante cualquier error de red
 
-Complementa al check_and_close del scanner principal (que corre cada 30s
-sobre velas cerradas). Este monitor actúa sobre precio en tiempo real.
+Ventaja vs polling de precio anterior:
+  - Latencia < 200 ms vs 5-10 s
+  - Sin llamadas redundantes a _close_market (que fallaba porque Binance
+    ya había cerrado la posición con la orden algo)
+  - El state file se actualiza siempre que Binance ejecute el SL o TP
 """
 
+import json
 import logging
-import time
 import threading
+import time
 from datetime import datetime, timezone
-from typing import Optional
+
+from .notifier import notify_ws_status
 
 _logger = logging.getLogger('order_monitor')
 
-INTERVAL_DEFAULT = 5   # segundos entre chequeos
+_WS_URL      = 'wss://fstream.binance.com/ws/{listen_key}'
+_KEEPALIVE_S = 1800  # 30 min — Binance expira la key a los 60 min sin renovar
+
+_SYMBOL_TO_ASSET = {
+    'BTCUSDT': 'BTC/USDT',
+    'ETHUSDT': 'ETH/USDT',
+}
 
 
-# ── Loop principal ────────────────────────────────────────────────────────────
+# ── Entry point ───────────────────────────────────────────────────────────────
 
 def run_loop(
     exchange,
     engines: dict,
     engines_lock: threading.Lock,
     live_mode: bool,
-    interval: int = INTERVAL_DEFAULT,
+    **_kwargs,
 ) -> None:
-    """Punto de entrada del thread. Corre indefinidamente."""
-    _logger.info(f'[ORDER_MONITOR] Iniciado — interval={interval}s  live={live_mode}')
+    """Punto de entrada del thread. Corre indefinidamente con reconexión automática."""
+    if not live_mode:
+        _logger.info('[ORDER_MONITOR] Modo paper — WebSocket desactivado')
+        return
+
+    _logger.info('[ORDER_MONITOR] Iniciando WebSocket User Data Stream')
+    _reconnect_count = 0
     while True:
         try:
-            if live_mode:
-                _check_all(exchange, engines, engines_lock)
+            _session(exchange, engines, engines_lock, _reconnect_count)
+            _reconnect_count += 1
         except Exception as e:
-            _logger.error(f'[ORDER_MONITOR] Error inesperado: {e}')
-        time.sleep(interval)
+            _logger.error(f'[ORDER_MONITOR] Sesión terminada ({e}) — reconectando en 5s')
+            notify_ws_status('error', str(e)[:120])
+            _reconnect_count += 1
+        time.sleep(5)
 
 
-def _check_all(exchange, engines: dict, engines_lock: threading.Lock) -> None:
-    with engines_lock:
-        items = list(engines.items())
+# ── WebSocket session ─────────────────────────────────────────────────────────
 
-    for asset, engine in items:
-        try:
-            _check_asset(exchange, asset, engine, engines_lock)
-        except Exception as e:
-            _logger.error(f'[ORDER_MONITOR] {asset}: {e}')
+def _session(
+    exchange,
+    engines: dict,
+    engines_lock: threading.Lock,
+    reconnect_count: int = 0,
+) -> None:
+    """Una sesión completa: crea key, conecta WebSocket, escucha hasta desconexión."""
+    from websockets.sync.client import connect
 
+    listen_key = _create_listen_key(exchange)
+    _logger.info(f'[ORDER_MONITOR] ListenKey: {listen_key[:12]}...')
 
-def _check_asset(exchange, asset: str, engine, engines_lock: threading.Lock) -> None:
-    pos = engine.get_position(asset)
-    if pos is None:
-        return
+    stop = threading.Event()
+    ka = threading.Thread(
+        target=_keepalive_loop,
+        args=(exchange, listen_key, stop),
+        daemon=True,
+        name='ws-keepalive',
+    )
+    ka.start()
 
-    # Precio actual
-    symbol = asset + ':USDT'
     try:
-        ticker = exchange.fetch_ticker(symbol)
-        price  = float(ticker['last'])
-    except Exception as e:
-        _logger.warning(f'[{asset}] fetch_ticker failed: {e}')
+        with connect(_WS_URL.format(listen_key=listen_key)) as ws:
+            event = 'reconnected' if reconnect_count > 0 else 'connected'
+            detail = f'Reconexión #{reconnect_count}' if reconnect_count > 0 else 'Escuchando fills en tiempo real'
+            _logger.info(f'[ORDER_MONITOR] {event.capitalize()} — {detail}')
+            notify_ws_status(event, detail)
+
+            for raw in ws:
+                try:
+                    _handle(json.loads(raw), engines, engines_lock)
+                except Exception as e:
+                    _logger.error(f'[ORDER_MONITOR] Error procesando evento: {e}')
+    finally:
+        stop.set()
+        _logger.warning('[ORDER_MONITOR] WebSocket desconectado')
+        notify_ws_status('disconnected', 'Intentando reconectar...')
+        _delete_listen_key(exchange, listen_key)
+
+
+# ── Listen key management ─────────────────────────────────────────────────────
+
+def _create_listen_key(exchange) -> str:
+    resp = exchange.fapiPrivatePostListenKey()
+    return resp['listenKey']
+
+
+def _keepalive_loop(exchange, listen_key: str, stop: threading.Event) -> None:
+    while not stop.wait(_KEEPALIVE_S):
+        try:
+            exchange.fapiPrivatePutListenKey({'listenKey': listen_key})
+            _logger.debug('[ORDER_MONITOR] ListenKey renovado')
+        except Exception as e:
+            _logger.warning(f'[ORDER_MONITOR] Keepalive falló: {e}')
+
+
+def _delete_listen_key(exchange, listen_key: str) -> None:
+    try:
+        exchange.fapiPrivateDeleteListenKey({'listenKey': listen_key})
+    except Exception:
+        pass
+
+
+# ── Event handler ─────────────────────────────────────────────────────────────
+
+def _handle(data: dict, engines: dict, engines_lock: threading.Lock) -> None:
+    if data.get('e') != 'ORDER_TRADE_UPDATE':
         return
 
-    direction = pos['direction']
-    sl        = pos['sl']
-    tp        = pos['tp']
-
-    # ¿Cruzó SL o TP?
-    if direction == 'long':
-        triggered = price <= sl or price >= tp
-    else:
-        triggered = price >= sl or price <= tp
-
-    if not triggered:
+    order = data.get('o', {})
+    if order.get('X') != 'FILLED':
         return
 
-    reason = _detect_reason(direction, price, sl, tp)
-    _logger.warning(
-        f'[ORDER_MONITOR] ⚠️ {asset} {reason} ALCANZADO — '
-        f'precio={price:.4f}  sl={sl}  tp={tp} → cerrando'
+    symbol     = order.get('s', '')     # BTCUSDT
+    order_type = order.get('o', '')     # STOP_MARKET, TAKE_PROFIT_MARKET, MARKET …
+    side       = order.get('S', '')     # BUY / SELL
+    fill_price = float(order.get('L') or order.get('ap') or 0)
+    order_id   = str(order.get('i', ''))
+    close_ts   = (
+        datetime.fromtimestamp(data.get('T', 0) / 1000, tz=timezone.utc)
+        .isoformat(timespec='seconds') + '+00:00'
     )
 
-    # Bar sintético con high=low=precio actual para reutilizar check_and_close
-    synthetic_bar = {
-        'open_time': datetime.now(timezone.utc).isoformat(timespec='seconds') + '+00:00',
-        'high':  price,
-        'low':   price,
-        'close': price,
-    }
+    asset = _SYMBOL_TO_ASSET.get(symbol)
+    if not asset:
+        return
+
+    _logger.info(
+        f'[ORDER_MONITOR] FILL {symbol}  {order_type}  {side}  '
+        f'price={fill_price}  orderId={order_id}'
+    )
 
     with engines_lock:
-        trade = engine.check_and_close(asset, synthetic_bar)
+        engine = engines.get(asset)
+        if engine is None:
+            return
 
-    if trade:
-        _logger.info(
-            f'[ORDER_MONITOR] ✅ {asset} cerrado por {trade["reason"]} '
-            f'@ {trade["exit"]}  pnl={trade["pnl"]:+.4f} USD'
-        )
-    else:
-        _logger.warning(f'[ORDER_MONITOR] {asset} check_and_close no registró cierre — reintentará')
+        pos = engine.get_position(asset)
+        if pos is None:
+            _logger.debug(f'[ORDER_MONITOR] {asset}: sin posición en state — ignorando')
+            return
+
+        # Solo el lado de cierre: sell para long, buy para short
+        expected_close = 'SELL' if pos['direction'] == 'long' else 'BUY'
+        if side != expected_close:
+            _logger.debug(f'[ORDER_MONITOR] {asset}: {side} no cierra {pos["direction"]}')
+            return
+
+        reason = _classify_reason(order_type, fill_price, pos)
+        trade  = engine.record_close(asset, fill_price, reason, close_ts, order_id)
+
+        if trade:
+            _logger.info(
+                f'[ORDER_MONITOR] ✅ {asset} {reason} @ {fill_price}  '
+                f'pnl={trade["pnl"]:+.4f}  equity={trade["equity"]:.2f}'
+            )
+        else:
+            _logger.warning(f'[ORDER_MONITOR] {asset}: record_close retornó None')
 
 
-def _detect_reason(direction: str, price: float, sl: float, tp: float) -> str:
-    if direction == 'long':
-        return 'SL' if price <= sl else 'TP'
-    return 'SL' if price >= sl else 'TP'
+def _classify_reason(order_type: str, fill_price: float, pos: dict) -> str:
+    if order_type in ('STOP_MARKET', 'STOP'):
+        return 'SL'
+    if order_type in ('TAKE_PROFIT_MARKET', 'TAKE_PROFIT'):
+        return 'TP'
+    # Fallback: comparar precio de fill con midpoint entre SL y TP
+    mid = (pos['sl'] + pos['tp']) / 2
+    if pos['direction'] == 'long':
+        return 'TP' if fill_price > mid else 'SL'
+    return 'TP' if fill_price < mid else 'SL'
 
 
-# ── Status para endpoint GET /orders ─────────────────────────────────────────
+# ── Status para GET /orders ───────────────────────────────────────────────────
 
 def get_status(
     exchange,
@@ -122,7 +205,7 @@ def get_status(
 ) -> list:
     """
     Devuelve estado de todas las posiciones abiertas: precio actual,
-    distancia a SL/TP, y si las órdenes algo de Binance siguen activas.
+    distancia a SL/TP, y si las órdenes algo siguen activas en Binance.
     """
     result = []
 
@@ -140,7 +223,6 @@ def get_status(
         direction = pos['direction']
         qty       = pos['qty']
 
-        # Precio actual
         current_price = None
         try:
             ticker        = exchange.fetch_ticker(asset + ':USDT')
@@ -148,17 +230,12 @@ def get_status(
         except Exception:
             pass
 
-        # PnL no realizado
         pnl_usd = None
         if current_price is not None:
-            if direction == 'long':
-                pnl_usd = (current_price - entry) * qty
-            else:
-                pnl_usd = (entry - current_price) * qty
+            mult    = 1 if direction == 'long' else -1
+            pnl_usd = (current_price - entry) * qty * mult
 
-        # Distancia a SL y TP en %
-        dist_sl_pct = None
-        dist_tp_pct = None
+        dist_sl_pct = dist_tp_pct = None
         if current_price:
             if direction == 'long':
                 dist_sl_pct = round((current_price - sl) / entry * 100, 3)
@@ -167,12 +244,10 @@ def get_status(
                 dist_sl_pct = round((sl - current_price) / entry * 100, 3)
                 dist_tp_pct = round((current_price - tp) / entry * 100, 3)
 
-        # Verificar si las órdenes algo siguen activas en Binance
-        sl_binance = None
-        tp_binance = None
+        sl_binance = tp_binance = None
         if live_mode:
             try:
-                sym        = asset.replace('/', '').replace(':USDT', '')  # ETHUSDT
+                sym        = asset.replace('/', '').replace(':USDT', '')
                 open_algos = exchange.request(
                     'openAlgoOrders', 'fapiPrivate', 'GET', {'symbol': sym}
                 )

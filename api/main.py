@@ -31,6 +31,7 @@ from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, StreamingResponse
+from pydantic import BaseModel
 
 import os
 
@@ -649,6 +650,147 @@ def post_wsp():
         raise HTTPException(status_code=503, detail='Monitor not ready yet.')
     sent = notify_daily_status(live_engines)
     return {'sent': sent}
+
+
+class OpenRequest(BaseModel):
+    asset:     str            # "BTC/USDT" or "ETH/USDT"
+    direction: str            # "long" or "short"
+    sl_pct:    float          # SL distance as % of entry price, e.g. 0.5
+    tp_pct:    float          # TP distance as % of entry price, e.g. 1.0
+    risk_usd:  Optional[float] = None  # if None → 1% of equity
+
+
+class CloseRequest(BaseModel):
+    asset:  str
+    reason: str = 'MANUAL'
+
+
+@app.post('/open')
+def post_open(
+    req:     OpenRequest,
+    confirm: bool = Query(False, description='Must be true to execute real order'),
+):
+    """
+    Manually open a position for testing.
+    Fetches current market price, computes SL/TP/qty, then calls engine.open_position().
+    Only works in LIVE_MODE. Requires ?confirm=true.
+    """
+    if not LIVE_MODE:
+        raise HTTPException(status_code=400, detail='Only available in live mode (LIVE_TRADING=1).')
+    if not confirm:
+        raise HTTPException(status_code=400, detail='Pass ?confirm=true to execute a real order.')
+    if req.direction not in ('long', 'short'):
+        raise HTTPException(status_code=400, detail='direction must be "long" or "short".')
+
+    with _engines_lock:
+        engine = _engines.get(req.asset)
+    if engine is None:
+        raise HTTPException(status_code=503, detail=f'Engine for {req.asset!r} not ready. Valid assets: {list(STATE_FILES.keys())}')
+
+    if engine.get_position(req.asset) is not None:
+        raise HTTPException(status_code=409, detail=f'{req.asset} already has an open position.')
+
+    exchange = _order_monitor_exchange
+    if exchange is None:
+        raise HTTPException(status_code=503, detail='Exchange not available yet.')
+
+    ticker    = exchange.fetch_ticker(req.asset + ':USDT')
+    entry     = float(ticker['last'])
+    sl_dist   = entry * req.sl_pct / 100
+    tp_dist   = entry * req.tp_pct / 100
+
+    if req.direction == 'long':
+        sl, tp = entry - sl_dist, entry + tp_dist
+    else:
+        sl, tp = entry + sl_dist, entry - tp_dist
+
+    risk_usd = req.risk_usd if req.risk_usd is not None else engine.equity * 0.01
+    qty      = risk_usd / sl_dist
+    ts       = datetime.now(timezone.utc).isoformat(timespec='seconds') + '+00:00'
+
+    ok = engine.open_position(req.asset, req.direction, entry, sl, tp, qty, ts, risk_usd)
+    if not ok:
+        raise HTTPException(status_code=500, detail='open_position failed — check logs (qty below min?).')
+
+    return {
+        'opened':        True,
+        'asset':         req.asset,
+        'direction':     req.direction,
+        'entry_approx':  entry,
+        'sl':            round(sl, 4),
+        'tp':            round(tp, 4),
+        'qty_approx':    round(qty, 6),
+        'risk_usd':      round(risk_usd, 2),
+    }
+
+
+@app.post('/close')
+def post_close(
+    req:     CloseRequest,
+    confirm: bool = Query(False, description='Must be true to execute real order'),
+):
+    """
+    Manually close an open position for testing.
+    Cancels pending SL/TP orders, places a MARKET close, records the trade.
+    Only works in LIVE_MODE. Requires ?confirm=true.
+    """
+    if not LIVE_MODE:
+        raise HTTPException(status_code=400, detail='Only available in live mode (LIVE_TRADING=1).')
+    if not confirm:
+        raise HTTPException(status_code=400, detail='Pass ?confirm=true to execute a real order.')
+    with _engines_lock:
+        engine = _engines.get(req.asset)
+    if engine is None:
+        raise HTTPException(status_code=503, detail=f'Engine for {req.asset!r} not ready.')
+
+    pos = engine.get_position(req.asset)
+    if pos is None:
+        raise HTTPException(status_code=404, detail=f'No open position for {req.asset}.')
+
+    exchange = _order_monitor_exchange
+    if exchange is None:
+        raise HTTPException(status_code=503, detail='Exchange not available yet.')
+
+    direction = pos['direction']
+    qty       = pos['qty']
+    side      = 'SELL' if direction == 'long' else 'BUY'
+
+    # Cancel all pending SL/TP orders before placing market close
+    try:
+        engine._cancel_open_orders(engine._symbol)
+    except Exception as e:
+        pass  # best-effort; MARKET reduceOnly will still close the position
+
+    try:
+        close_order = exchange.create_order(
+            engine._symbol, 'MARKET', side, qty,
+            params={'reduceOnly': True},
+        )
+        fill_price = float(close_order.get('average') or close_order.get('price') or 0)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f'MARKET close order failed: {e}')
+
+    close_ts = datetime.now(timezone.utc).isoformat(timespec='seconds') + '+00:00'
+
+    with _engines_lock:
+        trade = engine.record_close(req.asset, fill_price, req.reason, close_ts)
+
+    if trade is None:
+        return {
+            'closed':     True,
+            'note':       'record_close returned None — WS may have already processed this close.',
+            'fill_price': fill_price,
+        }
+
+    return {
+        'closed':    True,
+        'asset':     req.asset,
+        'direction': direction,
+        'reason':    req.reason,
+        'fill_price': fill_price,
+        'pnl_usd':   round(trade['pnl'], 4),
+        'equity':    round(trade['equity'], 2),
+    }
 
 
 @app.get('/health')
