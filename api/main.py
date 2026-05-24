@@ -33,7 +33,10 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, StreamingResponse
 from pydantic import BaseModel
 
+import logging
 import os
+
+logging.basicConfig(level=logging.INFO, format='%(name)s: %(message)s')
 
 # Pre-load heavy modules at process start so the monitor thread finds them cached
 from core.exchange import create_exchange, create_futures_exchange, create_public_exchange, ping_exchange

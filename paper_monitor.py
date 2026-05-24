@@ -123,7 +123,11 @@ def scan_asset(
     candle_time = str(row['open_time'])
 
     # ── Check exit for any open position first ────────────────────────────────
-    if engine.has_position(asset):
+    # Use local state as the gate: if local state has a position, always run
+    # check_and_close regardless of Binance's answer. When Binance already closed
+    # the position (TP/SL algo fill) has_position() returns False, so using it as
+    # the gate causes check_and_close to never run → zombie state + no notification.
+    if engine.get_position(asset) is not None:
         trade = engine.check_and_close(asset, row)
         if trade is not None:
             log_close(
