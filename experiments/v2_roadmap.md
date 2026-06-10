@@ -1,7 +1,44 @@
-# V2 Roadmap — Sistema Regime-Agnostic
-**Rama:** `v2-regime-agnostic`  
+# V3 Roadmap — Daily Breakout
+**Estado general:** ✅ ESTRATEGIA VALIDADA — pendiente deploy
+**Última actualización:** 2026-06-10
+
+> El roadmap original (ADX + mean reversion) fue descartado el 2026-06-09.
+> El pivote a Daily Breakout fue validado completamente en sesiones 2026-06-09 y 2026-06-10.
+> Ver sesiones para el detalle completo.
+
+---
+
+## Validación completada
+
+| Test | BTC | ETH | Estado |
+|------|-----|-----|--------|
+| IS 5 años | PF=1.735, MaxDD=4% | PF=1.711, MaxDD=5.1% | ✅ |
+| OOS 730d | PF=1.627, MaxDD=3% | PF=1.442, MaxDD=3% | ✅ |
+| Walk-forward 3 ventanas | 3/3 | 3/3 | ✅ |
+| Slippage | Δpf=0 | Δpf=0 | ✅ |
+| Alpha vs BnH | Calmar 5× mejor | Calmar >> BnH | ✅ |
+
+## Estrategia combinada (ADX router) — descartada 2026-06-10
+
+Testeado en `backtest/backtest_combined_strategy.py`. Resultado: el breakout solo
+supera al combined en PF y robustez en todas las ventanas de 5 años.
+El combined añade trades de pullback que contaminan el edge en BTC y no mejoran
+suficientemente ETH sobre 5 años. Ver `exp_session_2026_06_10_combined_strategy.md`.
+
+## Deploy pendiente — PRÓXIMA SESIÓN
+
+1. Actualizar Dockerfile: `CMD ["python", "paper_engine_breakout.py", "--loop"]`
+2. Crear `deploy/deploy_005_FECHA.md`
+3. Deploy Cloud Run europe-west1
+4. Archivar `paper_monitor.py` (no borrar, solo dejar de correr)
+
+---
+
+# Roadmap original (ARCHIVADO — descartado 2026-06-09)
+
+**Rama original:** `v2-regime-agnostic`  
 **Inicio:** 2026-04-26  
-**Objetivo:** PF > 1.2 con fees en cualquier ventana de 90 días, independiente del régimen de mercado.
+**Objetivo original:** PF > 1.2 con fees en cualquier ventana de 90 días, independiente del régimen de mercado.
 
 ---
 
