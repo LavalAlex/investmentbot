@@ -45,7 +45,8 @@ from core.live_engine import LiveEngine
 from core import gcs_storage
 from core.logger_v2 import setup_logger
 from core.order_monitor import run_loop as run_order_monitor, get_status as get_orders_status
-from paper_monitor import run_scan, ASSETS_CONFIG, SCAN_INTERVAL, RISK_PCT
+from paper_engine_breakout import run_scan, ASSETS_CONFIG, SCAN_INTERVAL
+from core.strategy_breakout import RISK_PCT
 
 # Shared engine registry — populated by monitor thread, read by /reset
 _engines: dict = {}
@@ -58,15 +59,15 @@ LOGS_DIR        = Path('logs')
 INITIAL_CAPITAL = 10_000.0
 LIVE_MODE       = os.getenv('LIVE_TRADING', '0') == '1'
 
-_state_suffix = '_live' if LIVE_MODE else ''
 STATE_FILES = {
-    'BTC/USDT': Path(f'btc_state{_state_suffix}.json'),
-    'ETH/USDT': Path(f'eth_state{_state_suffix}.json'),
+    'BTC/USDT': Path('btc_breakout_state.json'),
+    'ETH/USDT': Path('eth_breakout_state.json'),
 }
 
-LOG_PREFIXES = {
-    'btc': 'BTC/USDT',
-    'eth': 'ETH/USDT',
+# Maps short user-facing key ('btc'/'eth') to actual log file prefix
+_LOG_PREFIX_MAP = {
+    'btc': 'btc_breakout',
+    'eth': 'eth_breakout',
 }
 
 
@@ -120,7 +121,7 @@ def _run_monitor_inner() -> None:
     print("[MONITOR] Creating loggers...", flush=True)
     loggers = {
         asset: setup_logger(
-            f'paper_monitor_{cfg["log_prefix"]}',
+            f'breakout_{cfg["log_prefix"]}',
             log_file=f'logs/{cfg["log_prefix"]}_{log_date}.log',
             mode='a',
         )
@@ -128,10 +129,7 @@ def _run_monitor_inner() -> None:
     }
 
     print("[MONITOR] Creating exchange...", flush=True)
-    exchange = create_futures_exchange() if LIVE_MODE else create_public_exchange()
-    if LIVE_MODE:
-        global _order_monitor_exchange
-        _order_monitor_exchange = exchange
+    exchange = create_public_exchange()
     print("[MONITOR] Pinging Binance...", flush=True)
     ok, msg  = ping_exchange(create_public_exchange())
     _monitor_status["binance_ok"]  = ok
@@ -143,21 +141,10 @@ def _run_monitor_inner() -> None:
         return
 
     print(f"[MONITOR] Binance ping: ok={ok} msg={msg}", flush=True)
-    if LIVE_MODE:
-        print("[MONITOR] Creating LiveEngines...", flush=True)
-        engines = {
-            asset: LiveEngine(
-                exchange=exchange,
-                symbol=asset + ':USDT',
-                state_file=cfg['state_file'].replace('.json', '_live.json'),
-            )
-            for asset, cfg in ASSETS_CONFIG.items()
-        }
-    else:
-        engines = {
-            asset: PaperEngine(state_file=cfg['state_file'])
-            for asset, cfg in ASSETS_CONFIG.items()
-        }
+    engines = {
+        asset: PaperEngine(state_file=cfg['state_file'])
+        for asset, cfg in ASSETS_CONFIG.items()
+    }
     with _engines_lock:
         _engines.update(engines)
 
@@ -167,15 +154,14 @@ def _run_monitor_inner() -> None:
         logger = loggers[asset]
         engine = engines[asset]
         logger.info(f"[MONITOR] {'─'*50}")
-        logger.info(f"[MONITOR] {cfg['label']}")
+        logger.info(f"[MONITOR] {asset} — Daily Breakout V3")
         logger.info(f"[MONITOR] Binance OK  : {msg}")
-        logger.info(f"[MONITOR] SL min      : {cfg['min_sl_dist_pct']*100:.2f}%")
+        logger.info(f"[MONITOR] Strategy    : 10d vol≥1.5× ATR×1.5 RR=2")
         logger.info(f"[MONITOR] Risk        : {RISK_PCT*100:.0f}% equity/trade  |  R:R 2:1")
         logger.info(f"[MONITOR] Equity      : {engine.equity:.2f} USD")
         logger.info(f"[MONITOR] Interval    : {SCAN_INTERVAL}s")
         logger.info(f"[MONITOR] {'─'*50}")
 
-    last_candle_ts: dict = {}
     last_heartbeat: float = 0.0  # force send on startup
 
     while True:
@@ -186,14 +172,14 @@ def _run_monitor_inner() -> None:
                 prefix = cfg['log_prefix']
                 gcs_storage.download(f'logs/{prefix}_{log_date}.log', Path(f'logs/{prefix}_{log_date}.log'))
                 loggers[asset] = setup_logger(
-                    f'paper_monitor_{prefix}',
+                    f'breakout_{prefix}',
                     log_file=f'logs/{prefix}_{log_date}.log',
                     mode='a',
                 )
                 loggers[asset].info(f"[MONITOR] Log rotated — new day: {log_date}")
 
         with _engines_lock:
-            run_scan(exchange, engines, loggers, last_candle_ts, live=LIVE_MODE)
+            run_scan(exchange, engines, loggers)
 
         for asset, cfg in ASSETS_CONFIG.items():
             prefix = cfg['log_prefix']
@@ -314,17 +300,17 @@ def get_status():
 
     today    = datetime.now(timezone.utc).strftime('%Y%m%d')
     last_scans = {}
-    for prefix in ('btc', 'eth'):
-        log_path = LOGS_DIR / f'{prefix}_{today}.log'
+    for short, log_pfx in _LOG_PREFIX_MAP.items():
+        log_path = LOGS_DIR / f'{log_pfx}_{today}.log'
         if not log_path.exists():
-            log_path = _most_recent_log(prefix)
+            log_path = _most_recent_log(log_pfx)
         last_scan = None
         if log_path and log_path.exists():
             text = log_path.read_text(encoding='utf-8')
             idx  = text.rfind('[SCAN]')
             if idx != -1:
                 last_scan = text[idx:].split('\n')[0].replace('[SCAN]', '').strip()
-        last_scans[prefix] = last_scan
+        last_scans[short] = last_scan
 
     per_asset     = {}
     total_equity  = 0.0
@@ -479,15 +465,16 @@ def get_latest_logs(
     asset: Optional[str] = Query('eth', description='Asset prefix: btc or eth'),
 ):
     """Last scan block from the most recent log file for the specified asset."""
-    prefix   = asset.lower() if asset else 'eth'
+    short    = asset.lower() if asset else 'eth'
+    log_pfx  = _LOG_PREFIX_MAP.get(short, short)
     today    = datetime.now(timezone.utc).strftime('%Y%m%d')
-    log_path = LOGS_DIR / f'{prefix}_{today}.log'
+    log_path = LOGS_DIR / f'{log_pfx}_{today}.log'
 
     if not log_path.exists():
-        log_path = _most_recent_log(prefix)
+        log_path = _most_recent_log(log_pfx)
 
     if log_path is None:
-        raise HTTPException(status_code=404, detail=f'No log files found for {prefix}.')
+        raise HTTPException(status_code=404, detail=f'No log files found for {short}.')
 
     block = _last_scan_block(log_path)
     if not block:
@@ -507,7 +494,7 @@ def download_logs(
     to_date:   Optional[str] = Query(None, alias='to',   description='Range end:   YYYY-MM-DD'),
 ):
     """Download log file(s) for a given asset prefix (btc or eth)."""
-    prefix = asset.lower() if asset else 'eth'
+    prefix = _LOG_PREFIX_MAP.get(asset.lower() if asset else 'eth', asset.lower() if asset else 'eth')
 
     if date:
         path = _log_for_date(date, prefix)
@@ -805,17 +792,17 @@ def get_health():
     """Service health — API status, Binance connectivity, monitor state, per-asset equity."""
     today = datetime.now(timezone.utc).strftime('%Y%m%d')
     last_scans = {}
-    for prefix in ('btc', 'eth'):
-        log_path = LOGS_DIR / f'{prefix}_{today}.log'
+    for short, log_pfx in _LOG_PREFIX_MAP.items():
+        log_path = LOGS_DIR / f'{log_pfx}_{today}.log'
         if not log_path.exists():
-            log_path = _most_recent_log(prefix)
+            log_path = _most_recent_log(log_pfx)
         last_scan = None
         if log_path and log_path.exists():
             text = log_path.read_text(encoding='utf-8')
             idx  = text.rfind('[SCAN]')
             if idx != -1:
                 last_scan = text[idx:].split('\n')[0].replace('[SCAN]', '').strip()
-        last_scans[prefix] = last_scan
+        last_scans[short] = last_scan
 
     per_asset = {}
     with _engines_lock:

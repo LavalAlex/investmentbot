@@ -7,7 +7,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy source only — no .env, no data/, no logs/, no venv/
-COPY config.py fetch_history.py paper_monitor.py reset_paper_logs.py ./
+COPY config.py fetch_history.py paper_engine_breakout.py reset_paper_logs.py ./
 COPY core/    core/
 COPY backtest/ backtest/
 COPY api/     api/
