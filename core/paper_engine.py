@@ -43,8 +43,11 @@ class PaperEngine:
             gcs_storage.download(self._gcs_state, self._state_path)
         if self._state_path.exists():
             with open(self._state_path) as f:
-                return json.load(f)
-        return {'equity': INITIAL_CAPITAL, 'positions': {}, 'trades': []}
+                data = json.load(f)
+            if 'initial_equity' not in data:
+                data['initial_equity'] = data.get('equity', INITIAL_CAPITAL)
+            return data
+        return {'equity': INITIAL_CAPITAL, 'initial_equity': INITIAL_CAPITAL, 'positions': {}, 'trades': []}
 
     def _save(self) -> None:
         with open(self._state_file, 'w') as f:
@@ -75,6 +78,7 @@ class PaperEngine:
         qty: float,
         ts: str,
         risk_usd: float,
+        logger=None,
     ) -> None:
         """Record a new paper position."""
         self.state['positions'][asset] = {
@@ -201,12 +205,21 @@ class PaperEngine:
             f" | progress_to_tp={sign}{progress:.1f}% | time_in_trade={elapsed}"
         )
 
+    def init_equity(self, amount: float) -> None:
+        """Set initial equity from real balance. Only applies when state is pristine (no trades)."""
+        if self.state.get('trades') or self.state.get('positions'):
+            return
+        self.state['equity'] = round(amount, 4)
+        self.state['initial_equity'] = round(amount, 4)
+        self._save()
+
     def reset(self) -> None:
         """Wipe all trades, positions, and CB state. Equity back to INITIAL_CAPITAL."""
         self.state = {
-            'equity':    INITIAL_CAPITAL,
-            'positions': {},
-            'trades':    [],
+            'equity':         INITIAL_CAPITAL,
+            'initial_equity': INITIAL_CAPITAL,
+            'positions':      {},
+            'trades':         [],
         }
         self._save()
 
@@ -215,11 +228,12 @@ class PaperEngine:
     def print_summary(self, logger, label: str = 'PAPER TRADING SUMMARY') -> None:
         trades = self.state['trades']
         n      = len(trades)
+        initial = self.state.get('initial_equity', INITIAL_CAPITAL)
         logger.info(f"\n{'─'*55}")
         logger.info(f"{label}")
         logger.info(f"{'─'*55}")
         logger.info(f"Equity       : {self.equity:.2f} USD")
-        logger.info(f"Return       : {(self.equity - INITIAL_CAPITAL) / INITIAL_CAPITAL * 100:+.2f}%")
+        logger.info(f"Return       : {(self.equity - initial) / initial * 100:+.2f}%")
         if n == 0:
             logger.info(f"Trades       : 0")
         else:

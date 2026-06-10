@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
-from core.exchange import create_public_exchange, fetch_ohlcv
+from core.exchange import create_futures_exchange, create_public_exchange, fetch_ohlcv
 from core.strategy_breakout import prepare_daily, is_breakout_signal, calculate_position
 from core.paper_engine import PaperEngine
 from core.logger_v2 import setup_logger, log_open, log_close
@@ -219,6 +219,37 @@ def run_scan(exchange, engines: dict, loggers: dict) -> None:
         engine.print_summary(logger, label=f'{asset} BREAKOUT PAPER SUMMARY')
 
 
+# ── Equity sync ───────────────────────────────────────────────────────────────
+
+def _sync_equity_from_binance(engines: dict, loggers: dict) -> None:
+    """
+    On first deploy, init each engine's equity from the real Binance USDT spot balance.
+    No-op if any engine already has trades (equity reflects paper P&L, not initial balance).
+    """
+    any_active = any(
+        e.state.get('trades') or e.state.get('positions')
+        for e in engines.values()
+    )
+    if any_active:
+        return
+
+    try:
+        auth_exchange = create_futures_exchange()
+        auth_exchange.timeout = 10000  # 10s max — non-fatal if it hangs
+        balance = auth_exchange.fetch_balance()
+        usdt_free = float(balance.get('USDT', {}).get('free', 0.0))
+        if usdt_free <= 0:
+            return
+        for asset, engine in engines.items():
+            logger = loggers[asset]
+            engine.init_equity(usdt_free)
+            logger.info(f'[INIT] Equity sincronizado desde Binance: {usdt_free:.2f} USDT')
+    except Exception as e:
+        # Non-fatal: fallback to whatever is in state
+        first_logger = next(iter(loggers.values()))
+        first_logger.info(f'[INIT] No se pudo sincronizar equity desde Binance: {e}')
+
+
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main():
@@ -247,6 +278,9 @@ def main():
         asset: PaperEngine(state_file=cfg['state_file'])
         for asset, cfg in ASSETS_CONFIG.items()
     }
+
+    # Sync equity from real Binance balance if engines are in pristine state
+    _sync_equity_from_binance(engines, loggers)
 
     if not args.loop:
         run_scan(exchange, engines, loggers)

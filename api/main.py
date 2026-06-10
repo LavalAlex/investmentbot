@@ -45,7 +45,7 @@ from core.live_engine import LiveEngine
 from core import gcs_storage
 from core.logger_v2 import setup_logger
 from core.order_monitor import run_loop as run_order_monitor, get_status as get_orders_status
-from paper_engine_breakout import run_scan, ASSETS_CONFIG, SCAN_INTERVAL
+from paper_engine_breakout import run_scan, ASSETS_CONFIG, SCAN_INTERVAL, _sync_equity_from_binance
 from core.strategy_breakout import RISK_PCT
 
 # Shared engine registry — populated by monitor thread, read by /reset
@@ -145,6 +145,7 @@ def _run_monitor_inner() -> None:
         asset: PaperEngine(state_file=cfg['state_file'])
         for asset, cfg in ASSETS_CONFIG.items()
     }
+    _sync_equity_from_binance(engines, loggers)
     with _engines_lock:
         _engines.update(engines)
 

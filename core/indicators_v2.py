@@ -63,3 +63,31 @@ def adx(df: pd.DataFrame, period: int = 14) -> pd.Series:
     denom = (plus_di + minus_di).replace(0, float('nan'))
     dx    = 100 * (plus_di - minus_di).abs() / denom
     return dx.ewm(com=period - 1, min_periods=period, adjust=False).mean()
+
+
+def bollinger_bands(series: pd.Series, period: int = 20, std: float = 2.0):
+    """
+    Bollinger Bands.
+    Returns (upper, mid, lower) as pd.Series.
+    mid = SMA(period), bands = mid ± std * rolling_std.
+    """
+    mid   = series.rolling(period, min_periods=period).mean()
+    sigma = series.rolling(period, min_periods=period).std(ddof=0)
+    upper = mid + std * sigma
+    lower = mid - std * sigma
+    return upper, mid, lower
+
+
+def rsi(series: pd.Series, period: int = 14) -> pd.Series:
+    """
+    Wilder RSI. Range 0–100.
+    Oversold < 35, overbought > 65 (conservative thresholds for crypto).
+    Uses EWM with alpha=1/period (Wilder smoothing).
+    """
+    delta = series.diff()
+    gain  = delta.clip(lower=0)
+    loss  = (-delta).clip(lower=0)
+    avg_gain = gain.ewm(com=period - 1, min_periods=period, adjust=False).mean()
+    avg_loss = loss.ewm(com=period - 1, min_periods=period, adjust=False).mean()
+    rs = avg_gain / avg_loss.replace(0, float('nan'))
+    return 100 - (100 / (1 + rs))
